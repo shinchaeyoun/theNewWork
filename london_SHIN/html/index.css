@@ -52,6 +52,11 @@ header .header-wrap ul li.top-ul-a-active a {
   color:#222;
 }
 
+.top-active {
+  background-color: #fff;
+  border-bottom: 1px solid #000;
+}
+
 header nav > ul > li.on > a,
 header nav > ul > li:hover > a {
   color: #d7ff00 !important;
