@@ -29,8 +29,9 @@ function showImage(){
     var objImg1 = document.getElementById("introImg");
     var objImg2 = document.getElementById("blurImg");
     objImg1.src = imgArray1[imgNum];
-    objImg2.src = imgArray2[imgNum];
+    objImg2.src = imgArray2[imgNum];   
 }
+    
 
 
 let pos = {y:0, y2:0, state:''}
