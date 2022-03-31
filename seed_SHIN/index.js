@@ -28,8 +28,55 @@ $(function(){
     showImg();
   });
   
+  const $svg = $('#svg__circle');
+  const $bgMask = $('#bg_mask');
+  const $rotate = $('#rotate_text');
 
+  let pos = {y:0,y2:0,state:''};
 
+  
+  $(window).on('scroll',function(){
+    let $yy = this.scrollY;
+    pos.y = window.scrollY;
+    // console.log(pos.y);
+    // console.log(yy);
+
+    if(pos.y > pos.y2) {
+      pos.state = true;
+    } else {
+      pos.state = false;
+    }
+
+    pos.y2 = pos.y;
+
+    if(pos.state){
+      $yy = $yy/this.scrollY;
+  }else{
+      $yy = $yy/this.scrollY;
+  }
+
+  $svg.css({
+    width: 100 + this.scrollY,
+    height : 100 + this.scrollY
+  });
+
+  $bgMask.css({
+    clipPath: `circle(${50+this.scrollY/2}px at center)`
+  });
+
+  // console.log($svg.css('width'),$svg.css('height'));
+  // console.log($bgMask.css('clip-path'));
+
+  if(window.scrollY > 0){
+    $rotate.css({
+      width: 150+this.scrollY *1.5,
+      height:150+this.scrollY*1.5,
+      transform:`translate(-50%,-50%), rotate(${this.scrollY/2}deg)`,
+    });
+  }
+  
+
+  });
 
 
 
