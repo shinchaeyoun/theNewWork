@@ -28,7 +28,10 @@ $(function(){
 
   const $current = $('.sec1 > .slide-pagination > .current');
 
-  let nowIdx = 0;
+  
+  let nowIdx = 1;
+  
+  let lock = false;
 
   $(window).on('load',function(){
     setInterval(function(){
@@ -40,13 +43,17 @@ $(function(){
   $nextBtn.on('click',function(e){
     e.preventDefault();
 
-    if (nowIdx < 4) {
+
+    if(lock===false) {
+      lock = true;
+    
+    if (nowIdx < 5) {
 			nowIdx++;
 		} else {
-			nowIdx = 0;
+			nowIdx = 1;
 		}
 
-    $current.text('0' + (nowIdx + 1));
+    $current.text('0' + (nowIdx));
 
     // 컨테이너 이동
     $container.stop().animate({
@@ -56,12 +63,19 @@ $(function(){
       $container.css({
         left : 0
       });
+      lock = false;
     });
-  })
+
+    };
+
+  });
 
   // 이전 버튼
   $prevBtn.on('click',function(){
 
+    if(lock===false){
+      lock = true;
+    
     if (nowIdx > 0) {
 			nowIdx--;
 		} else {
@@ -77,8 +91,12 @@ $(function(){
       $container.css({
         left : -(100)+'%'
       });
+
+      lock=false;
     });
-  })
+    };
+
+  });
   // 메인 슬라이드 끝
 
   // 메인 추천 제품
@@ -89,7 +107,7 @@ $(function(){
   const $bar = $('.sec2 .slide-pagination');
 
   let s2Idx = 0;
-  let lock = false;
+  
   
   
   // 자동 슬라이드
@@ -190,20 +208,121 @@ $(function(){
 
   let click = 0;
 
+
   $familyBtn.on('click',function(){
     
     if (click <= 0 ) {
-      $familyMenu.css({
-        display:'block'
-      });
+      $familyMenu.slideUp();
       click ++;
     } else {
-      $familyMenu.css({
-        display:'none'
-      });
+      $familyMenu.slideDown();
       click = 0;
     }
   });
+
+  // 사이드 아이콘
+  const $sideMenu = $('aside > button');
+  const $menuIcon = $sideMenu.children('img');
+  const $sideIcon = $('aside > .side_icon');
+  const $hoverIcon = $sideIcon.children('.hover');
+  const $topIcon = $sideIcon.children('.go_top');
+  const $sideKakao = $sideIcon.children('.kakao');
+  const $sideCustomer = $sideIcon.children('.customer');
+  const $sideBtn = $('aside .button_wrap');
+
   
+  $sideMenu.on('click',function(){
+
+    if(lock===false) {
+      lock = true;
+
+    if(click<=0){
+      $menuIcon.stop().animate({
+        rotate:'135deg'
+      },200);
+      
+      $sideIcon.fadeIn(200);
+      
+      // $sideIcon.css({
+      //   display:'flex'
+      // });
+
+      click++;
+    } else {
+      $menuIcon.stop().animate({
+        rotate:0
+      },200);
+
+      $sideIcon.fadeOut(200);
+
+      // $sideIcon.css({
+      //   display:'none'
+      // });
+
+      click=0;
+    }
+      
+    lock = false;
+    }
+
+    $hoverIcon.hover(function(){
+      $(this).stop().animate({
+        width:145 
+      },200);
+    }, function (){
+      console.log('leave');
+      $(this).stop().animate({
+        width:60
+      },200)
+    });
+
+
+  });
+  // 사이드 아이콘 end
+
+  // 사이드 아이콘 구문 시작
+
+  // 카카오
+  $sideKakao.on('click',function(e){
+    e.preventDefault();
+    
+    $('aside > .kakao_pop').fadeIn(100);
+
+    $sideBtn.children('.cancel').on('click',function(){
+      $('aside > .kakao_pop').fadeOut(100);
+    });
+    $sideBtn.children('.check').on('click',function(){
+      alert('로그인 페이지로 이동');
+    });
+  });
+
+  // 고객센터
+  $sideCustomer.on('click',function(e){
+    e.preventDefault();
+    // alert('고객센터 클릭함');
+
+    $('aside > .customer_pop').fadeIn(100);
+
+    $sideBtn.children('.check').on('click',function(){
+      $('aside > .customer_pop').fadeOut(100);
+    });
+  });
+
+  // 상단 올라가기
+  $topIcon.on('click',function(e){
+    e.preventDefault();
+
+    $('html,body').stop().animate({
+      scrollTop:0
+    });
+  });
+  // 상단 올라가기 끝
+  // 사이드 아이콘 구문 끝
+  
+  // 스크롤 이벤트 구문
+  //왜 넣었는지 모르겠네??
+  // $(window).on('scroll',function(){
+  //   const scrollTop = $(this).scrollTop();    
+  // });
 
 }); // 준비핸들러
