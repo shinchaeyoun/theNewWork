@@ -241,11 +241,11 @@ $(function(){
         rotate:'135deg'
       },200);
       
-      $sideIcon.fadeIn(200);
+      // $sideIcon.fadeIn(200);
       
-      // $sideIcon.css({
-      //   display:'flex'
-      // });
+      $sideIcon.css({
+        display:'flex'
+      });
 
       click++;
     } else {
