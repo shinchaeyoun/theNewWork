@@ -427,12 +427,20 @@ $mo : "screen and (max-width:480px)";
       z-index: 999;
       background-color: #fff;
       > ul {
+        li {
+
           a {
             height: 25px;
             color:$basic;
             line-height: 25px !important;
           }
-
+          &.active {
+            > a{ 
+              color:$orange;
+              font-weight: 600;
+            }
+          } 
+        }
           > .hide {
             position: relative;
             > span {

@@ -75,10 +75,9 @@ $(function(){
 
   // 스크롤 이벤트 구문
   $(window).on('resize load', function (){
-    
+
     // 윈도우의 사이즈가 768px보다 큰 경우
     if(window.innerWidth >= 768) {
-      
       // 스크롤 이벤트 구문
       $(window).on('scroll',function(){    
         const scrollTop = $(this).scrollTop();

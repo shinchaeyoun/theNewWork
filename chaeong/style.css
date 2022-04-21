@@ -248,10 +248,14 @@
     z-index: 999;
     background-color: #fff;
   }
-  #wrap > header > .main_nav > ul a {
+  #wrap > header > .main_nav > ul li a {
     height: 25px;
     color: #707070;
     line-height: 25px !important;
+  }
+  #wrap > header > .main_nav > ul li.active > a {
+    color: #f76202;
+    font-weight: 600;
   }
   #wrap > header > .main_nav > ul > .hide {
     position: relative;
