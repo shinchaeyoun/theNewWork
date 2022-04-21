@@ -78,6 +78,7 @@ $(function(){
 
     // 윈도우의 사이즈가 768px보다 큰 경우
     if(window.innerWidth >= 768) {
+      console.log('768보다 큼');
       // 스크롤 이벤트 구문
       $(window).on('scroll',function(){    
         const scrollTop = $(this).scrollTop();
@@ -103,7 +104,7 @@ $(function(){
 
       // 윈도우 사이즈가  768보다 작은 경우
     } else if(window.innerWidth <= 768) {
-      console.log('on');
+      console.log('768보다 작음');
 
       // 메인 메뉴 클릭 이동
       $mainMenu.on('click',function(e){
