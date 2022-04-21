@@ -41,6 +41,9 @@ $(function(){
   const $mainMenu = $('header .main_nav ul li a');
   const $sideMenu = $('.scroll_down_nav ul li a');
   const $sideNav = $('.scroll_down_nav');
+  const $moMenu = $('.main_nav');
+  const $hideLi = $moMenu.children('ul').children('.hide');
+  const $hideSpan = $hideLi.children('span');
   
   const arrTopval = [];
   let menuIdx = null;
@@ -49,10 +52,9 @@ $(function(){
     arrTopval[i] = $('section').eq(i).offset().top;
   };
   
-  // main menu click event
+  // 메인 메뉴 클릭 이동
   $mainMenu.on('click',function(e){
     e.preventDefault();
-    console.log('click');
     mainNowIdx = $mainMenu.index(this)+1;
 
     $('html,body').stop().animate({
@@ -60,7 +62,7 @@ $(function(){
     });
   });
 
-  // 사이드 네비게이션 클릭 이벤트 구문
+  // 사이드 메뉴 클릭 이동
   $sideMenu.on('click',function(e){
     e.preventDefault();
     sideNowIdx = $sideMenu.index(this);
@@ -71,31 +73,84 @@ $(function(){
   });
 
 
-  // 사이드 메뉴 스크롤 이벤트 구문
-  $(window).resize(function(){
-    if(window.innerWidth > 768) {
-
+  // 스크롤 이벤트 구문
+  $(window).on('resize load', function (){
+    
+    // 윈도우의 사이즈가 768px보다 큰 경우
+    if(window.innerWidth >= 768) {
+      
+      // 스크롤 이벤트 구문
       $(window).on('scroll',function(){    
         const scrollTop = $(this).scrollTop();
     
         for(let i=0;i<arrTopval.length;i++){
+          // 사이드 메뉴 활성화표시
           if(scrollTop>=arrTopval[i]-10){
-    
-            //활성화표시
             $sideMenu.eq(i).parent().addClass('active').siblings().removeClass('active');
-    
           } else if(scrollTop<arrTopval[0]){
             $sideMenu.parent().removeClass('active');
           }
-    
+
+          // 사이드 메뉴 & 어사이드 보이기
           if (scrollTop>=265){
-    
             $sideNav.slideDown(300);
             $('aside').fadeIn(500);
           } else {
             $sideNav.slideUp(300);
             $('aside').fadeOut(300);
           }
+        }
+      });
+
+      // 윈도우 사이즈가  768보다 작은 경우
+    } else if(window.innerWidth <= 768) {
+      console.log('on');
+
+      // 메인 메뉴 클릭 이동
+      $mainMenu.on('click',function(e){
+        e.preventDefault();
+        mainNowIdx = $mainMenu.index(this)+1;
+
+        $('html,body').stop().animate({
+          scrollTop : arrTopval[mainNowIdx]-70
+        });
+      });
+      
+      // 스크롤 이벤트 구문
+      $(window).on('scroll',function(){    
+        const scrollTop = $(this).scrollTop();
+    
+        for(let i=0;i<arrTopval.length;i++){
+          
+          // 메뉴 활성화표시
+          if(scrollTop>=arrTopval[i]-10){
+            $mainMenu.eq(i).parent().addClass('active').siblings().removeClass('active');
+          } else if(scrollTop<arrTopval[0]){
+            $mainMenu.parent().removeClass('active');
+          }
+    
+          // 메인 메뉴 & 어사이드 상단에 붙이기
+          if (scrollTop>=126){
+            $moMenu.css({
+              position: 'fixed',
+              top:0,
+              width:100+'%'
+            });
+            
+            $hideLi.show();
+          } else {
+            $moMenu.css({
+              position: 'initial'
+            });
+            $hideLi.hide();
+          };
+
+          // li span 누르면 상단으로 올라가기
+          $hideSpan.on('click',function(){
+            $('html,body').stop().animate({
+              scrollTop:0
+            },500)
+          });
         }
       });
     }
