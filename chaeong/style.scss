@@ -202,6 +202,8 @@ $mo : "screen and (max-width:480px)";
       > .main_nav {
         > ul {
           > li {
+            
+
             > a {
               height: 30px !important;
               line-height: 30px !important;
@@ -436,6 +438,19 @@ $mo : "screen and (max-width:480px)";
               font-weight: 600;
             }
           } 
+          &:hover {
+            > a {
+              color:$orange;
+            }
+
+            > span {
+              background-color: $orange;
+
+              &::before{
+                border-color: $orange;
+              }
+            }
+          }
         }
           > .hide {
             position: relative;

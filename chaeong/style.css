@@ -254,6 +254,15 @@
     color: #f76202;
     font-weight: 600;
   }
+  #wrap > header > .main_nav > ul li:hover > a {
+    color: #f76202;
+  }
+  #wrap > header > .main_nav > ul li:hover > span {
+    background-color: #f76202;
+  }
+  #wrap > header > .main_nav > ul li:hover > span::before {
+    border-color: #f76202;
+  }
   #wrap > header > .main_nav > ul > .hide {
     position: relative;
   }
