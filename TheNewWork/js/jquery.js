@@ -84,8 +84,8 @@ $(function(){
   button();
   // header-burger
 
-  // const $body = $("body");
   // 흑백 전환
+  const $body = $("body");
   const $backGround = $(".bg");
   const $mainTit = $("#about_me .main_tit");
   const $red = $(".title a .red");
@@ -120,7 +120,7 @@ const $mainHei =  $main.offsetTop;
           end: $aboutme.offsetWidth, 
           scrub: 1,  
           ease: "power3",
-          markers:false 
+          markers:true 
       }
   });
 
