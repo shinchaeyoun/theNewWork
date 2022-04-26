@@ -7,10 +7,14 @@ src: url(../font/Chomsky.otf) format("truetype")
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Outfit:wght@100;200;300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
 *{padding:0;margin:0;list-style:none;text-decoration:none;}
+a:visited, a:link, a:hover, a:active {
+    color:#222;
+}
 
 // 컬러변수
 $point : #d0021b;
 $grey : #d3d3d3;
+$sub_grey: #5a5a5a;
 
 
 
@@ -177,8 +181,28 @@ header{
     }
 } // header end
 
-main {
-    height:300vh;
+#main {
+    height: calc(100vh - 172px);
+    border-bottom: 1px solid #000;
+
+    > h2 {
+        height: 100px;
+        line-height: 100px;
+        font-family: $nanum;
+        font-weight: 800;
+        text-align: center;
+    }
+
+    > .main_visual {
+        width: 1000px;
+        height: 500px;
+        border: 1px solid #000;
+        > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
 }
 
 #about_me {
@@ -187,6 +211,7 @@ main {
         justify-content: space-between;
 
         > .text {
+            margin-top: 100px;
             width: 420px;
             height: 480px;
             overflow: hidden;
@@ -194,16 +219,16 @@ main {
             &::after {
                 content: '';
                 position: absolute;
-                top:50px;right:0px;
+                top:0px;right:0px;
                 background-color: $grey;
                 width: 1px;
-                height: 480px;                
+                height: 500px;                
             }
             > ul.text_wrap {
                 width: calc(420px * 4);
                 
                 > li {
-                    padding-top: 50px;
+                    // padding-top: 100px;
                     width: 420px;
                     height: 480px;
                     box-sizing: border-box;
@@ -214,10 +239,12 @@ main {
                     > .tit {
 
                         > .main_tit {
+                            display: block;
+                            // margin-bottom: 10px;
+                            padding-top: 30px;
                             font-family: $nanum;
                             font-size: 40px;
                             font-weight: 400;
-                            margin-bottom: 10px;
                             &.active {
                                 color:$point;
                             }
@@ -240,6 +267,7 @@ main {
                     } // ol end
 
                     .page_num {
+                        margin-bottom: 30px;
                         width: 72%;
                         text-align: center;
                     }
@@ -249,14 +277,14 @@ main {
 
         > .frame {
             width: 530px;
-            height: 480px;
+            height: 580px;
             overflow: hidden;
             
             > ul.frame_wrap {
                 width: calc(530px * 4);
                 display: flex;
                 > li {
-                    margin-top: 50px;
+                    margin-top: 100px;
                     width: 530px;
                     height: 480px;
                     box-sizing: border-box;
@@ -264,7 +292,8 @@ main {
                     position: relative;
                      img {
                         width: 100%;
-                          
+                        height: 100%;
+                        object-fit: cover;
                      }
 
                      .black {
@@ -282,3 +311,136 @@ main {
 
     } // about_me_wrap
 } // about_me end
+
+#other_say {
+    // height: 100vh;
+    // background-color: pink;
+    // border-bottom: 1px solid #000;
+}
+
+#work {
+    margin: 50px 0;
+    > .work_wrap {
+        > .content_wrap {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            
+            padding: 50px 0;
+
+            border-bottom: 1px solid #000;
+
+            &:last-child {
+                border-bottom: none;
+            }
+            > .text_box {
+                padding: 10px;
+                width: 350px;
+                // border: 1px solid #000;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                    > .tit_box {
+                        > .main_tit {
+                            font-size: 30px;
+                            font-weight: 800;
+                            font-family: $nanum;
+                            margin-bottom: 5px;
+                            &.active{color:$point;}
+                        } // main tit end
+                        
+                        > .sub_tit {
+                            color: #5a5a5a;
+                            font-size: 14px;
+                        } // sub tit end
+                    } // tit_box end
+
+                    > ul {
+                        > li {
+                            margin-bottom: 20px;
+                            > span {
+                                font-size: 15px;
+                                font-weight: 600;
+
+                                &::after {
+                                    content:'';
+                                    display: block;
+                                    border-bottom: 1px solid $grey;
+                                }
+                            } // span end
+
+                            > ol {
+                                margin: 5px 0;
+                                > li {
+                                    font-size: 13px;
+                                } // li end
+
+                            } // ol end
+                            &:nth-of-type(1) {
+                                > ol {
+                                    display: flex;
+                                    > li {
+                                        margin-right: 10px;
+                                    }
+                                }
+                            }
+                            
+                        } // li end
+
+                    } // ul end
+            } // text_box end
+
+            > .img_box {
+                width: 600px;
+                height: 600px;
+                border: 1px solid #000;
+                box-sizing: border-box;
+                overflow-y: scroll;
+                > a {
+
+                    > img {
+                        width: 100%;
+                        
+                    }
+                }
+            } // img box end
+        } // content wrap end
+    } // work_wrap end
+} // work end
+
+#contact {
+    // height: 100vh;
+    // background-color: pink;
+    // border: 1px solid #000;
+}
+
+footer {
+    height: 300px;
+    
+    box-sizing: border-box;
+    
+    border-top: 1px solid $sub_grey;
+    &::before {
+        content: '';
+        position: relative;
+        top: -5px;
+        display: block;
+        border-top: 1px solid $sub_grey;
+    }
+
+    > .logo {
+        margin-top: 5px;
+            a {
+                font-family: Chomsky; 
+                font-size: 28px;
+                .red.active{color:$point;}
+            } // a end
+    } // logo end
+
+    > .bottom {
+        color: $sub_grey;
+        font-size: 13px;
+    }
+} // footer end

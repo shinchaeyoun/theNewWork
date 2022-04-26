@@ -24,7 +24,7 @@ $(document).ready(function() {
     $('.CurrTemp').prepend($Temp);
     $('.City').append($city, ", KR");
     }
-    })
+    });
 }); 
 
 
@@ -102,22 +102,22 @@ onoff.addEventListener('click', ()=> {
 
 // 어바웃미 이미지 영역 트리거
 const aboutme =  document.querySelector('#about_me');
+const main =  document.querySelector('#main');
+const mainHei =  main.offsetTop;
 const aboutmeHei = aboutme.offsetTop;
-const winHei = window.innerHeight;
 
 window.addEventListener('DOMContentLoaded',function(){
-   
   ScrollTrigger.name = "ScrollTrigger"; 
   gsap.registerPlugin(ScrollTrigger);
 
   let imgBox = gsap.timeline({ 
       scrollTrigger: {
-          trigger: aboutme, 
+          trigger: '#about_me', 
           pin: true, 
-          start: `${aboutmeHei - 170}`, 
+          start: main.mainHei, 
           end: aboutme.offsetWidth, 
           scrub: 1,  
-          ease: "power1",
+          ease: "power3",
           markers:false 
       }
   });
@@ -127,25 +127,24 @@ window.addEventListener('DOMContentLoaded',function(){
   },0);
   imgBox.to(".frame_wrap", { 
     rotation:0,x:-530 ,y:0
-  },1);
-  imgBox.to(".frame_wrap", { 
-    rotation:0,x:-1060 ,y:0
   },2);
   imgBox.to(".frame_wrap", { 
+    rotation:0,x:-1060 ,y:0
+  },4);
+  imgBox.to(".frame_wrap", { 
     rotation:0,x:-1590 ,y:0
-  },3);
+  },6);
   imgBox.to(".black", { 
     opacity:1
-  },4);
+  },8);
 
-  
 
   let textBox = gsap.timeline({ 
       scrollTrigger: {
-          trigger: aboutme, 
+          trigger: '#about_me', 
           scrub: 1,  
           pin: true, 
-          start: `${aboutmeHei - 170}`, 
+          start: main.mainHei, 
           end: aboutme.offsetWidth, 
           ease: "power3", 
           markers:false 
@@ -153,16 +152,16 @@ window.addEventListener('DOMContentLoaded',function(){
   });
   textBox.to(".text_wrap", { 
       rotation:0,x:0 ,y:-480
-  },1); 
-  textBox.to(".text_wrap", { 
-      rotation:0,x:0 ,y:-960
   },2); 
   textBox.to(".text_wrap", { 
-      rotation:0,x:0 ,y:-1440
-  },3); 
+      rotation:0,x:0 ,y:-960
+  },4); 
   textBox.to(".text_wrap", { 
       rotation:0,x:0 ,y:-1440
-  },4); 
+  },6); 
+  textBox.to(".text_wrap", { 
+      rotation:0,x:0 ,y:-1440
+  },8); 
 });
 
 

@@ -14,6 +14,10 @@
   text-decoration: none;
 }
 
+a:visited, a:link, a:hover, a:active {
+  color: #222;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -228,8 +232,30 @@ header .header_cate ul li span {
   color: #777;
 }
 
-main {
-  height: 300vh;
+#main {
+  height: calc(100vh - 172px);
+  border-bottom: 1px solid #000;
+}
+
+#main > h2 {
+  height: 100px;
+  line-height: 100px;
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 800;
+  text-align: center;
+}
+
+#main > .main_visual {
+  width: 1000px;
+  height: 500px;
+  border: 1px solid #000;
+}
+
+#main > .main_visual > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #about_me > .about_me_wrap {
@@ -242,6 +268,7 @@ main {
 }
 
 #about_me > .about_me_wrap > .text {
+  margin-top: 100px;
   width: 420px;
   height: 480px;
   overflow: hidden;
@@ -251,11 +278,11 @@ main {
 #about_me > .about_me_wrap > .text::after {
   content: '';
   position: absolute;
-  top: 50px;
+  top: 0px;
   right: 0px;
   background-color: #d3d3d3;
   width: 1px;
-  height: 480px;
+  height: 500px;
 }
 
 #about_me > .about_me_wrap > .text > ul.text_wrap {
@@ -263,7 +290,6 @@ main {
 }
 
 #about_me > .about_me_wrap > .text > ul.text_wrap > li {
-  padding-top: 50px;
   width: 420px;
   height: 480px;
   -webkit-box-sizing: border-box;
@@ -281,10 +307,11 @@ main {
 }
 
 #about_me > .about_me_wrap > .text > ul.text_wrap > li > .tit > .main_tit {
+  display: block;
+  padding-top: 30px;
   font-family: "Nanum Myeongjo", serif;
   font-size: 40px;
   font-weight: 400;
-  margin-bottom: 10px;
 }
 
 #about_me > .about_me_wrap > .text > ul.text_wrap > li > .tit > .main_tit.active {
@@ -307,13 +334,14 @@ main {
 }
 
 #about_me > .about_me_wrap > .text > ul.text_wrap > li .page_num {
+  margin-bottom: 30px;
   width: 72%;
   text-align: center;
 }
 
 #about_me > .about_me_wrap > .frame {
   width: 530px;
-  height: 480px;
+  height: 580px;
   overflow: hidden;
 }
 
@@ -325,7 +353,7 @@ main {
 }
 
 #about_me > .about_me_wrap > .frame > ul.frame_wrap > li {
-  margin-top: 50px;
+  margin-top: 100px;
   width: 530px;
   height: 480px;
   -webkit-box-sizing: border-box;
@@ -335,6 +363,9 @@ main {
 
 #about_me > .about_me_wrap > .frame > ul.frame_wrap > li img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #about_me > .about_me_wrap > .frame > ul.frame_wrap > li .black {
@@ -346,5 +377,138 @@ main {
   top: 0;
   left: 0;
   z-index: 100;
+}
+
+#work {
+  margin: 50px 0;
+}
+
+#work > .work_wrap > .content_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 50px 0;
+  border-bottom: 1px solid #000;
+}
+
+#work > .work_wrap > .content_wrap:last-child {
+  border-bottom: none;
+}
+
+#work > .work_wrap > .content_wrap > .text_box {
+  padding: 10px;
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#work > .work_wrap > .content_wrap > .text_box > .tit_box > .main_tit {
+  font-size: 30px;
+  font-weight: 800;
+  font-family: "Nanum Myeongjo", serif;
+  margin-bottom: 5px;
+}
+
+#work > .work_wrap > .content_wrap > .text_box > .tit_box > .main_tit.active {
+  color: #d0021b;
+}
+
+#work > .work_wrap > .content_wrap > .text_box > .tit_box > .sub_tit {
+  color: #5a5a5a;
+  font-size: 14px;
+}
+
+#work > .work_wrap > .content_wrap > .text_box > ul > li {
+  margin-bottom: 20px;
+}
+
+#work > .work_wrap > .content_wrap > .text_box > ul > li > span {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#work > .work_wrap > .content_wrap > .text_box > ul > li > span::after {
+  content: '';
+  display: block;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+#work > .work_wrap > .content_wrap > .text_box > ul > li > ol {
+  margin: 5px 0;
+}
+
+#work > .work_wrap > .content_wrap > .text_box > ul > li > ol > li {
+  font-size: 13px;
+}
+
+#work > .work_wrap > .content_wrap > .text_box > ul > li:nth-of-type(1) > ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#work > .work_wrap > .content_wrap > .text_box > ul > li:nth-of-type(1) > ol > li {
+  margin-right: 10px;
+}
+
+#work > .work_wrap > .content_wrap > .img_box {
+  width: 600px;
+  height: 600px;
+  border: 1px solid #000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+#work > .work_wrap > .content_wrap > .img_box > a > img {
+  width: 100%;
+}
+
+footer {
+  height: 300px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top: 1px solid #5a5a5a;
+}
+
+footer::before {
+  content: '';
+  position: relative;
+  top: -5px;
+  display: block;
+  border-top: 1px solid #5a5a5a;
+}
+
+footer > .logo {
+  margin-top: 5px;
+}
+
+footer > .logo a {
+  font-family: Chomsky;
+  font-size: 28px;
+}
+
+footer > .logo a .red.active {
+  color: #d0021b;
+}
+
+footer > .bottom {
+  color: #5a5a5a;
+  font-size: 13px;
 }
 /*# sourceMappingURL=index.css.map */
