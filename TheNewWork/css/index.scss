@@ -724,6 +724,8 @@ footer {
     } // logo end
 
     > .bottom {
+        position: relative;
+        bottom: 0;
         color: $sub_grey;
         font-size: 13px;
     }

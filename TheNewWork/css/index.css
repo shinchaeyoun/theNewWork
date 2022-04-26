@@ -723,6 +723,8 @@ footer > .logo a .red.active {
 }
 
 footer > .bottom {
+  position: relative;
+  bottom: 0;
   color: #5a5a5a;
   font-size: 13px;
 }
