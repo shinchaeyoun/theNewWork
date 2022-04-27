@@ -130,14 +130,14 @@ $(function (){
 
   // 전시 탭 메뉴 활성화
   const $tabMnu = $('.exhibit .tab li');
-  const $line = $('<div class="line"></div>').appendTo($tabMnu);
+  const $bar = $('.exhibit .tab li a');
 
   $tabMnu.on('click',function(e){
     e.preventDefault();
 
     tabIdx = $tabMnu.index(this);    
         
-    $tabMnu.eq(tabIdx).children('a').append('<span class="bar"></span>');
+    $bar.eq(tabIdx).parent().addClass('bar').siblings().removeClass('bar');
     
     $tabMnu.eq(tabIdx).find('.bar').css({
       color:'#000',
