@@ -6,6 +6,7 @@
 #wrap {
   margin: 0 30px;
   font-size: 15px;
+  position: relative;
 }
 
 section h1 {
@@ -211,6 +212,10 @@ header > .search > .srch-icon {
   background-repeat: no-repeat;
 }
 
+header > .search > .srch-icon.active {
+  background-image: url(./img/icon_close.svg);
+}
+
 header > .search > .click-show {
   position: absolute;
   z-index: 100;
@@ -233,6 +238,12 @@ header > .search > .click-show {
   display: none;
   background-color: #fff;
   border-bottom: 1px solid #000;
+}
+
+header > .search > .click-show.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 header > .search > .click-show > input {
@@ -495,12 +506,10 @@ header > .search > .click-show > button {
   width: 100%;
 }
 
-.art > ul > li > .inner-container > a {
-  overflow: hidden;
-}
-
 .art > ul > li > .inner-container > a > img {
   width: 100%;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 .art > ul > li > .inner-container > a > button.close {
@@ -942,12 +951,6 @@ header > .search > .click-show > button {
   width: 100%;
 }
 
-.news-letter > .slide > .slide-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .news {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1059,12 +1062,16 @@ footer > .address-wrap .logo img {
   height: 100%;
 }
 
-footer > .notify {
+.notify {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   background-color: #468268;
 }
 
-footer > .notify > p {
+.notify > p {
   color: #fff;
   text-align: center;
 }

@@ -1,10 +1,12 @@
-:focus {
+  :focus {
   outline: 2px  solid red;
 }
 
 #wrap {
   margin: 0 30px;
   font-size: 15px;
+
+  position: relative;
 }
 
 
@@ -158,6 +160,10 @@ header {
       background-size: 26px 26px;
       background-position: center center;
       background-repeat: no-repeat;
+
+      &.active {
+        background-image: url(./img/icon_close.svg);
+      }
     }
     
     > .click-show {
@@ -173,6 +179,10 @@ header {
       display: none;
       background-color: #fff;
       border-bottom: 1px solid #000;
+
+      &.active {
+        display: flex;
+      }
       > input {
         width: calc(100% - 202px);
         height: 78px;
@@ -413,9 +423,9 @@ header {
         width: 100%;
         
         > a {
-          overflow: hidden;
           > img {
             width: 100%;
+            transition: .5s;
           } // img end
           > button.close {
             position: absolute;
@@ -852,35 +862,6 @@ header {
 }
 
 
-
-.news-letter {}
-.news-letter > h1 {}
-.news-letter > .slide {}
-
-.news-letter > .slide > .slide-container {
-  display: flex;
-}
-
-.news-letter > .slide > .slide-container > .slide-content {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .news {
   display: flex;
   justify-content: space-between;
@@ -909,38 +890,10 @@ header {
   margin-top: -2px;
   margin-left: 10px;
 }
+
 .news > .more > span > img {
   transform: rotate(270deg);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 footer > .sub-container {
   display: flex;
@@ -991,14 +944,6 @@ footer > .sub-container > .footer-menu2 > .line {
 }
 
 
-
-
-
-
-
-
-
-
 footer > .address-wrap {
   display: flex;
   justify-content: space-between;
@@ -1015,12 +960,15 @@ footer > .address-wrap .logo img {
   height: 100%;
 }
 
-footer > .notify {
+.notify {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   background-color: #468268;
-}
-
-footer > .notify > p {
-  color: #fff;
-  text-align: center;
+  > p {
+    color: #fff;
+    text-align: center;
+  }
 }

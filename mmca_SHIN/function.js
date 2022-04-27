@@ -32,15 +32,13 @@ $(function (){
   const $icon = $srch.children('header .search .srch-icon');
   
   $srch.on('click',function(){
-    // alert('클릭');
-    $('.click-show').slideDown().css({
-      display:'flex'
-    });
+		
+		
+			$('.click-show').toggleClass('active');
+			$icon.toggleClass('active');
+		
 
-    $icon.css({
-      backgroundImage: 'url(./img/icon_close.svg)'
-    });
-
+	
 		
     
   });
@@ -97,8 +95,13 @@ $(function (){
 
 		//컨테이너 이동
 		$container.stop().animate({
-			left : -(100 * nowIdx) + '%'
-		})
+			left : -(100) + '%'
+		},function(){
+			$('.slides .slides-container .slide-content').last().prependTo($container);
+			$container.css({
+				left:-(100)+'%'
+			})
+		});
 	});
 
 
@@ -115,8 +118,13 @@ $(function (){
 		 $indicator.eq(nowIdx).parent().addClass('on').siblings().removeClass('on')
 		 
 		 $container.stop().animate({
-				left : -(100 * nowIdx) + '%'
-		 })
+				left : -(100) + '%'
+		 },function(){
+			$('.slides .slides-container .slide-content').first().appendTo($container);
+			$container.css({
+				left:0
+			})
+		})
 	});
 
 
