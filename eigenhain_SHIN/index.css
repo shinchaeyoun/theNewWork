@@ -21,7 +21,7 @@ html html, html body::-webkit-scrollbar, body html, body body::-webkit-scrollbar
   src: url("//cdn.shopify.com/s/files/1/0598/9236/7580/t/9/assets/FavoritStd-Regular.woff2?v=7676542140720861575") format("woff2"), url("//cdn.shopify.com/s/files/1/0598/9236/7580/t/9/assets/FavoritStd-Regular.woff?v=11891590716085230806") format("woff");
 }
 
-a:link, a:hover, a:visited, a:active {
+a:link, a:visited, a:active {
   text-decoration: none;
   color: #000;
 }
