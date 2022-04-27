@@ -126,7 +126,7 @@ $(window).on('resize load', function (){
             end: $aboutme.offsetWidth, 
             scrub: 1,  
             ease: "power3",
-            markers:true 
+            markers: false 
         }
     });
     
@@ -183,7 +183,7 @@ $(window).on('resize load', function (){
             end: $aboutme.offsetWidth, 
             scrub: 1,  
             ease: "power3",
-            markers:true 
+            markers: false 
         }
     });
     
@@ -213,7 +213,7 @@ $(window).on('resize load', function (){
             start: $main.$mainHei, 
             end: $aboutme.offsetWidth, 
             ease: "power3", 
-            markers:false 
+            markers: false 
         }
     });
     textBox.to(".text_wrap", { 
