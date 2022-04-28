@@ -283,7 +283,7 @@ body {
 }
 
 .top_menu.active {
-  background-image: url(/img/bg.jpg);
+  background-image: url(https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/img/bg.jpg);
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
