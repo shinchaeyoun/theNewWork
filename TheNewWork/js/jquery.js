@@ -93,6 +93,10 @@ $(function(){
   const $onoffLi = $(".onoff ul li");
   const $workTit = $('#work .main_tit');
   const $footerRed = $('footer .logo .red');
+  const $topBg = $('.top_menu');
+  const $topLogo = $('.top_menu .logo a');
+  const $workMainTit = $('#work-test .main_tit');
+  const $workSpan = $('#work-test .text_box span');
 
   $onoff.on('click', function (){ 
       $onoffLi.toggleClass('active');
@@ -101,8 +105,24 @@ $(function(){
       $red.toggleClass('active');
       $workTit.toggleClass('active');
       $footerRed.toggleClass('active');
+      $topBg.toggleClass('active');
+      $topLogo.toggleClass('active');
+      $workMainTit.toggleClass('active');
+      $workSpan.toggleClass('active');
   });
   
+  // top menu show hide
+  const $topMenu = $('.top_menu');
+  const $headerHei = $('header').height();
+
+  $(window).on('scroll',function (){
+    const scrollTop = $(document).scrollTop();
+    if($headerHei < scrollTop) {
+      $topMenu.slideDown(200);
+    } else {
+      $topMenu.slideUp(200);
+    }
+  });
 
   // 어바웃미 이미지 영역 트리거
 const $aboutme =  $('#about_me');
