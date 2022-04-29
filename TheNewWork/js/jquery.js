@@ -178,16 +178,16 @@ $(window).on('resize load', function (){
             markers:false 
         }
     });
-    textBox.to(".text_wrap", { 
+    textBox.to("#about_me .text_wrap", { 
         rotation:0,x:0 ,y:-480
     },2); 
-    textBox.to(".text_wrap", { 
+    textBox.to("#about_me .text_wrap", { 
         rotation:0,x:0 ,y:-960
     },4); 
-    textBox.to(".text_wrap", { 
+    textBox.to("#about_me .text_wrap", { 
         rotation:0,x:0 ,y:-1440
     },6); 
-    textBox.to(".text_wrap", { 
+    textBox.to("#about_me .text_wrap", { 
         rotation:0,x:0 ,y:-1440
     },8); 
   } else {

@@ -711,6 +711,271 @@ header .header_cate ul li span {
   z-index: 100;
 }
 
+#like .like_tab {
+  margin-top: 50px;
+  border-top: 1px solid #000;
+  font-family: "Assistant", sans-serif;
+}
+
+#like .like_tab .title {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#like .travel .sec1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 30px 0;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+#like .travel .sec1 .text_wrap {
+  width: 400px;
+  padding: 0 10px 0 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#like .travel .sec1 .text_wrap div {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 700;
+}
+
+#like .travel .sec1 .img_wrap {
+  width: 600px;
+  height: 400px;
+}
+
+#like .travel .sec1 .img_wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#like .travel .sec2 {
+  padding: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#like .travel .sec2 .content {
+  padding: 0 20px;
+  width: 300px;
+  position: relative;
+}
+
+#like .travel .sec2 .content::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #d3d3d3;
+  width: 1px;
+  height: 100%;
+}
+
+#like .travel .sec2 .content:first-child {
+  padding-left: 0;
+}
+
+#like .travel .sec2 .content:last-child {
+  padding-right: 0;
+}
+
+#like .travel .sec2 .content:last-child::after {
+  display: none;
+}
+
+#like .travel .sec2 .content .img_wrap {
+  margin-bottom: 10px;
+  height: 200px;
+}
+
+#like .travel .sec2 .content .img_wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#like .travel .sec3 {
+  padding: 0 0 30px;
+  border-top: 1px solid #000;
+}
+
+#like .travel .sec3 span {
+  display: block;
+  margin: 5px 0 20px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+#like .travel .sec3 .sec3_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#like .travel .sec3 .sec3_wrap .content {
+  padding: 0 20px;
+  width: 170px;
+  position: relative;
+}
+
+#like .travel .sec3 .sec3_wrap .content::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #d3d3d3;
+  width: 1px;
+  height: 100%;
+}
+
+#like .travel .sec3 .sec3_wrap .content:first-child {
+  padding-left: 0;
+}
+
+#like .travel .sec3 .sec3_wrap .content:last-child {
+  padding-right: 0;
+}
+
+#like .travel .sec3 .sec3_wrap .content:last-child::after {
+  display: none;
+}
+
+#like .travel .sec3 .sec3_wrap .content .img_wrap {
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+#like .travel .sec3 .sec3_wrap .content .img_wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#like .movies .movies_wrap {
+  padding: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#like .movies .movies_wrap .movies_sec {
+  padding: 0 20px;
+}
+
+#like .movies .movies_wrap .movies_sec:first-child {
+  padding-left: 0;
+}
+
+#like .movies .movies_wrap .movies_sec:last-child {
+  padding-right: 0;
+}
+
+#like .movies .movies_wrap span {
+  margin-bottom: 7px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Nanum Myeongjo", serif;
+}
+
+#like .movies .movies_wrap .sec1 {
+  width: 500px;
+  position: relative;
+}
+
+#like .movies .movies_wrap .sec1::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #d3d3d3;
+  width: 1px;
+  height: 100%;
+}
+
+#like .movies .movies_wrap .sec1 .img_wrap {
+  height: 300px;
+  margin-bottom: 10px;
+}
+
+#like .movies .movies_wrap .sec1 .img_wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#like .movies .movies_wrap .sec2 {
+  width: 300px;
+  position: relative;
+}
+
+#like .movies .movies_wrap .sec2::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #d3d3d3;
+  width: 1px;
+  height: 100%;
+}
+
+#like .movies .movies_wrap .sec2 .img_wrap {
+  height: 300px;
+  margin-bottom: 10px;
+}
+
+#like .movies .movies_wrap .sec2 .img_wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#like .movies .movies_wrap .sec3 {
+  width: 200px;
+}
+
+#like .movies .movies_wrap .sec3 .sec3_inner .img_wrap {
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+#like .movies .movies_wrap .sec3 .sec3_inner .img_wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 #portfolio .content_wrap {
   margin-top: 50px;
   border-top: 3px solid #000;
