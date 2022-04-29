@@ -242,7 +242,7 @@ body {
 .bg.active {
   position: fixed;
   z-index: -1;
-  background-image: url(/img/bg.jpg);
+  background-image: url(../img/bg.jpg);
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
@@ -283,7 +283,7 @@ body {
 }
 
 .top_menu.active {
-  background-image: url(https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/img/bg.jpg);
+  background-image: url(../img/bg.jpg);
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
@@ -812,16 +812,16 @@ header .header_cate ul li span {
   width: 100%;
 }
 
-#work-test .content_wrap {
+#portfolio .content_wrap {
   margin-top: 50px;
   border-top: 3px solid #000;
 }
 
-#work-test .content_wrap .tit_box {
+#portfolio .content_wrap .tit_box {
   padding: 8px 0 38px;
 }
 
-#work-test .content_wrap .tit_box .main_tit {
+#portfolio .content_wrap .tit_box .main_tit {
   margin-top: 10px;
   margin-bottom: 5px;
   font-size: 30px;
@@ -829,30 +829,32 @@ header .header_cate ul li span {
   font-family: "Nanum Myeongjo", serif;
 }
 
-#work-test .content_wrap .tit_box .main_tit.active {
+#portfolio .content_wrap .tit_box .main_tit.active {
   color: #d0021b;
 }
 
-#work-test .content_wrap .tit_box .sub_tit {
+#portfolio .content_wrap .tit_box .sub_tit {
   margin-bottom: 20px;
   color: #5a5a5a;
   font-size: 14px;
 }
 
-#work-test .content_wrap .text_box {
+#portfolio .content_wrap .text_box {
   width: 90%;
+  font-size: 14px;
+  line-height: 1.3;
 }
 
-#work-test .content_wrap .text_box span {
+#portfolio .content_wrap .text_box span {
   font-weight: 800;
   text-decoration: underline;
 }
 
-#work-test .content_wrap .text_box span.active {
+#portfolio .content_wrap .text_box span.active {
   color: #d0021b;
 }
 
-#work-test .content_wrap .img_box {
+#portfolio .content_wrap .img_box {
   margin-bottom: 30px;
   width: 90%;
   height: 500px;
@@ -860,7 +862,7 @@ header .header_cate ul li span {
   border: 1px solid #000;
 }
 
-#work-test .content_wrap .img_box a img {
+#portfolio .content_wrap .img_box a img {
   width: 100%;
 }
 
