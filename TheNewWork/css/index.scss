@@ -847,6 +847,128 @@ header{
 
     .fliming {
 
+        .fliming_wrap {
+            padding: 30px 0;
+            .screen {
+                width: 100%;
+                height: 500px;
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 100%;
+
+                    object-fit: cover;
+                }
+
+                .text {
+                    display: none;
+
+                    position: absolute;
+                    z-index: 100;
+                    bottom: 0;left: 0;
+
+                    padding: 10px;
+                    width: 100%;
+                    height: 70px;
+
+                    color: #fff;
+                    font-size: 13px;
+                    text-align: right;
+                    background-color: #0003;
+                    box-sizing: border-box;
+                    &.active {
+                        display: block;
+                    }
+                } // text end
+            } // screen end
+
+            .slide {
+                margin: 30px auto;
+                width: 90%;
+                // border: 1px solid #000;
+                .slide_container {
+                    margin: 0 auto;
+                    width: 790px;
+                    overflow: hidden;
+                    // border: 1px solid #f00;
+                    ul {
+                        width: calc(160px * 10);
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .slide_content {
+                        width: 150px;
+                        height: 100px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+                position: relative;
+
+                a {
+                    position: absolute;
+                    top: 0;
+                    display: block;
+                    width: 20px;
+                    height: 100px;
+                    // border: 1px solid #000;
+                    box-sizing: border-box;
+                    transition: .2s;
+
+                    span {
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 14px;
+                        height: 14px;
+                        border-width: 0;
+                        border-style: solid;
+                        border-color: #000;
+                        border-top-width: 2px;
+                        border-right-width: 2px;
+                        transform: translate(-70%, -50%) rotate(45deg);
+                    }
+                    &.prev {
+                        left: 20px;
+                        
+                        span {
+                            transform: translate(-25%, -40%) rotate(225deg);
+                        }
+
+                        &:hover {
+                            left: -10px;
+                            width: 50px;
+                        }
+                    }
+                    
+                    &.next {
+                        right: 20px;
+                        span {
+                            
+                        }
+
+                        &:hover {
+                            right:-10px;
+                            width: 50px;
+                        }
+                    }
+                }
+            }
+
+            .text_wrap {
+                span {
+
+                }
+
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
     } // fliming end
 
     .drive {
