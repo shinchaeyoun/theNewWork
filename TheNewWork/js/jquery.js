@@ -95,8 +95,8 @@ $(function(){
   const $footerRed = $('footer .logo .red');
   const $topBg = $('.top_menu');
   const $topLogo = $('.top_menu .logo a');
-  const $workMainTit = $('#work-test .main_tit');
-  const $workSpan = $('#work-test .text_box span');
+  const $workMainTit = $('#portfolio .main_tit');
+  const $workSpan = $('#portfolio .text_box span');
 
   $onoff.on('click', function (){ 
       $onoffLi.toggleClass('active');
