@@ -97,6 +97,12 @@ $(function(){
   const $topLogo = $('.top_menu .logo a');
   const $workMainTit = $('#portfolio .main_tit');
   const $workSpan = $('#portfolio .text_box span');
+  const $likeTit = $('#like .like_tab .title');
+  const $travelTit = $('#like .travel .sec1 .text_wrap span');
+  const $flimArrow = $('#like .fliming a');
+  const $moviesTit = $('#like .movies span');
+  const $musicTit = $('#like .music span');
+  const $booksTit = $('#like .books span');
 
   $onoff.on('click', function (){ 
       $onoffLi.toggleClass('active');
@@ -109,7 +115,14 @@ $(function(){
       $topLogo.toggleClass('active');
       $workMainTit.toggleClass('active');
       $workSpan.toggleClass('active');
+      $likeTit.toggleClass('active');
+      $travelTit.toggleClass('active');
+      $flimArrow.toggleClass('active');
+      $moviesTit.toggleClass('active');
+      $musicTit.toggleClass('active');
+      $booksTit.toggleClass('active');
   });
+
   
   // top menu show hide
   const $topMenu = $('.top_menu');
@@ -128,13 +141,14 @@ $(function(){
 const $aboutme =  $('#about_me');
 const $frameWid = $('.frame_wrap').children('li').width();
 const $main =  $('#main');
-const $mainHei =  $main.offsetTop;
+const $mainHei =  $main.offset().Top;
 
 $(window).on('resize load', function (){
 
-  // 윈도우의 사이즈가 480px보다 큰 경우
+  // 윈도우의 사이즈가 480px보다 큰 경우)
   if(window.innerWidth >= 480) {
     console.log('480보다 큼');
+
     ScrollTrigger.name = "ScrollTrigger"; 
     gsap.registerPlugin(ScrollTrigger);
     
@@ -144,7 +158,7 @@ $(window).on('resize load', function (){
             pin: true, 
             start: $main.$mainHei, 
             end: $aboutme.offsetWidth, 
-            scrub: 1,  
+            scrub: true,  
             ease: "power3",
             markers: false 
         }
@@ -170,7 +184,7 @@ $(window).on('resize load', function (){
     let textBox = gsap.timeline({ 
         scrollTrigger: {
             trigger: '#about_me', 
-            scrub: 1,  
+            scrub: true,  
             pin: true, 
             start: $main.$mainHei, 
             end: $aboutme.offsetWidth, 
@@ -228,7 +242,7 @@ $(window).on('resize load', function (){
     let textBox = gsap.timeline({ 
         scrollTrigger: {
             trigger: '#about_me', 
-            scrub: 1,  
+            scrub: true,  
             pin: true, 
             start: $main.$mainHei, 
             end: $aboutme.offsetWidth, 
@@ -250,6 +264,166 @@ $(window).on('resize load', function (){
     },8); 
   }
 }); // resize load end
+
+
+// 필름 슬라이드
+const $fcontainer = $('#like .fliming .slide .slide_container ul');
+const $fscreen = $('#like .fliming .screen');
+const $fPrev = $('#like .fliming .fliming_wrap .slide .prev');
+const $fNext = $('#like .fliming .fliming_wrap .slide .next');
+const $fImg = $fcontainer.children('.slide_content').children('img');
+
+let fslideIdx = 1; // 1~4
+
+
+// 6번째 이미지 
+const fNextImg = function (){
+  const imgSrc = $('#like .fliming .slide_content').eq(10).children('img').attr('src');
+  const imgAlt = $('#like .fliming .slide_content').eq(10).children('img').attr('alt');
+  
+  $fscreen.children('img').css({opacity:'0.6'}).stop().attr({
+    src: imgSrc,
+    alt: imgAlt
+  }).animate({opacity:1},300);
+};
+
+const fPrevImg = function (){
+  const imgSrc = $('#like .fliming .slide_content').eq(0).children('img').attr('src');
+  const imgAlt = $('#like .fliming .slide_content').eq(0).children('img').attr('alt');
+  
+  $fscreen.children('img').css({opacity:'0.6'}).stop().attr({
+    src: imgSrc,
+    alt: imgAlt
+  }).animate({opacity:1},300);
+};
+
+const fNextSlide = function(){
+  console.log('now ind = ', fslideIdx);
+
+  if(fslideIdx < 4) {
+    fslideIdx++;
+  } else {
+    fslideIdx=1;
+  }
+
+  $fcontainer.stop().animate({
+    left:-1600
+  },function(){
+    $('#like .fliming .slide .slide_container ul li').slice(0,5).appendTo($fcontainer);
+    $fcontainer.css({
+      left:-800
+    });
+  });
+
+}
+
+const fPrevSlide = function(){
+  console.log('now ind = ', fslideIdx);
+  if(fslideIdx > 0) {
+    fslideIdx--;
+  } else {
+    fslideIdx = 4;
+  }
+
+  $fcontainer.stop().animate({
+    left: 0
+  },function(){
+    $('#like .fliming .slide .slide_container ul li').slice(15,20).prependTo($fcontainer);
+    $fcontainer.css({
+      left:-800
+    });
+  });
+}
+
+// 다음 버튼 클릭
+$fNext.on('click',function (e){
+  e.preventDefault();
+  fNextSlide();
+  fNextImg();
+});
+
+// 이전 버튼 클릭
+$fPrev.on('click',function (e){
+  e.preventDefault();
+  fPrevSlide();
+  fPrevImg();
+});
+
+// 이미지 클릭시 스크린 이미지 변경
+$fImg.on('click',function(){
+  const imgSrc = $(this).attr('src');
+  const imgAlt = $(this).attr('alt');
+
+  $fscreen.children('img').css({opacity:'0.6'}).stop().attr({
+    src: imgSrc,
+    alt: imgAlt
+  }).animate({opacity:1},300);
+
+});
+
+// 필름 슬라이드 끝
+
+// 음악 
+const $mScreen = $('.music .box1 .frame img');
+const $mThum = $('.music .box2 .frame img');
+const $music = $('#music')
+const $musicTop = $music.offset().top;
+const $musicHei = $music.offset().height;
+
+console.log($musicHei);
+
+
+  for(let idx = 0; idx<$mThum.length;idx++) {
+    $mThum.on('click',function(){
+      const mThumSrc = $(this).attr('src');
+      $mScreen.attr('src',mThumSrc);
+    });
+  };
+
+  // 음악 스크롤 트리거
+  ScrollTrigger.name = "ScrollTrigger"; 
+    gsap.registerPlugin(ScrollTrigger);
+    
+    let musicRight = gsap.timeline({ 
+        scrollTrigger: {
+            trigger: '#music', 
+            scrub: true,  
+            pin: true, 
+            start: $main.$musicTop,
+            end: $('#music').offset().height, 
+            end: $music.offsetWidth, 
+            ease: "power3",
+            markers:false ,
+            id : 'right'
+        }
+    });
+
+    let musicLeft = gsap.timeline({ 
+        scrollTrigger: {
+            trigger: '#music',
+            pin: true,
+            // start: $('#music').offset().top,
+            // end: $('#books').offset().top,
+            scrub: true,
+            ease: "power3",
+            markers: false,
+            id : 'left'
+        }
+    });
+    
+    musicRight.to('.musicWrap', { 
+      rotation:0,x:-500 ,y:0
+    },1);
+    musicRight.to('.musicLeft', { 
+      rotation:0,x:-500 ,y:0
+    },1);
+    musicRight.to('.musicWrap', { 
+      rotation:0,x:-500*2 ,y:0
+    },2);
+    musicRight.to('.musicLeft', { 
+      rotation:0,x:-500*2 ,y:0
+    },2);
+// 음악 끝
 
 
 

@@ -239,6 +239,13 @@ body {
   }
 }
 
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .bg.active {
   position: fixed;
   z-index: -1;
@@ -718,8 +725,12 @@ header .header_cate ul li span {
 }
 
 #like .like_tab .title {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
+}
+
+#like .like_tab .title.active {
+  color: #d0021b;
 }
 
 #like .travel .sec1 {
@@ -743,11 +754,15 @@ header .header_cate ul li span {
           box-sizing: border-box;
 }
 
-#like .travel .sec1 .text_wrap div {
+#like .travel .sec1 .text_wrap span {
   margin-bottom: 10px;
   font-size: 30px;
   font-family: "Nanum Myeongjo", serif;
   font-weight: 700;
+}
+
+#like .travel .sec1 .text_wrap span.active {
+  color: #d0021b;
 }
 
 #like .travel .sec1 .img_wrap {
@@ -911,10 +926,6 @@ header .header_cate ul li span {
           box-sizing: border-box;
 }
 
-#like .fliming .fliming_wrap .screen .text.active {
-  display: block;
-}
-
 #like .fliming .fliming_wrap .slide {
   margin: 30px auto;
   width: 90%;
@@ -928,7 +939,9 @@ header .header_cate ul li span {
 }
 
 #like .fliming .fliming_wrap .slide .slide_container ul {
-  width: calc(160px * 10);
+  position: relative;
+  left: -800px;
+  width: calc(160px * 20);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -940,6 +953,7 @@ header .header_cate ul li span {
 #like .fliming .fliming_wrap .slide .slide_container .slide_content {
   width: 150px;
   height: 100px;
+  overflow: hidden;
 }
 
 #like .fliming .fliming_wrap .slide .slide_container .slide_content img {
@@ -947,6 +961,17 @@ header .header_cate ul li span {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+#like .fliming .fliming_wrap .slide .slide_container .slide_content:hover {
+  cursor: pointer;
+}
+
+#like .fliming .fliming_wrap .slide .slide_container .slide_content:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 #like .fliming .fliming_wrap .slide a {
@@ -977,6 +1002,10 @@ header .header_cate ul li span {
           transform: translate(-70%, -50%) rotate(45deg);
 }
 
+#like .fliming .fliming_wrap .slide a.active:hover span {
+  border-color: #d0021b;
+}
+
 #like .fliming .fliming_wrap .slide a.prev {
   left: 20px;
 }
@@ -1002,6 +1031,10 @@ header .header_cate ul li span {
 
 #like .fliming .fliming_wrap .text_wrap p {
   font-size: 14px;
+}
+
+#like .movies {
+  height: 100%;
 }
 
 #like .movies .movies_wrap {
@@ -1031,6 +1064,10 @@ header .header_cate ul li span {
   font-size: 20px;
   font-weight: 600;
   font-family: "Nanum Myeongjo", serif;
+}
+
+#like .movies .movies_wrap span.active {
+  color: #d0021b;
 }
 
 #like .movies .movies_wrap .sec1 {
@@ -1101,6 +1138,171 @@ header .header_cate ul li span {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+#like .music {
+  height: 100%;
+}
+
+#like .music .music_wrap {
+  padding: 30px 0;
+}
+
+#like .music .music_wrap .music_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#like .music .music_wrap .music_container .left_container {
+  width: 490px;
+  height: 450px;
+  overflow: hidden;
+}
+
+#like .music .music_wrap .music_container .left_container .musicLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#like .music .music_wrap .music_container .left_container .box1 {
+  width: 500px;
+  height: 450px;
+}
+
+#like .music .music_wrap .music_container .left_container .box1 > .frame {
+  width: 500px;
+  height: 300px;
+}
+
+#like .music .music_wrap .music_container .left_container .box1 > .frame img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#like .music .music_wrap .music_container .left_container .box1 span {
+  display: block;
+  padding: 10px;
+  font-size: 26px;
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+#like .music .music_wrap .music_container .left_container .box1 span.active {
+  color: #d0021b;
+}
+
+#like .music .music_wrap .music_container .left_container .box1 p {
+  padding: 10px;
+  font-size: 13px;
+  color: #5a5a5a;
+  text-align: center;
+}
+
+#like .music .music_wrap .music_container .right_container {
+  width: 490px;
+  height: 450px;
+  overflow: hidden;
+}
+
+#like .music .music_wrap .music_container .right_container .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#like .music .music_wrap .music_container .right_container .wrap > .box2 {
+  width: 500px;
+}
+
+#like .music .music_wrap .music_container .right_container .wrap > .box2 > ul > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 10px 10px;
+}
+
+#like .music .music_wrap .music_container .right_container .wrap > .box2 > ul > li > .frame {
+  width: 170px;
+  height: 100px;
+}
+
+#like .music .music_wrap .music_container .right_container .wrap > .box2 > ul > li > .frame:hover {
+  cursor: pointer;
+}
+
+#like .music .music_wrap .music_container .right_container .wrap > .box2 > ul > li > .frame img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#like .music .music_wrap .music_container .right_container .wrap > .box2 > ul > li > .text_box {
+  width: 330px;
+  padding: 0 10px 10px;
+}
+
+#like .music .music_wrap .music_container .right_container .wrap > .box2 > ul > li > .text_box span {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Nanum Myeongjo", serif;
+}
+
+#like .music .music_wrap .music_container .right_container .wrap > .box2 > ul > li > .text_box span.active {
+  color: #d0021b;
+}
+
+#like .music .music_wrap .music_container .right_container .wrap > .box2 > ul > li > .text_box p {
+  font-size: 13px;
+}
+
+#like .books .books_wrap {
+  padding: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#like .books .books_wrap .img_wrap {
+  width: 400px;
+  height: 600px;
+  border: 1px solid #000;
+}
+
+#like .books .books_wrap .img_wrap img {
+  width: 100%;
+  height: 100%;
+}
+
+#like .books .books_wrap .text_wrap {
+  padding: 0 0 0 30px;
+  width: 600px;
+}
+
+#like .books .books_wrap .text_wrap span {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Nanum Myeongjo", serif;
+}
+
+#like .books .books_wrap .text_wrap span.active {
+  color: #d0021b;
 }
 
 #portfolio .content_wrap {
