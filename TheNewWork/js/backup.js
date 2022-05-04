@@ -167,8 +167,8 @@ $(function(){
   // 어바웃미 이미지 영역 트리거
 const $aboutme =  $('#about_me');
 const $frameWid = $('.frame_wrap').children('li').width();
-const $main =  $('main');
-const $mainHei =  $main.offset().top;
+const $main =  $('#main');
+const $mainHei =  $main.offset().Top;
 
 $(window).on('resize load', function (){
 
@@ -296,19 +296,19 @@ $(window).on('resize load', function (){
 // travel 
 const $wrapper = $('#like .travel .tab_wrap');
 const $allTabs = $('#like .travel .tab_wrap .tab_content');
-const $tabMenu = $wrapper.find('#like .tab_menu li');
+const $tabMenu = $wrapper.find('.tab_menu li');
 
     $allTabs.not(':first-of-type').hide();  
     $tabMenu.filter(':first-of-type').find(':first').height('100%')
     
     $tabMenu.each(function(i) {
       $(this).attr('data-tab', 'tab'+i);
-      console.log('menu');
+      console.log('menu')
     });
     
     $allTabs.each(function(i) {
       $(this).attr('data-tab', 'tab'+i);
-      console.log('tab');
+      console.log('tab')
     });
     
     
