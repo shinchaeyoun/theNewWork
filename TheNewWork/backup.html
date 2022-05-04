@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Shin's Work Space</title>
+  <link href="css/reset.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <script defer src="js/jquery.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"
+    integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF"
+    crossorigin="anonymous"></script>
+  <script defer src="js/jquery-3.6.0.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+  <div class="bg"></div>
+
+  <div class="aside_menu">
+    <ul>
+      <li class="li">
+        <a href="">Introduce</a>
+        <ol>
+          <li><a href="#greeting">Greeting</a></li>
+          <li><a href="">Hashtag Story</a></li>
+          <li><a href="">Shin's Guide</a></li>
+          <li><a href="">Motive</a></li>
+          <li><a href="">Motto of Life</a></li>
+        </ol>
+      </li>
+
+      <li class="li">
+        <a href="">Like</a>
+        <ol>
+          <li><a href="">Travel</a></li>
+          <li><a href="">Fliming</a></li>
+          <li><a href="">Pottery</a></li>
+          <li><a href="">Movies</a></li>
+          <li><a href="">Music</a></li>
+          <li><a href="">Books</a></li>
+        </ol>
+      </li>
+
+      <li class="li">
+        <a href="">Career</a>
+        <ol>
+          <li><a href="">(주)피디씨컴퍼니</a></li>
+          <li><a href="">(주)제이엔에스트레이드</a></li>
+          <li><a href="">(주)커피101스트릿</a></li>
+        </ol>
+      </li>
+
+      <li class="li">
+        <a href="">Portfolio</a>
+        <ol>
+          <li><a href="">Eigenhain</a></li>
+          <li><a href="">London</a></li>
+          <li><a href="">MMCA</a></li>
+          <li><a href="">Seed</a></li>
+          <li><a href="">Sony</a></li>
+        </ol>
+      </li>
+    </ul>
+  </div>
+
+  <div class="top_menu">
+    <div class="wrap">
+
+      <div class="logo">
+        <a href="#">S</a>
+      </div>
+
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#introduce">Introduce</a></li>
+          <li><a href="#like">Like</a></li>
+          <li><a href="#career">Career</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <!-- <li><a href="#contact">Contact</a></li> -->
+        </ul>
+      </nav>
+
+      <div class="onoff">
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" id="wrap">
+    <header>
+      <div class="onoff">
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+      <div class="toggleMenu">
+        <nav>
+          <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        </nav>
+      </div>
+      <div class="header_wrap">
+        <div class="date">
+          <div id="current_date"></div>
+          <div class="clock_wrap">
+            <span id="clock">clock</span>
+            <span id="apm">ampm</span>
+          </div>
+        </div>
+        <div class='weather'>
+          <div class='City'></div>
+          <div class="flex">
+            <div class='CurrTemp'></div>
+            <div class='CurrIcon'></div>
+          </div>
+        </div>
+      </div>
+      <div class="title" onclick="window.scrollTo(0,0);">
+        <a href="#">
+          <span class="red">T</span>he <span class="red">S</span>hin's <span class="red">W</span>ork <span
+            class="red">S</span>pace
+        </a>
+      </div>
+      <div class="header_cate">
+        <ul>
+          <li><a href="#introduce">Introduce</a> <span>Greeting, Hashtag Story, Shin's Guide, Motive, Motto of
+              Life</span></li>
+          <li><a href="#like">Like</a> <span>Travel, Fliming, Pottery, Movies, Music, Books</span></li>
+          <li><a href="#career">Career</a><span>(주)피디씨컴퍼니, (주)제이엔에스트레이드, (주)커피101스트릿</span></li>
+          <li><a href="#portfolio">Portfolio</a><span>Eigenhain, London, MMCA, Seed, Sony</span></li>
+          <!-- <li><a href="#contact">Contact</a></li> -->
+        </ul>
+      </div>
+    </header>
+
+
+    <div style="text-align: center;">
+
+    </div>
+
+    <main>
+      <section id="main">
+        <h2>Chaeyoun's News</h2>
+        <div class="main_visual">
+          <img src="./img/like/flime/IMG_16.jpeg" alt="">
+        </div>
+      </section>
+
+
+      <section id="introduce">
+        <div class="main">자기소개 시작</div>
+
+        <div class="introduce_tab greeting">
+          <div class="title">greeting</div>
+
+          <div class="main_wrap">
+            <div class="side_wrap">
+              <span class="sub_tit">
+                Profile
+              </span>
+              <p>
+                <span>이름</span> 신채연 <br />
+                <span>생년월일</span>1998.02.17<br />
+                <span>주소</span>서울시 강서구<br />
+                <span>연락처</span>010-9230-9218<br />
+                <span>이메일</span>jun29182877@gmail.com<br />
+              </p>
+              <span class="sub_tit" style="margin-top:50px;">
+                Profile
+              </span>
+              <p>
+                <span>이름</span> 신채연 <br />
+                <span>생년월일</span>1998.02.17<br />
+                <span>주소</span>서울시 강서구<br />
+                <span>연락처</span>010-9230-9218<br />
+                <span>이메일</span>jun29182877@gmail.com<br />
+              </p>
+            </div>
+
+            <div class="center_wrap">
+              <div class="img_wrap">
+                <img src="./img/like/flime/img_17.jpeg" alt="">
+              </div>
+              <span class="sub_tit">
+                Greeting
+              </span>
+              <p>
+                It’s known as the fashion Oscars, tickets cost $35,000 and the strictly VIP guest-list
+                is vetted by the editor of American Vogue herself, Anna Wintour. It’s known as the
+                fashion Oscars, tickets cost $35,000 and the strictly VIP guest-list
+                is vetted by the editor of American Vogue herself, Anna Wintour. It’s known as the
+                fashion Oscars, tickets cost $35,000 and the strictly VIP guest-list
+                is vetted by the editor of American Vogue herself, Anna Wintour. It’s known as the
+                fashion Oscars, tickets cost $35,000 and the strictly VIP guest-list
+                is vetted by the editor of American Vogue herself, Anna Wintour.
+              </p>
+            </div>
+
+            <div class="side_wrap">
+              <span class="sub_tit">
+                무엇을 넣을까요~
+              </span>
+              <p>
+                It’s known as the fashion Oscars, tickets cost $35,000 and the strictly VIP guest-list
+                is vetted by the editor of American Vogue herself, Anna Wintour.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="introduce_tab hashtag_story">
+          <div class="title">Hashtag Story</div>
+          <div class="main_wrap">
+            <div class="first_container">
+              <div class="box1">
+                <div class="img_wrap">
+                  <img src="./img/introduce/IMG_8568.jpeg" alt="">
+                </div>
+
+                <div class="text_wrap">
+                  <span class="sub_tit">
+                    What to do about summer insomnia
+                  </span>
+                  <p>
+                    It’s known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
+                    known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
+                    known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
+                    known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour.
+                  </p>
+                </div>
+              </div>
+
+              <div class="box2">
+                <div class="img_wrap">
+                  <img src="./img/introduce/IMG_7433.jpeg" alt="">
+                </div>
+
+                <div class="text_wrap">
+                  <span class="sub_tit">
+                    What to do about summer insomnia
+                  </span>
+                  <p>
+                    It’s known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
+                    known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
+                    known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
+                    known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="second_container">
+              <div class="box1">
+                <div class="img_wrap">
+                  <img src="./img/IMG_6291.jpeg" alt="">
+                </div>
+
+                <div class="text_wrap">
+                  <span class="sub_tit">
+                    What to do about summer insomnia
+                  </span>
+                  <p>
+                    It’s known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
+                    known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
+                    known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
+                    known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour.
+                  </p>
+                </div>
+              </div>
+
+              <div class="box2">
+                <div class="img_wrap">
+                  <img src="./img/IMG_6291.jpeg" alt="">
+                </div>
+
+                <div class="text_wrap">
+                  <span class="sub_tit">
+                    What to do about summer insomnia
+                  </span>
+                  <p>
+                    It’s known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
+                    known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
+                    known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
+                    known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                    guest-list is vetted by the editor of American Vogue herself, Anna Wintour.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="introduce_tab shinsGuide" style="height:50vh">
+          <div class="title">Shin's Guide</div>
+          <div class="main_wrap">
+
+          </div>
+        </div>
+
+        <div class="introduce_tab message_motto">
+          <div class="title">Favorite Message & Motto of Life</div>
+
+          <div class="main_wrap">
+
+            <div class="message">
+              <span class="sub_tit">Favorite Message</span>
+
+              <span>"Just do it"</span>
+              <p>
+                It’s known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
+                guest-list is
+                vetted by the editor of American Vogue herself, Anna Wintour.
+              </p>
+
+            </div>
+
+            <div class="motto">
+              <span class="sub_tit">Motto of Life</span>
+
+              <span>"Love is All"</span>
+              <p>
+                It’s known as the fashion Oscars, tickets cost $35,000 and the strictly VIP guest-list
+                is vetted by the editor of American Vogue herself, Anna Wintour. It’s known as the
+                fashion Oscars, tickets cost $35,000 and the strictly VIP guest-list is vetted by the
+                editor of American Vogue herself, Anna Wintour. It’s known as the fashion Oscars,
+                tickets cost $35,000 and the strictly VIP guest-list is vetted by the editor of American
+                Vogue herself, Anna Wintour. It’s known as the fashion Oscars, tickets cost $35,000 and
+                the strictly VIP guest-list is vetted by the editor of American Vogue herself, Anna
+                Wintour.
+              </p>
+            </div>
+
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- <section id="about_me">
+                <div class="about_me_wrap">
+
+                    <div class="text">
+                        <ul class="text_wrap">
+                            <li>
+                                <div class="tit">
+                                    <span class="main_tit">Introduce</span>
+                                    <span class="sub_tit">과정을 즐기는 웹 퍼블리셔 신채연입니다.</span>
+                                </div>
+                                <ol>
+                                    <li>
+                                        ‘아는 사람은 좋아하는 사람만 못하고, 좋아하는 사람은 즐기는 사람만 못하다’ 라는 공자의 말이 있습니다.
+                                        저는 퍼블리싱을 알고, 좋아하며, 즐기고, 노력하는 개발자입니다.
+                                    </li>
+                                </ol>
+
+                                <span class="page_num">- 1 -</span>
+                            </li>
+                            <li>
+                                <div class="tit">
+                                    <span class="main_tit">Profile</span>
+                                    <span class="sub_tit">반드시 승리하겠다”고 밝혔다.</span>
+                                </div>
+                                <ol>
+                                    <li>Name <span>신채연</span></li>
+                                    <li>Birth <span>1998.02.17</span></li>
+                                    <li>Address <span>서울시 강서구</span></li>
+                                    <li>Phone <span>010-9230-9218</span></li>
+                                    <li>E-mail <span>jun29182877@gmail.com</span></li>
+                                </ol>
+
+                                <span class="page_num">- 2 -</span>
+                            </li>
+                            <li>
+                                <div class="tit">
+                                    <span class="main_tit">Skills</span>
+                                    <span class="sub_tit">반드시 승리하겠다”고 밝혔다.</span>
+                                </div>
+                                <ol>
+                                    <li>html5</li>
+                                    <li>css</li>
+                                    <li>javascript</li>
+                                    <li>jquery</li>
+                                    <li>Zen Codding / EMMET</li>
+                                    <li>sass</li>
+                                    <li>photoshop</li>
+                                    <li>illustrator</li>
+                                </ol>
+
+                                <span class="page_num">- 3 -</span>
+                            </li>
+                            <li>
+                                <div class="tit">
+                                    <span class="main_tit">Licens</span>
+                                    <span class="sub_tit">반드시 승리하겠다”고 밝혔다.</span>
+                                </div>
+                                <ol>
+                                    <li>2015 <span>컴퓨터그래픽스운용기능사</span></li>
+                                    <li>2013 <span>gtq 그래픽기술자격2급</span></li>
+                                    <li>2013 <span>gtq 일러스트2급</span></li>
+                                </ol>
+
+                                <span class="page_num">- 4 -</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="frame">
+                        <ul class="frame_wrap">
+                            <li><img src="./img/IMG_6291.jpeg" alt=""><img class="black" src="./img/IMG_6291.jpeg"
+                                    alt="">
+                            </li>
+                            <li><img src="./img/IMG_6298.jpeg" alt=""><img class="black" src="./img/IMG_6298.jpeg"
+                                    alt=""></li>
+                            <li><img src="./img/IMG_6301.jpeg" alt=""><img class="black" src="./img/IMG_6301.jpeg"
+                                    alt=""></li>
+                            <li><img src="./img/IMG_6309.jpeg" alt=""><img class="black" src="./img/IMG_6309.jpeg"
+                                    alt=""></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section> -->
+
+
+      <section id="like">
+        <div class="main"></div>
+
+        <div class="like_tab travel">
+          <span class="title">Travel</span>
+
+          <div class="sec1">
+            <div class="text_wrap">
+              <span>
+                Chaeyoun's Travel History
+              </span>
+              <p>
+                Royal culture, historic sites and traditional British experiences are catnip to
+                Americans who have missed traveling across the pond. A visitors’ guide.
+              </p>
+            </div>
+
+            <div class="img_wrap">
+              <img src="./img/like/travel/main_visual.gif" alt="#">
+            </div>
+          </div>
+
+          <div class="sec2">
+            <div class="tab_wrap">
+              <div class="tab_container">
+                <div class="tab_content">
+                  <ul>
+                    <li>
+                      <span>1</span>
+                      <p>무엇을</p>
+                    </li>
+                    <li>
+                      <span>봤다</span>
+                      <p>무엇을</p>
+                    </li>
+                    <li>
+                      <span>느꼈다</span>
+                      <p>무엇을</p>
+                    </li>
+                  </ul>
+
+                  <div class="img_wrap">
+                    <img src="./img/like/flime/img_9.jpeg" alt="">
+                  </div>
+                </div>
+
+                <div class="tab_content">
+                  <ul>
+                    <li>
+                      <span>2</span>
+                      <p>무엇을</p>
+                    </li>
+                    <li>
+                      <span>봤다</span>
+                      <p>무엇을</p>
+                    </li>
+                    <li>
+                      <span>느꼈다</span>
+                      <p>무엇을</p>
+                    </li>
+                  </ul>
+
+                  <div class="img_wrap">
+                    <img src="./img/like/flime/img_7.jpeg" alt="">
+                  </div>
+                </div>
+
+                <div class="tab_content">
+                  <ul>
+                    <li>
+                      <span>3</span>
+                      <p>무엇을</p>
+                    </li>
+                    <li>
+                      <span>봤다</span>
+                      <p>무엇을</p>
+                    </li>
+                    <li>
+                      <span>느꼈다</span>
+                      <p>무엇을</p>
+                    </li>
+                  </ul>
+
+                  <div class="img_wrap">
+                    <img src="./img/like/flime/img_5.jpeg" alt="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab_menu">
+                <span class="tit">Memorable Travel 3</span>
+                <ul>
+                  <li class="active"><a href="#">홍콩</a></li>
+                  <li><a href="#">동해</a></li>
+                  <li><a href="#">뉴질랜드</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="like_tab travel">
+                    <span class="title">Travel</span>
+
+                    <div class="sec1">
+                        <div class="text_wrap">
+                            <span>
+                                Chaeyoun's Travel History
+                            </span>
+                            <p>
+                                Royal culture, historic sites and traditional British experiences are catnip to
+                                Americans who have missed traveling across the pond. A visitors’ guide.
+                            </p>
+                        </div>
+
+                        <div class="img_wrap">
+                            <img src="./img/like/travel/main_visual.gif" alt="#">
+                        </div>
+                    </div>
+
+                    <div class="sec2">
+                        <div class="content">
+                            <div class="img_wrap">
+                                <img src="./img/like/travel/IMG_0143.jpeg" alt="#">
+                            </div>
+                            <span>
+                                홍콩 2017
+                            </span>
+                            <p>
+                                Royal culture, historic sites and traditional British experiences are catnip to
+                                Americans who have missed traveling across the pond. A visitors’ guide.
+                            </p>
+                        </div>
+                        <div class="content">
+                            <div class="img_wrap">
+                                <img src="./img/like/travel/IMG_5383.jpeg" alt="#">
+                            </div>
+                            <span>
+                                블라디보스톡 2018
+                            </span>
+                            <p>
+                                Royal culture, historic sites and traditional British experiences are catnip to
+                                Americans who have missed traveling across the pond. A visitors’ guide.
+                            </p>
+                        </div>
+                        <div class="content">
+                            <div class="img_wrap">
+                                <img src="./img/like/travel/IMG_0908.jpeg" alt="#">
+                            </div>
+                            <span>
+                                뉴질랜드 2019
+                            </span>
+                            <p>
+                                Royal culture, historic sites and traditional British experiences are catnip to
+                                Americans who have missed traveling across the pond. A visitors’ guide.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="sec3">
+                        <span>강원도</span>
+                        <div class="sec3_wrap">
+                            <div class="content">
+                                <div class="img_wrap">
+                                    <img src="./img/like/travel/IMG_7707.jpeg" alt="#">
+                                </div>
+                                <span>바다</span>
+                                <p>
+                                    Royal culture, historic sites and traditional British experiences are catnip to
+                                    Americans who have missed traveling across the pond. A visitors’ guide.
+                                </p>
+                            </div>
+                            <div class="content">
+                                <div class="img_wrap">
+                                    <img src="./img/like/travel/IMG_7103.jpeg" alt="#">
+                                </div>
+                                <span>산</span>
+                                <p>
+                                    Royal culture, historic sites and traditional British experiences are catnip to
+                                    Americans who have missed traveling across the pond. A visitors’ guide.
+                                </p>
+                            </div>
+                            <div class="content">
+                                <div class="img_wrap">
+                                    <img src="./img/like/travel/IMG_7222.jpeg" alt="#">
+                                </div>
+                                <span>선자령</span>
+                                <p>
+                                    Royal culture, historic sites and traditional British experiences are catnip to
+                                    Americans who have missed traveling across the pond. A visitors’ guide.
+                                </p>
+                            </div>
+                            <div class="content">
+                                <div class="img_wrap">
+                                    <img src="./img/like/travel/IMG_2697.jpeg" alt="#">
+                                </div>
+                                <span>강릉 안목해변</span>
+                                <p>
+                                    Royal culture, historic sites and traditional British experiences are catnip to
+                                    Americans who have missed traveling across the pond. A visitors’ guide.
+                                </p>
+                            </div>
+                            <div class="content">
+                                <div class="img_wrap">
+                                    <img src="./img/like/travel/IMG_2835.jpeg" alt="#">
+                                </div>
+                                <span>속초 </span>
+                                <p>
+                                    Royal culture, historic sites and traditional British experiences are catnip to
+                                    Americans who have missed traveling across the pond. A visitors’ guide.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sec3">
+                        <span>전라도</span>
+                        <div class="sec3_wrap">
+                            <div class="content">
+                                <div class="img_wrap">
+                                    <img src="./img/like/travel/IMG_5032.jpeg" alt="#">
+                                </div>
+                                <span>익산</span>
+                                <p>
+                                    Royal culture, historic sites and traditional British experiences are catnip to
+                                    Americans who have missed traveling across the pond. A visitors’ guide.
+                                </p>
+                            </div>
+                            <div class="content">
+                                <div class="img_wrap">
+                                    <img src="./img/like/travel/IMG_4224.jpeg" alt="#">
+                                </div>
+                                <span>보성 대한다원</span>
+                                <p>
+                                    Royal culture, historic sites and traditional British experiences are catnip to
+                                    Americans who have missed traveling across the pond. A visitors’ guide.
+                                </p>
+                            </div>
+                            <div class="content">
+                                <div class="img_wrap">
+                                    <img src="./img/like/travel/IMG_7315.jpeg" alt="#">
+                                </div>
+                                <span>여수 금오도</span>
+                                <p>
+                                    Royal culture, historic sites and traditional British experiences are catnip to
+                                    Americans who have missed traveling across the pond. A visitors’ guide.
+                                </p>
+                            </div>
+                            <div class="content">
+                                <div class="img_wrap">
+                                    <img src="./img/like/travel/IMG_3156.jpeg" alt="#">
+                                </div>
+                                <span>순천 순천만습지</span>
+                                <p>
+                                    Royal culture, historic sites and traditional British experiences are catnip to
+                                    Americans who have missed traveling across the pond. A visitors’ guide.
+                                </p>
+                            </div>
+                            <div class="content">
+                                <div class="img_wrap">
+                                    <img src="./img/like/travel/IMG_2625.jpeg" alt="#">
+                                </div>
+                                <span>순천 순천만습지</span>
+                                <p>
+                                    Royal culture, historic sites and traditional British experiences are catnip to
+                                    Americans who have missed traveling across the pond. A visitors’ guide.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sec3">
+                        <span>제주도</span>
+                        <div class="sec3_wrap">
+                            <div class="content">
+                                <div class="img_wrap">
+                                    <img src="./img/like/travel/IMG_9954.jpeg" alt="#">
+                                </div>
+                                <span>새별오름</span>
+                                <p>
+                                    Royal culture, historic sites and traditional British experiences are catnip to
+                                    Americans who have missed traveling across the pond. A visitors’ guide.
+                                </p>
+                            </div>
+                            <div class="content">
+                                <div class="img_wrap">
+                                    <img src="./img/like/travel/IMG_2609.jpeg" alt="#">
+                                </div>
+                                <span>함덕해변</span>
+                                <p>
+                                    Royal culture, historic sites and traditional British experiences are catnip to
+                                    Americans who have missed traveling across the pond. A visitors’ guide.
+                                </p>
+                            </div>
+                            <div class="content">
+                                <div class="img_wrap">
+                                    <img src="./img/like/travel/IMG_0006.jpeg" alt="#">
+                                </div>
+                                <span>오설록</span>
+                                <p>
+                                    Royal culture, historic sites and traditional British experiences are catnip to
+                                    Americans who have missed traveling across the pond. A visitors’ guide.
+                                </p>
+                            </div>
+                            <div class="content">
+                                <div class="img_wrap">
+                                    <img src="./img/like/travel/IMG_9821.jpeg" alt="#">
+                                </div>
+                                <span>새별오름</span>
+                                <p>
+                                    Royal culture, historic sites and traditional British experiences are catnip to
+                                    Americans who have missed traveling across the pond. A visitors’ guide.
+                                </p>
+                            </div>
+                            <div class="content">
+                                <div class="img_wrap">
+                                    <img src="./img/like/travel/IMG_8657.jpeg" alt="#">
+                                </div>
+                                <span>중문색달해변</span>
+                                <p>
+                                    Royal culture, historic sites and traditional British experiences are catnip to
+                                    Americans who have missed traveling across the pond. A visitors’ guide.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div> -->
+
+
+
+        <div class="like_tab fliming">
+          <span class="title">Fliming</span>
+
+          <div class="fliming_wrap">
+            <div class="screen">
+              <img src="./img/like/flime/IMG_6.jpeg" alt="">
+
+              <div class="text active">
+                Royal culture, historic sites and traditional British experiences are catnip to
+                Americans who have missed traveling across the pond. A visitors’ guide.
+              </div>
+              <div class="text">
+                Royal culture, historic sites and traditional British experiences are catnip to
+                Americans who have missed traveling across the pond. A visitors’ guide.
+              </div>
+              <div class="text">
+                Royal culture, historic sites and traditional British experiences are catnip to
+                Americans who have missed traveling across the pond. A visitors’ guide.
+              </div>
+              <div class="text">
+                Royal culture, historic sites and traditional British experiences are catnip to
+                Americans who have missed traveling across the pond. A visitors’ guide.
+              </div>
+              <div class="text">
+                Royal culture, historic sites and traditional British experiences are catnip to
+                Americans who have missed traveling across the pond. A visitors’ guide.
+              </div>
+              <div class="text">
+                Royal culture, historic sites and traditional British experiences are catnip to
+                Americans who have missed traveling across the pond. A visitors’ guide.
+              </div>
+              <div class="text">
+                Royal culture, historic sites and traditional British experiences are catnip to
+                Americans who have missed traveling across the pond. A visitors’ guide.
+              </div>
+              <div class="text">
+                Royal culture, historic sites and traditional British experiences are catnip to
+                Americans who have missed traveling across the pond. A visitors’ guide.
+              </div>
+              <div class="text">
+                Royal culture, historic sites and traditional British experiences are catnip to
+                Americans who have missed traveling across the pond. A visitors’ guide.
+              </div>
+              <div class="text">
+                Royal culture, historic sites and traditional British experiences are catnip to
+                Americans who have missed traveling across the pond. A visitors’ guide.
+              </div>
+            </div>
+
+            <div class="slide">
+              <div class="slide_container">
+                <ul>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_1.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_2.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_3.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_4.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_5.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_6.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_7.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_8.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_9.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_10.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_11.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_12.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_13.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_14.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_15.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_16.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_17.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_18.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_19.jpeg" alt="">
+                  </li>
+                  <li class="slide_content">
+                    <img src="./img/like/flime/IMG_20.jpeg" alt="">
+                  </li>
+                </ul>
+              </div>
+
+              <a class="prev"><span></span></a>
+              <a class="next"><span></span></a>
+            </div>
+
+            <div class="text_wrap">
+              <span></span>
+              <p>Royal culture, historic sites and traditional British experiences are catnip to Americans
+                who have missed traveling across the pond. A visitors’ guide.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="like_tab movies" id="movies">
+          <span class="title">Movies</span>
+
+          <div class="movies_wrap">
+
+            <div class="movies_sec sec1">
+              <div class="img_wrap">
+                <img src="./img/like/movies/763.jpeg" alt="#">
+              </div>
+
+              <span>
+                The Mauritanian
+              </span>
+
+              <p>
+                For decades, the singer-songwriter carved her own path while battling sexism in the
+                music
+                industry and personal darkness. Now, at 60, she’s telling her story in a new
+                documentary.
+              </p>
+            </div>
+
+            <div class="movies_sec sec2">
+              <div class="img_wrap">
+                <img src="./img/like/movies/9b8905e0df50507c8cd31e60b7923af2806a41e2.jpeg" alt="#">
+              </div>
+
+              <span>
+                Mr.Nobody
+              </span>
+
+              <p>
+                For decades, the singer-songwriter carved her own path while battling sexism in the
+                music
+                industry and personal darkness. Now, at 60, she’s telling her story in a new
+                documentary.
+              </p>
+            </div>
+
+            <div class="movies_sec sec3">
+              <div class="sec3_inner">
+                <div class="img_wrap">
+                  <img src="./img/IMG_6291.jpeg" alt="#">
+                </div>
+
+                <span>
+                  The Sheryl Crow You Never Knew
+                </span>
+
+                <p>
+                  For decades, the singer-songwriter carved her own path while battling sexism in the
+                  music
+                  industry and personal darkness. Now, at 60, she’s telling her story in a new
+                  documentary.
+                </p>
+              </div>
+
+              <div class="sec3_inner">
+                <div class="img_wrap">
+                  <img src="./img/IMG_6291.jpeg" alt="#">
+                </div>
+
+                <span>
+                  The Sheryl Crow You Never Knew
+                </span>
+
+                <p>
+                  For decades, the singer-songwriter carved her own path while battling sexism in the
+                  music
+                  industry and personal darkness. Now, at 60, she’s telling her story in a new
+                  documentary.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+        <div class="like_tab music" id="music">
+          <span class="title">Music</span>
+
+          <div class="music_wrap">
+            <div class="music_container">
+              <div class="left_container">
+                <div class="musicLeft">
+                  <div class="box1">
+                    <div class="frame">
+                      <img class="music_or_img" src="./img/IMG_7690.jpeg" alt=""><img class="music_cover"
+                        src="./img/like/flime/img_10.jpeg" alt="">
+                    </div>
+
+                    <span>
+                      POP
+                    </span>
+                    <p>
+                      Do you feel like you have aged a decade in the past two years and can never
+                      go back? Times writers on how they’re returning to their old selves — at
+                      last
+                    </p>
+                  </div>
+
+                  <div class="box1">
+                    <div class="frame">
+                      <img class="music_or_img" src="./img/IMG_7690.jpeg" alt=""><img class="music_cover"
+                        src="./img/like/flime/img_10.jpeg" alt="">
+                    </div>
+
+                    <span>
+                      Band
+                    </span>
+                    <p>
+                      Do you feel like you have aged a decade in the past two years and can never
+                      go back? Times writers on how they’re returning to their old selves — at
+                      last
+                    </p>
+                  </div>
+
+                  <div class="box1">
+                    <div class="frame">
+                      <img class="music_or_img" src="./img/IMG_7690.jpeg" alt=""><img class="music_cover"
+                        src="./img/like/flime/img_10.jpeg" alt="">
+                    </div>
+
+                    <span>
+                      Musicals
+                    </span>
+                    <p>
+                      Do you feel like you have aged a decade in the past two years and can never
+                      go back? Times writers on how they’re returning to their old selves — at
+                      last
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="right_container">
+                <div class="wrap">
+                  <div class="box2">
+                    <ul class="musicWrap">
+                      <li>
+                        <div class="frame">
+                          <img src="./img/IMG_6291.jpeg" alt="">
+                        </div>
+                        <div class="text_box">
+                          <span>
+                            HONNE
+                          </span>
+                          <p>
+                            Do you feel like you have aged a decade in the past two years
+                            and
+                            can never
+                            go back? Times writers on how they’re returning to their old
+                            selves
+                            — at
+                            last
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="frame">
+                          <img src="./img/IMG_6298.jpeg" alt="">
+                        </div>
+                        <div class="text_box">
+                          <span>
+                            Lukas Graham
+                          </span>
+                          <p>
+                            Do you feel like you have aged a decade in the past two years
+                            and
+                            can never
+                            go back? Times writers on how they’re returning to their old
+                            selves
+                            — at
+                            last
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="frame">
+                          <img src="./img/IMG_6301.jpeg" alt="">
+                        </div>
+                        <div class="text_box">
+                          <span>
+                            Sia
+                          </span>
+                          <p>
+                            Do you feel like you have aged a decade in the past two years
+                            and
+                            can never
+                            go back? Times writers on how they’re returning to their old
+                            selves
+                            — at
+                            last
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="frame">
+                          <img src="./img/IMG_6309.jpeg" alt="">
+                        </div>
+                        <div class="text_box">
+                          <span>
+                            Jeremy Zucker
+                          </span>
+                          <p>
+                            Do you feel like you have aged a decade in the past two years
+                            and
+                            can never
+                            go back? Times writers on how they’re returning to their old
+                            selves
+                            — at
+                            last
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+
+
+                  <div class="box2">
+                    <ul class="musicWrap">
+                      <li>
+                        <div class="frame">
+                          <img src="./img/IMG_6291.jpeg" alt="">
+                        </div>
+                        <div class="text_box">
+                          <span>
+                            Oasis
+                          </span>
+                          <p>
+                            Do you feel like you have aged a decade in the past two years
+                            and
+                            can never
+                            go back? Times writers on how they’re returning to their old
+                            selves
+                            — at
+                            last
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="frame">
+                          <img src="./img/IMG_6298.jpeg" alt="">
+                        </div>
+                        <div class="text_box">
+                          <span>
+                            Coldplay
+                          </span>
+                          <p>
+                            Do you feel like you have aged a decade in the past two years
+                            and
+                            can never
+                            go back? Times writers on how they’re returning to their old
+                            selves
+                            — at
+                            last
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="frame">
+                          <img src="./img/IMG_6301.jpeg" alt="">
+                        </div>
+                        <div class="text_box">
+                          <span>
+                            Sigur Rós
+                          </span>
+                          <p>
+                            Do you feel like you have aged a decade in the past two years
+                            and
+                            can never
+                            go back? Times writers on how they’re returning to their old
+                            selves
+                            — at
+                            last
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="frame">
+                          <img src="./img/IMG_6309.jpeg" alt="">
+                        </div>
+                        <div class="text_box">
+                          <span>
+                            Radiohead
+                          </span>
+                          <p>
+                            Do you feel like you have aged a decade in the past two years
+                            and
+                            can never
+                            go back? Times writers on how they’re returning to their old
+                            selves
+                            — at
+                            last
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="box2">
+                    <ul class="musicWrap">
+                      <li>
+                        <div class="frame">
+                          <img src="./img/IMG_6291.jpeg" alt="">
+                        </div>
+                        <div class="text_box">
+                          <span>
+                            오페라의 유령
+                          </span>
+                          <p>
+                            Do you feel like you have aged a decade in the past two years
+                            and
+                            can never
+                            go back? Times writers on how they’re returning to their old
+                            selves
+                            — at
+                            last
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="frame">
+                          <img src="./img/IMG_6298.jpeg" alt="">
+                        </div>
+                        <div class="text_box">
+                          <span>
+                            렌트
+                          </span>
+                          <p>
+                            Do you feel like you have aged a decade in the past two years
+                            and
+                            can never
+                            go back? Times writers on how they’re returning to their old
+                            selves
+                            — at
+                            last
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="frame">
+                          <img src="./img/IMG_6301.jpeg" alt="">
+                        </div>
+                        <div class="text_box">
+                          <span>
+                            모차르트!
+                          </span>
+                          <p>
+                            Do you feel like you have aged a decade in the past two years
+                            and
+                            can never
+                            go back? Times writers on how they’re returning to their old
+                            selves
+                            — at
+                            last
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="frame">
+                          <img src="./img/IMG_6309.jpeg" alt="">
+                        </div>
+                        <div class="text_box">
+                          <span>
+                            디어 에반 핸슨
+                          </span>
+                          <p>
+                            Do you feel like you have aged a decade in the past two years
+                            and
+                            can never
+                            go back? Times writers on how they’re returning to their old
+                            selves
+                            — at
+                            last
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="like_tab books" id="books">
+          <span class="title">Books</span>
+
+          <div class="books_wrap">
+            <div class="img_wrap">
+              <img src="./img/like/books/XL.jpeg" alt="지구별 여행자">
+            </div>
+
+            <div class="text_wrap">
+              <span>지구별 여행자 - 류시화</span>
+
+              <p>For decades, the singer-songwriter carved her own path while battling sexism in the music
+                industry and personal darkness. Now, at 60, she’s telling her story in a new
+                documentary.</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section id="about_me">
+        <div class="about_me_wrap">
+
+          <div class="text">
+            <ul class="text_wrap">
+              <li>
+                <div class="tit">
+                  <span class="main_tit">Introduce</span>
+                  <span class="sub_tit">과정을 즐기는 웹 퍼블리셔 신채연입니다.</span>
+                </div>
+                <ol>
+                  <li>
+                    ‘아는 사람은 좋아하는 사람만 못하고, 좋아하는 사람은 즐기는 사람만 못하다’ 라는 공자의 말이 있습니다.
+                    저는 퍼블리싱을 알고, 좋아하며, 즐기고, 노력하는 개발자입니다.
+                  </li>
+                </ol>
+
+                <span class="page_num">- 1 -</span>
+              </li>
+              <li>
+                <div class="tit">
+                  <span class="main_tit">Profile</span>
+                  <span class="sub_tit">반드시 승리하겠다”고 밝혔다.</span>
+                </div>
+                <ol>
+                  <li>Name <span>신채연</span></li>
+                  <li>Birth <span>1998.02.17</span></li>
+                  <li>Address <span>서울시 강서구</span></li>
+                  <li>Phone <span>010-9230-9218</span></li>
+                  <li>E-mail <span>jun29182877@gmail.com</span></li>
+                </ol>
+
+                <span class="page_num">- 2 -</span>
+              </li>
+              <li>
+                <div class="tit">
+                  <span class="main_tit">Skills</span>
+                  <span class="sub_tit">반드시 승리하겠다”고 밝혔다.</span>
+                </div>
+                <ol>
+                  <li>html5</li>
+                  <li>css</li>
+                  <li>javascript</li>
+                  <li>jquery</li>
+                  <li>Zen Codding / EMMET</li>
+                  <li>sass</li>
+                  <li>photoshop</li>
+                  <li>illustrator</li>
+                </ol>
+
+                <span class="page_num">- 3 -</span>
+              </li>
+              <li>
+                <div class="tit">
+                  <span class="main_tit">Licens</span>
+                  <span class="sub_tit">반드시 승리하겠다”고 밝혔다.</span>
+                </div>
+                <ol>
+                  <li>2015 <span>컴퓨터그래픽스운용기능사</span></li>
+                  <li>2013 <span>gtq 그래픽기술자격2급</span></li>
+                  <li>2013 <span>gtq 일러스트2급</span></li>
+                </ol>
+
+                <span class="page_num">- 4 -</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="frame">
+            <ul class="frame_wrap">
+              <li><img src="./img/IMG_6291.jpeg" alt=""><img class="black" src="./img/IMG_6291.jpeg" alt="">
+              </li>
+              <li><img src="./img/IMG_6298.jpeg" alt=""><img class="black" src="./img/IMG_6298.jpeg" alt=""></li>
+              <li><img src="./img/IMG_6301.jpeg" alt=""><img class="black" src="./img/IMG_6301.jpeg" alt=""></li>
+              <li><img src="./img/IMG_6309.jpeg" alt=""><img class="black" src="./img/IMG_6309.jpeg" alt=""></li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="career">
+        <div class="main"></div>
+
+        <h1 class="sr-only">경력사항</h1>
+
+        <div class="career_wrap">
+          <div class="container">
+
+            <div class="left_container">
+              <div class="img_content">
+                <img src="./img/" alt="">
+              </div>
+
+              <div class="text_content">
+                <div class="tit">
+                  (주)피디씨컴퍼니
+                  <span>인턴 4개월</span>
+
+                  <span>2015.09 ~ 2015.12</span>
+
+                </div>
+
+                <p>
+                  How are you sleeping? If you are finding it harder to drop off in the first place
+                  only
+                  to wake earlier than you should when early morning light bleeds through your bedroom
+                  blinds, then welcome to the early signs of summer insomnia. New research published
+                  in
+                  Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                  old
+                  age is necessary for optimum cognitive performance and mental health, will be of
+                  little
+                  solace to those whose sleeping issues become more extreme as the sun sets later,
+                  pollen
+                  levels rise and night-time temperatures increase.
+
+                  Researchers tracking seasonal variations in our sleep patterns reported in npj
+                  Digital
+                  Medicine journal that many of us wake earlier and sleep less in spring than in
+                </p>
+              </div>
+            </div>
+
+            <div class="right_container">
+              <div class="text_content">
+                <span>
+                  What to do about summer insomnia
+                </span>
+
+                <p>
+                  How are you sleeping? If you are finding it harder to drop off in the first place
+                  only
+                  to wake earlier than you should when early morning light bleeds through your bedroom
+                  blinds, then welcome to the early signs of summer insomnia. New research published
+                  in
+                  Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                  old
+                  age is necessary for optimum cognitive performance and mental health, will be of
+                  little
+                  solace to those whose sleeping issues become more extreme as the sun sets later,
+                  pollen
+                  levels rise and night-time temperatures increase.
+
+                  Researchers tracking seasonal variations in our sleep patterns reported in npj
+                  Digital
+                  Medicine journal that many of us wake earlier and sleep less in spring than in
+                </p>
+              </div>
+              <div class="text_content">
+                <span>
+                  What to do about summer insomnia
+                </span>
+
+                <p>
+                  How are you sleeping? If you are finding it harder to drop off in the first place
+                  only
+                  to wake earlier than you should when early morning light bleeds through your bedroom
+                  blinds, then welcome to the early signs of summer insomnia. New research published
+                  in
+                  Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                  old
+                  age is necessary for optimum cognitive performance and mental health, will be of
+                  little
+                  solace to those whose sleeping issues become more extreme as the sun sets later,
+                  pollen
+                  levels rise and night-time temperatures increase.
+
+                  Researchers tracking seasonal variations in our sleep patterns reported in npj
+                  Digital
+                  Medicine journal that many of us wake earlier and sleep less in spring than in
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+
+            <div class="left_container">
+              <div class="img_content">
+                <img src="./img/" alt="">
+              </div>
+
+              <div class="text_content">
+                <div class="tit">
+                  제이엔에스트레이드
+                  <span>웹디자이너 4년4개월</span>
+
+                  <span>2016.04 ~ 2020.07</span>
+                </div>
+
+                <p>
+                  How are you sleeping? If you are finding it harder to drop off in the first place
+                  only
+                  to wake earlier than you should when early morning light bleeds through your bedroom
+                  blinds, then welcome to the early signs of summer insomnia. New research published
+                  in
+                  Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                  old
+                  age is necessary for optimum cognitive performance and mental health, will be of
+                  little
+                  solace to those whose sleeping issues become more extreme as the sun sets later,
+                  pollen
+                  levels rise and night-time temperatures increase.
+
+                  Researchers tracking seasonal variations in our sleep patterns reported in npj
+                  Digital
+                  Medicine journal that many of us wake earlier and sleep less in spring than in
+                </p>
+              </div>
+            </div>
+
+            <div class="right_container">
+              <div class="text_content">
+                <span>
+                  What to do about summer insomnia
+                </span>
+
+                <p>
+                  How are you sleeping? If you are finding it harder to drop off in the first place
+                  only
+                  to wake earlier than you should when early morning light bleeds through your bedroom
+                  blinds, then welcome to the early signs of summer insomnia. New research published
+                  in
+                  Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                  old
+                  age is necessary for optimum cognitive performance and mental health, will be of
+                  little
+                  solace to those whose sleeping issues become more extreme as the sun sets later,
+                  pollen
+                  levels rise and night-time temperatures increase.
+
+                  Researchers tracking seasonal variations in our sleep patterns reported in npj
+                  Digital
+                  Medicine journal that many of us wake earlier and sleep less in spring than in
+                </p>
+              </div>
+              <div class="text_content">
+                <span>
+                  What to do about summer insomnia
+                </span>
+
+                <p>
+                  How are you sleeping? If you are finding it harder to drop off in the first place
+                  only
+                  to wake earlier than you should when early morning light bleeds through your bedroom
+                  blinds, then welcome to the early signs of summer insomnia. New research published
+                  in
+                  Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                  old
+                  age is necessary for optimum cognitive performance and mental health, will be of
+                  little
+                  solace to those whose sleeping issues become more extreme as the sun sets later,
+                  pollen
+                  levels rise and night-time temperatures increase.
+
+                  Researchers tracking seasonal variations in our sleep patterns reported in npj
+                  Digital
+                  Medicine journal that many of us wake earlier and sleep less in spring than in
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+
+            <div class="left_container">
+              <div class="img_content">
+                <img src="./img/" alt="">
+              </div>
+
+              <div class="text_content">
+                <div class="tit">
+                  커피101스트릿
+                  <span>매니저 1년 6개월</span>
+
+                  <span>2020.07 ~ 2021.12</span>
+                </div>
+
+                <p>
+                  How are you sleeping? If you are finding it harder to drop off in the first place
+                  only
+                  to wake earlier than you should when early morning light bleeds through your bedroom
+                  blinds, then welcome to the early signs of summer insomnia. New research published
+                  in
+                  Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                  old
+                  age is necessary for optimum cognitive performance and mental health, will be of
+                  little
+                  solace to those whose sleeping issues become more extreme as the sun sets later,
+                  pollen
+                  levels rise and night-time temperatures increase.
+
+                  Researchers tracking seasonal variations in our sleep patterns reported in npj
+                  Digital
+                  Medicine journal that many of us wake earlier and sleep less in spring than in
+                </p>
+              </div>
+            </div>
+
+            <div class="right_container">
+              <div class="text_content">
+                <span>
+                  What to do about summer insomnia
+                </span>
+
+                <p>
+                  How are you sleeping? If you are finding it harder to drop off in the first place
+                  only
+                  to wake earlier than you should when early morning light bleeds through your bedroom
+                  blinds, then welcome to the early signs of summer insomnia. New research published
+                  in
+                  Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                  old
+                  age is necessary for optimum cognitive performance and mental health, will be of
+                  little
+                  solace to those whose sleeping issues become more extreme as the sun sets later,
+                  pollen
+                  levels rise and night-time temperatures increase.
+
+                  Researchers tracking seasonal variations in our sleep patterns reported in npj
+                  Digital
+                  Medicine journal that many of us wake earlier and sleep less in spring than in
+                </p>
+              </div>
+              <div class="text_content">
+                <span>
+                  What to do about summer insomnia
+                </span>
+
+                <p>
+                  How are you sleeping? If you are finding it harder to drop off in the first place
+                  only
+                  to wake earlier than you should when early morning light bleeds through your bedroom
+                  blinds, then welcome to the early signs of summer insomnia. New research published
+                  in
+                  Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                  old
+                  age is necessary for optimum cognitive performance and mental health, will be of
+                  little
+                  solace to those whose sleeping issues become more extreme as the sun sets later,
+                  pollen
+                  levels rise and night-time temperatures increase.
+
+                  Researchers tracking seasonal variations in our sleep patterns reported in npj
+                  Digital
+                  Medicine journal that many of us wake earlier and sleep less in spring than in
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio">
+        <div class="main"></div>
+        <div class="portfolio_wrap">
+          <div class="content_wrap">
+
+            <div class="tit_box">
+              <div class="main_tit">Eigenhain</div>
+              <div class="sub_tit">클론사이트</div>
+            </div>
+
+            <div class="img_box">
+              <a href="https://shinchaeyoun.github.io/shin/eigenhain_SHIN/index.html" target="_blank">
+                <img src="./img/work/eigenhain_fullpage.png" alt="">
+              </a>
+            </div>
+
+            <div class="text_box">
+              <span>사용언어</span> HTML. SCSS. javascript.
+              <span>사용기능</span> 자바스크립트를 이용한 슬라이드 구성. css marquee를 이용한 텍스트 흐름.
+              <span>기획의도</span> 심플하면서 눈에 쉽게 들어오는 다양한 구성에 끌려 클론 사이트로 선정했습니다. 정적인 이미지들에 transition을 사용하여
+              시선이 머무르고 페이지를 즐길 수 있도록 수정하였습니다.
+              <span>제작후기</span> 첫번째 프로적트라 모르는 것도 많아서 제작기간이 길어졌지만,
+              처음으로 완성시킨 프로젝트라 뿌듯함이 큰 작품입니다.
+              제작 기간은 8일 소요되었습니다.
+            </div>
+
+
+
+          </div>
+
+          <div class="content_wrap">
+            <div class="tit_box">
+              <div class="main_tit">London</div>
+              <div class="sub_tit">제작사이트</div>
+            </div>
+
+            <div class="img_box">
+              <a href="https://shinchaeyoun.github.io/shin/london_SHIN/html/index.html" target="_blank">
+                <img src="./img/work/london_fullpage.png" alt="">
+              </a>
+            </div>
+
+            <div class="text_box">
+              <span>사용언어</span> HTML CSS javascript
+              <span>사용기능</span> javascript를 이용한 탭 메뉴. 포토갤러리를 응용한 여러 이미지를 나열. 슬라이드를 이용한 구성.
+              <span>기획의도</span> 런던의 대표적인 랜드마크를 탭 메뉴로 소개하였고, 런던 공원의 여러 모습을 보여주기 위해 포토갤러리를 응용하였습니다.
+              여러가지 축제들을 소개해주기 위하여 슬라이드를 구성했습니다.
+              런던 이외의 영국의 대표적인 여행지를 선정하여 탭 메뉴를 활용하여 많은 컨텐츠를 담아도 지루하지 않도록 구성하였습니다.
+              <span>제작후기</span> 클론페이지만 작업하다보니 기획부터 구현해야 한다는 것이 처음엔 부담스러웠지만, 평소에 좋아하던 도시의 모습을 소개하는 것이라 보여주고
+              싶은 모습이 많아 즐겁게 작업하였습니다.
+              탭 메뉴를 구성하는 것을 처음 작업해봐서 여러 페이지를 찾아보며 만들었는데 페이지를 만들고 나니 로직을 이해하게되어 스스로 응용할 수
+              있게 되어 었습니다.
+              제작기간은 4일 소요되었습니다.
+              </ul>
+            </div>
+          </div>
+
+          <div class="content_wrap">
+            <div class="tit_box">
+              <div class="main_tit">MMCA</div>
+              <div class="sub_tit">클론사이트</div>
+            </div>
+
+            <div class="img_box">
+              <a href="https://shinchaeyoun.github.io/shin/mmca_SHIN/index.html" target="_blank">
+                <img src="./img/work/mmca_fullpage.png" alt="">
+              </a>
+            </div>
+
+            <div class="text_box">
+              <span>사용언어</span> HTML SCSS javascript jQuery
+              <span>사용기능</span>
+              <span>기획의도</span>
+              <span>제작후기</span>
+            </div>
+          </div>
+
+          <div class="content_wrap">
+            <div class="tit_box">
+              <div class="main_tit">seed</div>
+              <div class="sub_tit">클론사이트</div>
+            </div>
+
+            <div class="img_box">
+              <a href="https://shinchaeyoun.github.io/shin/seed_SHIN/index.html" target="_blank">
+                <img src="./img/work/seed.png" alt="">
+              </a>
+            </div>
+
+            <div class="text_box">
+              <span>사용언어</span> HTML SCSS jQuery
+              <span>사용기능</span> jQuery를 사용하여 스크롤 이벤트 구성.
+              <span>기획의도</span> 학원 과정에서 가로 스크롤에 관한 수업이 진행되지 않아서, 개인적인 호기심으로 인하여 작업하게 되었습니다.
+              <span>제작후기</span> 스크롤 이벤크 구문은 처음 사용하여 많은 검색을 하며 제작하였습니다. 제작기간은 1일 소요하였습니다
+            </div>
+          </div>
+
+          <div class="content_wrap">
+            <div class="tit_box">
+              <div class="main_tit">sony</div>
+              <div class="sub_tit">클론사이트</div>
+            </div>
+
+            <div class="img_box">
+              <a href="https://shinchaeyoun.github.io/shin/sony_SHIN/index.html" target="_blank">
+                <img src="./img/work/sony_fullpage.png" alt="">
+              </a>
+            </div>
+
+            <div class="text_box">
+              <span>사용언어</span> HTML SCSS jQuery
+              <span>사용기능</span> jQuery를 이용한 무한 슬라이드.
+              <span>기획의도</span>
+              <span>제작후기</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="title">Contact</div>
+
+        <div class="contact_wrap">
+          <div class="tab phone">
+            <div class="txt">
+              <span>Phone</span>
+              <p>010-9230-9218</p>
+            </div>
+
+            <div class="icon">
+              <img src="./img/contact/phone.png" alt="phone">
+            </div>
+          </div>
+
+          <div class="tab email">
+            <div class="txt">
+              <span>E-mail</span>
+              <p>jun29182877@gmail.com</p>
+            </div>
+            <div class="icon">
+              <img src="./img/contact/gmail.png" alt="email">
+            </div>
+          </div>
+
+          <div class="tab insta">
+            <div class="txt">
+              <span>Instagram</span>
+              <p>@chaisini</p>
+            </div>
+            <div class="icon">
+              <img src="./img/contact/insta.png" alt="insta">
+            </div>
+          </div>
+
+          <div class="tab kakao">
+            <div class="txt">
+              <span>Kakao-talk</span>
+              <p>ID : 8217</p>
+            </div>
+            <div class="icon">
+              <img src="./img/contact/Kakao.png" alt="kakao">
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="logo">
+        <a href="#">
+          <span class="red">T</span>he <span class="red">S</span>hin's <span class="red">W</span>ork <span
+            class="red">S</span>pace
+        </a>
+      </div>
+
+      <div class="bottom">
+        © 2022 The New York Times Company
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

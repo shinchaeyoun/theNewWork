@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Shin's Work Space - main test</title>
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/index_test.css" rel="stylesheet">
+    <script defer src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"
+        integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF"
+        crossorigin="anonymous"></script>
+    <script defer src="js/jquery-3.6.0.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <div class="bg"></div>
+
+    <div class="aside_menu">
+        <ul>
+            <li class="li">
+                <a href="./introduce.html">Introduce</a>
+                <ol>
+                    <li><a href="#greeting">Greeting</a></li>
+                    <li><a href="">Hashtag Story</a></li>
+                    <li><a href="">Shin's Guide</a></li>
+                    <li><a href="">Motive</a></li>
+                    <li><a href="">Motto of Life</a></li>
+                </ol>
+            </li>
+
+            <li class="li">
+                <a href="./like.html">Like</a>
+                <ol>
+                    <li><a href="">Travel</a></li>
+                    <li><a href="">Fliming</a></li>
+                    <li><a href="">Pottery</a></li>
+                    <li><a href="">Movies</a></li>
+                    <li><a href="">Music</a></li>
+                    <li><a href="">Books</a></li>
+                </ol>
+            </li>
+
+            <li class="li">
+                <a href="./career.html">Career</a>
+                <ol>
+                    <li><a href="">(주)피디씨컴퍼니</a></li>
+                    <li><a href="">(주)제이엔에스트레이드</a></li>
+                    <li><a href="">(주)커피101스트릿</a></li>
+                </ol>
+            </li>
+
+            <li class="li">
+                <a href="./portfolio.html">Portfolio</a>
+                <ol>
+                    <li><a href="">Eigenhain</a></li>
+                    <li><a href="">London</a></li>
+                    <li><a href="">MMCA</a></li>
+                    <li><a href="">Seed</a></li>
+                    <li><a href="">Sony</a></li>
+                </ol>
+            </li>
+
+            <li class="li">
+                <a href="./contact.html">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="top_menu">
+        <div class="wrap">
+
+            <div class="logo">
+                <a href="./test_main.html">S</a>
+            </div>
+
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="./introduce.html">Introduce</a></li>
+                    <li><a href="./like.html">Like</a></li>
+                    <li><a href="./career.html">Career</a></li>
+                    <li><a href="./portfolio.html">Portfolio</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <!-- <li><a href="#contact">Contact</a></li> -->
+                </ul>
+            </nav>
+
+            <div class="onoff">
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap" id="wrap">
+        <header>
+            <div class="onoff">
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="toggleMenu">
+                <nav>
+                    <div class="burger">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
+                </nav>
+            </div>
+            <div class="header_wrap">
+                <div class="date">
+                    <div id="current_date"></div>
+                    <div class="clock_wrap">
+                        <span id="clock">clock</span>
+                        <span id="apm">ampm</span>
+                    </div>
+                </div>
+                <div class='weather'>
+                    <div class='City'></div>
+                    <div class="flex">
+                        <div class='CurrTemp'></div>
+                        <div class='CurrIcon'></div>
+                    </div>
+                </div>
+            </div>
+            <div class="title" onclick="window.scrollTo(0,0);">
+                <a href="./test_main.html">
+                    <span class="red">T</span>he <span class="red">S</span>hin's <span class="red">W</span>ork <span
+                        class="red">S</span>pace
+                </a>
+            </div>
+            <div class="header_cate">
+                <ul>
+                    <li><a href="./introduce.html">Introduce</a> <span>Greeting, Hashtag Story, Shin's Guide, Motive,
+                            Motto of
+                            Life</span></li>
+                    <li><a href="./like.html">Like</a> <span>Travel, Fliming, Pottery, Movies, Music, Books</span></li>
+                    <li><a href="./career.html">Career</a><span>(주)피디씨컴퍼니, (주)제이엔에스트레이드, (주)커피101스트릿</span></li>
+                    <li><a href="./portfolio.html">Portfolio</a><span>Eigenhain, London, MMCA, Seed, Sony</span></li>
+                    <li><a href="./contact.html">Contact</a><span>Eigenhain, London, MMCA, Seed, Sony</span></li>
+                    <!-- <li><a href="#contact">Contact</a></li> -->
+                </ul>
+            </div>
+        </header>
+
+
+        <div style="text-align: center;">
+
+        </div>
+
+        <main>
+            <section id="about_me">
+                <div class="about_me_wrap">
+
+                    <div class="text">
+                        <ul class="text_wrap">
+                            <li>
+                                <div class="tit">
+                                    <span class="main_tit">Introduce</span>
+                                    <span class="sub_tit">과정을 즐기는 웹 퍼블리셔 신채연입니다.</span>
+                                </div>
+                                <ol>
+                                    <li>
+                                        ‘아는 사람은 좋아하는 사람만 못하고, 좋아하는 사람은 즐기는 사람만 못하다’ 라는 공자의 말이 있습니다.
+                                        저는 퍼블리싱을 알고, 좋아하며, 즐기고, 노력하는 개발자입니다.
+                                    </li>
+                                </ol>
+
+                                <span class="page_num">- 1 -</span>
+                            </li>
+                            <li>
+                                <div class="tit">
+                                    <span class="main_tit">Profile</span>
+                                    <span class="sub_tit">반드시 승리하겠다”고 밝혔다.</span>
+                                </div>
+                                <ol>
+                                    <li>Name <span>신채연</span></li>
+                                    <li>Birth <span>1998.02.17</span></li>
+                                    <li>Address <span>서울시 강서구</span></li>
+                                    <li>Phone <span>010-9230-9218</span></li>
+                                    <li>E-mail <span>jun29182877@gmail.com</span></li>
+                                </ol>
+
+                                <span class="page_num">- 2 -</span>
+                            </li>
+                            <li>
+                                <div class="tit">
+                                    <span class="main_tit">Skills</span>
+                                    <span class="sub_tit">반드시 승리하겠다”고 밝혔다.</span>
+                                </div>
+                                <ol>
+                                    <li>html5</li>
+                                    <li>css</li>
+                                    <li>javascript</li>
+                                    <li>jquery</li>
+                                    <li>Zen Codding / EMMET</li>
+                                    <li>sass</li>
+                                    <li>photoshop</li>
+                                    <li>illustrator</li>
+                                </ol>
+
+                                <span class="page_num">- 3 -</span>
+                            </li>
+                            <li>
+                                <div class="tit">
+                                    <span class="main_tit">Licens</span>
+                                    <span class="sub_tit">반드시 승리하겠다”고 밝혔다.</span>
+                                </div>
+                                <ol>
+                                    <li>2015 <span>컴퓨터그래픽스운용기능사</span></li>
+                                    <li>2013 <span>gtq 그래픽기술자격2급</span></li>
+                                    <li>2013 <span>gtq 일러스트2급</span></li>
+                                </ol>
+
+                                <span class="page_num">- 4 -</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="frame">
+                        <ul class="frame_wrap">
+                            <li><img src="./img/IMG_6291.jpeg" alt=""><img class="black" src="./img/IMG_6291.jpeg"
+                                    alt="">
+                            </li>
+                            <li><img src="./img/IMG_6298.jpeg" alt=""><img class="black" src="./img/IMG_6298.jpeg"
+                                    alt=""></li>
+                            <li><img src="./img/IMG_6301.jpeg" alt=""><img class="black" src="./img/IMG_6301.jpeg"
+                                    alt=""></li>
+                            <li><img src="./img/IMG_6309.jpeg" alt=""><img class="black" src="./img/IMG_6309.jpeg"
+                                    alt=""></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="career">
+                <div class="main"></div>
+
+                <h1 class="sr-only">경력사항</h1>
+
+                <div class="career_wrap">
+                    <div class="container">
+
+                        <div class="left_container">
+                            <div class="img_content">
+                                <img src="./img/" alt="">
+                            </div>
+
+                            <div class="text_content">
+                                <div class="tit">
+                                    (주)피디씨컴퍼니
+                                    <span>인턴 4개월</span>
+
+                                    <span>2015.09 ~ 2015.12</span>
+
+                                </div>
+
+                                <p>
+                                    How are you sleeping? If you are finding it harder to drop off in the first place
+                                    only
+                                    to wake earlier than you should when early morning light bleeds through your bedroom
+                                    blinds, then welcome to the early signs of summer insomnia. New research published
+                                    in
+                                    Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                                    old
+                                    age is necessary for optimum cognitive performance and mental health, will be of
+                                    little
+                                    solace to those whose sleeping issues become more extreme as the sun sets later,
+                                    pollen
+                                    levels rise and night-time temperatures increase.
+
+                                    Researchers tracking seasonal variations in our sleep patterns reported in npj
+                                    Digital
+                                    Medicine journal that many of us wake earlier and sleep less in spring than in
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="right_container">
+                            <div class="text_content">
+                                <span>
+                                    What to do about summer insomnia
+                                </span>
+
+                                <p>
+                                    How are you sleeping? If you are finding it harder to drop off in the first place
+                                    only
+                                    to wake earlier than you should when early morning light bleeds through your bedroom
+                                    blinds, then welcome to the early signs of summer insomnia. New research published
+                                    in
+                                    Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                                    old
+                                    age is necessary for optimum cognitive performance and mental health, will be of
+                                    little
+                                    solace to those whose sleeping issues become more extreme as the sun sets later,
+                                    pollen
+                                    levels rise and night-time temperatures increase.
+
+                                    Researchers tracking seasonal variations in our sleep patterns reported in npj
+                                    Digital
+                                    Medicine journal that many of us wake earlier and sleep less in spring than in
+                                </p>
+                            </div>
+                            <div class="text_content">
+                                <span>
+                                    What to do about summer insomnia
+                                </span>
+
+                                <p>
+                                    How are you sleeping? If you are finding it harder to drop off in the first place
+                                    only
+                                    to wake earlier than you should when early morning light bleeds through your bedroom
+                                    blinds, then welcome to the early signs of summer insomnia. New research published
+                                    in
+                                    Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                                    old
+                                    age is necessary for optimum cognitive performance and mental health, will be of
+                                    little
+                                    solace to those whose sleeping issues become more extreme as the sun sets later,
+                                    pollen
+                                    levels rise and night-time temperatures increase.
+
+                                    Researchers tracking seasonal variations in our sleep patterns reported in npj
+                                    Digital
+                                    Medicine journal that many of us wake earlier and sleep less in spring than in
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+
+                        <div class="left_container">
+                            <div class="img_content">
+                                <img src="./img/" alt="">
+                            </div>
+
+                            <div class="text_content">
+                                <div class="tit">
+                                    제이엔에스트레이드
+                                    <span>웹디자이너 4년4개월</span>
+
+                                    <span>2016.04 ~ 2020.07</span>
+                                </div>
+
+                                <p>
+                                    How are you sleeping? If you are finding it harder to drop off in the first place
+                                    only
+                                    to wake earlier than you should when early morning light bleeds through your bedroom
+                                    blinds, then welcome to the early signs of summer insomnia. New research published
+                                    in
+                                    Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                                    old
+                                    age is necessary for optimum cognitive performance and mental health, will be of
+                                    little
+                                    solace to those whose sleeping issues become more extreme as the sun sets later,
+                                    pollen
+                                    levels rise and night-time temperatures increase.
+
+                                    Researchers tracking seasonal variations in our sleep patterns reported in npj
+                                    Digital
+                                    Medicine journal that many of us wake earlier and sleep less in spring than in
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="right_container">
+                            <div class="text_content">
+                                <span>
+                                    What to do about summer insomnia
+                                </span>
+
+                                <p>
+                                    How are you sleeping? If you are finding it harder to drop off in the first place
+                                    only
+                                    to wake earlier than you should when early morning light bleeds through your bedroom
+                                    blinds, then welcome to the early signs of summer insomnia. New research published
+                                    in
+                                    Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                                    old
+                                    age is necessary for optimum cognitive performance and mental health, will be of
+                                    little
+                                    solace to those whose sleeping issues become more extreme as the sun sets later,
+                                    pollen
+                                    levels rise and night-time temperatures increase.
+
+                                    Researchers tracking seasonal variations in our sleep patterns reported in npj
+                                    Digital
+                                    Medicine journal that many of us wake earlier and sleep less in spring than in
+                                </p>
+                            </div>
+                            <div class="text_content">
+                                <span>
+                                    What to do about summer insomnia
+                                </span>
+
+                                <p>
+                                    How are you sleeping? If you are finding it harder to drop off in the first place
+                                    only
+                                    to wake earlier than you should when early morning light bleeds through your bedroom
+                                    blinds, then welcome to the early signs of summer insomnia. New research published
+                                    in
+                                    Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                                    old
+                                    age is necessary for optimum cognitive performance and mental health, will be of
+                                    little
+                                    solace to those whose sleeping issues become more extreme as the sun sets later,
+                                    pollen
+                                    levels rise and night-time temperatures increase.
+
+                                    Researchers tracking seasonal variations in our sleep patterns reported in npj
+                                    Digital
+                                    Medicine journal that many of us wake earlier and sleep less in spring than in
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+
+                        <div class="left_container">
+                            <div class="img_content">
+                                <img src="./img/" alt="">
+                            </div>
+
+                            <div class="text_content">
+                                <div class="tit">
+                                    커피101스트릿
+                                    <span>매니저 1년 6개월</span>
+
+                                    <span>2020.07 ~ 2021.12</span>
+                                </div>
+
+                                <p>
+                                    How are you sleeping? If you are finding it harder to drop off in the first place
+                                    only
+                                    to wake earlier than you should when early morning light bleeds through your bedroom
+                                    blinds, then welcome to the early signs of summer insomnia. New research published
+                                    in
+                                    Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                                    old
+                                    age is necessary for optimum cognitive performance and mental health, will be of
+                                    little
+                                    solace to those whose sleeping issues become more extreme as the sun sets later,
+                                    pollen
+                                    levels rise and night-time temperatures increase.
+
+                                    Researchers tracking seasonal variations in our sleep patterns reported in npj
+                                    Digital
+                                    Medicine journal that many of us wake earlier and sleep less in spring than in
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="right_container">
+                            <div class="text_content">
+                                <span>
+                                    What to do about summer insomnia
+                                </span>
+
+                                <p>
+                                    How are you sleeping? If you are finding it harder to drop off in the first place
+                                    only
+                                    to wake earlier than you should when early morning light bleeds through your bedroom
+                                    blinds, then welcome to the early signs of summer insomnia. New research published
+                                    in
+                                    Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                                    old
+                                    age is necessary for optimum cognitive performance and mental health, will be of
+                                    little
+                                    solace to those whose sleeping issues become more extreme as the sun sets later,
+                                    pollen
+                                    levels rise and night-time temperatures increase.
+
+                                    Researchers tracking seasonal variations in our sleep patterns reported in npj
+                                    Digital
+                                    Medicine journal that many of us wake earlier and sleep less in spring than in
+                                </p>
+                            </div>
+                            <div class="text_content">
+                                <span>
+                                    What to do about summer insomnia
+                                </span>
+
+                                <p>
+                                    How are you sleeping? If you are finding it harder to drop off in the first place
+                                    only
+                                    to wake earlier than you should when early morning light bleeds through your bedroom
+                                    blinds, then welcome to the early signs of summer insomnia. New research published
+                                    in
+                                    Nature Aging, which found that only about seven hours’ sleep a night in middle to
+                                    old
+                                    age is necessary for optimum cognitive performance and mental health, will be of
+                                    little
+                                    solace to those whose sleeping issues become more extreme as the sun sets later,
+                                    pollen
+                                    levels rise and night-time temperatures increase.
+
+                                    Researchers tracking seasonal variations in our sleep patterns reported in npj
+                                    Digital
+                                    Medicine journal that many of us wake earlier and sleep less in spring than in
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="logo">
+                <a href="#">
+                    <span class="red">T</span>he <span class="red">S</span>hin's <span class="red">W</span>ork <span
+                        class="red">S</span>pace
+                </a>
+            </div>
+
+            <div class="bottom">
+                © 2022 The New York Times Company
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
