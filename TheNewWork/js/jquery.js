@@ -70,27 +70,50 @@ $(function(){
   setInterval(clock, 1000);
 
   // header-burger메뉴 토글
-  const button =()=>{
-    const $burger = $('.toggleMenu');
-    const $aside = $('.aside_menu');
+  const $burger = $('.toggleMenu');
+  const $topBurger = $('.top_menu .burger');
+  const $aside = $('.aside_menu');
   
+  const button =()=>{
     $burger.on('click', ()=> { 
-        $burger.toggleClass('toggle');
-        $aside.toggleClass('active');
-        console.log($aside.classList[1]);
-      });
-  };
+      $burger.toggleClass('toggle');
+      $aside.toggleClass('active');
+    });
 
+    $topBurger.on('click', ()=> { 
+      $burger.toggleClass('toggle');
+      $aside.toggleClass('active');
+    });
+  };
+    
   button();
   // header-burger
+
+  // aside
+  const $asideLi = $('.aside_menu .li');
+  const $asideOi = $('.aside_menu .li ol');
+
+  
+  $asideLi.on('click',function(e){
+    let asideIdx = $(this).index();
+    e.preventDefault();
+
+    $asideOi.eq(asideIdx).slideDown().parent().siblings().children('ol').slideUp();
+  });
+
+  // aside end
+
 
   // 흑백 전환
   const $body = $("body");
   const $backGround = $(".bg");
-  const $mainTit = $("#about_me .main_tit");
   const $red = $(".title a .red");
   const $onoff = $(".onoff");
   const $onoffLi = $(".onoff ul li");
+  const $mainTit = $('#main h2');
+  const $asideBg = $('.aside_menu');
+  const $asideTit = $('.aside_menu > ul > li > a');
+  const $aboutmeTit = $("#about_me .main_tit");
   const $workTit = $('#work .main_tit');
   const $footerRed = $('footer .logo .red');
   const $topBg = $('.top_menu');
@@ -107,8 +130,11 @@ $(function(){
   $onoff.on('click', function (){ 
       $onoffLi.toggleClass('active');
       $backGround.toggleClass('active');
-      $mainTit.toggleClass('active'); 
       $red.toggleClass('active');
+      $mainTit.toggleClass('active'); 
+      $asideBg.toggleClass('aside_bg'); 
+      $asideTit.toggleClass('active'); 
+      $aboutmeTit.toggleClass('active'); 
       $workTit.toggleClass('active');
       $footerRed.toggleClass('active');
       $topBg.toggleClass('active');
@@ -137,6 +163,7 @@ $(function(){
     }
   });
 
+
   // 어바웃미 이미지 영역 트리거
 const $aboutme =  $('#about_me');
 const $frameWid = $('.frame_wrap').children('li').width();
@@ -156,11 +183,12 @@ $(window).on('resize load', function (){
         scrollTrigger: {
             trigger: '#about_me', 
             pin: true, 
-            start: $main.$mainHei, 
+            start: $mainHei, 
             end: $aboutme.offsetWidth, 
             scrub: true,  
             ease: "power3",
-            markers: false 
+            markers: false,
+            id:'abot me' 
         }
     });
     
@@ -265,6 +293,42 @@ $(window).on('resize load', function (){
   }
 }); // resize load end
 
+// travel 
+const $wrapper = $('#like .travel .tab_wrap');
+const $allTabs = $('#like .travel .tab_wrap .tab_content');
+const $tabMenu = $wrapper.find('.tab_menu li');
+
+    $allTabs.not(':first-of-type').hide();  
+    $tabMenu.filter(':first-of-type').find(':first').height('100%')
+    
+    $tabMenu.each(function(i) {
+      $(this).attr('data-tab', 'tab'+i);
+      console.log('menu')
+    });
+    
+    $allTabs.each(function(i) {
+      $(this).attr('data-tab', 'tab'+i);
+      console.log('tab')
+    });
+    
+    
+    $tabMenu.on('click', function(e) {
+      e.preventDefault();
+      
+      const dataTab = $(this).data('tab'),
+            $getWrapper = $(this).closest($wrapper);
+      
+      $getWrapper.find($tabMenu).removeClass('active');
+      $(this).addClass('active');
+      
+      $getWrapper.find($allTabs).slideUp();
+      $getWrapper.find($allTabs).filter('[data-tab='+dataTab+']').slideDown();
+    });
+    
+
+
+      
+// travel end
 
 // 필름 슬라이드
 const $fcontainer = $('#like .fliming .slide .slide_container ul');
@@ -364,19 +428,19 @@ $fImg.on('click',function(){
 // 필름 슬라이드 끝
 
 // 음악 
-const $mScreen = $('.music .box1 .frame img');
+const $mScreen = $('.music .box1 .frame .music_or_img');
 const $mThum = $('.music .box2 .frame img');
-const $music = $('#music')
+
+const $music = $('#music');
 const $musicTop = $music.offset().top;
-const $musicHei = $music.offset().height;
-
-console.log($musicHei);
-
 
   for(let idx = 0; idx<$mThum.length;idx++) {
     $mThum.on('click',function(){
       const mThumSrc = $(this).attr('src');
       $mScreen.attr('src',mThumSrc);
+      $('.music_cover').css({
+        opacity:0
+      })
     });
   };
 
@@ -389,25 +453,11 @@ console.log($musicHei);
             trigger: '#music', 
             scrub: true,  
             pin: true, 
-            start: $main.$musicTop,
-            end: $('#music').offset().height, 
+            start: 'top',
             end: $music.offsetWidth, 
             ease: "power3",
-            markers:false ,
-            id : 'right'
-        }
-    });
-
-    let musicLeft = gsap.timeline({ 
-        scrollTrigger: {
-            trigger: '#music',
-            pin: true,
-            // start: $('#music').offset().top,
-            // end: $('#books').offset().top,
-            scrub: true,
-            ease: "power3",
-            markers: false,
-            id : 'left'
+            markers: false ,
+            id : 'music'
         }
     });
     
@@ -417,11 +467,17 @@ console.log($musicHei);
     musicRight.to('.musicLeft', { 
       rotation:0,x:-500 ,y:0
     },1);
+    musicRight.to('.music_cover', { 
+      opacity:1
+    },1);
     musicRight.to('.musicWrap', { 
       rotation:0,x:-500*2 ,y:0
     },2);
     musicRight.to('.musicLeft', { 
       rotation:0,x:-500*2 ,y:0
+    },2);
+    musicRight.to('.music_cover', { 
+      opacity:1
     },2);
 // 음악 끝
 
