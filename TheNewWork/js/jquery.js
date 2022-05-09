@@ -126,6 +126,10 @@ $(function(){
   const $moviesTit = $('#like .movies span');
   const $musicTit = $('#like .music span');
   const $booksTit = $('#like .books span');
+  const $contactTit = $('#contact .title');
+  const $contactBtn = $('#contact button');
+  const $contactSubTit = $('#contact .contact_container span');
+  const $contactThx = $('#contact .thankyou_message');
 
   $onoff.on('click', function (){ 
       $onoffLi.toggleClass('active');
@@ -147,6 +151,10 @@ $(function(){
       $moviesTit.toggleClass('active');
       $musicTit.toggleClass('active');
       $booksTit.toggleClass('active');
+      $contactTit.toggleClass('active');
+      $contactBtn.toggleClass('active');
+      $contactSubTit.toggleClass('active');
+      $contactThx.toggleClass('active');
   });
 
   
@@ -481,6 +489,8 @@ const $musicTop = $music.offset().top;
     },2);
 // 음악 끝
 
+
+// contact email
 
 
 
