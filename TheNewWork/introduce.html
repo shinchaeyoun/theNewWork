@@ -7,92 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Shin's Work Space - main test</title>
     <link href="css/reset.css" rel="stylesheet">
-    <link href="css/index_test.css" rel="stylesheet">
-    <script defer src="js/jquery.js"></script>
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/introduce.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/favicon.ico/favicon.ico" type="image/x-icon">
+    <script defer src="js/common.js"></script>
+    <script defer src="js/introduce.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"
-        integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF"
-        crossorigin="anonymous"></script>
-    <script defer src="js/jquery-3.6.0.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
     <div class="bg"></div>
-
-    <div class="aside_menu">
-        <ul>
-            <li class="li">
-                <a href="./introduce.html">Introduce</a>
-                <ol>
-                    <li><a href="#greeting">Greeting</a></li>
-                    <li><a href="">Hashtag Story</a></li>
-                    <li><a href="">Shin's Guide</a></li>
-                    <li><a href="">Motive</a></li>
-                    <li><a href="">Motto of Life</a></li>
-                </ol>
-            </li>
-
-            <li class="li">
-                <a href="./like.html">Like</a>
-                <ol>
-                    <li><a href="">Travel</a></li>
-                    <li><a href="">Fliming</a></li>
-                    <li><a href="">Pottery</a></li>
-                    <li><a href="">Movies</a></li>
-                    <li><a href="">Music</a></li>
-                    <li><a href="">Books</a></li>
-                </ol>
-            </li>
-
-            <li class="li">
-                <a href="./career.html">Career</a>
-                <ol>
-                    <li><a href="">(주)피디씨컴퍼니</a></li>
-                    <li><a href="">(주)제이엔에스트레이드</a></li>
-                    <li><a href="">(주)커피101스트릿</a></li>
-                </ol>
-            </li>
-
-            <li class="li">
-                <a href="./portfolio.html">Portfolio</a>
-                <ol>
-                    <li><a href="">Eigenhain</a></li>
-                    <li><a href="">London</a></li>
-                    <li><a href="">MMCA</a></li>
-                    <li><a href="">Seed</a></li>
-                    <li><a href="">Sony</a></li>
-                </ol>
-            </li>
-
-            <li class="li">
-                <a href="./contact.html">Contact</a>
-            </li>
-        </ul>
+    <div class="cursor">
+        <div class="cursor__inner cursor__inner--circle"></div>
+        <div class="cursor__inner cursor__inner--dot"></div>
     </div>
-
     <div class="top_menu">
         <div class="wrap">
 
             <div class="logo">
-                <a href="./test_main.html">S</a>
-            </div>
-
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+                <a href="./main.html">S</a>
             </div>
 
             <nav>
                 <ul>
+                    <li><a href="./main.html">Main</a></li>
                     <li><a href="./introduce.html">Introduce</a></li>
                     <li><a href="./like.html">Like</a></li>
                     <li><a href="./career.html">Career</a></li>
                     <li><a href="./portfolio.html">Portfolio</a></li>
                     <li><a href="./contact.html">Contact</a></li>
-                    <!-- <li><a href="#contact">Contact</a></li> -->
                 </ul>
             </nav>
 
@@ -106,54 +49,7 @@
 
     <div class="wrap" id="wrap">
         <header>
-            <div class="onoff">
-                <ul>
-                    <li></li>
-                </ul>
-            </div>
-            <div class="toggleMenu">
-                <nav>
-                    <div class="burger">
-                        <div class="line1"></div>
-                        <div class="line2"></div>
-                        <div class="line3"></div>
-                    </div>
-                </nav>
-            </div>
-            <div class="header_wrap">
-                <div class="date">
-                    <div id="current_date"></div>
-                    <div class="clock_wrap">
-                        <span id="clock">clock</span>
-                        <span id="apm">ampm</span>
-                    </div>
-                </div>
-                <div class='weather'>
-                    <div class='City'></div>
-                    <div class="flex">
-                        <div class='CurrTemp'></div>
-                        <div class='CurrIcon'></div>
-                    </div>
-                </div>
-            </div>
-            <div class="title" onclick="window.scrollTo(0,0);">
-                <a href="./test_main.html">
-                    <span class="red">T</span>he <span class="red">S</span>hin's <span class="red">W</span>ork <span
-                        class="red">S</span>pace
-                </a>
-            </div>
-            <div class="header_cate">
-                <ul>
-                    <li><a href="./introduce.html">Introduce</a> <span>Greeting, Hashtag Story, Shin's Guide, Motive,
-                            Motto of
-                            Life</span></li>
-                    <li><a href="./like.html">Like</a> <span>Travel, Fliming, Pottery, Movies, Music, Books</span></li>
-                    <li><a href="./career.html">Career</a><span>(주)피디씨컴퍼니, (주)제이엔에스트레이드, (주)커피101스트릿</span></li>
-                    <li><a href="./portfolio.html">Portfolio</a><span>Eigenhain, London, MMCA, Seed, Sony</span></li>
-                    <li><a href="./contact.html">Contact</a><span>Eigenhain, London, MMCA, Seed, Sony</span></li>
-                    <!-- <li><a href="#contact">Contact</a></li> -->
-                </ul>
-            </div>
+            <div></div>
         </header>
 
 
@@ -164,7 +60,6 @@
         <main>
             <section id="introduce">
                 <div class="introduce_tab greeting">
-                    <!-- <div class="title">greeting</div> -->
 
                     <div class="main_wrap">
                         <div class="side_wrap">
@@ -178,20 +73,10 @@
                                 <span>연락처</span>010-9230-9218<br />
                                 <span>이메일</span>jun29182877@gmail.com<br />
                             </p>
-                            <span class="sub_tit" style="margin-top:50px;">
-                                Profile
-                            </span>
-                            <p>
-                                <span>이름</span> 신채연 <br />
-                                <span>생년월일</span>1998.02.17<br />
-                                <span>주소</span>서울시 강서구<br />
-                                <span>연락처</span>010-9230-9218<br />
-                                <span>이메일</span>jun29182877@gmail.com<br />
-                            </p>
                         </div>
 
                         <div class="center_wrap">
-                            <div class="img_wrap">
+                            <div class="img_wrap white_cursor">
                                 <img src="./img/like/flime/img_17.jpeg" alt="">
                             </div>
                             <span class="sub_tit">
@@ -225,103 +110,86 @@
                     <div class="title">Hashtag Story</div>
                     <div class="main_wrap">
                         <div class="first_container">
-                            <div class="box1">
-                                <div class="img_wrap">
+                            <div class="box1 content">
+                                <div class="img_wrap white_cursor">
                                     <img src="./img/introduce/IMG_8568.jpeg" alt="">
                                 </div>
 
                                 <div class="text_wrap">
                                     <span class="sub_tit">
-                                        What to do about summer insomnia
+                                        #친화력
                                     </span>
                                     <p>
-                                        It’s known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
-                                        known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
-                                        known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
-                                        known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour.
+                                        친구들과 “내 친구를 소개합니다”라는 이벤트를 진행한 적이 있습니다.
+                                        4-5명의 친구들이 각자 호스트가 되어 자신의 게스트를 불러 모으는 자리였습니다. 새로운 사람들을 만나는 것을 좋아하지만, 성인이 되어 새로운
+                                        사람을 만나는 자리가 줄어들었던 때에 단비같은 모임이었습니다. 어색해하는 친구들 대신하여 자기소개를 하기도 하고, 각자 골라온 음악을 틀어놓고
+                                        다같이 떠들거나 삼삼오오 모여 서로를 알아가는 그 자리가 너무나 재미있었습니다. 그 이후로도 다른 호스트를 모아 새로운 게스트들과 모이기도
+                                        하며, 가끔은 즉석으로 모이기도 하며 즐거운 관계를 이어가고 있습니다.
                                     </p>
                                 </div>
                             </div>
 
-                            <div class="box2">
-                                <div class="img_wrap">
+                            <div class="box2 content">
+                                <div class="img_wrap white_cursor">
                                     <img src="./img/introduce/IMG_7433.jpeg" alt="">
                                 </div>
 
                                 <div class="text_wrap">
                                     <span class="sub_tit">
-                                        What to do about summer insomnia
+                                        #책임감
                                     </span>
                                     <p>
-                                        It’s known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
-                                        known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
-                                        known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
-                                        known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour.
+                                        19살에 중학교 친구의 권유로 성당의 초등부 교리 교사 봉사활동을 시작했었습니다. 시작한지 한달만에 친구는 개인 사정으로 인해서 함께하지 못하게
+                                        되었습니다. 기존 교사들과 적게는 2살, 많게는 23살의 나이차이도 있고, 아직은 어색한 상황이라 혼자 남겨지게 되는 것이 무척 부담스러웠지만,
+                                        친구가 없으니깐 나간다는 것은 책임감없는 행동이라는 생각이 들어서 혼자라도 단체에 남아있게 되었습니다. 처음엔 모든게 서툴었지만, 격려해주며
+                                        살갑게 대해주는 동료 교사들 덕에 몇 달이 지나지 않아서 모든 교사들과 맘 편히 웃으며 지낼 수 있었고, 5년이라는 시간을 함께 할 수
+                                        있었습니다. 웃음과 눈물을 나눈 동료들은 지금은 저에게 친구같은, 가족같은 언니들이 되어주어 끈끈한 인연을 이어가고 있습니다.
                                     </p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="second_container">
-                            <div class="box1">
-                                <div class="img_wrap">
+                            <div class="box1 content">
+                                <div class="img_wrap white_cursor">
                                     <img src="./img/IMG_6291.jpeg" alt="">
                                 </div>
 
                                 <div class="text_wrap">
                                     <span class="sub_tit">
-                                        What to do about summer insomnia
+                                        #혼자보단_함께
                                     </span>
                                     <p>
-                                        It’s known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
-                                        known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
-                                        known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
-                                        known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour.
+                                        어릴 적 부터 혼자였던 적 없이 외로움을 모르고 살아왔습니다. 어느 때는 혼자 있고 싶다는 생각을 할 정도로 제 옆에 있는 사람들이 당연했고
+                                        사랑받는 것이 당연하게 여겨지던 적이 있습니다.
+                                        몇년 전 혼자 타지에서 5개월간 지내게 되며, 한국과의 시차로 가족과 친구들과도 연락이 어려워서 모든 시간을 혼자 보내야했습니다. 그 시간을
+                                        보내며 외로움을 느꼈고, 저의 가치관마저 변했습니다. 이전에는 난 혼자서도 잘 살 수 있어! 어차피 인생은 혼자인거야! 라는 생각이었지만, 나는
+                                        사람없이는 살 수 없는 사람이구나 라는 생각을 했습니다.
+                                        친구나 동료와 함께 하는 것에 소중함을 느꼈고, 그저 주어진 것이 아닌 상대와 내가 서로를 배려하고 소중하게 생각해주어 이어져온 관계임을 알고,
+                                        항상 진심만으로 대할 수 있도록 노력 중 입니다. 전 항상 사람들 속에 있는 것이 행복하고 즐겁습니다.
                                     </p>
                                 </div>
                             </div>
 
-                            <div class="box2">
-                                <div class="img_wrap">
+                            <div class="box2 content">
+                                <div class="img_wrap white_cursor">
                                     <img src="./img/IMG_6291.jpeg" alt="">
                                 </div>
 
                                 <div class="text_wrap">
                                     <span class="sub_tit">
-                                        What to do about summer insomnia
+                                        #추진력
                                     </span>
                                     <p>
-                                        It’s known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
-                                        known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
-                                        known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour. It’s
-                                        known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                        guest-list is vetted by the editor of American Vogue herself, Anna Wintour.
+                                        하고자 한다는 것은 하는 편입니다.
+                                        5년동안 운전면허를 따라는 친구의 잔소리를 들었습니다. 그동안은 운전은 무섭고 필요하지 않을거란 생각에 그저 알겠어!! 다음달에 딸게! 라는
+                                        식으로 웃어 넘겼지만, 작년에 문득 면허를 따야겠다는 생각이 들어서, 그 길로 면허 학원을 등록했고, 모든 시험을 만점으로 통과하게 되었습니다.
+                                        면허 취득 다음 날 곧바로 중고차를 구매했습니다. 저의 첫 차는 현재 9개월 동안 1만 키로를 달리며, 친구들과 바다로, 산으로 더 많은 것을
+                                        자유롭게 보러 다닐 수 있었습니다.
                                     </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="introduce_tab shinsGuide" style="height:50vh">
-                    <div class="title">Shin's Guide</div>
-                    <div class="main_wrap">
-
                     </div>
                 </div>
 
@@ -335,9 +203,12 @@
 
                             <span>"Just do it"</span>
                             <p>
-                                It’s known as the fashion Oscars, tickets cost $35,000 and the strictly VIP
-                                guest-list is
-                                vetted by the editor of American Vogue herself, Anna Wintour.
+                                한국말로 직역하자면 일단해!
+                                학창시절 소심했던 성격으로 행동을 하기 전 많은 생각이 앞섰습니다. 생각을 하느라 기회를 놓치기도 하고, 좋은 생각, 나쁜 생각 많은 생각을 하다보니 혼자서
+                                스트레스도 많이 받고 더욱 움츠려들기도 했었습니다. 생각이 많은 것에 스트레스를 받고, 할 수 있었음에도 할 수 있을까? 해야할까?를 생각하다보면 멀어지는
+                                기회들을 보며 어느 순간 ‘일단 해보자!’라는 생각이 들었습니다. 그 생각을 가지니 고민하는 시간은 줄어들고 행동하며 다시 기회를 얻을 수 있는 시간 또한
+                                주어졌습니다. 일단 시작한다면 실패하더라도 후회또한 없다는 것도 알게되고, 무서워서 머뭇거리던 것들은 사실 재밌고 신나는 일임을 알게되었습니다. 자신감이
+                                생기게되며, 성격 또한 많이 밝아졌음을 느낍니다. 저는 실패하더라도 다시 도전할 수 있습니다. 실패해도? 일단 해!
                             </p>
 
                         </div>
@@ -347,14 +218,15 @@
 
                             <span>"Love is All"</span>
                             <p>
-                                It’s known as the fashion Oscars, tickets cost $35,000 and the strictly VIP guest-list
-                                is vetted by the editor of American Vogue herself, Anna Wintour. It’s known as the
-                                fashion Oscars, tickets cost $35,000 and the strictly VIP guest-list is vetted by the
-                                editor of American Vogue herself, Anna Wintour. It’s known as the fashion Oscars,
-                                tickets cost $35,000 and the strictly VIP guest-list is vetted by the editor of American
-                                Vogue herself, Anna Wintour. It’s known as the fashion Oscars, tickets cost $35,000 and
-                                the strictly VIP guest-list is vetted by the editor of American Vogue herself, Anna
-                                Wintour.
+                                사랑의 힘은 무엇보다 강하다고 생각합니다.
+                                중학교 1학년 당시 왕따를 당한 적이 있습니다. 친했던 친구와 사이가 틀어진 것이라, 내가 좋아하는 친구가 나에게 등을 돌렸다는 사실이 힘들어서 교실을
+                                들어가기도 싫고, 쉬는 시간이면 다른 반 친구를 만나러 가며 피해다녔지만, 어느날 문득 “나는 그 친구를 미워하지 않아, 나는 그 친구를 사랑해’라는 생각이
+                                들었습니다.
+                                그것이 저에게 마법의 주문이 되어주었는지 그 생각이 든 이후로 두려울 것이 없어지고, 마음이 편해졌습니다. 제게 여유가 생겨서인지 반에서 다른 친구들도 사귈
+                                수 있었고, 그 친구와도 다시 좋은 친구가 되었습니다.
+                                이 경험으로 인해서, 한 사람이 미워질 때면 오히려 사랑하려 노력하고 그 사람을 사랑한다 마음으로 되뇌입니다. 때로는 이 마법의 주문이 통하지 않아도 저에게
+                                힘이 되어줍니다.
+                                모든 싸움은 사랑이 부족해서 생기는 일이라 생각합니다. 저에겐 사랑이 가장 중요합니다.
                             </p>
                         </div>
 
@@ -367,15 +239,7 @@
         </main>
 
         <footer>
-            <div class="logo">
-                <a href="#">
-                    <span class="red">T</span>he <span class="red">S</span>hin's <span class="red">W</span>ork <span
-                        class="red">S</span>pace
-                </a>
-            </div>
-
-            <div class="bottom">
-                © 2022 The New York Times Company
+            <div class="footer_wrap">
             </div>
         </footer>
     </div>

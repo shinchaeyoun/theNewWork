@@ -7,92 +7,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Shin's Work Space - main test</title>
   <link href="css/reset.css" rel="stylesheet">
-  <link href="css/index_test.css" rel="stylesheet">
-  <script defer src="js/jquery.js"></script>
+  <link href="css/contact.css" rel="stylesheet">
+  <link href="css/common.css" rel="stylesheet">
+  <link rel="shortcut icon" href="./img/favicon.ico/favicon.ico" type="image/x-icon">
+  <script defer src="js/common.js"></script>
+  <script defer src="js/contact.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"
-    integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF"
-    crossorigin="anonymous"></script>
-  <script defer src="js/jquery-3.6.0.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
   <div class="bg"></div>
-
-  <div class="aside_menu">
-    <ul>
-      <li class="li">
-        <a href="./introduce.html">Introduce</a>
-        <ol>
-          <li><a href="#greeting">Greeting</a></li>
-          <li><a href="">Hashtag Story</a></li>
-          <li><a href="">Shin's Guide</a></li>
-          <li><a href="">Motive</a></li>
-          <li><a href="">Motto of Life</a></li>
-        </ol>
-      </li>
-
-      <li class="li">
-        <a href="./like.html">Like</a>
-        <ol>
-          <li><a href="">Travel</a></li>
-          <li><a href="">Fliming</a></li>
-          <li><a href="">Pottery</a></li>
-          <li><a href="">Movies</a></li>
-          <li><a href="">Music</a></li>
-          <li><a href="">Books</a></li>
-        </ol>
-      </li>
-
-      <li class="li">
-        <a href="./career.html">Career</a>
-        <ol>
-          <li><a href="">(주)피디씨컴퍼니</a></li>
-          <li><a href="">(주)제이엔에스트레이드</a></li>
-          <li><a href="">(주)커피101스트릿</a></li>
-        </ol>
-      </li>
-
-      <li class="li">
-        <a href="./portfolio.html">Portfolio</a>
-        <ol>
-          <li><a href="">Eigenhain</a></li>
-          <li><a href="">London</a></li>
-          <li><a href="">MMCA</a></li>
-          <li><a href="">Seed</a></li>
-          <li><a href="">Sony</a></li>
-        </ol>
-      </li>
-
-      <li class="li">
-        <a href="./contact.html">Contact</a>
-      </li>
-    </ul>
+  <div class="cursor">
+    <div class="cursor__inner cursor__inner--circle"></div>
+    <div class="cursor__inner cursor__inner--dot"></div>
   </div>
-
   <div class="top_menu">
     <div class="wrap">
 
       <div class="logo">
-        <a href="./test_main.html">S</a>
-      </div>
-
-      <div class="burger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
+        <a href="./main.html">S</a>
       </div>
 
       <nav>
         <ul>
+          <li><a href="./main.html">Main</a></li>
           <li><a href="./introduce.html">Introduce</a></li>
           <li><a href="./like.html">Like</a></li>
           <li><a href="./career.html">Career</a></li>
           <li><a href="./portfolio.html">Portfolio</a></li>
           <li><a href="./contact.html">Contact</a></li>
-          <!-- <li><a href="#contact">Contact</a></li> -->
         </ul>
       </nav>
 
@@ -106,54 +49,7 @@
 
   <div class="wrap" id="wrap">
     <header>
-      <div class="onoff">
-        <ul>
-          <li></li>
-        </ul>
-      </div>
-      <div class="toggleMenu">
-        <nav>
-          <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-          </div>
-        </nav>
-      </div>
-      <div class="header_wrap">
-        <div class="date">
-          <div id="current_date"></div>
-          <div class="clock_wrap">
-            <span id="clock">clock</span>
-            <span id="apm">ampm</span>
-          </div>
-        </div>
-        <div class='weather'>
-          <div class='City'></div>
-          <div class="flex">
-            <div class='CurrTemp'></div>
-            <div class='CurrIcon'></div>
-          </div>
-        </div>
-      </div>
-      <div class="title" onclick="window.scrollTo(0,0);">
-        <a href="./test_main.html">
-          <span class="red">T</span>he <span class="red">S</span>hin's <span class="red">W</span>ork <span
-            class="red">S</span>pace
-        </a>
-      </div>
-      <div class="header_cate">
-        <ul>
-          <li><a href="./introduce.html">Introduce</a> <span>Greeting, Hashtag Story, Shin's Guide, Motive,
-              Motto of
-              Life</span></li>
-          <li><a href="./like.html">Like</a> <span>Travel, Fliming, Pottery, Movies, Music, Books</span></li>
-          <li><a href="./career.html">Career</a><span>(주)피디씨컴퍼니, (주)제이엔에스트레이드, (주)커피101스트릿</span></li>
-          <li><a href="./portfolio.html">Portfolio</a><span>Eigenhain, London, MMCA, Seed, Sony</span></li>
-          <li><a href="./contact.html">Contact</a><span>Eigenhain, London, MMCA, Seed, Sony</span></li>
-          <!-- <li><a href="#contact">Contact</a></li> -->
-        </ul>
-      </div>
+      <div></div>
     </header>
 
 
@@ -163,7 +59,6 @@
 
     <main>
       <div id="contact">
-        v
         <div class="inner_wrap">
           <div class="submit_container">
 
@@ -176,15 +71,17 @@
               <div class="form-elements">
                 <fieldset class="pure-group">
                   <label class="sr-only" for="name">Name</label>
-                  <input type="text" id="name" name="name" placeholder="Enter your name">
+                  <input type="text" id="name" name="name" autocomplete="off" placeholder="Enter your name">
                 </fieldset>
                 <fieldset class="pure-group">
                   <label class="sr-only" for="email">Email</label>
-                  <input type="email" id="email" name="email" placeholder="Enter a valid emali address">
+                  <input type="email" id="email" name="email" autocomplete="off"
+                    placeholder="Enter a valid emali address">
                 </fieldset>
                 <fieldset class="pure-group">
                   <label class="sr-only" for="message">Message</label>
-                  <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message"></textarea>
+                  <textarea name="message" id="message" cols="30" rows="10" autocomplete="off"
+                    placeholder="Enter your message"></textarea>
                 </fieldset>
                 <button>Submit</button>
               </div>
@@ -211,7 +108,7 @@
               </li>
               <li>
                 <span>Kakao-talk</span>
-                ID : 8217
+                <a>ID : 8217</a>
               </li>
             </ul>
           </div>
@@ -220,78 +117,7 @@
     </main>
 
     <footer>
-      <!-- <div class="line"></div> -->
-
       <div class="footer_wrap">
-        <div class="logo">
-          <a href="#">
-            <span class="red">T</span>he <span class="red">S</span>hin's <span class="red">W</span>ork <span
-              class="red">S</span>pace
-          </a>
-        </div>
-
-        <nav>
-          <ul>
-            <li>
-              <a href="./test_main.html" class="tit">Main</a>
-              <ol>
-                <li><a href="./introduce.html">introduce</a></li>
-                <li><a href="./like.html">Like</a></li>
-                <li><a href="./career.html">career</a></li>
-                <li><a href="./portfolio.html">portfolio</a></li>
-                <li><a href="./contact.html">contact</a></li>
-              </ol>
-            </li>
-
-            <li>
-              <a href="./introduce.html" class="tit">Introduce</a>
-              <ol>
-                <li>travel</li>
-                <li>flimeing</li>
-                <li>movies</li>
-                <li>music</li>
-                <li>books</li>
-              </ol>
-            </li>
-
-            <li>
-              <a href="./career.html" class="tit">Career</a>
-              <ol>
-                <li>(주)피디씨컴퍼니</li>
-                <li>(주)제이엔에스트레이드</li>
-                <li>(주)커피101스트릿</li>
-              </ol>
-            </li>
-
-            <li>
-              <a href="./portfolio.html" class="tit">Portfolio</a>
-              <ol>
-                <li>Eigenhain</li>
-                <li>London</li>
-                <li>MMCA</li>
-                <li>Seed</li>
-                <li>Sony</li>
-              </ol>
-            </li>
-
-            <li>
-              <a href="./contact.html" class="tit">Contact</a>
-              <ol>
-                <li>010-9230-9218</li>
-                <li>jun29182877@gmail.com</li>
-                <li>@chaisini</li>
-                <li>ID : 8217</li>
-              </ol>
-            </li>
-          </ul>
-        </nav>
-
-        <div class="bottom">
-          © 2022 The Shin's Work Space
-
-
-          <span>S</span>
-        </div>
       </div>
     </footer>
   </div>
