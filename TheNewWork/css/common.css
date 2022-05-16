@@ -1,0 +1,747 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Outfit:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap");
+@font-face {
+  font-family: Chomsky;
+  font-style: normal;
+  font-weight: 700;
+  src: url(../font/Chomsky.otf) format("truetype");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+a:visited, a:link, a:hover, a:active {
+  color: #222;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  color: #222;
+  font-size: 13px;
+  line-height: 1.4;
+  font-family: 'Noto Sans KR';
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #fff;
+  position: relative;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+.cursor__inner {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: 999999;
+}
+
+.cursor__inner--dot {
+  width: 6px;
+  height: 6px;
+  background: #000;
+}
+
+.cursor__inner--circle {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+}
+
+@media screen and (max-width: 480px) {
+  .wrap {
+    max-width: 768px !important;
+  }
+  header .onoff ul {
+    margin-top: 20px !important;
+    left: initial !important;
+    right: 20px !important;
+  }
+  header nav {
+    margin-top: 20px !important;
+    left: 20px !important;
+    display: block !important;
+  }
+  header .header_wrap {
+    padding: 0px 10px !important;
+    position: relative;
+  }
+  header .header_wrap .date {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 0px;
+    padding: 0 20px;
+    height: 25px;
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+  }
+  header .header_wrap .date #current_date, header .header_wrap .date .weather {
+    text-align: center;
+  }
+  header .header_wrap .date .clock_wrap {
+    margin-left: 10px;
+  }
+  header .title {
+    padding: 10px 0 0 0 !important;
+  }
+  header .title a {
+    font-size: 23px !important;
+  }
+  header .header_cate {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  #about_me {
+    display: none;
+  }
+  #like {
+    display: none;
+  }
+  #career {
+    display: none;
+  }
+  #contact {
+    display: none;
+  }
+  #portfolio {
+    display: none;
+  }
+  #footer {
+    display: none;
+  }
+  .fliming {
+    display: none;
+  }
+  .movies {
+    display: none;
+  }
+  .music {
+    display: none;
+  }
+  .books {
+    display: none;
+  }
+  .top_menu .wrap {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0 20px;
+  }
+  header .onoff ul {
+    left: initial !important;
+    right: 20px !important;
+  }
+  header nav {
+    left: 20px !important;
+    display: block !important;
+  }
+  header .header_wrap {
+    padding: 20px 10px !important;
+    position: relative;
+  }
+  header .header_wrap .date {
+    position: absolute;
+    top: 95px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    margin-top: 3px;
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+    padding: 4px 20px 0;
+  }
+  header .header_wrap .date #current_date, header .header_wrap .date .weather {
+    text-align: center;
+  }
+  header .header_wrap .date .clock_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header .header_wrap .date .clock_wrap #clock {
+    margin-right: 2px;
+  }
+  header .title {
+    padding: 20px 0 0 0 !important;
+  }
+  header .title a {
+    font-size: 45px !important;
+  }
+  header .header_cate {
+    display: none;
+  }
+  .wrap {
+    max-width: 768px !important;
+  }
+  main {
+    padding-top: 50px;
+  }
+  #main {
+    height: calc(100vh - 140px) !important;
+  }
+  #main .main_visual {
+    height: 400px !important;
+  }
+  #introduce .main {
+    height: 100px !important;
+  }
+  #introduce .greeting .main_wrap .side_wrap {
+    -webkit-box-ordinal-group: 101;
+        -ms-flex-order: 100;
+            order: 100;
+  }
+  #introduce .greeting .main_wrap .center_wrap {
+    -webkit-box-ordinal-group: 201;
+        -ms-flex-order: 200;
+            order: 200;
+  }
+  #about_me > .about_me_wrap > .text {
+    width: 300px !important;
+    padding: 0 10px;
+  }
+  #about_me > .about_me_wrap > .frame {
+    width: 478px !important;
+  }
+  #work > .work_wrap > .content_wrap {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: column-reverse !important;
+            flex-direction: column-reverse !important;
+  }
+  #work > .work_wrap > .content_wrap > .text_box {
+    width: 100% !important;
+  }
+  #work > .work_wrap > .content_wrap > .text_box > .tit_box > .main_tit {
+    margin-top: 20px;
+  }
+  #work > .work_wrap > .content_wrap > .text_box > .tit_box > .sub_tit {
+    margin-bottom: 30px;
+  }
+  #work > .work_wrap > .content_wrap > .img_box {
+    width: 100% !important;
+  }
+}
+
+.bg.active {
+  position: fixed;
+  z-index: -1;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.top_menu {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 30px;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 4px #999;
+          box-shadow: 1px 1px 4px #999;
+}
+
+.top_menu.active {
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+}
+
+.top_menu .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  width: 1000px;
+  height: 30px;
+}
+
+.top_menu .logo {
+  width: 50px;
+}
+
+.top_menu .logo a {
+  font-size: 24px;
+  font-family: 'Chomsky';
+}
+
+.top_menu .logo a.active {
+  color: #d0021b;
+}
+
+.top_menu .burger {
+  width: 50px;
+}
+
+.top_menu .burger div {
+  background-color: #000;
+  width: 15px;
+  height: 1.5px;
+  margin: 3px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.top_menu nav {
+  width: 100%;
+  padding: 0 70px;
+}
+
+.top_menu nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.top_menu nav ul li a {
+  font-size: 12px;
+  font-family: "Outfit", sans-serif;
+}
+
+.top_menu nav ul li:hover a {
+  color: #d0021b;
+}
+
+.top_menu .onoff {
+  position: relative;
+  z-index: 9;
+  width: 50px;
+  height: 30px;
+  padding-left: 30px;
+}
+
+.top_menu .onoff ul {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border: 1px solid #000;
+  border-radius: 50px;
+  width: 26px;
+  height: 12px;
+  cursor: pointer;
+}
+
+.top_menu .onoff ul li {
+  background-color: #000;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.top_menu .onoff ul li.active {
+  -webkit-transform: translateX(14px);
+          transform: translateX(14px);
+  background-color: #d0021b;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  position: relative;
+}
+
+header .header_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 50px 0 20px;
+  height: 55px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+header .header_wrap #current_date, header .header_wrap .weather, header .header_wrap #clock, header .header_wrap #apm {
+  font-family: 'Assistant', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+header .header_wrap .onoff {
+  position: relative;
+  z-index: 1;
+}
+
+header .header_wrap .onoff ul {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: 1px solid #000;
+  border-radius: 50px;
+  width: 26px;
+  height: 12px;
+  cursor: pointer;
+}
+
+header .header_wrap .onoff ul li {
+  background-color: #000;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+header .header_wrap .onoff ul li.active {
+  -webkit-transform: translateX(14px);
+          transform: translateX(14px);
+  background-color: #d0021b;
+}
+
+header .title {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 50px 0 0 0;
+  width: 100%;
+  text-align: center;
+}
+
+header .title a {
+  font-family: Chomsky;
+  font-size: 60px;
+  cursor: pointer;
+}
+
+header .title a .red.active {
+  color: #d0021b;
+}
+
+header .header_cate {
+  border-top: 1px solid #d3d3d3;
+  border-bottom: 1px solid #000;
+  position: relative;
+  padding: 15px 0;
+}
+
+header .header_cate::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  position: absolute;
+  bottom: -5px;
+}
+
+header .header_cate ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+header .header_cate ul li a {
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+header .header_cate ul li a:hover {
+  color: #d0021b;
+}
+
+header .header_cate ul li span {
+  display: none;
+  position: absolute;
+  color: #777;
+}
+
+main #main {
+  margin-bottom: 80px;
+}
+
+main #main > h2 {
+  height: 100px;
+  line-height: 100px;
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 800;
+  text-align: center;
+}
+
+main #main > h2.active {
+  color: #d0021b;
+}
+
+main #main > .main_visual {
+  width: 1000px;
+  width: 100%;
+  height: 500px;
+  border: 1px solid #000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main #main > .main_visual > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .tab span {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 20px;
+  font-weight: 800;
+  font-family: "Nanum Myeongjo", serif;
+}
+
+main .first_line {
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+main .first_line .text_wrap {
+  width: 400px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main .first_line .img_wrap {
+  width: 550px;
+}
+
+main .first_line .img_wrap img {
+  width: 100%;
+  height: 100%;
+}
+
+main .second_line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #000;
+}
+
+main .second_line .img_wrap {
+  width: 400px;
+}
+
+main .second_line .img_wrap img {
+  width: 100%;
+  height: 100%;
+}
+
+main .second_line .text_wrap {
+  width: 550px;
+}
+
+main .third_line {
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .third_line .content {
+  padding: 0 20px;
+  width: calc(100% / 3);
+  height: 150px;
+  position: relative;
+}
+
+main .third_line .content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #d3d3d3;
+}
+
+main .third_line .content:first-child {
+  padding-left: 0;
+}
+
+main .third_line .content:last-child {
+  padding-right: 0;
+}
+
+main .third_line .content:last-child::after {
+  display: none;
+}
+
+main .third_line .content span {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: "Nanum Myeongjo", serif;
+  text-align: center;
+}
+
+footer {
+  margin-top: 50px;
+  border-top: 1px solid #5a5a5a;
+}
+
+footer::before {
+  content: '';
+  position: relative;
+  top: -5px;
+  display: block;
+  border-top: 1px solid #5a5a5a;
+}
+
+footer .footer_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 300px;
+}
+
+footer .footer_wrap > .logo {
+  margin-top: 5px;
+}
+
+footer .footer_wrap > .logo a {
+  font-family: 'Chomsky';
+  font-size: 28px;
+}
+
+footer .footer_wrap > .logo a .red.active {
+  color: #d0021b;
+}
+
+footer .footer_wrap nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .footer_wrap nav ul li .tit {
+  font-weight: 800;
+  margin-bottom: 10px;
+  display: block;
+}
+
+footer .footer_wrap nav ul li ol li {
+  margin-bottom: 5px;
+}
+
+footer .footer_wrap > .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 30px;
+  line-height: 30px;
+  color: #5a5a5a;
+  border-top: 1px solid #5a5a5a;
+  padding: 20px 0;
+  color: #000;
+}
+
+footer .footer_wrap > .bottom span {
+  font-family: 'Chomsky';
+  font-size: 28px;
+}
+
+footer .footer_wrap > .bottom span.active {
+  color: #d0021b;
+}
+/*# sourceMappingURL=common.css.map */

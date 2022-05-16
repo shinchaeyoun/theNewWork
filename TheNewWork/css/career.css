@@ -1,0 +1,87 @@
+#career {
+  margin-top: 30px;
+}
+
+#career .career_wrap .container {
+  padding: 30px 0;
+  border-top: 1px solid #000;
+}
+
+#career .career_wrap .container:nth-of-type(2) .left_container {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+#career .career_wrap .container:nth-of-type(2) .left_container .text_content {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+#career .career_wrap .left_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#career .career_wrap .left_container .img_content {
+  width: 500px;
+  height: 300px;
+}
+
+#career .career_wrap .left_container .text_content {
+  padding-left: 20px;
+  width: 500px;
+}
+
+#career .career_wrap .left_container .text_content .tit {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Nanum Myeongjo", serif;
+}
+
+#career .career_wrap .left_container .text_content .tit.active {
+  color: #d0021b;
+}
+
+#career .career_wrap .left_container .text_content .tit span {
+  font-size: 14px;
+  color: #5a5a5a;
+}
+
+#career .career_wrap .left_container .text_content p {
+  font-size: 14px;
+}
+
+#career .career_wrap .right_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+}
+
+#career .career_wrap .right_container .text_content {
+  width: 490px;
+}
+
+#career .career_wrap .right_container .text_content span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Nanum Myeongjo", serif;
+}
+
+#career .career_wrap .right_container .text_content span.active {
+  color: #d0021b;
+}
+
+#career .career_wrap .right_container .text_content p {
+  font-size: 14px;
+}
+/*# sourceMappingURL=career.css.map */
