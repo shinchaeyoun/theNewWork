@@ -231,7 +231,7 @@ const $tabMenu = $('#like .travel .tab_wrap .tab_menu li');
   const $seekBar = $player.find('#seek-bar');
   const $dot = $player.find('.dot');
   const $trackTime = $player.find('.track_time'); 
-  const $currentTime = $player.find('.current_time'); 
+  const $tProgress = $player.find('.current_time'); 
   const $trackLength = $player.find('.track_length');
   const $prevBtn = $player.find('.control_bar .prev');
   const $playBtn = $player.find('.control_bar .play');
@@ -446,9 +446,9 @@ const $tabMenu = $('#like .travel .tab_wrap .tab_menu li');
       if(durSec < 10){durSec = '0'+durSec;};
 
       if( isNaN(curMin) || isNaN(curSec) ){
-        $currentTime.text('00:00');
+        $tProgress.text('00:00');
       } else {
-        $currentTime.text(curMin+':'+curSec);
+        $tProgress.text(curMin+':'+curSec);
       };
 
       if( isNaN(durMin) || isNaN(durSec) ){
@@ -463,7 +463,7 @@ const $tabMenu = $('#like .travel .tab_wrap .tab_menu li');
       if (playProgress == 100) {
         $seekBar.width(0);
         $dot.css({left: playProgress+'%'});
-        $currentTime.text('00:00');
+        $tProgress.text('00:00');
       };
   }
   
