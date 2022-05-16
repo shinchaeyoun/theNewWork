@@ -304,8 +304,7 @@ const $tabMenu = $('#like .travel .tab_wrap .tab_menu li');
     audio.play();
 
     // 재생버튼, 플레이 바 활성화
-    $playBtn.addClass('active');
-    $dot.addClass('active');
+    btnActive();
 
     // 왼쪽 정보 변경
     $albumCover.attr('src','./img/like/music/'+listIdx+'.jpeg');
@@ -339,21 +338,10 @@ const $tabMenu = $('#like .travel .tab_wrap .tab_menu li');
 
   // 재생
   function playBtn(){
+    console.log('play BTN',playIdx);
 
     btnActive();
-
-    // play ();
-    // if($playBtn.hasClass('active') === true){
-    if(audio.paused){
-      audio.volume = 0.1;
-      audio.loop = false;
-      audio.src = '../audio/'+playIdx+'.mp3';
-      audio.play();
-      
-    } else {
-      audio.pause();
-    }
-
+    play ();
     listActive();
     
     // 자동 넘김
@@ -385,16 +373,8 @@ const $tabMenu = $('#like .travel .tab_wrap .tab_menu li');
     }
 
     console.log('music',playIdx);
-
     // 재생
-    audio.volume = 0.1;
-    audio.loop = false;
-    audio.src = '../audio/'+playIdx+'.mp3';
-    audio.play();
-
-    $playBtn.addClass('active');
-    $dot.addClass('active');
-
+    play ();
     // 왼쪽 정보 변경
     lifeInfo();
     // 리스트 활성화
@@ -412,14 +392,7 @@ const $tabMenu = $('#like .travel .tab_wrap .tab_menu li');
 
     console.log('music',playIdx);
     // 재생
-    audio.volume = 0.1;
-    audio.loop = false;
-    audio.src = '../audio/'+playIdx+'.mp3';
-    audio.play();
-
-    $playBtn.addClass('active');
-    $dot.addClass('active');
-
+    play ();
     // 왼쪽 정보 변경
     lifeInfo();
     // 리스트 활성화
@@ -431,6 +404,7 @@ const $tabMenu = $('#like .travel .tab_wrap .tab_menu li');
 
   // 재생시간
   function time (){
+    audio.onloadeddata = ()=>{
       curMin = Math.floor(audio.currentTime / 60);
       curSec = Math.floor(audio.currentTime - curMin *60);
 
@@ -439,6 +413,8 @@ const $tabMenu = $('#like .travel .tab_wrap .tab_menu li');
 
       playProgress = (audio.currentTime / audio.duration) * 100;
 
+      console.log('playProgress',playProgress);
+      
       if(curMin < 10){curMin = '0'+curMin;};
       if(curSec < 10){curSec = '0'+curSec;};
 
@@ -458,15 +434,19 @@ const $tabMenu = $('#like .travel .tab_wrap .tab_menu li');
       }
 
       $seekBar.width(playProgress+'%');
-      $dot.css({left: playProgress+'%'});
+
 
       if (playProgress == 100) {
         $seekBar.width(0);
-        $dot.css({left: playProgress+'%'});
         $currentTime.text('00:00');
-      };
+      }
+      // audio.onloadeddata = ()=>{
+      //   // $trackLength.text(audio.duration);
+      //   $currentTime.text(curMin + ':' + curSec);
+      // }
+    };
   }
-  
+  time();
 
   // 재생 바 마우스 오버
   $sArea.mouseover(function(e){
@@ -512,22 +492,149 @@ const $tabMenu = $('#like .travel .tab_wrap .tab_menu li');
 
   // 재생 바 클릭
   $sArea.on('click',function(){
-    audio.currentTime = seekLoc
+    console.log('bar click');
+    audio.currentTime = seekLoc;
     $seekBar.width(seekT);
     $dot.css({
       left:seekT
-    });
+    })
     hideHover();
   });
 
+
+
+
+
+  
+
+  function updateCurrTime(){
+    nTime = new Date();
+    nTime = nTime.getTime();
+
+    if( !tFlag ){
+      tFlag = true;
+      trackTime.addClass('active');
+    }
+
+    curMinutes = Math.floor(audio.currentTime / 60);
+    curSeconds = Math.floor(audio.currentTime - curMinutes * 60);
+    
+    durMinutes = Math.floor(audio.duration / 60);
+    durSeconds = Math.floor(audio.duration - durMinutes * 60);
+    
+    playProgress = (audio.currentTime / audio.duration) * 100;
+    
+    if(curMinutes < 10)
+      curMinutes = '0'+curMinutes;
+    if(curSeconds < 10)
+      curSeconds = '0'+curSeconds;
+    
+    if(durMinutes < 10)
+      durMinutes = '0'+durMinutes;
+    if(durSeconds < 10)
+      durSeconds = '0'+durSeconds;
+      
+    if( isNaN(curMinutes) || isNaN(curSeconds) )
+        tProgress.text('00:00');
+    else
+    tProgress.text(curMinutes+':'+curSeconds);
+    
+    if( isNaN(durMinutes) || isNaN(durSeconds) )
+        tTime.text('00:00');
+    else
+    tTime.text(durMinutes+':'+durSeconds);
+    
+    if( isNaN(curMinutes) || isNaN(curSeconds) || isNaN(durMinutes) || isNaN(durSeconds) )
+        trackTime.removeClass('active');
+    else
+        trackTime.addClass('active');
+
+    seekBar.width(playProgress+'%');
+  
+    if( playProgress == 100 ){
+      i.attr('class','fa fa-play');
+      seekBar.width(0);
+      tProgress.text('00:00');
+        
+      clearInterval(buffInterval);
+    }
+  };
+
+
+
+  
+  function checkBuffering(){
+      clearInterval(buffInterval);
+      buffInterval = setInterval(function(){ 
+          bTime = new Date();
+          bTime = bTime.getTime();
+      },100);
+  }
+
+  function selectTrack(flag){
+      if( flag == 0 || flag == 1 )
+          ++currIndex;
+      else
+          --currIndex;
+
+      if( (currIndex > -1) && (currIndex < albumArtworks.length) ){
+          if( flag == 0 )
+              i.attr('class','fa fa-play');
+          else
+          {
+              i.attr('class','fa fa-pause');
+          }
+
+          seekBar.width(0);
+          trackTime.removeClass('active');
+          tProgress.text('00:00');
+          tTime.text('00:00');
+
+          currAlbum = albums[currIndex];
+          currTrackName = trackNames[currIndex];
+          currArtwork = albumArtworks[currIndex];
+
+          audio.src = trackUrl[currIndex];
+          
+          nTime = 0;
+          bTime = new Date();
+          bTime = bTime.getTime();
+
+          
+          if(flag != 0){
+              audio.play();
+              playerTrack.addClass('active');
+          
+              clearInterval(buffInterval);
+              checkBuffering();
+          }
+
+          albumName.text(currAlbum);
+          trackName.text(currTrackName);
+          $('#'+currArtwork).addClass('active');
+          
+          bgArtworkUrl = $('#'+currArtwork).attr('src');
+
+          bgArtwork.css({'background-image':'url('+bgArtworkUrl+')'});
+      }
+      else{
+          if( flag == 0 || flag == 1 )
+              --currIndex;
+          else
+              ++currIndex;
+      }
+  };
+
+
+
+
+  
   
   function initPlayer(){
-    time();
     $list.on('click',list);
     $playBtn.on('click',playBtn);
     $nextBtn.on('click',nextBtn);
     $prevBtn.on('click',prevBtn);
-    $(audio).on('timeupdate',time);
   };
 
   initPlayer();
