@@ -1,521 +1,87 @@
-@font-face { 
-font-family: Chomsky; 
-font-style: normal; 
-font-weight: 700; 
-src: url(../font/Chomsky.otf) format("truetype")
-}
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&family=Outfit:wght@100;200;300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
-
-*{padding:0;margin:0;list-style:none;text-decoration:none;}
-
-a:visited, a:link, a:hover, a:active {
-    color:#222;
-}
-
 // 컬러변수
 $point : #d0021b;
 $grey : #d3d3d3;
 $sub_grey: #5a5a5a;
-
-
 
 // 폰트변수
 $assistant : 'Assistant', sans-serif;
 $outfit : 'Outfit', sans-serif;
 $nanum : 'Nanum Myeongjo', serif;
 
-html{scroll-behavior: smooth;}
-
-body{
-    position:relative;
-    color: #222;
-	font-size: 13px;
-	line-height: 1.4;
-	font-family: 'Noto Sans KR';
-}
-.cursor__inner {	
-	z-index: 999999;
-	pointer-events: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	border-radius: 50%;
-}
-
-.cursor__inner--dot {
-	width: 6px;
-	height: 6px;
-	background: #000;
-}
-
-.cursor__inner--circle {
-	width: 20px;
-	height: 20px;
-	border: 1px solid #000;
-}
-// html,body {
-//     overflow: scroll;
-//     /* IE scroll 숨김 */
-//     -ms-overflow-style: none;
-  
-//     html,body::-webkit-scrollbar { 
-//       width: 0 !important;
-//       display: none; 
-//     }
-//   }
-
 @media screen and (max-width:480px) {
-    .wrap {
-        max-width: 768px !important;
-    }
+    
 
     #main {
-        .main_visual {
-            // width: 768px;
-            height: 400px !important;
-        }
-    }
-    header {
-        .onoff {
-            ul {
-                margin-top: 20px !important;
-                left: initial !important;
-                right: 20px !important;          
-            }
-        }
-
-        nav {
-            margin-top: 20px !important;
-            left: 20px !important;
-            display: block !important;
-        }
-
-        .header_wrap {
-            padding: 0px 10px !important;
-            
-            position: relative;
-            .date {
-                position: absolute;
-                top: 55px;
-                left: 0;
-                right: 0;
-
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                
-                margin-top: 0px;
-                padding: 0 20px;
-
-                height: 25px;
-                border-top: 1px solid #d3d3d3;
-                border-bottom: 1px solid #d3d3d3;
-                #current_date, .weather{
-                    text-align: center;
-                }
-
-                .clock_wrap {
-                    margin-left: 10px;
-                    // display: flex;
-                    // align-items: center;
-                    // justify-content: center;
-                    #clock {
-                        // margin-right: 2px;
-                    }
-                }
-            }
-        }
-
-
-        .weather{
-            display: none;
-        }
-
-        .title {
-            padding: 10px 0 0 0 !important;
-
-            a{
-                font-size: 23px !important;    
-            }
-        }
-
-        .header_cate {
-            display: none;
-        } // header_cate end
-    } // header end
-
-    main {
-        padding-top: 30px;
-    } // main end
-
-// #main {display: none;}
-#about_me {display: none;}
-#introduce {display: none;}
-#like {display: none;}
-#career {display: none;}
-#contact {display: none;}
-#portfolio {display: none;}
-#footer {display: none;}
-
-.fliming {display: none;}
-.movies {display: none;}
-.music {display: none;}
-.books {display: none;}
-
-    #main {
-        height: initial;
         > .main_visual {
             height: 300px !important;
         }
     } // #main end
 
-    #about_me {
-        > .about_me_wrap {
+    #main_container {
+        .tab {
+            padding: 20px 10px;
+
+            span  {font-size: 18px;}
+            // p {font-size: 12px;}
+        }
+
+        .first_line {
             flex-direction: column;
-            > .text {
-                width: 100% !important;
-                height: 400px !important;
-                padding: 0 10px;
-                order: 200;
-                margin-top: 10px !important;
-                &::after {
-                    display: none;
-                }
-
-                > ul {
-                    > li {
-                        // width: 100% !important; 
-                        height: 400px !important;
-                    }
-                }
+            .img_wrap {width: 100%;}
+            .text_wrap {margin-right: 10px;margin-bottom: 15px;}
+        }
+        
+        .second_line {
+            flex-direction: column;
+            .img_wrap {width: 100%;}
+            .text_wrap {
+                margin-top: 10px;
+                margin-left: 10px;
+                width: 100%;
             }
+        }
 
-            > .frame {
-                width: 100% !important;
-                height: 400px !important;
-                order: 100;
-
-                > .frame_wrap {
-                    width: calc(100% * 4) !important;
-
-                    > li {
-                        width: 100% !important;
-                        margin-top: 50px !important;
-                    }
-                }
-            }
-        } // about me wrap end
-    } // about me end
-
-
-    #work {
-        > .work_wrap {
-            > .content_wrap {
-                flex-direction: column-reverse !important;
-                > .text_box {
-                    width: 100% !important;
-
-                    > .tit_box {
-                        > .main_tit {
-                            margin-top: 20px;
-                        }
-
-                        > .sub_tit {
-                            margin-bottom: 30px;
-                        }
-                    }
-                } // text_box end
-
-                > .img_box {
-                    width: 100% !important;
-                    height: 400px !important;
-                } // img_box end
-            } // .content_wrap end
-        } // work_wrap end
-    } // work end
-
+        .third_line {
+            padding: 20px 10px;
+        }
+    }
 
 } // 480 end
 
 @media screen and (min-width:480px) and (max-width:768px) {
-    
-// #main {display: none;}
-#about_me {display: none;}
-// #introduce {display: none;}
-#like {display: none;}
-#career {display: none;}
-#contact {display: none;}
-#portfolio {display: none;}
-#footer {display: none;}
-
-.fliming {display: none;}
-.movies {display: none;}
-.music {display: none;}
-.books {display: none;}
-
-
-    .top_menu {
-            .wrap {
-                box-sizing: border-box;
-                padding: 0 20px;
-            }
-        }
-
-    header {
-        .onoff {
-            ul {
-                left: initial !important;
-                right: 20px !important;          
-            }
-        }
-
-        nav {
-            left: 20px !important; 
-            display: block !important;
-        }
-
-        
-
-        .header_wrap {
-            padding: 20px 10px !important;
-            
-            position: relative;
-            .date {
-                position: absolute;
-                top: 95px;
-                left: 0;
-                right: 0;
-                height: 40px;
-                margin-top: 3px;
-                border-top: 1px solid #d3d3d3;
-                border-bottom: 1px solid #d3d3d3;
-                padding: 4px 20px 0;
-                #current_date, .weather{
-                    text-align: center;
-                }
-
-                .clock_wrap {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    #clock {
-                        margin-right: 2px;
-                    }
-                }
-            }
-        }
-
-
-
-        .title {
-            padding: 20px 0 0 0 !important;
-
-            a{
-                font-size: 45px !important;    
-            }
-        }
-
-        .header_cate {
-            display: none;
-        } // header_cate end
-    } // header end
-
-    
-    .wrap {
-        max-width: 768px !important;
-    }
-
-    main {
-        padding-top: 50px;
-    } // main end
-
-
     #main {
-        height: calc(100vh - 140px) !important;
+        // height: calc(100vh - 140px) !important;
         .main_visual {
             // width: 768px;
-            height: 400px !important;
+            // height: 400px !important;
         }
     } // #main end
 
-    #introduce {
-        .main {
-            height: 100px !important;
+    #main_container {
+        .tab {
+            padding: 20px;
+        }
+        
+        .second_line {
+            .text_wrap {
+                margin-left: 20px;
+            }
         }
 
-        .introduce_tab {
+        .third_line {
+            padding: 20px;
         }
-
-        .greeting {
-            .main_wrap {
-                .side_wrap {
-                    order: 100;
-                }
-                .center_wrap {
-                    order: 200;
-                }
-            }
-        } // greeting end
-    } // #introduce end
-    #about_me {
-        > .about_me_wrap {
-            > .text {
-                width: 300px !important;
-                padding: 0 10px;
-            }
-
-            > .frame {
-                width: 478px !important;
-            }
-        } // about me wrap end
-    } // about me end
-
-
-    #work {
-        > .work_wrap {
-            > .content_wrap {
-                flex-direction: column-reverse !important;
-                > .text_box {
-                    width: 100% !important;
-
-                    > .tit_box {
-                        > .main_tit {
-                            margin-top: 20px;
-                        }
-
-                        > .sub_tit {
-                            margin-bottom: 30px;
-                        }
-                    }
-                } // text_box end
-
-                > .img_box {
-                    width: 100% !important;
-                } // img_box end
-            } // .content_wrap end
-        } // work_wrap end
-    } // work end
-
-
+    }
 } // 768 end
-
-.bg{
-    &.active{
-    position: fixed;
-    z-index: -1;
-    background-image: url(../img/bg.jpg);
-    background-size: cover;
-    background-repeat: repeat;
-    background-position: center;
-    width:100%;height:100%;
-    }
-}
-
-
-.top_menu {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    height: 30px;
-    background-color: #fff;
-    box-shadow: 1px 1px 4px #999;
-
-    &.active{
-        background-image: url(../img/bg.jpg);
-        background-size: cover;
-        background-repeat: repeat;
-        background-position: center;
-    }
-    
-    .wrap {
-        display: flex;
-        align-items: center;
-        margin: 0 auto;
-        width: 1000px;
-        height: 30px;
-        // line-height: 30px;
-    }
-
-    .logo {
-        width: 50px;
-        a {
-            font-size: 24px;
-            font-family: 'Chomsky';
-            
-            &.active {
-                color:$point;
-            }
-        }
-    }
-    .burger{
-        width: 50px;
-        div{
-            background-color: #000;
-            width:15px;height:1.5px;margin:3px;
-            transition: all 0.5s;
-        }
-    }
-
-    nav {
-        width: 100%;
-        padding: 0 70px;
-        ul {
-            display: flex;
-            justify-content: space-between;
-            li {
-                a {
-                    font-size: 12px;
-                    font-family: $outfit;
-                }
-                &:hover {a {color:$point;}}
-            }
-        }
-    }
-
-    .onoff{
-        position: relative;
-        z-index: 9;
-        width: 50px;
-        height: 30px;
-        padding-left: 30px;
-    }
-    .onoff ul{
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        border: 1px solid #000;
-        border-radius: 50px;
-        width:26px;height: 12px;
-        cursor: pointer;
-        li{
-            background-color: #000;
-            width:12px;height:12px;
-            position: absolute;
-            top:0;left:0;
-            border-radius: 50px;
-            transition: .5s;
-            &.active{
-                transform: translateX(14px);
-                background-color: $point;
-            }
-        }
-    }
-}
-
 
 .wrap{
     max-width: 1000px;
     margin:0 auto;
 }
 
-
 main {
     #main {
         margin-bottom: 50px;
-    
     
         > .main_visual {
             margin-top: 50px;
@@ -560,12 +126,22 @@ main {
         .text_wrap {
             width: 400px;
             box-sizing: border-box;
-            span{&.active{color:$point;}}
+            span{
+                opacity: 0;
+                transform: translateY(20px);
+                transition: 1s;
+                &.on {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                &.active{color:$point;}
+            }
 
             p {
                 opacity: 0;
                 transform: translateY(20px);
-                transition: .5s;
+                transition: 1s;
+                transition-delay: .5s;
                 &.active {
                     opacity: 1;
                     transform: translateY(0);
@@ -577,7 +153,8 @@ main {
 
             opacity: 0;
             transform: translateY(20px);
-            transition: .5s;
+            transition: 1s;
+            transition-delay: 1s;
 
             &.active {
                 transform: translateY(0);
@@ -601,7 +178,7 @@ main {
             width: 400px;
             opacity: 0;
             transform: translateY(20px);
-            transition: .5s;
+            transition: 1s;
 
             &.active {
                 transform: translateY(0);
@@ -618,11 +195,23 @@ main {
 
         .text_wrap {
             width: 550px;
-            span{&.active{color:$point;}}
+            span{
+                opacity: 0;
+                transform: translateY(20px);
+                transition: 1s;
+                transition-delay: .5s;
+                &.on {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                &.active{color:$point;}
+            }
+
             p {
                 opacity: 0;
                 transform: translateY(20px);
-                transition: .5s;
+                transition: 1s;
+                transition-delay: 1s;
                 &.active {
                     opacity: 1;
                     transform: translateY(0);

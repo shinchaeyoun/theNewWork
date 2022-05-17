@@ -295,4 +295,107 @@
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
+
+@media screen and (max-width: 480px) {
+  .greeting .main_wrap {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 10px !important;
+  }
+  .greeting .main_wrap .side_wrap {
+    width: 100% !important;
+    padding: 10px 20px !important;
+  }
+  .greeting .main_wrap .first {
+    -webkit-box-ordinal-group: 3 !important;
+        -ms-flex-order: 2 !important;
+            order: 2 !important;
+  }
+  .greeting .main_wrap .last {
+    -webkit-box-ordinal-group: 2 !important;
+        -ms-flex-order: 1 !important;
+            order: 1 !important;
+  }
+  .greeting .main_wrap .center_wrap {
+    padding-right: initial !important;
+    padding: 10px 0 20px !important;
+    width: 100% !important;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .greeting .main_wrap .center_wrap .img_wrap {
+    width: 100% !important;
+  }
+  .greeting .main_wrap .center_wrap p {
+    padding: 0 10px;
+  }
+  .hashtag_story .container {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  .hashtag_story .container .content {
+    width: 100% !important;
+    margin-bottom: 50px !important;
+  }
+  .hashtag_story .container .img_wrap {
+    width: 100% !important;
+  }
+  .hashtag_story .container .text_wrap {
+    padding: 0 10px !important;
+  }
+  .message_motto .main_wrap {
+    height: initial !important;
+  }
+  .message_motto .message {
+    padding: 0 10px !important;
+  }
+  .message_motto .motto {
+    padding: 0 10px !important;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .greeting .main_wrap {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .greeting .main_wrap .side_wrap {
+    width: 50% !important;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-top: 20px;
+    padding: 20px !important;
+  }
+  .greeting .main_wrap .center_wrap {
+    padding-right: initial !important;
+    width: 100% !important;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .greeting .main_wrap .center_wrap .img_wrap {
+    width: 100% !important;
+  }
+  .greeting .main_wrap .center_wrap p {
+    padding: 0 10px;
+  }
+  .hashtag_story .first_container .box1 {
+    margin-right: 10px;
+    width: 75% !important;
+  }
+  .hashtag_story .second_container .box1 {
+    margin-left: 10px;
+    width: 75% !important;
+  }
+  .message_motto .message {
+    padding: 0 10px !important;
+  }
+  .message_motto .motto {
+    padding: 0 10px !important;
+  }
+}
 /*# sourceMappingURL=introduce.css.map */

@@ -1,4 +1,4 @@
-$(function(){
+ $(function(){
   const windowHei = window.innerHeight,
         $minusWin = windowHei / 2,
         $port = $('#portfolio'),

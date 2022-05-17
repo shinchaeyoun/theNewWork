@@ -1,130 +1,52 @@
-// $(function(){
-//     // 어바웃미 이미지 영역 트리거
-// const $aboutme =  $('#about_me');
-// const $frameWid = $('.frame_wrap').children('li').width();
-// const $main =  $('main');
-// const $mainHei =  $main.offset().top;
+$(function(){
+  const windowHei = window.innerHeight,
+        $minusWin = windowHei / 2,
+        $container = $('.container'),
+        $con1 = $('.con1').offset().top,
+        $con2 = $('.con2').offset().top,
+        $con3 = $('.con3').offset().top,
+        $mainTit = $('.main_content .tit'),
+        $mainTitSub = $('.main_content .tit span'),
+        $mainTxt = $('.main_content p'),
+        $subTit = $('.sub_content span'),
+        $subTxt = $('.sub_content p');
 
-// $(window).on('resize load', function (){
 
-//   // 윈도우의 사이즈가 480px보다 큰 경우)
-//   if(window.innerWidth >= 480) {
-//     console.log('480보다 큼');
+        $(window).on('load',function(){
+          $mainTit.eq(0).addClass('on');
+          $mainTitSub.eq(0).addClass('on');
+          $mainTxt.eq(0).addClass('on');
+          $subTit.eq(0).addClass('on');
+          $subTxt.eq(0).addClass('on');
+        });
 
-//     ScrollTrigger.name = "ScrollTrigger"; 
-//     gsap.registerPlugin(ScrollTrigger);
-    
-//     let imgBox = gsap.timeline({ 
-//         scrollTrigger: {
-//             trigger: '#about_me', 
-//             pin: true, 
-//             start: $mainHei, 
-//             end: $aboutme.offsetWidth, 
-//             scrub: true,  
-//             ease: "power3",
-//             markers: false,
-//             id:'abot me' 
-//         }
-//     });
-    
-//     imgBox.to(".black", { 
-//       opacity:0
-//     },0);
-//     imgBox.to(".frame_wrap", { 
-//       rotation:0,x:-$frameWid ,y:0
-//     },2);
-//     imgBox.to(".frame_wrap", { 
-//       rotation:0,x:-$frameWid*2 ,y:0
-//     },4);
-//     imgBox.to(".frame_wrap", { 
-//       rotation:0,x:-$frameWid*3 ,y:0
-//     },6);
-//     imgBox.to(".black", { 
-//       opacity:1
-//     },8);
-    
-    
-//     let textBox = gsap.timeline({ 
-//         scrollTrigger: {
-//             trigger: '#about_me', 
-//             scrub: true,  
-//             pin: true, 
-//             start: $main.$mainHei, 
-//             end: $aboutme.offsetWidth, 
-//             ease: "power3", 
-//             markers:false 
-//         }
-//     });
-//     textBox.to("#about_me .text_wrap", { 
-//         rotation:0,x:0 ,y:-480
-//     },2); 
-//     textBox.to("#about_me .text_wrap", { 
-//         rotation:0,x:0 ,y:-960
-//     },4); 
-//     textBox.to("#about_me .text_wrap", { 
-//         rotation:0,x:0 ,y:-1440
-//     },6); 
-//     textBox.to("#about_me .text_wrap", { 
-//         rotation:0,x:0 ,y:-1440
-//     },8); 
-//   } else {
-//     console.log('480보다 작음');
-//     ScrollTrigger.name = "ScrollTrigger"; 
-//     gsap.registerPlugin(ScrollTrigger);
-    
-//     let imgBox = gsap.timeline({ 
-//         scrollTrigger: {
-//             trigger: '#about_me', 
-//             pin: true, 
-//             start: $main.$mainHei, 
-//             end: $aboutme.offsetWidth, 
-//             scrub: 1,  
-//             ease: "power3",
-//             markers: false 
-//         }
-//     });
-    
-//     imgBox.to(".black", { 
-//       opacity:0
-//     },0);
-//     imgBox.to(".frame_wrap", { 
-//       rotation:0,x:-$frameWid ,y:0
-//     },2);
-//     imgBox.to(".frame_wrap", { 
-//       rotation:0,x:-$frameWid*2 ,y:0
-//     },4);
-//     imgBox.to(".frame_wrap", { 
-//       rotation:0,x:-$frameWid*3 ,y:0
-//     },6);
-//     imgBox.to(".black", { 
-//       opacity:1
-//     },8);
-    
-//     console.log($frameWid);
-    
-//     let textBox = gsap.timeline({ 
-//         scrollTrigger: {
-//             trigger: '#about_me', 
-//             scrub: true,  
-//             pin: true, 
-//             start: $main.$mainHei, 
-//             end: $aboutme.offsetWidth, 
-//             ease: "power3", 
-//             markers: false 
-//         }
-//     });
-//     textBox.to(".text_wrap", { 
-//         rotation:0,x:0 ,y:-400
-//     },2); 
-//     textBox.to(".text_wrap", { 
-//         rotation:0,x:0 ,y:-800
-//     },4); 
-//     textBox.to(".text_wrap", { 
-//         rotation:0,x:0 ,y:-1200
-//     },6); 
-//     textBox.to(".text_wrap", { 
-//         rotation:0,x:0 ,y:-1200
-//     },8); 
-//   }
-// }); // resize load end
-// });
+        $(window).on('scroll',function(){
+          if(window.scrollY > $con2 - $minusWin) {
+            $mainTit.eq(1).addClass('on');
+            $mainTitSub.eq(1).addClass('on');
+            $mainTxt.eq(1).addClass('on');
+            $subTit.eq(1).addClass('on');
+            $subTxt.eq(1).addClass('on');
+          } else if(window.scrollY < $con2 - $minusWin) {
+            $mainTit.eq(1).removeClass('on');
+            $mainTitSub.eq(1).removeClass('on');
+            $mainTxt.eq(1).removeClass('on');
+            $subTit.eq(1).removeClass('on');
+            $subTxt.eq(1).removeClass('on');
+          }
+
+          if(window.scrollY > $con3 - $minusWin) {
+            $mainTit.eq(2).addClass('on');
+            $mainTitSub.eq(2).addClass('on');
+            $mainTxt.eq(2).addClass('on');
+            $subTit.eq(2).addClass('on');
+            $subTxt.eq(2).addClass('on');
+          } else if(window.scrollY < $con3 - $minusWin) {
+            $mainTit.eq(2).removeClass('on');
+            $mainTitSub.eq(2).removeClass('on');
+            $mainTxt.eq(2).removeClass('on');
+            $subTit.eq(2).removeClass('on');
+            $subTxt.eq(2).removeClass('on');
+          }
+        });
+});
