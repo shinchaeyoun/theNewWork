@@ -61,7 +61,7 @@ body{
 
 @media screen and (min-width:1024px) {
     body {cursor: none;}
-    
+
     .cursor__inner {	
         pointer-events: none;
         position: absolute;
@@ -408,7 +408,7 @@ footer {
             justify-content: center;
             padding: initial;
             height: 60px;
-            a{font-size: 30px;}
+            a{font-size: 2em;}
         }
 
         .header_cate {padding: 15px 10px;}
