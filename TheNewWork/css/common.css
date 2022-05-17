@@ -35,28 +35,30 @@ body {
   background-color: #fff;
   position: relative;
   overflow-x: hidden;
-  cursor: none;
 }
 
-.cursor__inner {
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  z-index: 999999;
-}
-
-.cursor__inner--dot {
-  width: 6px;
-  height: 6px;
-  background: #000;
-}
-
-.cursor__inner--circle {
-  width: 20px;
-  height: 20px;
-  border: 1px solid #000;
+@media screen and (min-width: 1024px) {
+  body {
+    cursor: none;
+  }
+  .cursor__inner {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    z-index: 999999;
+  }
+  .cursor__inner--dot {
+    width: 6px;
+    height: 6px;
+    background: #000;
+  }
+  .cursor__inner--circle {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+  }
 }
 
 .bg.active {
