@@ -318,6 +318,9 @@ main .third_line .content span {
   #main_container .third_line {
     padding: 20px 10px;
   }
+  #main_container .third_line .content {
+    height: 250px !important;
+  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 768px) {

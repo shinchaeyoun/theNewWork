@@ -62,6 +62,7 @@ body{
 @media screen and (min-width:1024px) {
     body {cursor: none;}
 
+
     .cursor__inner {	
         pointer-events: none;
         position: absolute;
@@ -122,7 +123,7 @@ body{
     }
 
     .logo {
-        width: 50px;
+        // width: 50px;
         a {
             font-size: 24px;
             font-family: 'Chomsky';
@@ -147,7 +148,7 @@ body{
         ul {
             display: flex;
             justify-content: space-between;
-            li {
+            > li {
                 a {
                     font-size: 12px;
                     font-family: $outfit;
@@ -162,7 +163,6 @@ body{
         z-index: 9;
         width: 50px;
         height: 30px;
-        padding-left: 30px;
     }
     .onoff ul{
         position: absolute;
@@ -315,7 +315,8 @@ footer {
             ul {
                 display: flex;
                 justify-content: space-between;
-                li {
+                > li {
+                    width: calc(100% / 6);
                     .tit {
                         font-weight: 800;
                         margin-bottom: 10px;
@@ -350,6 +351,7 @@ footer {
 
 @media screen and (max-width:480px) {
     body {font-size: 12px !important;}
+    .cursor {display: none;}
 
     .top_menu {
         .wrap {
@@ -358,6 +360,7 @@ footer {
             box-sizing: border-box;
         }
     
+        .logo {width: 30px;}
         nav {padding: initial !important;}
     }
 
@@ -416,6 +419,7 @@ footer {
     } // header end
 
     footer {
+        margin-top: 30px !important;
         nav{
             ul {
                 padding: 0 10px;
@@ -430,6 +434,7 @@ footer {
 } // 480 end
 
 @media screen and (min-width:480px) and (max-width:768px) {
+    .cursor {display: none;}
     .top_menu {
         .wrap {
             box-sizing: border-box;
@@ -485,6 +490,7 @@ footer {
     .wrap {max-width: 768px !important;}
 
     footer {
+        margin-top: 30px !important;
         nav {
             ul {padding: 0 20px;}
         }
