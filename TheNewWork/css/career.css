@@ -10,6 +10,11 @@
   border-top: 1px solid #000;
 }
 
+#career .career_wrap .con1 {
+  border-top: none;
+  padding: 0 0 30px;
+}
+
 #career .career_wrap .main_content {
   width: 50%;
   padding-right: 10px;
@@ -125,6 +130,9 @@
             flex-direction: column;
     padding: 30px 10px !important;
   }
+  .con1 {
+    padding: 0 10px 30px !important;
+  }
   .content {
     width: 100% !important;
   }
@@ -140,6 +148,9 @@
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .container {
     padding: 30px 10px !important;
+  }
+  .con1 {
+    padding: 0 10px 30px !important;
   }
 }
 /*# sourceMappingURL=career.css.map */

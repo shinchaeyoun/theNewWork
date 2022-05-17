@@ -986,6 +986,12 @@
     display: block;
     text-align: center;
   }
+  .travel .sec1 .text_wrap p {
+    width: 100%;
+    padding: 0 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
   .travel .sec1 .img_wrap {
     width: 100% !important;
     height: initial !important;
@@ -1093,6 +1099,18 @@
   }
   .movies .movies_wrap .sec1, .movies .movies_wrap .sec2 {
     width: 100% !important;
+  }
+  .movies .movies_wrap .sec1::after {
+    width: 100% !important;
+    height: 1px !important;
+    top: initial !important;
+    bottom: 0;
+  }
+  .movies .movies_wrap .sec2::after {
+    width: 100% !important;
+    height: 1px !important;
+    top: initial !important;
+    bottom: 0;
   }
   .movies .movies_wrap .sec3 {
     display: -webkit-box;

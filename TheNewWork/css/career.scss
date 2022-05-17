@@ -18,6 +18,11 @@ $nanum : 'Nanum Myeongjo', serif;
             border-top: 1px solid #000;
         }
 
+        .con1 {
+            border-top: none;
+            padding: 0 0 30px;
+        }
+
         .main_content {
             width: 50%;
             padding-right: 10px;
@@ -106,7 +111,7 @@ $nanum : 'Nanum Myeongjo', serif;
         flex-direction: column;
         padding: 30px 10px !important;
     }
-
+    .con1 {padding: 0 10px 30px !important;}
     .content {width: 100% !important;}
     .main_content{padding-right: initial !important;margin-bottom: 20px;}
     .sub_content{padding-left: initial !important;}
@@ -114,4 +119,5 @@ $nanum : 'Nanum Myeongjo', serif;
 
 @media screen and (min-width:480px) and (max-width:768px) {
     .container {padding: 30px 10px !important;}
+    .con1 {padding: 0 10px 30px !important;}
 }
