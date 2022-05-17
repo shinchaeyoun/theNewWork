@@ -241,16 +241,26 @@ const $tabMenu = $('#like .travel .tab_wrap .tab_menu li');
   const artistNames = ['박효신','짙은','호피폴라','검정치마','선우정아','HONNE','Alec Benjamin','Glass Animals','Jesper Munk','The xx'];
 
                       const audio = new Audio(
-                        'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/1.mp3',
-                        'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/2.mp3',
-                        'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/3.mp3',
-                        'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/4.mp3',
-                        'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/5.mp3',
-                        'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/6.mp3',
-                        'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/7.mp3',
-                        'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/8.mp3',
-                        'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/9.mp3',
-                        'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/10.mp3'
+                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/1.mp3',
+                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/2.mp3',
+                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/3.mp3',
+                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/4.mp3',
+                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/5.mp3',
+                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/6.mp3',
+                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/7.mp3',
+                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/8.mp3',
+                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/9.mp3',
+                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/10.mp3'
+                        // 'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/1.mp3',
+                        // 'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/2.mp3',
+                        // 'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/3.mp3',
+                        // 'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/4.mp3',
+                        // 'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/5.mp3',
+                        // 'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/6.mp3',
+                        // 'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/7.mp3',
+                        // 'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/8.mp3',
+                        // 'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/9.mp3',
+                        // 'https://github.com/shinchaeyoun/shin/blob/main/TheNewWork/audio/10.mp3'
                       //  '../audio/2.mp3',
                       //  '../audio/3.mp3',
                       //  '../audio/4.mp3',
