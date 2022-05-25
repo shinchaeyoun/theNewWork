@@ -7,6 +7,8 @@ $(function(){
         $con3 = $('.con3').offset().top,
         $mainTit = $('.main_content .tit'),
         $mainTitSub = $('.main_content .tit span'),
+        $con2TitSub = $('.con2 .main_content .tit span'),
+        $con3TitSub = $('.con3 .main_content .tit span'),
         $mainTxt = $('.main_content p'),
         $subTit = $('.sub_content span'),
         $subTxt = $('.sub_content p');
@@ -23,13 +25,13 @@ $(function(){
         $(window).on('scroll',function(){
           if(window.scrollY > $con2 - $minusWin) {
             $mainTit.eq(1).addClass('on');
-            $mainTitSub.eq(1).addClass('on');
+            $con2TitSub.addClass('on');
             $mainTxt.eq(1).addClass('on');
             $subTit.eq(1).addClass('on');
             $subTxt.eq(1).addClass('on');
           } else if(window.scrollY < $con2 - $minusWin) {
             $mainTit.eq(1).removeClass('on');
-            $mainTitSub.eq(1).removeClass('on');
+            $con2TitSub.removeClass('on');
             $mainTxt.eq(1).removeClass('on');
             $subTit.eq(1).removeClass('on');
             $subTxt.eq(1).removeClass('on');
@@ -37,13 +39,13 @@ $(function(){
 
           if(window.scrollY > $con3 - $minusWin) {
             $mainTit.eq(2).addClass('on');
-            $mainTitSub.eq(2).addClass('on');
+            $con3TitSub.addClass('on');
             $mainTxt.eq(2).addClass('on');
             $subTit.eq(2).addClass('on');
             $subTxt.eq(2).addClass('on');
           } else if(window.scrollY < $con3 - $minusWin) {
             $mainTit.eq(2).removeClass('on');
-            $mainTitSub.eq(2).removeClass('on');
+            $con3TitSub.removeClass('on');
             $mainTxt.eq(2).removeClass('on');
             $subTit.eq(2).removeClass('on');
             $subTxt.eq(2).removeClass('on');
