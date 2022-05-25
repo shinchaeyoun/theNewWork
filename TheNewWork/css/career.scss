@@ -8,7 +8,6 @@ $assistant : 'Assistant', sans-serif;
 $outfit : 'Outfit', sans-serif;
 $nanum : 'Nanum Myeongjo', serif;
 
-
 #career {
     margin-top: 30px;
     .career_wrap {
@@ -50,6 +49,7 @@ $nanum : 'Nanum Myeongjo', serif;
                     transform: TranslateY(20px);
                     transition: 1s;
                     transition-delay: .5s;
+                    
                     &.on{
                         opacity: 1;
                         transform: TranslateY(0);
@@ -86,7 +86,7 @@ $nanum : 'Nanum Myeongjo', serif;
                 transform: TranslateY(20px);
                 transition: 1s;
                 transition-delay: 1.5s;
-                &.on{
+                &.on {
                     opacity: 1;
                     transform: TranslateY(0);
                 }
