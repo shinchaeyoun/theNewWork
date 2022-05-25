@@ -16,15 +16,12 @@ $(function(){
         $flimSlideBtn = $('.fliming .slide a'),
         $flimTxt = $('.fliming .text_wrap'),
         $movies = $('.movies').offset().top,
-        $mov1Mtit = $('.movies .sec1 .sub_tit'),
         $mov1Img = $('.movies .sec1 .img_wrap'),
         $mov1Tit = $('.movies .sec1 span'),
         $mov1Sub = $('.movies .sec1 p'),
-        $mov2Mtit = $('.movies .sec2 .sub_tit'),
         $mov2Img = $('.movies .sec2 .img_wrap'),
         $mov2Tit = $('.movies .sec2 span'),
         $mov2Sub = $('.movies .sec2 p'),
-        $mov3Mtit = $('.movies .sec3 .sub_tit'),
         $mov3img = $('.movies .sec3 .img_wrap'),
         $mov3tit = $('.movies .sec3 span'),
         $mov3sub = $('.movies .sec3 p');
@@ -67,28 +64,22 @@ $(function(){
           }
 
           if(window.scrollY > $movies - $minusWin){
-            $mov1Mtit.addClass('active');
             $mov1Img.addClass('active');
             $mov1Tit.addClass('on');
             $mov1Sub.addClass('active');
-            $mov2Mtit.addClass('active');
             $mov2Img.addClass('active');
             $mov2Tit.addClass('on');
             $mov2Sub.addClass('active');
-            $mov3Mtit.addClass('active');
             $mov3img.addClass('active');
             $mov3tit.addClass('on');
             $mov3sub.addClass('active');
           } else if (window.scrollY < $movies - $minusWin) {
-            $mov1Mtit.removeClass('active');
             $mov1Img.removeClass('active');
             $mov1Tit.removeClass('on');
             $mov1Sub.removeClass('active');
-            $mov2Mtit.removeClass('active');
             $mov2Img.removeClass('active');
             $mov2Tit.removeClass('on');
             $mov2Sub.removeClass('active');
-            $mov3Mtit.removeClass('active');
             $mov3img.removeClass('active');
             $mov3tit.removeClass('on');
             $mov3sub.removeClass('active');
@@ -240,7 +231,7 @@ const $tabMenu = $('#like .travel .tab_wrap .tab_menu li');
   const $seekBar = $player.find('#seek-bar');
   const $dot = $player.find('.dot');
   const $trackTime = $player.find('.track_time'); 
-  const $tProgress = $player.find('.current_time'); 
+  const $currentTime = $player.find('.current_time'); 
   const $trackLength = $player.find('.track_length');
   const $prevBtn = $player.find('.control_bar .prev');
   const $playBtn = $player.find('.control_bar .play');
@@ -250,18 +241,18 @@ const $tabMenu = $('#like .travel .tab_wrap .tab_menu li');
   const artistNames = ['박효신','짙은','호피폴라','검정치마','선우정아','HONNE','Alec Benjamin','Glass Animals','Jesper Munk','The xx'];
 
                       const audio = new Audio(
-                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/1.mp3',
-                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/2.mp3',
-                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/3.mp3',
-                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/4.mp3',
-                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/5.mp3',
-                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/6.mp3',
-                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/7.mp3',
-                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/8.mp3',
-                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/9.mp3',
-                        'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/10.mp3'
+                       '../audio/1.mp3',
+                       '../audio/2.mp3',
+                       '../audio/3.mp3',
+                       '../audio/4.mp3',
+                       '../audio/5.mp3',
+                       '../audio/6.mp3',
+                       '../audio/7.mp3',
+                       '../audio/8.mp3',
+                       '../audio/9.mp3',
+                       '../audio/10.mp3'
                        );
-console.log(audio.src);
+
   let playIdx = 1;
   const buffInterval = null;
 
@@ -313,8 +304,7 @@ console.log(audio.src);
     audio.play();
 
     // 재생버튼, 플레이 바 활성화
-    $playBtn.addClass('active');
-    $dot.addClass('active');
+    btnActive();
 
     // 왼쪽 정보 변경
     $albumCover.attr('src','./img/like/music/'+listIdx+'.jpeg');
@@ -348,21 +338,10 @@ console.log(audio.src);
 
   // 재생
   function playBtn(){
+    console.log('play BTN',playIdx);
 
     btnActive();
-
-    // play ();
-    // if($playBtn.hasClass('active') === true){
-    if(audio.paused){
-      audio.volume = 0.1;
-      audio.loop = false;
-      audio.src = '../audio/'+playIdx+'.mp3';
-      audio.play();
-      
-    } else {
-      audio.pause();
-    }
-
+    play ();
     listActive();
     
     // 자동 넘김
@@ -394,16 +373,8 @@ console.log(audio.src);
     }
 
     console.log('music',playIdx);
-
     // 재생
-    audio.volume = 0.1;
-    audio.loop = false;
-    audio.src = '../audio/'+playIdx+'.mp3';
-    audio.play();
-
-    $playBtn.addClass('active');
-    $dot.addClass('active');
-
+    play ();
     // 왼쪽 정보 변경
     lifeInfo();
     // 리스트 활성화
@@ -421,14 +392,7 @@ console.log(audio.src);
 
     console.log('music',playIdx);
     // 재생
-    audio.volume = 0.1;
-    audio.loop = false;
-    audio.src = '../audio/'+playIdx+'.mp3';
-    audio.play();
-
-    $playBtn.addClass('active');
-    $dot.addClass('active');
-
+    play ();
     // 왼쪽 정보 변경
     lifeInfo();
     // 리스트 활성화
@@ -440,6 +404,7 @@ console.log(audio.src);
 
   // 재생시간
   function time (){
+    audio.onloadeddata = ()=>{
       curMin = Math.floor(audio.currentTime / 60);
       curSec = Math.floor(audio.currentTime - curMin *60);
 
@@ -448,6 +413,8 @@ console.log(audio.src);
 
       playProgress = (audio.currentTime / audio.duration) * 100;
 
+      console.log('playProgress',playProgress);
+      
       if(curMin < 10){curMin = '0'+curMin;};
       if(curSec < 10){curSec = '0'+curSec;};
 
@@ -455,9 +422,9 @@ console.log(audio.src);
       if(durSec < 10){durSec = '0'+durSec;};
 
       if( isNaN(curMin) || isNaN(curSec) ){
-        $tProgress.text('00:00');
+        $currentTime.text('00:00');
       } else {
-        $tProgress.text(curMin+':'+curSec);
+        $currentTime.text(curMin+':'+curSec);
       };
 
       if( isNaN(durMin) || isNaN(durSec) ){
@@ -467,15 +434,19 @@ console.log(audio.src);
       }
 
       $seekBar.width(playProgress+'%');
-      $dot.css({left: playProgress+'%'});
+
 
       if (playProgress == 100) {
         $seekBar.width(0);
-        $dot.css({left: playProgress+'%'});
-        $tProgress.text('00:00');
-      };
+        $currentTime.text('00:00');
+      }
+      // audio.onloadeddata = ()=>{
+      //   // $trackLength.text(audio.duration);
+      //   $currentTime.text(curMin + ':' + curSec);
+      // }
+    };
   }
-  
+  time();
 
   // 재생 바 마우스 오버
   $sArea.mouseover(function(e){
@@ -521,22 +492,149 @@ console.log(audio.src);
 
   // 재생 바 클릭
   $sArea.on('click',function(){
-    audio.currentTime = seekLoc
+    console.log('bar click');
+    audio.currentTime = seekLoc;
     $seekBar.width(seekT);
     $dot.css({
       left:seekT
-    });
+    })
     hideHover();
   });
 
+
+
+
+
+  
+
+  function updateCurrTime(){
+    nTime = new Date();
+    nTime = nTime.getTime();
+
+    if( !tFlag ){
+      tFlag = true;
+      trackTime.addClass('active');
+    }
+
+    curMinutes = Math.floor(audio.currentTime / 60);
+    curSeconds = Math.floor(audio.currentTime - curMinutes * 60);
+    
+    durMinutes = Math.floor(audio.duration / 60);
+    durSeconds = Math.floor(audio.duration - durMinutes * 60);
+    
+    playProgress = (audio.currentTime / audio.duration) * 100;
+    
+    if(curMinutes < 10)
+      curMinutes = '0'+curMinutes;
+    if(curSeconds < 10)
+      curSeconds = '0'+curSeconds;
+    
+    if(durMinutes < 10)
+      durMinutes = '0'+durMinutes;
+    if(durSeconds < 10)
+      durSeconds = '0'+durSeconds;
+      
+    if( isNaN(curMinutes) || isNaN(curSeconds) )
+        tProgress.text('00:00');
+    else
+    tProgress.text(curMinutes+':'+curSeconds);
+    
+    if( isNaN(durMinutes) || isNaN(durSeconds) )
+        tTime.text('00:00');
+    else
+    tTime.text(durMinutes+':'+durSeconds);
+    
+    if( isNaN(curMinutes) || isNaN(curSeconds) || isNaN(durMinutes) || isNaN(durSeconds) )
+        trackTime.removeClass('active');
+    else
+        trackTime.addClass('active');
+
+    seekBar.width(playProgress+'%');
+  
+    if( playProgress == 100 ){
+      i.attr('class','fa fa-play');
+      seekBar.width(0);
+      tProgress.text('00:00');
+        
+      clearInterval(buffInterval);
+    }
+  };
+
+
+
+  
+  function checkBuffering(){
+      clearInterval(buffInterval);
+      buffInterval = setInterval(function(){ 
+          bTime = new Date();
+          bTime = bTime.getTime();
+      },100);
+  }
+
+  function selectTrack(flag){
+      if( flag == 0 || flag == 1 )
+          ++currIndex;
+      else
+          --currIndex;
+
+      if( (currIndex > -1) && (currIndex < albumArtworks.length) ){
+          if( flag == 0 )
+              i.attr('class','fa fa-play');
+          else
+          {
+              i.attr('class','fa fa-pause');
+          }
+
+          seekBar.width(0);
+          trackTime.removeClass('active');
+          tProgress.text('00:00');
+          tTime.text('00:00');
+
+          currAlbum = albums[currIndex];
+          currTrackName = trackNames[currIndex];
+          currArtwork = albumArtworks[currIndex];
+
+          audio.src = trackUrl[currIndex];
+          
+          nTime = 0;
+          bTime = new Date();
+          bTime = bTime.getTime();
+
+          
+          if(flag != 0){
+              audio.play();
+              playerTrack.addClass('active');
+          
+              clearInterval(buffInterval);
+              checkBuffering();
+          }
+
+          albumName.text(currAlbum);
+          trackName.text(currTrackName);
+          $('#'+currArtwork).addClass('active');
+          
+          bgArtworkUrl = $('#'+currArtwork).attr('src');
+
+          bgArtwork.css({'background-image':'url('+bgArtworkUrl+')'});
+      }
+      else{
+          if( flag == 0 || flag == 1 )
+              --currIndex;
+          else
+              ++currIndex;
+      }
+  };
+
+
+
+
+  
   
   function initPlayer(){
-    time();
     $list.on('click',list);
     $playBtn.on('click',playBtn);
     $nextBtn.on('click',nextBtn);
     $prevBtn.on('click',prevBtn);
-    $(audio).on('timeupdate',time);
   };
 
   initPlayer();
