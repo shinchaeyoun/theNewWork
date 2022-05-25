@@ -451,6 +451,12 @@
   padding-right: 0;
 }
 
+#like .movies .movies_wrap .sub_tit {
+  display: block;
+  margin: 0 10px 5px 10px;
+  color: #5a5a5a;
+}
+
 #like .movies .movies_wrap span {
   margin-bottom: 7px;
   font-size: 20px;
@@ -475,6 +481,20 @@
   background-color: #d3d3d3;
   width: 1px;
   height: 100%;
+}
+
+#like .movies .movies_wrap .sec1 .sub_tit {
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+#like .movies .movies_wrap .sec1 .sub_tit.active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 #like .movies .movies_wrap .sec1 .img_wrap {
@@ -548,6 +568,22 @@
   height: 100%;
 }
 
+#like .movies .movies_wrap .sec2 .sub_tit {
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+#like .movies .movies_wrap .sec2 .sub_tit.active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 #like .movies .movies_wrap .sec2 .img_wrap {
   height: 300px;
   margin-bottom: 10px;
@@ -610,12 +646,38 @@
   width: 200px;
 }
 
+#like .movies .movies_wrap .sec3 span {
+  margin-bottom: 7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#like .movies .movies_wrap .sec3 span.active {
+  color: #d0021b;
+}
+
 #like .movies .movies_wrap .sec3 .sec3_inner {
   margin-bottom: 30px;
 }
 
+#like .movies .movies_wrap .sec3 .sec3_inner .sub_tit {
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transition-delay: 2s;
+          transition-delay: 2s;
+}
+
+#like .movies .movies_wrap .sec3 .sec3_inner .sub_tit.active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 #like .movies .movies_wrap .sec3 .sec3_inner .img_wrap {
-  height: 100px;
+  height: 150px;
   margin-bottom: 10px;
   opacity: 0;
   -webkit-transform: translateY(20px);
