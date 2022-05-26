@@ -53,47 +53,103 @@ $(function(){
             $tabMenuTit.removeClass('on');
             $tabMenuSub.removeClass('on');
           }
-
-          if(window.scrollY > $flim - $minusWin){
-            $flimImg.addClass('active');
-            $flimSlide.addClass('active');
-            $flimSlideBtn.addClass('active');
-            $flimTxt.addClass('active');
-          } else if (window.scrollY < $flim - $minusWin) {
-            $flimImg.removeClass('active');
-            $flimSlide.removeClass('active');
-            $flimSlideBtn.removeClass('active');
-            $flimTxt.removeClass('active');
-          }
-
-          if(window.scrollY > $movies - $minusWin){
-            $mov1Mtit.addClass('active');
-            $mov1Img.addClass('active');
-            $mov1Tit.addClass('on');
-            $mov1Sub.addClass('active');
-            $mov2Mtit.addClass('active');
-            $mov2Img.addClass('active');
-            $mov2Tit.addClass('on');
-            $mov2Sub.addClass('active');
-            $mov3Mtit.addClass('active');
-            $mov3img.addClass('active');
-            $mov3tit.addClass('on');
-            $mov3sub.addClass('active');
-          } else if (window.scrollY < $movies - $minusWin) {
-            $mov1Mtit.removeClass('active');
-            $mov1Img.removeClass('active');
-            $mov1Tit.removeClass('on');
-            $mov1Sub.removeClass('active');
-            $mov2Mtit.removeClass('active');
-            $mov2Img.removeClass('active');
-            $mov2Tit.removeClass('on');
-            $mov2Sub.removeClass('active');
-            $mov3Mtit.removeClass('active');
-            $mov3img.removeClass('active');
-            $mov3tit.removeClass('on');
-            $mov3sub.removeClass('active');
-          }
         });
+
+        $(window).resize(function(){
+            if (window.innerWidth > 768) {  // 다바이스 크기가 480이상일때 
+              $(window).on('scroll',function(){
+                console.log(window.scrollY)
+                console.log($flim - $minusWin)
+                if(window.scrollY > $flim - $minusWin){
+                  $flimImg.addClass('active');
+                  $flimSlide.addClass('active');
+                  $flimSlideBtn.addClass('active');
+                  $flimTxt.addClass('active');
+                } else if (window.scrollY < $flim - $minusWin) {
+                  $flimImg.removeClass('active');
+                  $flimSlide.removeClass('active');
+                  $flimSlideBtn.removeClass('active');
+                  $flimTxt.removeClass('active');
+                }
+
+                if(window.scrollY > $movies - $minusWin){
+                  $mov1Mtit.addClass('active');
+                  $mov1Img.addClass('active');
+                  $mov1Tit.addClass('on');
+                  $mov1Sub.addClass('active');
+                  $mov2Mtit.addClass('active');
+                  $mov2Img.addClass('active');
+                  $mov2Tit.addClass('on');
+                  $mov2Sub.addClass('active');
+                  $mov3Mtit.addClass('active');
+                  $mov3img.addClass('active');
+                  $mov3tit.addClass('on');
+                  $mov3sub.addClass('active');
+                } else if (window.scrollY < $movies - $minusWin) {
+                  $mov1Mtit.removeClass('active');
+                  $mov1Img.removeClass('active');
+                  $mov1Tit.removeClass('on');
+                  $mov1Sub.removeClass('active');
+                  $mov2Mtit.removeClass('active');
+                  $mov2Img.removeClass('active');
+                  $mov2Tit.removeClass('on');
+                  $mov2Sub.removeClass('active');
+                  $mov3Mtit.removeClass('active');
+                  $mov3img.removeClass('active');
+                  $mov3tit.removeClass('on');
+                  $mov3sub.removeClass('active');
+                }
+            });
+          } else {
+            $(window).on('scroll',function(){
+              console.log(window.scrollY)
+              const minus = windowHei * 2.1
+              console.log($movies - minus)
+
+              if(window.scrollY > $flim - windowHei * 2.1){
+                $flimImg.addClass('active');
+                $flimSlide.addClass('active');
+                $flimSlideBtn.addClass('active');
+                $flimTxt.addClass('active');
+              } else if (window.scrollY < $flim - windowHei * 2.1) {
+                $flimImg.removeClass('active');
+                $flimSlide.removeClass('active');
+                $flimSlideBtn.removeClass('active');
+                $flimTxt.removeClass('active');
+              }
+
+              if(window.scrollY > $movies - minus){
+                $mov1Mtit.addClass('active');
+                $mov1Img.addClass('active');
+                $mov1Tit.addClass('on');
+                $mov1Sub.addClass('active');
+                $mov2Mtit.addClass('active');
+                $mov2Img.addClass('active');
+                $mov2Tit.addClass('on');
+                $mov2Sub.addClass('active');
+                $mov3Mtit.addClass('active');
+                $mov3img.addClass('active');
+                $mov3tit.addClass('on');
+                $mov3sub.addClass('active');
+              } else if (window.scrollY < $movies) {
+                $mov1Mtit.removeClass('active');
+                $mov1Img.removeClass('active');
+                $mov1Tit.removeClass('on');
+                $mov1Sub.removeClass('active');
+                $mov2Mtit.removeClass('active');
+                $mov2Img.removeClass('active');
+                $mov2Tit.removeClass('on');
+                $mov2Sub.removeClass('active');
+                $mov3Mtit.removeClass('active');
+                $mov3img.removeClass('active');
+                $mov3tit.removeClass('on');
+                $mov3sub.removeClass('active');
+              }
+          });
+          
+          }
+          
+          }).resize(); 
 
 // travel 
 const $wrapper = $('#like .travel .tab_wrap');
