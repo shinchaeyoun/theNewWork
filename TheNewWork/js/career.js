@@ -7,6 +7,7 @@ $(function(){
         $con3 = $('.con3').offset().top,
         $mainTit = $('.main_content .tit'),
         $mainTitSub = $('.main_content .tit span'),
+        $mainTitSub2 = $('.main_content .tit span.date'),
         $con2TitSub = $('.con2 .main_content .tit span'),
         $con3TitSub = $('.con3 .main_content .tit span'),
         $mainTxt = $('.main_content p'),
@@ -17,6 +18,7 @@ $(function(){
         $(window).on('load',function(){
           $mainTit.eq(0).addClass('on');
           $mainTitSub.eq(0).addClass('on');
+          $mainTitSub2.addClass('on');
           $mainTxt.eq(0).addClass('on');
           $subTit.eq(0).addClass('on');
           $subTxt.eq(0).addClass('on');

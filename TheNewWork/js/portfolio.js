@@ -85,6 +85,17 @@
               $img.eq(4).removeClass('on');
               $txt.eq(4).removeClass('on');
             }
+            if(window.scrollY > top[5] - $minusWin){
+              $mainTit.eq(5).addClass('on');
+              $subTit.eq(5).addClass('on');
+              $img.eq(5).addClass('on');
+              $txt.eq(5).addClass('on');
+            } else if (window.scrollY < top[5] - $minusWin){
+              $mainTit.eq(5).removeClass('on');
+              $subTit.eq(5).removeClass('on');
+              $img.eq(5).removeClass('on');
+              $txt.eq(5).removeClass('on');
+            }
           }
 
           // if(window.scrollY > scrollTop){

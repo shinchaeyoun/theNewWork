@@ -90,9 +90,6 @@
                   overflow: hidden;
                   margin: 30px 0;
               }
-  
-              .tab_container {
-              }
               
               .tab_content {
                   display: flex;
@@ -329,25 +326,6 @@
                       }
                   }
               }
-  
-              .text_wrap {
-                opacity: 0;
-                transform: translateY(20px);
-                transition: 1s;
-                transition-delay: 1s;
-                &.active {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-
-                  span {
-  
-                  }
-  
-                  p {
-                      font-size: 14px;
-                  }
-              }
           }
       } // fliming end
   
@@ -519,13 +497,7 @@
                     &.active{color:$point;}
                 }
 
-              .sec3_inner {
-                .sec3_wrap {
-                    
-                }
-                margin-bottom: 30px;
-
-                  .sub_tit {
+                .sub_tit {
                     opacity: 0;
                     transform: translateY(20px);
                     transition: 1s;
@@ -535,6 +507,12 @@
                         transform: translateY(0);
                     }
                   }
+                  
+              .sec3_inner {
+                
+                margin-bottom: 30px;
+
+                  
                   .img_wrap {
                     height: 150px;
                     margin-bottom: 10px;
