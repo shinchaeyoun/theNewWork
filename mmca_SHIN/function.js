@@ -32,15 +32,8 @@ $(function (){
   const $icon = $srch.children('header .search .srch-icon');
   
   $srch.on('click',function(){
-		
-		
 			$('.click-show').toggleClass('active');
 			$icon.toggleClass('active');
-		
-
-	
-		
-    
   });
 
   
@@ -104,29 +97,31 @@ $(function (){
 		});
 	});
 
-
+  let lock = false;
 	//다음버튼에 대한 클릭이벤트 구문
 	$btnNext.on('click',function(evt){
-		 evt.preventDefault();
+		evt.preventDefault();
+		if(nowIdx<4){
+			nowIdx++;
+		} else {
+			nowIdx = 0;
+		}
 
-		 if(nowIdx<4){
-				nowIdx++;
-		 } else {
-				nowIdx = 0;
-		 }
-
-		 $indicator.eq(nowIdx).parent().addClass('on').siblings().removeClass('on')
-		 
-		 $container.stop().animate({
-				left : -(100) + '%'
-		 },function(){
-			$('.slides .slides-container .slide-content').first().appendTo($container);
-			$container.css({
-				left:0
-			})
+	$indicator.eq(nowIdx).parent().addClass('on').siblings().removeClass('on')
+	
+	$container.stop().animate({
+			left : -(100) + '%'
+	},function(){
+		$('.slides .slides-container .slide-content').first().appendTo($container);
+		$container.css({
+			left:0
 		})
 	});
+	});
 
+	setInterval(() => {
+		$btnNext.trigger('click');
+	},3000);
 
   // 전시 탭 메뉴 활성화
   const $tabMnu = $('.exhibit .tab li');
@@ -143,10 +138,7 @@ $(function (){
       color:'#000',
       display:'block'
     }).fadeIn();
-
   });
-  
-
 
   // 전시 슬라이드
 	const $exContainer = $('.exhibit .slide-wrap .slide-container');
