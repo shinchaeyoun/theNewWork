@@ -1,7 +1,3 @@
-  :focus {
-  // outline: 2px  solid red;
-}
-
 #wrap {
   margin: 0 30px;
   font-size: 15px;
@@ -538,8 +534,6 @@ header {
       display: flex;
       flex-flow: row wrap;
       .slide-content {
-        &.hide {display: none;}
-        &.show {display: block;}
         margin-right: 45px;
         width: 400px;
         a {

@@ -3,8 +3,7 @@ $(function (){
   const $sub = $menu.children('.sub-container');
   const $grey = $menu.children('a');
 
-
-  let mnuIdx = null;
+	let mnuIdx = null;
 
   // 서브메뉴
   $menu.hover(
@@ -97,7 +96,6 @@ $(function (){
 		});
 	});
 
-  let lock = false;
 	//다음버튼에 대한 클릭이벤트 구문
 	$btnNext.on('click',function(evt){
 		evt.preventDefault();
@@ -124,8 +122,9 @@ $(function (){
 	},3000);
 
 
+
+
   // 전시
-  const $wrapper = $('.exhibit .slide-container');
   const $tabMnu = $('.exhibit .tab li');
   const $allTabs = $('.exhibit .slide-container .slide-content');
   const $bar = $('.exhibit .tab li a');
@@ -134,7 +133,7 @@ $(function (){
 	const $exBtnNext = $('.exhibit .slide-wrap .next');
 
 	let exNowIdx = 0;
-	
+
 	$allTabs.on('click',function(e){
 		e.preventDefault();
 	})
@@ -156,14 +155,30 @@ $(function (){
     }).fadeIn();
 
 		const dataTab = $(this).data('tab');
-		console.log(tabIdx);
-		console.log(dataTab);
-		$allTabs.removeClass('hide').removeClass('show');
-		$allTabs.filter('[data-tab='+dataTab+']').addClass('show').siblings().addClass('hide');
+
+		$allTabs.show();
+		$allTabs.not('[data-tab='+dataTab+']').hide();
+
+		$tabMnu.eq(0).on('click',function(){
+			$allTabs.show();
+			$exBtnPrev.show();
+			$exBtnNext.show();
+		});
 
 		$exContainer.stop().animate({left:'0'});
-  });
 
+		let count = $('.exhibit .slide-container .slide-content:visible').length;
+		console.log('count =',count);
+
+		if(count>3){
+			$exBtnPrev.show();
+			$exBtnNext.show();
+		} else if (count<3) {
+			$exBtnPrev.hide();
+			$exBtnNext.hide();
+		};
+
+  });
 
 // 전시 슬라이드
 //이전버튼에 대한 클릭이벤트 구문
@@ -186,17 +201,36 @@ $exBtnPrev.on('click', function(evt){
 $exBtnNext.on('click',function(evt){
 	evt.preventDefault();
 
-	if(exNowIdx<=2){
-	 exNowIdx++;
-	 $exBtnPrev.addClass('active');
-	} else {
-	 $(this).removeClass('active');
-	}
+	let count = $('.exhibit .slide-container .slide-content:visible').length
+		
+		if(count>4){
+			if(exNowIdx < 3) {
+				exNowIdx++;
+			} else {
+				exNowIdx = 0;
+			}
 	
-	$exContainer.stop().animate({
-		left : -(445 * exNowIdx) + 'px'
-	 });
+			$exContainer.stop().animate({
+				left : -(445 * exNowIdx) + 'px'
+			});
+		} else if (count===4){
+		if(exNowIdx < 1) {
+			exNowIdx++;
+		} else {
+			exNowIdx = 0;
+		}
+
+		$exContainer.stop().animate({
+			left : -(445 * exNowIdx) + 'px'
+		});
+	};
 });
+
+
+
+
+
+
 
 
   // 소장품 슬라이드

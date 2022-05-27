@@ -631,14 +631,6 @@ header > .search > .click-show > button {
   width: 400px;
 }
 
-.exhibit .slide-wrap .slide-container .slide-content.hide {
-  display: none;
-}
-
-.exhibit .slide-wrap .slide-container .slide-content.show {
-  display: block;
-}
-
 .exhibit .slide-wrap .slide-container .slide-content a {
   display: block;
 }
