@@ -113,6 +113,10 @@
   width: 100%;
 }
 
+#portfolio .seed .img_box {
+  height: 100%;
+}
+
 @media screen and (max-width: 480px) {
   #portfolio {
     padding: 0 0 30px !important;

@@ -78,6 +78,8 @@ $nanum : 'Nanum Myeongjo', serif;
             }
         } // text box end
 
+        
+
         .img_box{
         margin-bottom: 30px;
         height: 500px;
@@ -100,6 +102,11 @@ $nanum : 'Nanum Myeongjo', serif;
             }
         }
     } // content_wrap end
+    .seed {
+        .img_box {
+            height: 100%;
+        }
+    }
 } // portfolio end
 
 @media screen and (max-width:480px) {
