@@ -473,6 +473,7 @@ header {
 } // art end
 
 
+
 // 전시
 .exhibit {
   .title-wrap {
@@ -515,6 +516,7 @@ header {
       span {
         width: 8px;
         img {
+          padding: 5px 0 2px 0;
           width: 100%;
           transform: rotate(270deg);
         }
@@ -538,6 +540,8 @@ header {
       display: flex;
       flex-flow: row wrap;
       .slide-content {
+        &.hide {display: none;}
+        &.show {display: block;}
         margin-right: 45px;
         width: 400px;
         a {
@@ -666,6 +670,7 @@ header {
   > .slide {
     position: relative;
     width: 100%;
+    overflow: hidden;
     
     > .slide-container {
       display: flex;

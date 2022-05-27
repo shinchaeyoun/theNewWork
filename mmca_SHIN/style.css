@@ -599,6 +599,7 @@ header > .search > .click-show > button {
 }
 
 .exhibit .title-wrap .btn-more span img {
+  padding: 5px 0 2px 0;
   width: 100%;
   -webkit-transform: rotate(270deg);
           transform: rotate(270deg);
@@ -630,6 +631,14 @@ header > .search > .click-show > button {
 .exhibit .slide-wrap .slide-container .slide-content {
   margin-right: 45px;
   width: 400px;
+}
+
+.exhibit .slide-wrap .slide-container .slide-content.hide {
+  display: none;
+}
+
+.exhibit .slide-wrap .slide-container .slide-content.show {
+  display: block;
 }
 
 .exhibit .slide-wrap .slide-container .slide-content a {
@@ -767,6 +776,7 @@ header > .search > .click-show > button {
 .collection > .slide {
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
 .collection > .slide > .slide-container {
