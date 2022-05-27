@@ -135,6 +135,9 @@ $(function (){
 
 	let exNowIdx = 0;
 	
+	$allTabs.on('click',function(e){
+		e.preventDefault();
+	})
 
 	// 전시 탭 메뉴 활성화
 	$tabMnu.each(function(i) {
