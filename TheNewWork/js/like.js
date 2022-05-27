@@ -58,8 +58,6 @@ $(function(){
         $(window).resize(function(){
             if (window.innerWidth > 768) {  // 다바이스 크기가 480이상일때 
               $(window).on('scroll',function(){
-                console.log(window.scrollY)
-                console.log($flim - $minusWin)
                 if(window.scrollY > $flim - $minusWin){
                   $flimImg.addClass('active');
                   $flimSlide.addClass('active');
@@ -102,16 +100,14 @@ $(function(){
             });
           } else {
             $(window).on('scroll',function(){
-              console.log(window.scrollY)
               const minus = windowHei * 2.1
-              console.log($movies - minus)
 
-              if(window.scrollY > $flim - windowHei * 2.1){
+              if(window.scrollY > $flim - minus){
                 $flimImg.addClass('active');
                 $flimSlide.addClass('active');
                 $flimSlideBtn.addClass('active');
                 $flimTxt.addClass('active');
-              } else if (window.scrollY < $flim - windowHei * 2.1) {
+              } else if (window.scrollY < $flim - minus) {
                 $flimImg.removeClass('active');
                 $flimSlide.removeClass('active');
                 $flimSlideBtn.removeClass('active');
@@ -317,110 +313,78 @@ const $tabMenu = $('#like .travel .tab_wrap .tab_menu li');
                         'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/9.mp3',
                         'https://raw.githubusercontent.com/shinchaeyoun/shin/tree/main/TheNewWork/audio/10.mp3'
                        );
-console.log(audio.src);
+                       
   let playIdx = 1;
+  audio.src = '../audio/'+playIdx+'.mp3';
   const buffInterval = null;
 
-  // 재생버튼, 플레이 바  활성화
-  function btnActive (){
-    $playBtn.toggleClass('active');
-    $dot.toggleClass('active');
-  };
+  // 플레이
+  function play (){
+    audio.volume = 0.1;
+    audio.loop = false;
+    audio.src = '../audio/'+playIdx+'.mp3';
+    audio.play();
+  }
 
-  // list active
+  // 리스트 활성화
   function listActive (){
     $list.eq(playIdx-1).addClass('active').siblings().removeClass('active');
   }
 
-  // audio play
-  function play (){
-    if($playBtn.hasClass('active') === true){
-      audio.volume = 0.1;
-      audio.loop = false;
-      audio.src = '../audio/'+playIdx+'.mp3';
-      audio.play();
-    } else {
-      audio.pause();
-    }
-  }
-
-  // left change
+  // 왼쪽 정보 변경
   function lifeInfo (){
     $albumCover.attr('src','./img/like/music/'+playIdx+'.jpeg');
     $trackName.text(trackNames[playIdx-1]);
     $artistName.text(artistNames[playIdx-1]);
   }
-  
 
-
-
-
-
-  // 리스트
-  function list (){
-    let listIdx = $list.index(this)+1;
-    
-    console.log('listIdx is', listIdx);
-
-    // 음악 바로 재생
-    audio.volume = 0.1;
-    audio.loop = false;
-    audio.src = '../audio/'+listIdx+'.mp3';
-    audio.play();
-
-    // 재생버튼, 플레이 바 활성화
+  function btnAdd (){
     $playBtn.addClass('active');
     $dot.addClass('active');
+  }
 
-    // 왼쪽 정보 변경
-    $albumCover.attr('src','./img/like/music/'+listIdx+'.jpeg');
-    $trackName.text(trackNames[listIdx-1]);
-    $artistName.text(artistNames[listIdx-1]);
+  function btnToggle (){
+    $playBtn.toggleClass('active');
+    $dot.toggleClass('active');
+  }
 
-    // 리스트 활성화
-    $list.eq(listIdx-1).addClass('active').siblings().removeClass('active');
-
-    // 자동 넘김
+  // 자동 넘김
+  function autoNext (){
     audio.onended = function(){
-      if(listIdx<10) {
-        listIdx++;
-      } else {
-        listIdx=1;
-      }
-      console.log('넘어감',listIdx);
-  
-      audio.src = '../audio/'+listIdx+'.mp3';
+      if(playIdx<10) {playIdx++;} else {playIdx=1;}
+
+      console.log('넘어감',playIdx);
+
+      audio.src = '../audio/'+playIdx+'.mp3';
       audio.play();
 
       // 왼쪽 정보 변경
-      $albumCover.attr('src','./img/like/music/'+listIdx+'.jpeg');
-      $trackName.text(trackNames[listIdx-1]);
-      $artistName.text(artistNames[listIdx-1]);
-
+      lifeInfo();
       // 리스트 활성화
-      $list.eq(listIdx-1).addClass('active').siblings().removeClass('active');
-    }
+      listActive();
+    };
   };
 
-  // 재생
-  function playBtn(){
+  
 
-    btnActive();
-
-    // play ();
-    // if($playBtn.hasClass('active') === true){
-    if(audio.paused){
-      audio.volume = 0.1;
-      audio.loop = false;
-      audio.src = '../audio/'+playIdx+'.mp3';
-      audio.play();
-      
-    } else {
-      audio.pause();
-    }
-
-    listActive();
+  // 리스트
+  function list (){
+    playIdx = $list.index(this)+1;
     
+    console.log('listIdx is', playIdx);
+
+    // 음악 바로 재생
+    play();
+
+    // 재생버튼, 플레이 바 활성화
+    btnAdd ()
+
+    // 왼쪽 정보 변경
+    lifeInfo ()
+
+    // 리스트 활성화
+    listActive ()
+
     // 자동 넘김
     audio.onended = function(){
       if(playIdx<10) {
@@ -434,11 +398,30 @@ console.log(audio.src);
       audio.play();
 
       // 왼쪽 정보 변경
-      lifeInfo();
-      // 리스트 활성화
-      listActive();
-    };
+      lifeInfo ()
 
+      // 리스트 활성화
+      listActive ()
+    }
+  };
+
+  // 재생
+  function playBtn(){
+    // 재생버튼, 플레이 바  활성화
+    btnToggle ()
+    
+    if(audio.paused){
+      audio.volume = 0.1;
+      audio.loop = false;
+      audio.play();
+    } else {
+      audio.pause();
+    }
+
+    listActive();
+    
+    // 자동 넘김
+    autoNext();
   };
 
   // 다음
@@ -449,22 +432,19 @@ console.log(audio.src);
       playIdx=1;
     }
 
-    console.log('music',playIdx);
+    console.log('next Btn',playIdx);
 
     // 재생
-    audio.volume = 0.1;
-    audio.loop = false;
-    audio.src = '../audio/'+playIdx+'.mp3';
-    audio.play();
+    play ();
 
-    $playBtn.addClass('active');
-    $dot.addClass('active');
+    btnAdd ();
 
     // 왼쪽 정보 변경
     lifeInfo();
     // 리스트 활성화
-    console.log('list',playIdx);
     listActive();
+    // 자동 넘김
+    autoNext();
   };
 
   // 이전
@@ -477,19 +457,16 @@ console.log(audio.src);
 
     console.log('music',playIdx);
     // 재생
-    audio.volume = 0.1;
-    audio.loop = false;
-    audio.src = '../audio/'+playIdx+'.mp3';
-    audio.play();
+    play ();
 
-    $playBtn.addClass('active');
-    $dot.addClass('active');
+    btnAdd ()
 
     // 왼쪽 정보 변경
     lifeInfo();
     // 리스트 활성화
-    console.log('prev BTN',playIdx);
     listActive();
+    // 자동 넘김
+    autoNext();
   };
   
   // 재생 바
