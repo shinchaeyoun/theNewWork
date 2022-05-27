@@ -534,9 +534,7 @@ header {
     .slide-container {
       position: absolute;
       top: 0;
-      /* left: calc(-445px * 2); */
-      /* left: -445px; */
-      width: calc(445px *6);
+      width: calc(445px * 6);
       display: flex;
       flex-flow: row wrap;
       .slide-content {

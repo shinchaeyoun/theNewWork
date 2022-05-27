@@ -616,9 +616,7 @@ header > .search > .click-show > button {
 .exhibit .slide-wrap .slide-container {
   position: absolute;
   top: 0;
-  /* left: calc(-445px * 2); */
-  /* left: -445px; */
-  width: calc(445px *6);
+  width: calc(445px * 6);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
