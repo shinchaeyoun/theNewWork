@@ -31,7 +31,7 @@ $nanum : 'Nanum Myeongjo', serif;
 
                 opacity:0;
                 transform: translateY(20px);
-                transition: 1s;
+                transition: .5s;
                 &.on {
                     opacity: 1;
                     transform: translateY(0);
@@ -45,7 +45,7 @@ $nanum : 'Nanum Myeongjo', serif;
 
                 opacity:0;
                 transform: translateY(20px);
-                transition: 1s;
+                transition: .5s;
                 transition-delay: .2s;
                 &.on {
                     opacity: 1;
@@ -64,7 +64,7 @@ $nanum : 'Nanum Myeongjo', serif;
 
             opacity:0;
             transform: translateY(20px);
-            transition: 1s;
+            transition: .5s;
             transition-delay: .8s;
             &.on {
                 opacity: 1;
@@ -88,7 +88,7 @@ $nanum : 'Nanum Myeongjo', serif;
     
         opacity:0;
         transform: translateY(20px);
-        transition: 1s;
+        transition: .5s;
         transition-delay: .5s;
         &.on {
             opacity: 1;

@@ -18,9 +18,7 @@
               &.active {color:$point;}
           }
   
-          .main_wrap {
-              padding: 30px 0;
-          }
+          .main_wrap {padding: 30px 0;}
   
           .sub_tit {
               display: block;
@@ -37,9 +35,6 @@
                   color:$grey;
               }
           }
-
-          
-          
       }
   
      .greeting {
@@ -61,8 +56,8 @@
 
             opacity: 0;
             transform: translateY(20px);
-            transition: 1s;
-            transition-delay: .5s;
+            transition: .5s;
+            transition-delay: .2s;
 
             &.active{
                 opacity: 1;
@@ -90,7 +85,7 @@
             
             opacity: 0;
             transform: translateY(20px);
-            transition: 1s;
+            transition: .5s;
 
             &.active{
                 opacity: 1;
@@ -98,13 +93,9 @@
             }
          }
 
-         .first {
-            transition-delay: 1s;
-         }
-
+         .first {transition-delay: .4s;}
          .last {
-            transition-delay: 1.5s;
-
+            transition-delay: .6s;
             li{
                 span {
                     display: inline-block;
@@ -131,7 +122,7 @@
               .img_wrap {
                 opacity: 0;
                 transform: translateY(20px);
-                transition: 1s;
+                transition: .5s;
                 &.active{
                     opacity: 1;
                     transform: translateY(0);
@@ -141,7 +132,7 @@
             .text_wrap {
                 opacity: 0;
                 transform: translateY(20px);
-                transition: 1s;
+                transition: .5s;
                 &.active{
                     opacity: 1;
                     transform: translateY(0);
@@ -150,19 +141,18 @@
         }
         
           .first_container {
-              .box1 {.img_wrap {transition-delay: .5s;} .text_wrap {transition-delay: 1s;}}
-              .box2 {.img_wrap{transition-delay: 1.5s;} .text_wrap {transition-delay: 2s;}}
+              .box1 {.img_wrap {transition-delay: .2s;} .text_wrap {transition-delay: .4s;}}
+              .box2 {.img_wrap{transition-delay: .6s;} .text_wrap {transition-delay: .8s;}}
           }
 
           .second_container {
-              .box1 {.img_wrap {transition-delay: 2.5s;} .text_wrap {transition-delay: 3s;}}
-              .box2 {.img_wrap {transition-delay: 3.5s;} .text_wrap {transition-delay: 4s;}}
+              .box1 {.img_wrap {transition-delay: 1s;} .text_wrap {transition-delay: 1.2s;}}
+              .box2 {.img_wrap {transition-delay: 1.4s;} .text_wrap {transition-delay: 1.6s;}}
           }
 
 
           .box1 {
               margin-bottom: 50px;
-              // width: 600px;
               width: 590px;
               .img_wrap {
                   margin-bottom: 10px;
@@ -209,8 +199,8 @@
 
             opacity: 0;
             transform: translateY(20px);
-            transition: 1s;
-            transition-delay: .5s;
+            transition: .5s;
+            transition-delay: .2s;
             
 
             &.active{
@@ -233,17 +223,15 @@
 
             opacity: 0;
             transform: translateY(20px);
-            transition: 1s;
-            transition-delay: 1s;
+            transition: .5s;
+            transition-delay: .4s;
 
             &.active{
                 opacity: 1;
                 transform: translateY(0);
             }
           }
-          
       } //motive_motto end
-  
   } // introduce end
 
 

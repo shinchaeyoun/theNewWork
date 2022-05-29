@@ -3,6 +3,7 @@ $(function(){
         $minusWin = windowHei / 2,
         $travel = $('.travel'),
         $travelHei = $('.travel').offset().top,
+        $mainTit = $travel.find('.sec1 span'),
         $mainTxt = $travel.find('.sec1 p'),
         $mainImg = $travel.find('.sec1 .img_wrap'),
         $sec2 = $travel.find('.sec2').offset().top,
@@ -27,15 +28,17 @@ $(function(){
         $mov3Mtit = $('.movies .sec3 .sub_tit'),
         $mov3img = $('.movies .sec3 .img_wrap'),
         $mov3tit = $('.movies .sec3 span'),
-        $mov3sub = $('.movies .sec3 p');
-
-
+        $mov3sub = $('.movies .sec3 p'),
+        $music = $('.music').offset().top,
+        $sceplayer = $('.music .music_wrap');
 
         $(window).on('load',function(){
           if(window.scrollY > $travelHei - $minusWin){
+            $mainTit.addClass('on');
             $mainTxt.addClass('active');
             $mainImg.addClass('active');
           } else if (window.scrollY < $travelHei - $minusWin) {
+            $mainTit.removeClass('on');
             $mainTxt.removeClass('active');
             $mainImg.removeClass('active');
           }
@@ -52,6 +55,12 @@ $(function(){
             $tabMenuTxt.removeClass('active');
             $tabMenuTit.removeClass('on');
             $tabMenuSub.removeClass('on');
+          }
+          
+          if(window.scrollY > $music - $minusWin){
+            $sceplayer.addClass('active');
+          } else if (window.scrollY < $music - $minusWin) {
+            $sceplayer.removeClass('active');
           }
         });
 

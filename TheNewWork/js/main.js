@@ -8,11 +8,11 @@ $(function(){
         $firstImg = $firstLine.find('.img_wrap'),
         $firstSpan = $firstLine.find('.text_wrap span'),
         $firstP = $firstLine.find('.text_wrap p'),
-        $secon_line = $('#second_line'),
-        seconHei = $secon_line.offset().top,
-        $seconImg = $secon_line.find('.img_wrap'),
-        $seconSpan = $secon_line.find('span'),
-        $seconP = $secon_line.find('p'),
+        $second = $('#second_line'),
+        $seconHei = $second.offset().top,
+        $seconImg = $second.find('.img_wrap'),
+        $seconSpan = $second.find('span'),
+        $seconP = $second.find('p'),
         $thirdLine = $('.third_line'),
         $thirdLineHei = $thirdLine.offset().top,
         $trio = $thirdLine.find('.content');
@@ -28,29 +28,31 @@ $(function(){
       $firstP.removeClass('active');
     }
 
-    if(window.scrollY > seconHei - $minusWin) {
+    if(window.scrollY > $seconHei){
+      console.log('seond 어디니??');
       $seconImg.addClass('active');
       $seconSpan.addClass('on');
       $seconP.addClass('active');
-    } else if (window.scrollY < seconHei - $minusWin){
+    } else if (window.scrollY < $seconHei){
       $seconImg.removeClass('active');
       $seconSpan.removeClass('on');
       $seconP.removeClass('active');
     }
 
-    if(window.scrollY > $thirdLineHei - $minusWin) {
+    if(window.scrollY > $thirdLineHei){
+      console.log('third 어디니??');
       $trio.addClass('active');
-    } else if(window.scrollY < $thirdLineHei - $minusWin) {
+    } else if(window.scrollY < $thirdLineHei){
       $trio.removeClass('active');
     }
   });
 
   $(window).on('load',function(){
-        $mainImg.addClass('active');
-      
-        if (window.scrollY < $mainHei.offset().top){
-          $seconImg.removeClass('active');
-        }
+    $mainImg.addClass('active');
+  
+    if (window.scrollY < $mainHei.offset().top){
+      $seconImg.removeClass('active');
+    }
   });
 });
 

@@ -25,8 +25,8 @@
   opacity: 0;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 #portfolio .content_wrap .tit_box .main_tit.active {
@@ -46,8 +46,8 @@
   opacity: 0;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: .5s;
+  transition: .5s;
   -webkit-transition-delay: .2s;
           transition-delay: .2s;
 }
@@ -68,8 +68,8 @@
   opacity: 0;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: .5s;
+  transition: .5s;
   -webkit-transition-delay: .8s;
           transition-delay: .8s;
 }
@@ -97,8 +97,8 @@
   opacity: 0;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: .5s;
+  transition: .5s;
   -webkit-transition-delay: .5s;
           transition-delay: .5s;
 }

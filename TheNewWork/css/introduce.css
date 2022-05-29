@@ -60,10 +60,10 @@
   opacity: 0;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
-  -webkit-transition: 1s;
-  transition: 1s;
-  -webkit-transition-delay: .5s;
-          transition-delay: .5s;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
 }
 
 #introduce .greeting .center_wrap.active {
@@ -93,8 +93,8 @@
   opacity: 0;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 #introduce .greeting .side_wrap:last-child {
@@ -108,13 +108,13 @@
 }
 
 #introduce .greeting .first {
-  -webkit-transition-delay: 1s;
-          transition-delay: 1s;
+  -webkit-transition-delay: .4s;
+          transition-delay: .4s;
 }
 
 #introduce .greeting .last {
-  -webkit-transition-delay: 1.5s;
-          transition-delay: 1.5s;
+  -webkit-transition-delay: .6s;
+          transition-delay: .6s;
 }
 
 #introduce .greeting .last li span {
@@ -148,8 +148,8 @@
   opacity: 0;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 #introduce .hashtag_story .main_wrap .content .img_wrap.active {
@@ -162,8 +162,8 @@
   opacity: 0;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 #introduce .hashtag_story .main_wrap .content .text_wrap.active {
@@ -173,43 +173,43 @@
 }
 
 #introduce .hashtag_story .main_wrap .first_container .box1 .img_wrap {
-  -webkit-transition-delay: .5s;
-          transition-delay: .5s;
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
 }
 
 #introduce .hashtag_story .main_wrap .first_container .box1 .text_wrap {
+  -webkit-transition-delay: .4s;
+          transition-delay: .4s;
+}
+
+#introduce .hashtag_story .main_wrap .first_container .box2 .img_wrap {
+  -webkit-transition-delay: .6s;
+          transition-delay: .6s;
+}
+
+#introduce .hashtag_story .main_wrap .first_container .box2 .text_wrap {
+  -webkit-transition-delay: .8s;
+          transition-delay: .8s;
+}
+
+#introduce .hashtag_story .main_wrap .second_container .box1 .img_wrap {
   -webkit-transition-delay: 1s;
           transition-delay: 1s;
 }
 
-#introduce .hashtag_story .main_wrap .first_container .box2 .img_wrap {
-  -webkit-transition-delay: 1.5s;
-          transition-delay: 1.5s;
-}
-
-#introduce .hashtag_story .main_wrap .first_container .box2 .text_wrap {
-  -webkit-transition-delay: 2s;
-          transition-delay: 2s;
-}
-
-#introduce .hashtag_story .main_wrap .second_container .box1 .img_wrap {
-  -webkit-transition-delay: 2.5s;
-          transition-delay: 2.5s;
-}
-
 #introduce .hashtag_story .main_wrap .second_container .box1 .text_wrap {
-  -webkit-transition-delay: 3s;
-          transition-delay: 3s;
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
 }
 
 #introduce .hashtag_story .main_wrap .second_container .box2 .img_wrap {
-  -webkit-transition-delay: 3.5s;
-          transition-delay: 3.5s;
+  -webkit-transition-delay: 1.4s;
+          transition-delay: 1.4s;
 }
 
 #introduce .hashtag_story .main_wrap .second_container .box2 .text_wrap {
-  -webkit-transition-delay: 4s;
-          transition-delay: 4s;
+  -webkit-transition-delay: 1.6s;
+          transition-delay: 1.6s;
 }
 
 #introduce .hashtag_story .main_wrap .box1 {
@@ -267,10 +267,10 @@
   opacity: 0;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
-  -webkit-transition: 1s;
-  transition: 1s;
-  -webkit-transition-delay: .5s;
-          transition-delay: .5s;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
 }
 
 #introduce .message_motto .message.active {
@@ -295,10 +295,10 @@
   opacity: 0;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
-  -webkit-transition: 1s;
-  transition: 1s;
-  -webkit-transition-delay: 1s;
-          transition-delay: 1s;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transition-delay: .4s;
+          transition-delay: .4s;
 }
 
 #introduce .message_motto .motto.active {

@@ -59,7 +59,7 @@ main {
             span{
                 opacity: 0;
                 transform: translateY(20px);
-                transition: 1s;
+                transition: .5s;
                 &.on {
                     opacity: 1;
                     transform: translateY(0);
@@ -70,8 +70,8 @@ main {
             p {
                 opacity: 0;
                 transform: translateY(20px);
-                transition: 1s;
-                transition-delay: .5s;
+                transition: .5s;
+                transition-delay: .2s;
                 &.active {
                     opacity: 1;
                     transform: translateY(0);
@@ -83,8 +83,8 @@ main {
 
             opacity: 0;
             transform: translateY(20px);
-            transition: 1s;
-            transition-delay: 1s;
+            transition: .5s;
+            transition-delay: .4s;
 
             &.active {
                 transform: translateY(0);
@@ -108,7 +108,7 @@ main {
             width: 400px;
             opacity: 0;
             transform: translateY(20px);
-            transition: 1s;
+            transition: .5s;
 
             &.active {
                 transform: translateY(0);
@@ -128,8 +128,8 @@ main {
             span{
                 opacity: 0;
                 transform: translateY(20px);
-                transition: 1s;
-                transition-delay: .5s;
+                transition: .5s;
+                transition-delay: .2s;
                 &.on {
                     opacity: 1;
                     transform: translateY(0);
@@ -140,8 +140,8 @@ main {
             p {
                 opacity: 0;
                 transform: translateY(20px);
-                transition: 1s;
-                transition-delay: 1s;
+                transition: .5s;
+                transition-delay: .4s;
                 &.active {
                     opacity: 1;
                     transform: translateY(0);
@@ -164,11 +164,11 @@ main {
 
             opacity: 0;
             transform: translateY(20px);
-            transition: 1s;
+            transition: .5s;
 
-            &:nth-of-type(1){transition-delay: .5s;}
-            &:nth-of-type(2){transition-delay: 1s;}
-            &:nth-of-type(3){transition-delay: 1.5s;}
+            &:nth-of-type(1){transition-delay: .2s;}
+            &:nth-of-type(2){transition-delay: .4s;}
+            &:nth-of-type(3){transition-delay: .6s;}
 
             &.active{
                 opacity: 1;
