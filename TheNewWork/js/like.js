@@ -28,9 +28,7 @@ $(function(){
         $mov3Mtit = $('.movies .sec3 .sub_tit'),
         $mov3img = $('.movies .sec3 .img_wrap'),
         $mov3tit = $('.movies .sec3 span'),
-        $mov3sub = $('.movies .sec3 p'),
-        $music = $('.music').offset().top,
-        $sceplayer = $('.music .music_wrap');
+        $mov3sub = $('.movies .sec3 p');
 
         $(window).on('load',function(){
           if(window.scrollY > $travelHei - $minusWin){
@@ -55,12 +53,6 @@ $(function(){
             $tabMenuTxt.removeClass('active');
             $tabMenuTit.removeClass('on');
             $tabMenuSub.removeClass('on');
-          }
-          
-          if(window.scrollY > $music - $minusWin){
-            $sceplayer.addClass('active');
-          } else if (window.scrollY < $music - $minusWin) {
-            $sceplayer.removeClass('active');
           }
         });
 
