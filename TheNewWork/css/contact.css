@@ -249,6 +249,36 @@
           transform: translateY(0);
 }
 
+#contact .contact_container > ul > li .kakao {
+  opacity: 0;
+  position: relative;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#contact .contact_container > ul > li .kakao.active {
+  opacity: 1;
+}
+
+#contact .contact_container > ul > li .kakao li {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+}
+
+#contact .contact_container > ul > li .kakao li img {
+  width: 100%;
+  height: 100%;
+}
+
+#contact .contact_container > ul .kakao_qr a {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 480px) {
   .inner_wrap {
     -webkit-box-orient: vertical;

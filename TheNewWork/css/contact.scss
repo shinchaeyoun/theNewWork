@@ -3,8 +3,6 @@ $point : #d0021b;
 $grey : #d3d3d3;
 $sub_grey: #5a5a5a;
 
-
-
 // 폰트변수
 $assistant : 'Assistant', sans-serif;
 $outfit : 'Outfit', sans-serif;
@@ -35,13 +33,8 @@ $nanum : 'Nanum Myeongjo', serif;
             opacity: 0;
             transform: translateY(20px);
             transition:.5s;
-            &.on {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
+            &.on {opacity: 1; transform: translateY(0);}
             &#email{transition-delay: .2s;}
-              
           }
   
           textarea {
@@ -58,35 +51,24 @@ $nanum : 'Nanum Myeongjo', serif;
             transform: translateY(20px);
             transition:.5s;
             transition-delay: .4s;
-            &.on {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            &.on {opacity: 1; transform: translateY(0);}
           }
   
           button {
-              &:active, &:visited, a:hover {
-                  color: #222;
-              }
+              &:active, &:visited, a:hover {color: #222;}
 
               width: 100px;
               height: 30px;
               border-radius: 25px;
               background-color: $grey;
               border: none;
-              &.active {
-                  color:#fff;
-                  background-color: $point;
-              }
+              &.active {color:#fff; background-color: $point;}
 
               opacity: 0;
               transform: translateY(20px);
               transition:.5s;
               transition-delay: .8s;
-              &.on {
-                  opacity: 1;
-                  transform: translateY(0);
-              }
+              &.on {opacity: 1; transform: translateY(0);}
           }
   
           &::after {
@@ -153,16 +135,30 @@ $nanum : 'Nanum Myeongjo', serif;
                             transform: translateY(0);
                         }
                     }
+                    
+                    .kakao {
+                        opacity: 0;
+                        position: relative;
+                        transition: .2s;
+                        &.active {opacity: 1;}
+                        li {
+                            position: absolute;
+                            top: 0; left: 50%;
+                            transform: translateX(-50%);
+                            width: 100px;
+                            height: 100px;                            
+                            img {width: 100%; height: 100%;}
+                        }
+                    }
               }
+              .kakao_qr { a {cursor: pointer;}}
           }
       }
   
   }
 
   @media screen and (max-width:480px) {
-      .inner_wrap {
-          flex-direction:column;
-      }
+      .inner_wrap {flex-direction:column;}
 
       .submit_container {
         margin: 0 !important;

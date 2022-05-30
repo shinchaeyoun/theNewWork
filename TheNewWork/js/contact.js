@@ -6,7 +6,9 @@ $(function(){
         $message = $('#message'),
         $button = $('button'),
         $span = $('span'),
-        $a = $('a');
+        $a = $('a'),
+        $kakaoQr = $('.kakao_qr'),
+        $qrImg = $('.kakao');
 
         $(window).on('load',function(){
           $name.addClass('on');
@@ -16,4 +18,10 @@ $(function(){
           $span.addClass('on');
           $a.addClass('on');
         });
+
+        $kakaoQr.on('click',function(){
+          $qrImg.toggleClass('active');
+        });
+
+  
 });
