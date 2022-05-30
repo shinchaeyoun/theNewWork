@@ -311,6 +311,9 @@
     margin: 0 !important;
     padding: 50px 0 0 !important;
   }
+  .contact_container .kakao.active {
+    margin-bottom: 130px;
+  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
