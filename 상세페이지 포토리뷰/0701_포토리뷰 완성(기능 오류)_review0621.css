@@ -1,0 +1,220 @@
+#prdReview {  }
+#prdReview h3 {  }
+#prdReview .board > .ec-base-button {  }
+#prdReview .nodata { padding:14px 0; text-align:center; }
+
+/* 상품 후기 리스트 */
+.xans-product-review .writeNotiArea { padding:0 14px; background:#fff; }
+.xans-product-review .writeNotiArea:after { content:""; display:block; clear:both; }
+.xans-product-review .writeNotiArea p { float:left; margin:7px 0; }
+.xans-product-review .writeNotiArea div.gRight { float:right; margin:7px 0 0; }
+.xans-product-review .noAccess { margin:14px 0; font-size:1.4rem; text-align:center; }
+.xans-product-review .minor { padding:108px 0 28px; text-align:center; background:url("//img.echosting.cafe24.com/skin/mobile_ko_KR/intro/bg_adult.png") center 14px no-repeat; background-size:80px 80px; border-top:1px solid #d5d5d5; border-bottom:1px solid #d5d5d5; }
+.xans-product-review .minor p { font-size:1.3rem; margin:0 0 14px; }
+
+/* 정렬 */
+.xans-product-review .boardSort { padding:7px 14px; font-size:1.3rem; background:#f1f1f1; }
+.xans-product-review .boardSort:after { content:""; display:block; clear:both; }
+.xans-product-review .boardSort span { float:left; margin:0 14px 0 0; }
+
+/* 게시글 */
+.xans-product-review { margin:-1px 0 0; font-size:1.1rem; background:#fff; }
+.xans-product-review > ul > li { overflow:hidden; position:relative;  color:#757575; border-bottom:1px solid #d5d5d5; }
+.xans-product-review > ul > li:first-child { border-top:1px solid #d5d5d5; }
+.xans-product-review .descriptions { position:relative; margin:0 0 0 0px; padding:0 7px; }
+.xans-product-review .descriptions a {  position:relative;display:block;color:#757575; font-size:0; width:100%; padding:18px 0;}
+.xans-product-review .descriptions a .id { padding:0 7px 0  0;width:100px; }
+.xans-product-review .descriptions a .date {width:100px;}
+.xans-product-review .descriptions a .hit {width:100px;}
+.xans-product-review .descriptions a .vote {width:100px;}
+.xans-product-review .descriptions a .point {width:50px;}
+.xans-product-review .descriptions a .id:before {display:none;}
+.xans-product-review .descriptions a span { float:right;position:relative;   padding:0 17px 0 18px; font-size:1.4rem;text-align:center;font-weight:300;}
+.xans-product-review .descriptions a span img {margin-top:7px;}
+.xans-product-review .descriptions a span:before { display:block; content:""; position:absolute; top:6px; left:0; width:1px; height:11px; background:#eee; }
+.xans-product-review .descriptions a span.point:before { display:block; content:""; position:absolute; top:0px; left:0; width:1px; height:11px; background:#eee; }
+.xans-product-review .descriptions a .num {float:left;padding-left:0px;}
+.xans-product-review .descriptions a .num:before {display:none;}
+.xans-product-review .descriptions a strong {}
+.xans-product-review .descriptions a strong + span:before { display:none; }
+
+/* 브라우져 가로 1024픽셀 이하일경우 반응*/
+@media screen and (max-width: 1280px) {
+    .xans-product-review .descriptions a {  height:46px; }
+    .xans-product-review .descriptions a .id { width:70px; left:0;}
+    .xans-product-review .descriptions a .date {width:75px;left:160px;text-align:center;}
+    .xans-product-review .descriptions a .hit {width:65px;left:80px;text-align:center;}
+    .xans-product-review .descriptions a .vote {width:50px;}
+    .xans-product-review .descriptions a .point {width:50px;left:250px;bottom:26px}
+    .xans-product-review .descriptions a span { position:absolute; padding:0 7px 0 8px; font-size:1.2rem;text-align:left;bottom:19px;color:#aaa;}
+    .xans-product-review .descriptions a span img {margin-top:0px;}
+    .xans-product-review .descriptions a .num {display:none;}
+}
+
+/* 상품후기 아코디언형 본문 */
+.xans-product-review .contentView { margin:0; padding:20px; min-height:0; background:#f9f9f9; color:#757575; font-size:1.5rem !important;line-height:1.8em !important; text-align:left !important; word-wrap:break-word; }
+.xans-product-review .contentView .view { margin:0; padding:14px 0 50px; }
+.xans-product-review .contentView .view p {   font-size:1.5rem !important;line-height:1.8em !important; text-align:left !important; }
+.xans-product-review .contentView .view.secret { padding:14px 28px; }
+.xans-product-review .contentView .view.secret .alert { display:block; margin:0 0 14px; padding:0 0 0 31px; color:#353535; font-size:1.3rem; line-height:1.2em; background:url("//img.echosting.cafe24.com/skin/mobile_ko_KR/board/ico_secret.png") 4px 4px no-repeat; background-size:17px 20px; }
+.xans-product-review .contentView .view.secret p { position:relative; padding:0 46px 0 0; }
+.xans-product-review .contentView .view.secret p input[type="password"] { width:100%; }
+.xans-product-review .contentView .view.secret p input[type="button"] { position:absolute; top:0; right:0; }
+.xans-product-review .contentView .attach {   font-size:1.5rem !important;line-height:1.8em !important; text-align:left !important; }
+.xans-product-review .contentView .attach img { max-width:100% !important; height:auto !important;margin:0 0 14px; border:0px solid #dedede; }
+.xans-product-review .contentView p { color:#1b1b1b; }
+.xans-product-review .contentView .ec-base-button { margin:0; padding:0 0px 14px; }
+.xans-product-review .contentView .ec-base-button a em { color:#000; }
+.xans-product-review .contentView .ec-base-button .ico.write { position:relative; top:2px; display:inline-block; width:13px; height:13px; background-image:url("//img.echosting.cafe24.com/skin/mobile_ko_KR/board/ico_comment.png"); background-size:13px 13px; }
+
+/* 상품후기 아코디언형 코멘트 목록 */
+.xans-product-review .contentView .boardComment li { padding:0 0 0 14px; border-top:1px solid #d5d5d5; background:#f1f1f1; }
+.xans-product-review .contentView .boardComment li .ec-base-button .gLeft { margin-left:-4px; }
+.xans-product-review .contentView .boardComment li .ec-base-button .gLeft a,
+.xans-product-review .contentView .boardComment li .ec-base-button .gLeft button { margin-left:4px; }
+.xans-product-review .contentView .boardComment li .commentInfo { padding:14px 14px 0; font-size:1.2rem; color:#757575; background:url("//img.echosting.cafe24.com/skin/mobile_ko_KR/product/ico_bullet.png") 0 16px no-repeat; background-size:8px 8px; }
+.xans-product-review .contentView .boardComment li .commentInfo .name { padding:0 8px 0 0; font-weight:normal; }
+.xans-product-review .contentView .boardComment li .commentInfo span { position:relative; padding:0 8px; }
+.xans-product-review .contentView .boardComment li .commentInfo span:before { position:absolute; top:1px; left:0; display:inline-block; content:""; width:1px; height:11px; background:#ccc; }
+.xans-product-review .contentView .boardComment li .commentInfo .grade img { width:50px; height:8px; }
+.xans-product-review .contentView .boardComment p.comment { padding:14px; color:#1b1b1b; }
+
+.xans-product-review .contentView .boardComment .replyArea { padding:0 0 0 28px; border-top:0; background:#f1f1f1; background-size:8px 8px; }
+.xans-product-review .contentView .boardComment .replyArea .commentInfo { border-top:1px solid #d5d5d5; }
+
+/* 상품후기 아코디언형 코멘트 작성 */
+.xans-product-review .contentView .memoCont { padding:7px 0 0; border-top:1px solid #d5d5d5; }
+.xans-product-review .contentView .memoCont .label { padding:0 7px 0 0; color:#757575; font-weight:normal; vertical-align:middle; letter-spacing:-1px; }
+.xans-product-review .contentView .memoCont .label.hide { display:none; }
+.xans-product-review .contentView .memoCont .info { padding:0 14px; }
+.xans-product-review .contentView .memoCont .info:after { content:""; display:block; clear:both; }
+.xans-product-review .contentView .memoCont .info p { position:relative; box-sizing:border-box; width:50%; }
+.xans-product-review .contentView .memoCont .info p .label { position:absolute; left:0; padding:0; text-align:center; font-size:1.2rem; line-height:29px; letter-spacing:0; }
+.xans-product-review .contentView .memoCont .info p.name { float:left; padding:0 0 0 45px }
+.xans-product-review .contentView .memoCont .info p.name .label { width:45px; }
+.xans-product-review .contentView .memoCont .info p.password { float:right; padding:0 0 0 65px }
+.xans-product-review .contentView .memoCont .info p.password .label { width:65px; }
+.xans-product-review .contentView .memoCont .info p.name input[type="text"],
+.xans-product-review .contentView .memoCont .info p.password input[type="password"] { width:100%; margin:0; }
+.xans-product-review .contentView .memoCont .info p.password .label { margin:0; }
+.xans-product-review .contentView .memoCont .ec-base-help { margin:8px 0 0 24px; }
+.xans-product-review .contentView .memoCont .admin { margin:10px 0 0; }
+.xans-product-review .contentView .memoCont .admin a { display:block; text-align:center; }
+.xans-product-review .contentView .memoCont .comment { margin:14px 14px 0; }
+.xans-product-review .contentView .memoCont .comment textarea#comment { width:100%; height:50px; margin:0 0 7px 0; -webkit-box-sizing: border-box; -o-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; }
+.xans-product-review .contentView .memoCont .byteRating { margin:5px 0 0; }
+.xans-product-review .contentView .memoCont .byteRating:after { content:""; display:block; clear:both; }
+.xans-product-review .contentView .memoCont .rating { float:left; padding:7px 14px; box-sizing:border-box; }
+.xans-product-review .contentView .memoCont .rating .label { display:inline-block; width:45px; padding:0; line-height:29px; text-align:center; font-size:1.2rem; letter-spacing:0; }
+.xans-product-review .contentView .memoCont .byte { float:right; text-align:right; }
+.xans-product-review .contentView .memoCont .submit { text-align:right; padding:0 14px 7px; }
+.xans-product-review .contentView .memoCont .captcha { overflow:hidden; margin:0 14px;  padding:10px 0 10px 114px; border-top:1px solid #ededed; }
+.xans-product-review .contentView .memoCont .captcha .form { float:left; position:relative; }
+.xans-product-review .contentView .memoCont .captcha img { position:absolute; left:-30px; margin-right:-30px; }
+.xans-product-review .contentView .memoCont .captcha img:first-child { left:-114px; margin-right:-114px; }
+.xans-product-review .contentView .memoCont .captcha .form { width:100%; }
+.xans-product-review .contentView .memoCont .captcha .form p { margin:14px 0 0; padding:0 0 0 20px; font-size:1.1rem; background:url("//img.echosting.cafe24.com/skin/mobile_ko_KR/board/ico_important.png") no-repeat 0 50%; background-size:13px 13px; }
+.xans-product-review .contentView .memoCont .mButton { margin:10px 0 0; }
+.xans-product-review .contentView .memoCont #captcha  { margin:2px 0 0 0; width:100%; }
+
+/* 권한 없음 */
+.xans-product-review .contentView .memoCont .boardCommentAuthority { padding:14px; text-align:center; background:#fff; }
+
+
+.xans-product-review .contentView .memoCont .comment textarea#comment {width:100%;}
+
+
+/* 포토리뷰 */
+.review_content {position: relative; display:flex; flex-flow:row nowrap; padding:30px 0px;}
+.review_content .main_wrap {padding-right: 20px; width:80%}
+.review_content .main_wrap .summary {position: relative;}
+/*.review_content .main_wrap .summary span {display:block;}*/
+.review_content .main_wrap .summary .new_icon {margin-bottom: 10px;}
+.review_content .main_wrap .summary .point {}
+.review_content .main_wrap .summary .date {position: absolute;top: 0;right: 0;}
+.review_content .main_wrap .summary .hit {}
+.review_content .main_wrap .summary .vote {}
+
+.review_content .main_wrap {display:flex;}
+
+.review_content .main_wrap .imgLink { display:block; width:120px; height:120px; overflow:hidden; border-radius:5px; position:relative;}
+.review_content .main_wrap .imgLink .review_img {width:100%; height:100%; object-fit:cover;}
+.review_content .main_wrap .imgLink .prod_img {position:absolute; top:0;}
+.review_content .main_wrap .imgLink .prod_img.active {display:block !important; position:absolute; top:0; left:0; width:120px; height:120px;}
+.review_content .main_wrap .imgLink .prod_img img {width:100%; height:100%;}
+
+.review_content .main_wrap .content_wrap {width:100%; padding: 0 0 0 20px;}
+
+.review_content .main_wrap .tablet_name {display:none;}
+.review_content .main_wrap .tablet_img {display:none;}
+.review_content .main_wrap .tablet_img.active {display:none;}
+.review_content .main_wrap .description {}
+
+.review_content .main_wrap .description .subject {display:block; margin:20px 0; color:#222; font-size:1.5rem; font-weight:500;}
+
+.review_content .main_wrap .view {}
+.review_content .main_wrap .view .view-fr {color:#222; font-size:1.3rem;}
+.review_content .main_wrap .view .view-fr span {display:none;}
+
+.review_content .main_wrap .view .more_review {font-size:1.2em;}
+.review_content .main_wrap .view .more_review.active {display:none;}
+
+.review_content .main_wrap .view .close_review {display:none; width:100%; text-align:left;}
+.review_content .main_wrap .view .close_review.active {display:block; font-size:1.2em;}
+
+.xans-product-review .contentView .view .fr-view {display:none;}
+
+.xans-product-review .contentView .ec-base-button {display:none;}
+.xans-product-review .contentView .view {padding:10px;}
+
+
+.review_content .user_name {padding: 0 20px; width:20%; border-left:1px solid #d5d5d5; box-sizing: border-box;}
+.review_content .user_name .summary {}
+.review_content .user_name .summary .name {width:100%; font-size:1.2rem;}
+
+.xans-product-additional .memoCont .info {display:flex; margin-bottom:10px;}
+.xans-product-additional .memoCont .info input {margin-left:20px;}
+
+.xans-product-additional .memoCont .comment {margin-bottom:10px;}
+.xans-product-additional .memoCont .comment #comment {margin-left:20px; width: 93%;}
+.xans-product-additional .memoCont .submit a {width:150px;}
+
+.xans-record- .main_wrap .view .fr-view-article {color: #222; font-size: 1.3rem; height:3.9rem; overflow:hidden; }
+.xans-record- .main_wrap .view .fr-view-article.active {height:100%;}
+/*.xans-record- .main_wrap .view .fr-view-article span {display:none;}*/
+
+.xans-record- .main_wrap .view .fr-view-article p span {font-size: 1.3rem !important;}
+
+.review_content .summary .name strong.naver {color:#13a32b;}
+.review_content .user_name .summary .name strong.naver {color:#13a32b;}
+
+@media screen and (max-width: 1024px){
+    .review_content { padding: 20px 10px !important; }
+.xans-product-additional .memoCont .info input {
+    width: initial !important;
+    border: 1px solid #ececec !important;
+    }
+    
+    .xans-product-additional .memoCont .comment #comment {border: 1px solid #ececec !important;}
+}
+@media(max-width:768px){
+    .review_content .main_wrap .summary span {margin-top:10px; font-size:1.2rem; text-align: right;}
+    .review_content {flex-flow:column nowrap;}
+    
+    .review_content .main_wrap {width:100%;}
+    
+    .review_content .main_wrap .img_wrap {display:none;}
+    .review_content .main_wrap .tablet_img {display:block; margin-top:20px;}
+    .review_content .main_wrap .content_wrap {padding:initial;}
+    .review_content .main_wrap .imgLink .review_img {width:120px; height:120px; object-fit: cover;}
+    .review_content .main_wrap .imgLink .product_img { display:none; position: absolute; width: 120px; height: 120px; top: 0px; left: 0px; padding: 0; object-fit: cover;}
+    .review_content .main_wrap .imgLink .product_img img {width:100%; height:100%; object-fit:cover;}
+
+    .review_content .user_name {display:none;}
+    .review_content .main_wrap .tablet_name {display:block; margin-top:10px;}
+    
+    .xans-product-review .contentView {padding:initial;}
+    
+    .review_content .main_wrap .view .more_review {display:block; width:100%; text-align:right;}
+    .review_content .main_wrap .view .close_review { width:100%; text-align:right;}
+}
