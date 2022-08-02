@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+@import url(//fonts.googleapis.com/earlyaccess/kopubbatang.css);
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+* {
+  font-family: "pretendard";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "SUIT-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+#sub_container {
+  padding: 77px 0px 0px 0px !important;
+}
+
+.bs_wrap {
+  width: 100%;
+  background-color: #efe8de;
+  font-family: "Assistant", sans-serif;
+}
+
+section {
+  position: relative;
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.text_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 700px;
+  font-size: 17px;
+  line-height: 30px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.kr {
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.eng {
+  font-family: "Philosopher", serif;
+  font-size: 18px;
+  color: rgb(58, 58, 58);
+}
+
+.eng {
+  color: #222;
+}
+
+.filter {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.3;
+}
+
+.sec1 {
+  background-color: #381f10;
+}
+.sec1 .text_box {
+  color: #fff;
+  font-size: 30px;
+}
+
+.sec2 {
+  position: relative;
+  background-image: url(./image/0701_02.jpg);
+}
+.sec2 .text_box {
+  color: #000;
+}
+
+.sec3 {
+  background-image: url(./image/0701_01.jpg);
+}
+.sec3 .eng {
+  color: #fff;
+}
+
+.sec4 .text_box {
+  color: #000;
+}
+
+.sec5 {
+  background-image: url(./image/0701_03.jpg);
+}
+.sec5 .eng {
+  color: #fff;
+}
+
+.sec6 {
+  background-color: #381f10;
+  color: #fff;
+}
+.sec6 .eng {
+  color: #fff;
+}
+
+.sec7 {
+  height: 500px;
+}
+.sec7 .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 100px;
+  background-image: url(./image/logo_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-50%, -50%);
+}/*# sourceMappingURL=브랜드스토리.css.map */
