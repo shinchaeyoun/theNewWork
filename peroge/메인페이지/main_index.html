@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--@layout(/layout/basic/main.html)-->
+<!--@css(/css/mosen/main_index.css)-->
+
+<div id="main_wrap">
+    <!--슬라이드-->
+    <div class="slide" id="slide">
+        <div class="slide-container">
+            <div class="slide-content skin">
+                <div class="img-wrap">
+                    <img src="/AURA/main/skin.jpg" alt="">
+                </div>
+
+                <div class="text-wrap">
+                    <div class="kr_tit">하이드로 클리어 스킨</div>
+                    <div class="eng_tit">hydro clear skin</div>
+
+                    <div class="sub">
+                        <span>peroge keeps thinking about these problems and</span>
+                        <span>create solutions for them to restore the natural luster</span>
+                        <span>and firmness of the skin</span>
+                    </div>
+                </div>
+
+                <div  class="go_page">
+                    <a href="/product/detail.html?product_no=18"></a>    
+                </div>
+            </div>
+
+            <div class="slide-content serum">
+                <div class="img-wrap">
+                    <img src="/AURA/main/rebalancing_serum.jpg" alt="">
+                </div>
+
+                <div class="text-wrap">
+                    <div class="kr_tit">리밸런싱 세럼</div>
+                    <div class="eng_tit">rebalancing serum</div>
+
+                    <div class="sub">
+                        <span>peroge made the perfect products from the raw materials</span>
+                        <span>of the trees for your skin.</span>
+                        <span>Our ultimate goal is to find the cause of the skin problem</span>
+                        <span>to help the skin improve and enhance it's natural beauty.</span>
+                    </div>
+                </div>
+
+                <div  class="go_page">
+                    <a href="/product/detail.html?product_no=15"></a>    
+                </div>
+            </div>
+
+            <div class="slide-content cream">
+                <div class="img-wrap">
+                    <img src="/AURA/main/cream.jpg" alt="">
+                </div>
+
+                <div class="text-wrap">
+                    <div class="kr_tit">센시티브 리페어 크림</div>
+                    <div class="eng_tit">sensitive repair cream</div>
+
+                    <div class="sub">
+                        <span>We believe that the power of water and trees</span>
+                        <span>can help to have beautiful skin.</span>
+                    </div>
+                </div>
+
+                <div  class="go_page">
+                    <a href="/product/detail.html?product_no=19"></a>    
+                </div>
+            </div>
+        </div><!--slide container end-->
+
+        <div class="prev"></div>
+        <div class="next"></div>
+    </div>
+    <!-- slide end-->
+    
+    <div class="mo_only philosophy">
+    	<div class="title">
+            <h2>Our Philosophy</h2>
+            
+        </div>
+        
+        <div class="info">
+        	<p class="kr">
+                페로제는 자연의 힘을 빌려 최대한 <br/>
+                완벽에 가까운 기초를 완성시키고자 합니다. <br/>
+                피부의 문제를 바로잡고 그 이상의 피부로 <br/>
+                가꾸어주는 것이 우리의 최종 목표입니다.
+            </p>
+            
+            <p class="eng">
+                peroge keeps thinking about these problems<br/>
+                and create solutions for them to restore<br/>
+                the natural luster and firmness of the skin.
+            </p>
+            
+        </div>
+    </div>
+
+    
+    <!--헉슬리-->
+    <div module="product_listmain_1" class="mo_only prod-wrap">
+        <div class="tab-menu">
+            <div class="active">All</div>
+            <div>Set</div>
+        </div>
+
+        <!--
+        $count = 12
+        $basket_result = /product/add_basket.html
+        $basket_option = /product/basket_option.html
+        -->
+        <div class="tabs-wrap">
+            <div class="tab active">
+                <ul class="slider slider_all">
+                    <li class="item" id="anchorBoxId_{$product_no}">
+                        <!--@import(/product/like_button.html)-->
+                            <div class="thumbnail move">
+                                <div class="prdImg" onclick="window.location.href='{$link_product_detail}'">
+                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}">
+                                        <img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" />
+                                        <span module="product_Imagestyle">
+                                            <span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <span class="chk"><input type="checkbox" class="{$product_compare_class} {$product_compare_display|display}" /></span>
+                                <p class="name {$product_name_display|display}"><a href="{$link_product_detail}">{$product_name}</a></p>
+                                <p class="custom {$product_custom|display}"><strike>{$disp_product_custom}</strike></p>
+                                <p class="price {$product_price_display|display} {$product_sale_strike}">{$disp_product_price}<span class="{$product_price_ref_display|display}">{$txt_product_price_ref}</span></p>    
+                                <p class="price sale {$product_sale_visible}">{$prd_price_sale}</p>
+                                <p class="simple">{$simple_desc}</p>
+                            </div>
+                    </li>
+                    <li class="item" id="anchorBoxId_{$product_no}">
+                        <!--@import(/product/like_button.html)-->
+                            <div class="thumbnail move">
+                                <div class="prdImg" onclick="window.location.href='{$link_product_detail}'">
+                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}">
+                                        <img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" />
+                                        <span module="product_Imagestyle">
+                                            <span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <span class="chk"><input type="checkbox" class="{$product_compare_class} {$product_compare_display|display}" /></span>
+                                <p class="name {$product_name_display|display}"><a href="{$link_product_detail}">{$product_name}</a></p>
+                                <p class="custom {$product_custom|display}"><strike>{$disp_product_custom}</strike></p>
+                                <p class="price {$product_price_display|display} {$product_sale_strike}">{$disp_product_price}<span class="{$product_price_ref_display|display}">{$txt_product_price_ref}</span></p>    
+                                <p class="price sale {$product_sale_visible}">{$prd_price_sale}</p>
+                                <p class="simple">{$simple_desc}</p>
+                            </div>
+                    </li>  
+                </ul>
+            </div>
+
+        
+            <div class="tab">
+                <ul class="slider slider_set">
+                    <li class="item" id="anchorBoxId_{$product_no}">
+                        <!--@import(/product/like_button.html)-->
+                            <div class="thumbnail move">
+                                <div class="prdImg" onclick="window.location.href='{$link_product_detail}'">
+									<a href="{$link_product_detail}" name="anchorBoxName_{$product_no}">
+                                        <img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" />
+                                        <span module="product_Imagestyle">
+                                            <span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <span class="chk"><input type="checkbox" class="{$product_compare_class} {$product_compare_display|display}" /></span>
+                                <p class="name {$product_name_display|display}"><a href="{$link_product_detail}">{$product_name}</a></p>
+                                <p class="custom {$product_custom|display}"><strike>{$disp_product_custom}</strike></p>
+                                <p class="price {$product_price_display|display} {$product_sale_strike}">{$disp_product_price}<span class="{$product_price_ref_display|display}">{$txt_product_price_ref}</span></p>    
+                                <p class="price sale {$product_sale_visible}">{$prd_price_sale}</p>
+                                <p class="simple">{$simple_desc}</p>
+                            </div>
+                    </li>
+                    <li class="item" id="anchorBoxId_{$product_no}">
+                        <!--@import(/product/like_button.html)-->
+                            <div class="thumbnail move">
+                                <div class="prdImg" onclick="window.location.href='{$link_product_detail}'">
+                                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}">
+                                        <img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" />
+                                        <span module="product_Imagestyle">
+                                            <span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <span class="chk"><input type="checkbox" class="{$product_compare_class} {$product_compare_display|display}" /></span>
+                                <p class="name {$product_name_display|display}"><a href="{$link_product_detail}">{$product_name}</a></p>
+                                <p class="custom {$product_custom|display}"><strike>{$disp_product_custom}</strike></p>
+                                <p class="price {$product_price_display|display} {$product_sale_strike}">{$disp_product_price}<span class="{$product_price_ref_display|display}">{$txt_product_price_ref}</span></p>    
+                                <p class="price sale {$product_sale_visible}">{$prd_price_sale}</p>
+                                <p class="simple">{$simple_desc}</p>
+                            </div>
+                    </li>  
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--헉슬리-->
+
+    <!--이벤트 배너-->
+    <div class="event_banner" id="event_banner">
+        <div class="image-wrap"></div>
+    </div>
+
+    <!--제품-->
+    <div class="section product" id="product style02_3 ">
+        <!--@import(/mosen/main/main_best.html)-->
+    </div>
+
+    <!--footer-->
+    <div id="bottom_dp" class="fp-auto-height section">
+         <!--@import(/layout/mosen/bottom.html)--> 
+    </div>  
+
+    <ul class="pagination">
+        <li class="active"><a></a></li>
+        <li><a></a></li>
+        <li><a></a></li>
+        <li class="hide"><a></a></li>
+        <li class="hide"><a></a></li>
+    </ul>
+</div>
+
+
+
+
+<script src="/mosen/slick_slide/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    $('.slide-container').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        lazyLoad: 'ondemand', // ondemand progressive anticipated
+        dots: true,
+        nextArrow: $('.next'),
+        prevArrow: $('.prev'),
+    });
+    
+    // 메인 페이지네이션
+    $(window).scroll(function(){
+        if(window.scrollY > $('.event_banner .image-wrap').offset().top ){
+        	$('.event_banner .image-wrap').addClass('active');
+        } else {
+        	$('.event_banner .image-wrap').removeClass('active')
+        }
+    });
+    
+    $('.main_best').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        lazyLoad: 'ondemand', // ondemand progressive anticipated
+        nextArrow: $('.slick-next'),
+        prevArrow: $('.slick-prev'),
+        responsive: [ // 반응형 웹 구현 옵션
+
+            {
+                breakpoint: 1024, //화면 사이즈 960px
+                settings: {
+                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 480, //화면 사이즈 768px
+                settings: {
+                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+    
+    // 헉슬리
+    $('.prod-wrap .slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        lazyLoad: 'ondemand', // ondemand progressive anticipated
+        dots: true,
+        arrows:false, 
+        
+    });
+    
+    const $jq = jQuery.noConflict();
+    $jq(document).ready(function(){
+       $jq('a').click(function(e){
+    		$jq(this).hide();
+            e.preventDefault();
+        });                 	
+    });
+    
+    // tab menu
+    $('.prod-wrap .tab-menu div').click(function(){
+            var $this = $(this);
+            var index = $this.index();
+            
+            $this.addClass('active');
+            $this.siblings('div.active').removeClass('active');
+            
+            var $outer = $this.closest('.prod-wrap');
+            var $current = $outer.find(' > .tabs-wrap > .tab.active');
+            var $post = $outer.find(' > .tabs-wrap > .tab').eq(index);
+            
+            $current.removeClass('active');
+            $post.addClass('active');
+            
+            $('.prod-wrap .slider').slick({
+            	setPosition:0,
+                
+            });
+            // 탭 페이지 안에서 slick 사용시 – slick이 첫페이지에 있지 않으면 slick의 첫번째 이미지가 보이지 않고 2번째 부터 도는것을 확인 할 수 있다. 해당 문제는 탭이 active가 된 후 그 페이지에 slick이 있다면 = slick의 위치를 수동으로 새로 고쳐줘야 한다.
+        
+        });
+
+        if(!slider1){
+
+            $("#slide .slide-content").slick({
+                setPosition:0,
+            });
+
+        };
+    
+    // 헉슬리
+    
+    // footer
+    $(window).scroll(function() {
+        if( $(window).scrollTop() + $(window).height() > $(document).height() - 300 ) {
+            $('#left, .mbi-simpletalk-kakao').removeClass('hide_bg').fadeOut(500);
+            $('#bottom , .ec-base-lookbook').removeClass('move_Top_Out2').addClass('move_Top_In2');
+        } else {
+            $('#left, .mbi-simpletalk-kakao').fadeIn(500);
+            $('#bottom , .ec-base-lookbook').removeClass('move_Top_In2').addClass('move_Top_Out2');   
+        }    
+    });
+    // 모바일 반응형
+    $(window).resize(function(){ 
+        if (window.innerWidth < 1024) { 
+            const mo_skin = '/AURA/main/mo_skin.jpg';
+            const mo_serum = '/AURA/main/mo_rebalancing_serum.jpg';
+            const mo_cream = '/AURA/main/mo_cream.jpg';
+            
+            $('.skin .img-wrap img').attr('src',mo_skin);
+            $('.serum .img-wrap img').attr('src',mo_serum);
+            $('.cream .img-wrap img').attr('src',mo_cream);
+        };
+        
+        // 메인페이지네이션
+        const windowHei = window.innerHeight,
+              $minusWin = windowHei / 2,
+              $content1 = $('.slide').offset().top,
+              $content2 = $('.event_banner').offset().top,
+              $content3 = $('.product').offset().top,
+              $philosophy = $('.philosophy').offset().top,
+              $tabItem = $('.prod-wrap').offset().top,
+              $main_pagination = $('.pagination li a');
+    
+        
+        if ( window.innerWidth < 768 ){
+        	//모바일 페이지네이션 추가
+            $('#main_wrap .pagination li').removeClass('hide');
+            
+            $(window).scroll(function() {
+                
+                if( window.scrollY > $content3 - $minusWin) {
+                    $main_pagination.eq(4).parent().addClass('active').siblings().removeClass('active');
+
+
+                } else if( window.scrollY > $content2 - $minusWin) {
+                    $main_pagination.eq(3).parent().addClass('active').siblings().removeClass('active');
+
+
+                } else if( window.scrollY > $tabItem - $minusWin) {
+                    $main_pagination.eq(2).parent().addClass('active').siblings().removeClass('active');
+
+
+                } else if( window.scrollY > $philosophy - $minusWin) {
+                    $main_pagination.eq(1).parent().addClass('active').siblings().removeClass('active');
+
+
+                } else if ( window.scrollY > $content1 - $minusWin) {
+                    $main_pagination.eq(0).parent().addClass('active').siblings().removeClass('active');
+
+                }    
+            });
+        } else {
+            $('#main_wrap .pagination li').eq(3).addClass('hide');
+            $('#main_wrap .pagination li').eq(4).addClass('hide');
+
+        	$(window).scroll(function() {
+                if( window.scrollY > $content3 - $minusWin) {
+                    $main_pagination.eq(2).parent().addClass('active').siblings().removeClass('active');
+
+
+                } else if( window.scrollY > $content2 - $minusWin) {
+                    $main_pagination.eq(1).parent().addClass('active').siblings().removeClass('active');
+
+
+                } else if ( window.scrollY > $content1 - $minusWin) {
+                    $main_pagination.eq(0).parent().addClass('active').siblings().removeClass('active');
+
+                }    
+            });
+        }
+    }).resize(); 
+    
+
+    function mainFn (){
+           for (let i=0; i<reviewImg.length; i++) {
+               // 제품이미지로 변경
+               if($('.review_img').eq(i).attr('src') === errorSrc) {
+                   $('.review_img').eq(i).hide();
+                   $('.prod_img').eq(i).show();
+               };
+               
+                // 네이버페이 구매자 글씨 색 변경
+                if(naver.eq(i).text().charAt(0) == '네'){
+                    naver.eq(i).addClass('naver');
+                };
+                
+                // 제품이미지일 경우 클릭 막기
+                if (reviewImg.attr('src') == prodImg){
+					
+                };
+                
+                // 리뷰 더보기
+                $('.view').eq(i).click(function(){
+                    textBox.eq(i).toggleClass('active');
+                    $(this).find('.more_review').toggleClass('active');
+                    $(this).find('.close_review').toggleClass('active');
+                });
+                
+                // 일반,포토 나눠보기
+            }; // for 문 종료
+        }; // mainFn 종료
+    
+</script>
+    <!--리뷰-->
+    <div class="review width: 900px">
+    	<div class="board" module="board_listpackage_4">
+        <!--@css(/css/module/board/372/listpackage_4.css)-->
+            <!--@js(/test.js)-->-->
+            <h3 module="board_title_4">{$home_title}</h3>
+            <div class="galleryList" module="board_list_4">
+                <!--
+                    $count = 5
+                    $main_list = yes
+                    $subject_cut = 25
+                -->
+                <ul>
+                    <li class="test">
+                        <a href="/board/product/read.html{$param_read}" class="imgLink"><img src="{$img_src}" alt="" />{$subject} {$comment_count}</a>
+                        <span>{$write_date|date:Y-m-d}</span>
+                    </li>
+                    <li class="test">
+                        <a href="/board/product/read.html{$param_read}" class="imgLink"><img src="{$img_src}" alt="" />{$subject} {$comment_count}</a>
+                        <span>{$write_date|date:Y-m-d}</span>
+                    </li>
+                </ul>
+            </div>
+            <a href="/board/gallery/list.html?board_no=4" class="more"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_board_more.gif" alt="더보기" /></a>
+        </div>
+    </div> <!--리뷰 end-->
+
+</body>
+</html>

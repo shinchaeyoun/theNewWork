@@ -1,0 +1,147 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<div module="Board_ListPackage_4">
+    <!--@css(/css/module/board/board_review.css)-->
+    <p class="banner" module="board_title_4">{$board_top_image}</p>
+    <div id="titleArea" module="board_title_4">
+        
+        <h2><a href="/front/php/b/board_list.php?board_no=4&is_pcver=T">{$board_name}</a></h2>
+        <span module="Layout_MobileAction">
+            <a href="#none" onclick="{$go_back}"><img src="//img.echosting.cafe24.com/skin/mobile_ko_KR/layout/btn_back.gif" width="33" alt="뒤로가기" ></a>
+        </span>
+    </div>
+
+    <div class="boardSort">
+        <span module="board_category_4">{$form.board_category}</span>
+    </div>
+
+    <ul module="board_listheader_4">
+        <li><a class="{$list_type_display|display}" href="/board/gallery/list.html{$param_list}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_type_image.gif" alt="이미지형으로 보기"></a></li>
+        <li><a class="{$list_type_display|display}" href="/board/gallery/list2.html{$param_list}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_type_list.gif" alt="리스트형으로 보기"></a></li>
+    </ul>
+
+    <div class="boardList">
+        <table border="1" summary="">
+               
+                <!-- 리뷰목록 -->
+            <ul module="board_list_4" class="review_list_wrap">
+                <!--
+                    $login_page_url = /member/login.html
+                    $deny_access_url = /index.html
+                -->
+                <li style="{$list_bg_color} {$list_char_color}" class="review_container">
+                    <ul class="content_wrap">
+                        <li class="subject">
+                            <div class="icon_wrap">
+                                <span class="new">{$icon_new}</span>
+                                <span class="hit">{$icon_hit}</span>
+                                <span class="lock">{$icon_lock}</span>
+                                <span class="txtLess {$date_display|display} date">{$write_date}</span>
+                                <div class="{$point_display|display} point"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/ico_point{$point_count}.gif" alt="{$point_count}점"></div>
+                            </div>
+                            
+                            <div class="prod_wrap">
+                                <a href="/product/detail.html{$param_product}">
+                                    <div class="prod_img">{$product_img}</div>
+
+                                    <ul class="prod_info">
+                                        <li class="prod_name">{$product_name}</li>
+                                    </ul>
+                                </a>
+                            </div>
+                            
+                            
+                            <div class="content">
+                                <p>{$content}</p>
+                                <a href="/board/gallery/read.html{$param_read}" class="imgLink"><img src="{$img_src}" alt="" class="review_img"/></a>
+                            </div>
+                            
+                        </li>
+                        
+                        <li class="txtLess {$vote_display|display}">{$vote}</li>
+                    </ul>
+
+                    <ul class="user_wrap">
+                        <li class="user_name"><strong>{$member_icon}{$writer}</strong>님의 리뷰입니다.</li>
+                    </ul>
+                </li>
+
+                <li style="{$list_bg_color} {$list_char_color}" class="review_container">
+                    <ul class="content_wrap">
+                        <li class="subject">
+                            <div class="icon_wrap">
+                                <span class="new">{$icon_new}</span>
+                                <span class="hit">{$icon_hit}</span>
+                                <span class="lock">{$icon_lock}</span>
+                                <span class="txtLess {$date_display|display} date">{$write_date}</span>
+                                <div class="{$point_display|display} point"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/ico_point{$point_count}.gif" alt="{$point_count}점"></div>
+                            </div>
+                            
+                            <div class="prod_wrap">
+                                <a href="/product/detail.html{$param_product}">
+                                    <div class="prod_img">{$product_img}</div>
+
+                                    <ul class="prod_info">
+                                        <li class="prod_name">{$product_name}</li>
+                                    </ul>
+                                </a>
+                            </div>
+                            
+                            <div class="content">
+                                <p>{$content}</p>
+                                <a href="/board/gallery/read.html{$param_read}" class="imgLink"><img src="{$img_src}" alt="" class="review_img"/></a>
+                            </div>
+                        </li>
+                        
+                        <li class="txtLess {$vote_display|display}">{$vote}</li>
+                    </ul>
+
+                    <ul class="user_wrap">
+                        <li class="user_name"><strong>{$member_icon}{$writer}</strong>님의 리뷰입니다.</li>
+                    </ul>
+                </li>
+            </ul>
+        </table>
+    </div>
+    <div class="boardListEmpty {$empty_display|display}" module="board_empty_4">
+        <p>
+            {$empty_message}
+        </p>
+    </div>
+
+    <div module="board_ButtonList_4" class="{$write_display|display}">
+        <a href="/board/gallery/write.html{$param_write}" class="{$write_display|display}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_write.gif" alt="글쓰기" /></a>
+    </div>
+</div>
+
+
+<div module="board_paging_4" class="ec-base-paginate typeList">
+    <!--
+        $count = 5
+    -->
+    <a href="{$param_prev}" class="btnPrev">이전 페이지</a>
+    <ol>
+        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+    </ol>
+    <a href="{$param_next}" class="btnNext">다음 페이지</a>
+</div>
+
+<div module="board_search_4">
+    <!--@css(/css/module/board/search.css)-->
+    <fieldset class="boardSearch">
+        <legend>게시물 검색</legend>
+        <div class="category">{$form.product_category_selector} {$form.search_date} {$form.search_key}</div>
+        <div class="ec-base-field">{$form.search} <button class="btnStrong" onclick="{$action_search}">검색</button></div>
+    </fieldset>
+</div>
+
+
+<script>
+    var url = window.location.search;
+    
+    if(url =="?board_no=6"){
+        $(".point").css("display","none");
+        $(".xans-board-list .subject").css("width","680px");
+    }
+</script>
