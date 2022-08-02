@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function review_image (){
+            for (let i=0; i < $('.review_list .review_content').length; i++ ){
+                let orSrc = $('.review_list .slick-slide').find('.review_img').eq(i).attr('src');
+                let chSrc = orSrc.replace('/gallery','');
+                
+                $('.review_list .slick-slide').eq(i).find('.review_img').attr('src',chSrc)
+            };
+            
+        };
+        
+        review_image ();
+    </script>
+</body>
+</html>

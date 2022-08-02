@@ -1,0 +1,143 @@
+<style>
+    #aside{width:20vw; max-width:410px; height:100vh; position:fixed; top:0px; left:-20vw; background-color:#fff; z-index:2; font-family: 'Noto Sans KR', sans-serif; }
+    #aside .aside_cont{padding:40% 10% 20% 10%;}
+	#aside .aside_cont div{color:#000; font-size:2.2rem; height:2.2rem; margin-bottom:1.5rem; }
+    #aside .aside_cont .tit{font-weight:900;}
+    /* 닫기 */
+    #aside .aside_close{font-size: 2.6rem; position: absolute; left: 13vw; display: inline; top: 4vh; }
+    /* 하위 메뉴 */ 
+    #aside .aside_cont .dep_1{margin-bottom:4rem;}
+    #aside .aside_cont .dep_1 a{font-size:1.6rem; color:#7f7f7f; text-decoration:none; }
+    /* 카테고리 */
+    #aside .aside_cont #category {height:19rem;margin-bottom: 4rem;}
+    #category .position ul li {display: block; height: 1.6rem; margin-bottom: 1.6rem;}
+    #category .position ul li a{font-size:1.6rem; color:#7f7f7f; text-decoration:none; line-height: normal; }
+    #category .position ul li a:hover,  #aside .aside_cont .comm ul li a:hover, #aside .aside_cont .dep_1 a:hover{text-decoration:underline;}
+    /* 커뮤니티 */
+    #aside .aside_cont .comm{height:25rem; }
+    #aside .aside_cont .comm ul li {display: block; height: 1.6rem; margin-bottom: 1.6rem;}
+    #aside .aside_cont .comm ul li a{font-size:1.6rem; color:#7f7f7f; text-decoration:none; line-height: normal; }
+    /* 로그인, 회원가입 */
+    .btn{position:absolute; width:80%; bottom:15%;}
+    .aside_btn{ width:90%; height:5rem !important; line-height:5rem; margin:0 auto; text-align:center; font-size:1.6rem !important; border:1px solid #707070; margin-bottom:2rem !important; }
+    /* 검색창 닫기 */
+    .search_form{display:none;}
+    
+    @media screen and (max-width:1024px){
+    	#aside{left:-85vw; overflow: auto;}
+        #aside .aside_cont{padding:15% 10% 20% 10%;}
+        .btn{width:100%; position:relative; top:4vh;}
+        #aside .aside_btn {
+            font-size: 1.4rem !important;
+            width: 100% !important;
+            height: 4rem !important;
+            line-height: 4rem !important;
+            float: left;
+            margin-right: 2rem;
+        }
+        #aside .aside_cont #category {
+            height: 14rem !important;
+            margin-bottom: 3.5rem !important;
+            margin-top: -1rem !important;
+        }
+        #header.scroll #aside .aside_cont #category {
+            margin-top: -2rem !important;
+            padding-bottom: 1rem;
+        }
+    }
+    @media(min-width:700px){
+        .br_none{display:none !important;}
+    }
+    @media(max-width:700px){
+        .bottom_left #logo{display: none;}
+        .br_none{display:block !important;}
+        .xans-board-list-8 .summary {
+            padding-top: 26px !important;
+        }
+        .xans-board-list-8 .summary .subject{font-size: 12px !important;
+        }
+        .subject .top-sb {
+            font-size: 17px !important;
+            padding-bottom: 6px !important;
+            display: inline-block !important;
+            margin-top: -8px !important;
+        }
+    }
+    @media(max-width:366px){
+        .xans-product-detail .headingArea {
+        /* top: 42% !important; */
+            top: 95vw !important;
+        }
+    }
+</style>
+<div id="aside">
+    <a href="javascript:void(0);" onclick="aside_off();" class="aside_close"><i class="xi-close-thin"></i></a>
+    <div class="aside_cont">
+		<div class="search_form" module="Layout_SearchHeader">
+            <!--@css(/css/module/layout/searchHeader.css)-->
+            <!--
+                $product_page=/product/detail.html
+                $category_page=/product/list.html
+            -->
+            <a href="#" style="position:absolute; font-size:2rem;" onclick="SEARCH_BANNER.submitSearchBanner(this); return false;"><i class="xi-search"></i></a>
+            <fieldset>
+                <legend>검색</legend>
+                {$form.keyword}<input type="image" src="http://img.echosting.cafe24.com/skin/base_ko_KR/layout/btn_search.gif" alt="검색" onclick="{$action_search_submit}" />
+            </fieldset>
+        </div>
+        
+    	<div class="tit">BRAND</div>
+       	<div class="dep_1"><a href="/brand/brandstory.html">PEROGE</a></div>
+            
+        <div style="margin-bottom:0px"  class="tit">PRODUCT</div>
+       	<div id="category">
+            <div class="position">
+            	<ul>
+                  	<li><a href="/product/detail.html?product_no=18"> - 하이드로 클리어 스킨</a></li>
+                    <li><a href="/product/detail.html?product_no=17"> - 모이스처 밸런스 로션</a></li>
+                    <li><a href="/product/detail.html?product_no=19"> - 센시티브 리페어 크림</a></li>
+                    <li><a href="/product/detail.html?product_no=15"> - 리밸런싱 세럼(민감성)</a></li>
+                    <li><a href="/product/detail.html?product_no=16"> - 리커버 세럼(안티에이징)</a></li>
+                    <li><a href="/product/list.html?cate_no=42"> - 세트</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="margin-bottom:0px;"  class="tit">COMMUNITY</div>
+       	<div class="comm">
+        	<ul>
+            	<li><a href="/front/php/b/board_list.php?board_no=1&is_pcver=T"> - 공지사항</a></li>
+                <li><a href="/front/php/b/board_list.php?board_no=3&is_pcver=T"> - 자주 묻는 질문</a></li>
+				<li><a href="/front/php/b/board_list.php?board_no=5&is_pcver=T"> - 제안해주세요</a></li>
+                <li><a href="/front/php/myshop/cons_board_list.php?board_no=9&is_pcver=T"> - 1대1 문의</a></li>
+                <li><a href="/front/php/b/board_list.php?board_no=8&is_pcver=T"> - 이벤트</a></li>
+                <li><a href="/front/php/b/board_list.php?board_no=4&is_pcver=T"> - 리뷰</a></li>
+             </ul>
+        </div>
+ 		<div class="btn" module="Layout_stateLogoff">
+        	<a href="/member/login.html"><div class="aside_btn">로그인</div></a>     
+            <a href="/member/join.html"><div class="aside_btn">회원가입</div></a>     
+        </div>
+        <div class="btn" module="Layout_stateLogon">
+          	<a href="{$action_logout}" class="log"><div class="aside_btn">로그아웃</div></a>
+          	<a href="/myshop/index.html"><div class="aside_btn">마이페이지</div></a>
+        </div>
+    </div>
+</div>
+<script>
+    function aside_off(){
+        var windowWidth = $( window ).width();
+		if(windowWidth < 1024) {
+        //창 가로 크기가 1024 미만일 경우
+            $("#aside").animate({
+        		left: "-85vw"    
+        	},500,"linear");
+        } else {
+        //창 가로 크기가 1024 보다 클 경우
+       		$("#aside").animate({
+        		left: "-20vw"    
+        	},500,"linear"); 
+        }
+      
+        
+    }
+</script>

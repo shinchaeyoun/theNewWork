@@ -1,0 +1,90 @@
+
+
+<!-- -->
+<!-- 옵션 영역 -->
+<div class="prod_option" >
+    <div style="width:50%;"> 
+        <tbody module="product_option" >
+            <tr>
+                <th scope="row">{$option_name}</th>
+                <td>{$form.option}<p class="value">{$option_desc}</p></td>
+            </tr>
+            <tr module="product_quantity">
+                <th scope="row">수량</th>
+                <td>
+                    <div class="ec-base-qty">
+                        {$form.quantity}
+                        <a href="javascript:;"><img src="https://gywls6603.cafe24.com/web/img/plus.png" id="{$quantity_up_id}" alt="증가" class="up {$quantity_up_class}"></a>
+                        <a href="javascript:;"><img src="https://gywls6603.cafe24.com/web/img/minus.png" id="{$quantity_down_id}" alt="감소" class="down {$quantity_down_class}"></a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+        <table border="1" summary="">
+        <ul module="product_option" style="display:none">
+        <li scope="row">{$option_name}sadfasdadasdasda</li>
+        <li>{$form.option}<p class="value">{$option_desc}</p></li>
+        </ul>
+        </table>
+
+        <div id="{$total.total_id}" class="{$total.total_display|display}">
+        <p class="ec-base-help txtWarn txt11 {$single_item_display|display}"> 수량을 선택해주세요.</p>
+        <p class="ec-base-help txtWarn txt11 {$several_item_display|display}"> 위 옵션선택 박스를 선택하시면 아래에 상품이 추가됩니다.</p>
+
+        <table border="1" summary="">
+        <caption>상품 목록</caption>
+        <colgroup>
+        <col style="width:auto;" />
+        <col style="width:60px;" />
+        <col style="width:80px;" />
+        </colgroup>
+        <thead>
+        <tr>
+        <th scope="col">상품명</th>
+        <th scope="col">상품수</th>
+        <th scope="col">가격</th>
+        </tr>
+        </thead>
+        <tbody class="{$quantity_display|display}">
+        <tr>
+        <td>{$name}</td>
+        <td>
+        <span class="quantity main_quantity">
+        {$quantity}
+        <a href="#none"><img src="https://gywls6603.cafe24.com/web/img/plus.png" alt="수량증가" class="{$quantity_up_class} up main_up_btn" /></a>
+        <a href="#none"><img src="https://gywls6603.cafe24.com/web/img/plus.png" alt="수량감소" class="{$quantity_down_class} down main_down_btn" /></a>
+        </span>
+        </td>
+        <td class="right"><span class="{$total.quantity_price}">{$product_price}</span> <span class="mileage {$mileage_display|display}">(<img src="{$mileage_mileage_icon}" /> <span class="{$total.mileage_price}">{$mileage_value}</span>)</span></td>
+        </tr>
+        </tbody>
+        <!-- 옵션선택 또는 세트상품 선택시 상품이 추가되는 영역입니다. 쇼핑몰 화면에는 아래와 같은 마크업구조로 표시됩니다. 삭제시 기능이 정상동작 하지 않습니다. -->
+        <tbody>
+        <!-- tr>
+        <td>
+        <p class="product">
+        $상품명<br />
+        <span>$옵션</span>
+        </p>
+        </td>
+        <td>
+        <span class="quantity">
+        <input type="text" class="quantity_opt" />
+        <a href="#none"><img src="https://gywls6603.cafe24.com/web/img/plus.png" alt="수량증가" class="up" /></a>
+        <a href="#none"><img src="https://gywls6603.cafe24.com/web/img/minus.png" alt="수량감소" class="down" /></a>
+        </span>
+        <a href="#none"><img src="//img.echosting.cafe24.com/design/skin/default/product/btn_price_delete.gif" alt="삭제" class="option_box_del" /></a>
+        </td>
+        <td class="right">
+        <span>$가격</span>
+        <span class="mileage">(<img src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/product/ico_pay_point.gif" /> <span class="mileage_price">$적립금</span>)</span>
+        </td>
+        </tr -->
+        </tbody>
+        <!-- // 옵션선택 또는 세트상품 선택시 상품이 추가되는 영역입니다. 쇼핑몰 화면에는 아래와 같은 마크업구조로 표시됩니다. 삭제시 기능이 정상동작 하지 않습니다. -->
+        </table>
+        </div>
+    </div>
+
+</div> <!-- -->

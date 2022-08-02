@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./aside.css">
+</head>
+<body>
+    
+<div id="aside">
+    <a href="javascript:void(0);" onclick="aside_off();" class="aside_close"><i class="xi-close-thin"></i></a>
+    <div class="aside_cont">
+        
+    	<div class="tit">BRAND</div>
+       	<div class="dep_1"><a href="/brand/brandstory.html">PEROGE</a></div>
+            
+        <div style="margin-bottom:0px"  class="tit">PRODUCT</div>
+       	<div id="category">
+            <div class="position">
+            	<ul>
+                  	<li><a href="/product/detail.html?product_no=18"> - 하이드로 클리어 스킨</a></li>
+                    <li><a href="/product/detail.html?product_no=17"> - 모이스처 밸런스 로션</a></li>
+                    <li><a href="/product/detail.html?product_no=19"> - 센시티브 리페어 크림</a></li>
+                    <li><a href="/product/detail.html?product_no=15"> - 리밸런싱 세럼(민감성)</a></li>
+                    <li><a href="/product/detail.html?product_no=16"> - 리커버 세럼(안티에이징)</a></li>
+                    <li><a href="/product/list.html?cate_no=42"> - 세트</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div style="margin-bottom:0px;"  class="tit">COMMUNITY</div>
+       	<div class="comm">
+        	<ul>
+            	<li><a href="/front/php/b/board_list.php?board_no=1&is_pcver=T"> - 공지사항</a></li>
+                <li><a href="/front/php/b/board_list.php?board_no=3&is_pcver=T"> - 자주 묻는 질문</a></li>
+				<li><a href="/front/php/b/board_list.php?board_no=5&is_pcver=T"> - 제안해주세요</a></li>
+                <li><a href="/front/php/myshop/cons_board_list.php?board_no=9&is_pcver=T"> - 1대1 문의</a></li>
+                <li><a href="/front/php/b/board_list.php?board_no=8&is_pcver=T"> - 이벤트</a></li>
+                <li><a href="/front/php/b/board_list.php?board_no=4&is_pcver=T"> - 리뷰</a></li>
+             </ul>
+        </div>
+
+ 		<div class="btn" module="Layout_stateLogoff">
+        	<a href="/member/login.html"><div class="aside_btn">로그인</div></a>     
+            <a href="/member/join.html"><div class="aside_btn">회원가입</div></a>     
+        </div>
+        <div class="btn" module="Layout_stateLogon">
+          	<a href="{$action_logout}" class="log"><div class="aside_btn">로그아웃</div></a>
+          	<a href="/myshop/index.html"><div class="aside_btn">마이페이지</div></a>
+        </div>
+    </div> <!-- .aside_cont end -->
+</div> <!-- #aside end -->
+
+
+<script>
+    function aside_off(){
+        var windowWidth = $( window ).width();
+		if(windowWidth < 1024) {
+        //창 가로 크기가 1024 미만일 경우
+            $("#aside").animate({
+        		left: "-85vw"    
+        	},500,"linear");
+        } else {
+        //창 가로 크기가 1024 보다 클 경우
+       		$("#aside").animate({
+        		left: "-20vw"    
+        	},500,"linear"); 
+        }
+      
+        
+    }
+</script>
+</body>
+</html>

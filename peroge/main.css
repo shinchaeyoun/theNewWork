@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+.slide { position: relative; width: 100%; height: 100vh;}
+
+.prev,
+.next { position: absolute; top: 0; width: 20%; height: 100%; display: block;  }
+.prev { left: 0;  cursor: url(/AURA/main/arrow_l.935a967c.cur), auto; }
+.next { right: 0; cursor: url(/AURA/main/arrow_r.1db549d7.cur), auto; }
+
+.slide-container { position: absolute; top: 0; left:0; display: flex; width: 100%; height: 100%; }
+
+.slide-content { position:relative; width: 100%; height: 100%; }
+.slick-slide > div { height: 100%; }
+.slick-slider .slick-track, 
+.slick-slider .slick-list { height: 100%; }
+.slick-slide { margin :0 !important; }
+.img-wrap { width: 100%; height: 100%;  font-style: italic;}
+.img-wrap img { width: 100%; height: 100%; object-fit: cover;}
+
+.text-wrap { position: absolute; top: 50%; left: 50%; text-align: center; color: #fff; transform: translate(-50%, -50%); }
+.text-wrap .kr_tit { font-size: 20px; opacity: 0; transform: translateY(20px); transition: .5s; }
+.text-wrap .kr_tit.active { opacity: 1; transform:translateY(0); }
+.text-wrap .eng_tit { font-size: 80px; font-family: 'DM Serif Display', serif; opacity: 0; transform: translateY(20px); transition: .5s; transition-delay:.04s; }
+.text-wrap .eng_tit.active { opacity: 1; transform:translateY(0); }
+.text-wrap .sub { margin-top: 20px; font-size: 15px; font-family: 'Ibarra Real Nova', serif; opacity: 0; transform: translateY(20px); transition: .5s; transition-delay:.08s; }
+.text-wrap .sub.active { opacity: 1; transform:translateY(0); }
+
+.text-wrap { animation: txtAni 5000; animation: txtAni .5s timing-function delay iteration-count direction fill-mode infinite; }
+
+@keyframes txtAni {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform:translateY(0); }
+  }
+
+.text-wrap .sub span { display: block; }
+
+.go_page { position: absolute; top: 0; bottom: 0; left:0; right: 0; }
+.go_page a { display:block; width:100%; height: 100%; }
+
+.slick-dots { position: absolute; bottom: 20px; display: flex; justify-content: center; align-items: center; width: 100%; }
+.slick-dots li { margin: 0 3px; }
+.slick-dots li button { width: 10px; height: 10px; font-size:0; border:none; border-radius: 50%; }
+.slick-active button { background-color: #ff5722; border:none;  } 
+
+.event_banner {width: 100%; height: 100vh;  }
+.event_banner .image-wrap { width: 100%; height: 100%; background-image: url('/AURA/main1_20001333.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;} 
+.event_banner .image-wrap.active { background-attachment:initial; }
+
+@media screen and (max-width: 1024px) {
+    .slide { height: 100vh;}
+
+	.event_banner .image-wrap { background-image: url(/AURA/0705_mo_main_01.jpg); }
+    .event_banner .image-wrap { background-attachment: initial;} 
+
+}
+
+@media screen and (max-width: 768px) {
+	.event_banner { background-image: url(/AURA/0705_mo_main_01.jpg); }
+}

@@ -1,0 +1,32 @@
+<!--리뷰-->
+<div class="review">
+
+    <div module="Board_ListPackage_4">
+    <!--@css(/css/module/board/325/listpackage_4.css)-->
+        <div module="board_list_4">
+            <!--
+                $count = 55
+                $login_page_url = /member/login.html
+                $deny_access_url = /index.html
+            -->
+            <ul>
+                <li class="li">
+                    <a href="/board/gallery/read.html{$param_read}" class="imgLink"><img src="{$img_src}"/></a>
+                    <a href="/board/gallery/read.html{$param_read}" class="imgLink">{$subject} {$comment_count}</a>
+                    <span>
+                        <strong>작성자 : {$member_icon}{$writer} </strong>
+                        <em>작성일 : {$write_date}</em>
+                    </span>
+                </li>
+                <li class="li">
+                    <a href="/board/gallery/read.html{$param_read}" class="imgLink"><img src="{$img_src}" /></a>
+                    <a href="/board/gallery/read.html{$param_read}" class="imgLink">{$subject} {$comment_count}</a>
+                    <span>
+                        <strong>작성자 : {$member_icon}{$writer} </strong>
+                        <em>작성일 : {$write_date}</em>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div> <!--리뷰 end-->
