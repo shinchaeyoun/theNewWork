@@ -1,0 +1,31 @@
+<!------------- google analytics  -------------->
+<!------------- 공통코드 -------------->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-215580494-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-215580494-1');
+</script>
+
+<script>
+    var productList = [];
+    var productIdList = [];
+    var listname = '';
+    var isNaverPaySending = false;
+    var naverPaySendingDelay = 10;
+    function setCookieAnalytics(cName, cValue, cDay){var expire = new Date();expire.setDate(expire.getDate() + cDay);cookies = cName + '=' + escape(cValue) + '; path=/ ';if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';document.cookie = cookies;}
+    function getCookieAnalytics(cName) {cName = cName + '=';var cookieData = document.cookie;var start = cookieData.indexOf(cName);var cValue = '';if(start != -1){start += cName.length;var end = cookieData.indexOf(';', start);if(end == -1)end = cookieData.length;cValue = cookieData.substring(start, end);}return unescape(cValue);}
+    function getCategoryCode(strCode){var strPCode = strCode;strPCode = strPCode.match(/cate_no=\d+/);strPCode = String(strPCode);var intPCode = strPCode.match(/\d+/);if(intPCode != null && intPCode.length > 0) {return intPCode[0];}return '';}
+    function getCategoryCodeDetailUrl(string) {var stringArr = string.split('/');if(stringArr.length > 0) {for(var i  in stringArr) {if(stringArr[i] == 'category') {return stringArr[parseInt(i)+2];}}}return '';}
+    function getProductCode(strCode){var strPCode = strCode;strPCode = strPCode.match(/product_no=\d+/);strPCode = String(strPCode);var intPCode = strPCode.match(/\d+/);if(intPCode != null && intPCode.length > 0) {return intPCode[0];}return '';}
+    function getProductCodeDetailUrl(string) {var stringArr = string.split('/');if(stringArr.length > 0) {for(var i  in stringArr) {if(stringArr[i] == 'product') {return stringArr[parseInt(i)+2];}}}return '';}
+    function productClick(goodsNo) {if (typeof productListItems != 'undefined') {for (var i in productListItems) {if (goodsNo == productListItems[i].id) {gtag('event', 'select_content', {"content_type": "product", "items": [productListItems[i]]});break;}if (i == (productList.length - 1)) break;}}}
+    function removeHtml(str){var removed_str = str.replace(/\<.*?\>/g," ");return removed_str;}
+    function removeComma(str){var removed_str = parseInt(str.replace(/,/g,""));return removed_str;}
+    function callbackIsVisible(selector, callback) {var time = 0;var interval = setInterval(function () {if($(selector).is(':visible')) {callback();clearInterval(interval);} else {time += 100;}}, 200);}
+</script>
+<!------------- 공통코드 -------------->
+<!------------- google analytics  -------------->
