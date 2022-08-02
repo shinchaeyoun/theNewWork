@@ -1,0 +1,274 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* { 
+font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+
+#header .header { background:none !important; }
+
+#sub_container { margin:0 auto; padding:160px 0 !important; width: 1200px; }
+.titleArea {}
+
+.mo_only { display: none; }
+
+.icoRequired { display:inline-block; text-indent:-9999999px; }
+.ec-base-fold { border:none !important; }
+.ec-base-fold > .title { padding:20px 0 !important; }
+.ec-base-fold > .title span.txtStrong  { margin-right: 40px; }
+.ec-base-fold > .title h2, .ec-base-fold > .title h3 { font-size: 20px !important; font-weight:bold !important; }
+.titleArea { text-align:center; font-size:20px; font-weight:bold; }
+#ec-jigsaw-area-orderProduct .title h2 { font-size: 16px; font-weight:700; }
+
+#ec-jigsaw-area-orderProduct,
+.billingNshipping,
+.ec-jigsawWrapper,
+#ec-jigsaw-area-payment,
+#ec-jigsaw-area-paymethod,
+#ec-jigsaw-area-benefit { padding:10px 0; border-bottom: 1px solid #aaa !important; }
+
+input[type=text], input[type=password], input[type=number], input[type=tel], textarea { border:1px solid #ddd !important; }
+
+.ec-base-fold + .ec-base-fold { margin-top:0 !important; }
+
+/* 주문상품 */
+#ec-jigsaw-area-orderProduct { padding-bottom:20px; }
+#ec-jigsaw-area-orderProduct .ec-base-prdInfo { }
+#ec-jigsaw-area-orderProduct .ec-base-prdInfo .thumbnail { width:90px; height:90px; }
+#ec-jigsaw-area-orderProduct .ec-base-prdInfo .description .thumbnail a {}
+#ec-jigsaw-area-orderProduct .ec-base-prdInfo .description .thumbnail a img {}
+#ec-jigsaw-area-orderProduct .ec-base-prdInfo .description .prdName {}
+#ec-jigsaw-area-orderProduct .ec-base-prdInfo .description .info {}
+#ec-jigsaw-area-orderProduct .ec-base-prdInfo .description .info .allotment {}
+#ec-jigsaw-area-orderProduct .ec-base-prdInfo .description .info .expiration_date {}
+#ec-jigsaw-area-orderProduct .ec-base-prdInfo .description .info li.option {}
+#ec-jigsaw-area-orderProduct .ec-base-prdInfo .description .info li.option p.option {}
+#ec-jigsaw-area-orderProduct .ec-base-prdInfo .description .info li.option ul.option {}
+#ec-jigsaw-area-orderProduct .ec-base-prdInfo .description .info li.option ul.option li {}
+#ec-jigsaw-area-orderProduct .ec-base-prdInfo button {}
+#ec-jigsaw-area-orderProduct .ec-base-fold { }
+
+/**/
+.box_wrap { display: flex; }
+.box_wrap .left,
+.box_wrap .right { width: 50%; }
+.box_wrap .left { margin-right: 10px; }
+.box_wrap .right { margin-left: 10px; }
+
+
+/* 배송지 정보 */
+#ec-jigsaw-tab-shippingInfo { margin-right:5px; }
+.billingNshipping { border-bottom: 10px solid #ececec; }
+#ec-jigsaw-title-shippingInfo h2 { font-size: 16px; font-weight:700; }
+
+#ec-shippingInfo-newAddress .tit { margin:20px 0 5px; font-size:14px; font-weight:700; }
+
+#ec-jigsaw-area-shippingInfo .ec-shippingInfo-sameaddr {}
+
+	/* 배송지 */
+#ec-shippingInfo-plusAddress {}
+#ec-shippingInfo-plusAddress .tit { margin: 25px 0 10px; }
+.ec-shippingInfo-newAddress-name { margin:10px 0; }
+.ec-shippingInfo-newAddress-name input { width:100%; border:1px solid #f00;}
+
+#ec-receiver-address {}
+.ec-base-table .ec-address {}
+.ec-base-table .ec-address .ec-address-zipcode input[type="text"] { width:150px !important; }
+.ec-base-table .ec-address .ec-address-zipcode .btnBasic { width:150px; line-height: 40px; }
+
+.ec-shippingInfo-receiverCell { margin:10px 0; }
+.ec-shippingInfo-receiverCell select,
+.ec-shippingInfo-receiverCell input[type=text] { width: 100px; }
+.ec-shippingInfo-receiverCell select { margin: 0 5px 0 0; }
+.ec-shippingInfo-receiverCell input[type=text] { margin: 0 5px; }
+
+.ec-orderform-emailRow { margin:10px 0; }
+.ec-orderform-emailRow .ec-base-mail { display: flex; justify-content: space-between; align-items: center; }
+.ec-orderform-emailRow .ec-base-mail select,
+.ec-orderform-emailRow .ec-base-mail input { margin: 0 5px; }
+.ec-orderform-emailRow .ec-base-mail input:first-child { margin-left:0; }
+
+
+
+	/* 배송메세지 */
+.ec-shippingInfo-shippingMessage select { margin:10px 0; }
+
+#omessage_select {width:100%;} 
+
+
+/* 최근배송지 */
+#ec-shippingInfo-recentAddress { margin:10px 0; }
+#ec-shippingInfo-recentAddress .shippingList {}
+.recentShipArea .sideRight button { margin:15px 0 0px; width:100%; border:1px solid #ddd;  }
+.recentShipArea .segment .shippingList li { border :1px solid #f00; }
+
+.ec-base-fold .tabCont .segment .shippingList li { margin:10px 0; padding: 10px; border :1px solid #dddddd; }
+.ec-base-fold .tabCont .segment .shippingList > li button.btnText { margin:10px 0 0; padding:5px 30px; background-color:#f0f0f0; border:1px solid #dddddd; }
+
+
+	/* 비회원 주문조회 */
+#eSimpleJoinByOrderForm { padding:20px 10px 10px; border:1px solid #ddd; background-color:#f1f1f1; }
+#eSimpleJoinByOrderForm .agreeJoin { margin-bottom:10px; }
+#eSimpleJoinByOrderForm .agreeJoin label { margin-left: 10px; font-size:15px; font-weight:bold; }
+#eSimpleJoinByOrderForm  #simpleJoinDataForm { background:none; }
+#eSimpleJoinByOrderForm  #simpleJoinDataForm ul li ul li:first-child { margin-bottom:5px; }
+#eSimpleJoinByOrderForm  #simpleJoinDataForm ul li ul > li:last-child > input { width:100%;}
+#eSimpleJoinByOrderForm  #simpleJoinDataForm ul li ul .agreeList div {  }
+#eSimpleJoinByOrderForm  #simpleJoinDataForm ul li ul .agreeList div { margin-bottom: 10px; }
+#eSimpleJoinByOrderForm  #simpleJoinDataForm ul li ul .agreeList div label { margin-left:5px; width:90%; }
+#eSimpleJoinByOrderForm #simpleJoinDataForm ul li ul .agreeList div label {}
+
+.pannelArea { margin:20px 0; border-top: 1px solid #aaa; }
+.pannelArea .title { padding:20px 0; }
+.pannelArea .contents { display:block !important; }
+.pannelArea .contents li input { width:100%;}
+.pannelArea .contents ul li ul { margin-bottom:20px;}
+.pannelArea .contents .tit { margin-bottom:10px; }
+
+.ec-base-table
+/* 할인부가결제 */
+.ec-jigsawWrapper {  }
+.discountDetail { margin-bottom:20px; }
+.discountDetail .control .btnNormal { margin-left:20px; width:150px; line-height: 40px !important; }
+.discountDetail .heading { display:inline-block; margin-bottom:10px; }
+.mCouponSelect .heading {  }
+
+#mileage_use_area .control input { width:200px; height: 40px; }
+
+.ec-base-fold .contents .totalPay,
+.ec-base-fold.selected .contents .totalPay { display:flex; justify-content:space-between; align-items:center; margin:20px 0; }
+.ec-base-fold .contents .totalPay h3,
+.ec-base-fold.selected .contents .totalPay h3 { font-size: 16px; }
+.ec-base-fold .contents .totalPay .txtEm,
+.ec-base-fold.selected .contents .totalPay .txtEm,
+.ec-base-fold .contents .totalPay .txtStrong,
+.ec-base-fold.selected .contents .totalPay .txtStrong { display:inline-block; padding:5px 0; }
+
+.ec-base-table.gCellNarrow th,
+.ec-base-table.gCellNarrow td { border:none !important; }
+
+.gBlank10 { padding-top:20px; border-top:1px solid #ececec; }
+/* 자동할인내역 팝업 숨기기 */
+.autoDiscountLayer { display:none; }
+
+
+/* 결제수단 */
+
+#ec-jigsaw-area-paymethod .contents {}
+.segment .payMethod .ec-paymethod-newArea .inner { display:flex; justify-content:space-between; }
+.segment .payMethod .ec-paymethod-newArea .inner .ec-base-label { margin:10px 0; margin-right:5px; padding:10px; border:1px solid #dddddd; }
+.segment .payMethod .ec-paymethod-newArea .inner .ec-base-label label {  }
+
+.payMethod .ec-paymethod-recentArea.selected .inner { margin: 10px 0; padding: 20px; font-weight:600; border:1px solid #ddd; }
+
+.payMethod > li { margin-bottom:20px; }
+.payMethod > li label { font-weight: bold;}
+.payMethod > li .inner { overflow:hidden; opacity:0; height:0; }
+.payMethod > li.selected > .inner  { overflow:visible; opacity:1; height:auto; transition: height .3s ease,opacity .3s ease-out; }
+.payMethod > li.selected > .inner span { width:calc(100%/5); }
+.saveArea { margin:20px 0; padding-top:20px; border-top:1px solid #ececec; }
+
+.receiptArea {padding: 10px 0 20px; }
+.receiptArea .title { margin-bottom:15px; }
+
+.receiptArea #cashreceipt_form_area #cashreceipt_mobile_display_area select { width:130px; }
+.receiptArea #cashreceipt_form_area #cashreceipt_mobile_display_area input { width:150px; }
+
+#ec-jigsaw-area-paymethod table { margin:-20px 0 20px; }
+#ec-jigsaw-area-paymethod table td,
+#ec-jigsaw-area-paymethod table th { padding:12px 0; line-height: 40px; }
+
+#ec-jigsaw-area-paymethod .helpArea { margin :-20px 0 20px; }
+
+.ec-paymethod-input-detail { padding-bottom:10px; }
+
+
+/* 약관동의 */
+#ec-jigsaw-area-agreement { margin: 20px 0; }
+#ec-jigsaw-area-agreement .agreeArea div.allAgree { margin-bottom :20px; }
+#ec-jigsaw-area-agreement .agreeArea div.agree { margin-bottom:10px; }
+#ec-jigsaw-area-agreement .agreeArea div.agree button { margin-left:5px; padding: 3px 15px; color:#000; border:none; border-radius:25px; }
+
+.ec-base-fold.selected .contents .totalPay .txtEm,
+.ec-base-fold.selected .contents .totalPay .txtStrong { font-size: 16px; }
+
+
+/*결제버튼*/
+#orderFixItem button { height:50px; font-size: 16px; font-weight:600; background:#38271f; }
+
+
+.last-info { padding: 0 20px; }
+
+@media screen and (max-width:1300px) {
+	#sub_container { width: initial; padding:160px 100px !important; }
+}
+
+@media screen and (max-width:1024px) {
+    #sub_container { width: initial; margin:0 -7px 0; padding: 0 !important; }
+	input[type="text"] { border: 1px solid #ddd !important;}
+}
+
+@media screen and (min-width:768px) {
+    .ec-orderform-emailRow .ec-base-mail input,
+    .ec-orderform-emailRow .ec-base-mail select { width: 100%;}
+}
+
+@media screen and (max-width:768px) {
+    #header { display: none !important; }
+	#sub_container { width: initial; padding: 0 !important; }
+    
+    .titleArea { position:relative; margin:0!important; height: 50px; font-size:16px; line-height:50px; border-bottom:10px solid #f1f1f1; }
+    .titleArea  h2 {  top:0!important; transform: translate(0,0)!important; font-weight:bold !important; }
+    .titleArea  .top_svg { position:absolute; top:50%; left:0px; transform:translateY(-50%);}
+    
+    .mo_only { display:inline-block;}
+    
+    #ec-jigsaw-area-orderProduct .ec-base-prdInfo { padding: 14px 0; } 
+    #ec-jigsaw-area-orderProduct .title { padding: 10px 0 0px !important; }
+    
+    .box_wrap { flex-direction:column; }
+    .box_wrap > .left,
+    .box_wrap > .right { width:100%;}
+    .box_wrap > .left { margin-right:0;}
+    .box_wrap > .right { margin-left:0;}
+    
+    #ec-jigsaw-area-orderProduct,
+    .billingNshipping,
+    .ec-jigsawWrapper,
+    #ec-jigsaw-area-payment,
+    #ec-jigsaw-area-paymethod,
+    #ec-jigsaw-area-benefit { padding:10px 20px; border-bottom: 10px solid #f1f1f1 !important; }
+    
+    .ec-base-table .ec-address .ec-address-zipcode input[type="text"] { width:50% !important; }
+    .ec-base-table .ec-address .ec-address-zipcode .btnBasic { width:30%; }
+
+    .ec-shippingInfo-receiverCell select, .ec-shippingInfo-receiverCell input[type=text] { width :100%; }
+    .ec-shippingInfo-receiverCell li:last-child { display:flex; justify-content: space-between; align-items: center; }
+    
+    .ec-shippingInfo-shippingMessage select { width:100%; border:1px solid #ececec; }
+    .ec-orderform-emailRow .ec-base-mail {flex-wrap:wrap;}
+    .ec-orderform-emailRow .ec-base-mail input { margin:0; }
+    .ec-orderform-emailRow .ec-base-mail input:first-child { margin-right:5px; width:45% }
+    .ec-orderform-emailRow .ec-base-mail input:nth-of-type(2) { margin-left:5px; width:45%; }
+    .ec-orderform-emailRow .ec-base-mail select { margin:0; margin:10px 0; width:100%; }
+    
+    
+    .segment .payMethod .ec-paymethod-newArea .inner select { width: 100%; }
+    
+    #ec-jigsaw-area-paymethod .contents {}
+    .segment .payMethod .ec-paymethod-newArea .inner { flex-wrap: wrap; }
+    .payMethod > li.selected > .inner span { margin: 5px 0 !important; padding:15px 10px !important; margin-right:0px !important; width:43%; }
+
+    
+    #bankaccount, #pname { width: 100%; }
+    
+    
+    
+    
+    .has_coupon { margin-bottom: 10px; }
+    .has_coupon ,
+    .mCouponSelect .control { display: flex; justify-content: space-between; align-items: center; }
+    
+    #ec-jigsaw-area-agreement { padding: 10px 20px;}
+    #ec-jigsaw-area-agreement .agreeArea div {margin-bottom:10px;}
+}

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "895735aa61c7a8";
+if(window.wcs) {
+  wcs_do();
+}
+</script>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <title>주문서 작성</title>
+
+    <!--@css(/css/module/order/ec_orderform/form_onetouch.css)-->
+    <!-- 사용자 스타일 수정이 필요한 경우, 신규 CSS 파일을 추가하여 #userStyle #mCafe24Order { } 셀렉터로 처리 가능합니다. -->
+
+    <!-- 스마트디자인에서는 JQuery 1.4.4 버전이 내장되어있습니다. 추가로 호출하면 충돌이 생길 수 있습니다. -->
+    <!--@js(/layout/basic/js/common.js)-->
+    <!--@js(/js/module/order/ec_orderform/orders.js)-->
+        
+
+<!------------- google analytics  -------------->
+<!------------- 공통코드 -------------->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-215580494-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-215580494-1');
+</script>
+
+<script>
+    var productList = [];
+    var productIdList = [];
+    var listname = '';
+    var isNaverPaySending = false;
+    var naverPaySendingDelay = 10;
+    function setCookieAnalytics(cName, cValue, cDay){var expire = new Date();expire.setDate(expire.getDate() + cDay);cookies = cName + '=' + escape(cValue) + '; path=/ ';if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';document.cookie = cookies;}
+    function getCookieAnalytics(cName) {cName = cName + '=';var cookieData = document.cookie;var start = cookieData.indexOf(cName);var cValue = '';if(start != -1){start += cName.length;var end = cookieData.indexOf(';', start);if(end == -1)end = cookieData.length;cValue = cookieData.substring(start, end);}return unescape(cValue);}
+    function getCategoryCode(strCode){var strPCode = strCode;strPCode = strPCode.match(/cate_no=\d+/);strPCode = String(strPCode);var intPCode = strPCode.match(/\d+/);if(intPCode != null && intPCode.length > 0) {return intPCode[0];}return '';}
+    function getCategoryCodeDetailUrl(string) {var stringArr = string.split('/');if(stringArr.length > 0) {for(var i  in stringArr) {if(stringArr[i] == 'category') {return stringArr[parseInt(i)+2];}}}return '';}
+    function getProductCode(strCode){var strPCode = strCode;strPCode = strPCode.match(/product_no=\d+/);strPCode = String(strPCode);var intPCode = strPCode.match(/\d+/);if(intPCode != null && intPCode.length > 0) {return intPCode[0];}return '';}
+    function getProductCodeDetailUrl(string) {var stringArr = string.split('/');if(stringArr.length > 0) {for(var i  in stringArr) {if(stringArr[i] == 'product') {return stringArr[parseInt(i)+2];}}}return '';}
+    function productClick(goodsNo) {if (typeof productListItems != 'undefined') {for (var i in productListItems) {if (goodsNo == productListItems[i].id) {gtag('event', 'select_content', {"content_type": "product", "items": [productListItems[i]]});break;}if (i == (productList.length - 1)) break;}}}
+    function removeHtml(str){var removed_str = str.replace(/\<.*?\>/g," ");return removed_str;}
+    function removeComma(str){var removed_str = parseInt(str.replace(/,/g,""));return removed_str;}
+    function callbackIsVisible(selector, callback) {var time = 0;var interval = setInterval(function () {if($(selector).is(':visible')) {callback();clearInterval(interval);} else {time += 100;}}, 200);}
+</script>
+<!------------- 공통코드 -------------->
+<!------------- google analytics  -------------->
+
+
+    
+</head>
+    
+<body id="userStyle">
+    <!-- [상단영역] -->
+    <!--@import(/order/ec_orderform/header.html)-->
+
+    <div id="mCafe24Order" class="typeHeader" module="Order_form" unroll="1">
+        <!-- 이값은 지우면 안되는 값입니다. ($move_order_after 주문완료페이지 주소 / $move_basket 장바구니페이지 주소)
+            $move_order_after=/order/order_result.html
+            $move_basket=/order/basket.html
+            $paymethod_selector = textButton
+            $email_type=emailcompact
+        -->
+        
+		<!-- [주문상품] -->
+        <!--@import(/order/ec_orderform/orderProduct.html)-->
+        
+        <!-- [바로구매 주문상품] -->
+        <!--@import(/order/ec_orderform/product_detail.html)-->
+
+        <!-- [주문배송정보] 주문자정보, 배송지정보, 배송정보 -->
+        <!--@import(/order/ec_orderform/billingNshipping.html)-->
+
+        <!-- [추가정보입력] 추가입력, 기타문의사항 -->
+        <!--@import(/order/ec_orderform/additionalInput.html)-->
+
+        <!-- [사은품] -->
+        <div id="{$gift_orderform_id}">
+            <!--@import(/order/ec_orderform/gift.html)-->
+        </div>
+
+        <!-- [할인/부가결제] 할인/부가결제, 자동 할인내역 레이어 팝업 -->
+        <!--@import(/order/ec_orderform/discount.html)-->
+
+        <!-- [결제정보] -->
+        <!--@import(/order/ec_orderform/payment.html)-->
+
+        <!-- [결제수단] -->
+        <!--@import(/order/ec_orderform/paymethod.html)-->
+
+        <!-- [적립 혜택] -->
+        <!--@import(/order/ec_orderform/benefit.html)-->
+
+        <!-- [약관동의] -->
+        <!--@import(/order/ec_orderform/agreement.html)-->
+
+        <div class="ec-base-button gFull" id="orderFixItem">
+            <button type="button" class="btnSubmit" id="{$btn_payment_id}">
+                {$total_order_price_front_head}<span id="{$total_order_price_front_id}">{$total_order_price_front}</span>{$total_order_price_front_tail} <span class="{$subscription_hide_display|display}">결제하기</span><span class="{$subscription_show_display|display}">정기배송 신청하기</span>
+            </button>
+        </div>
+
+        <div class="helpArea">
+            <ul class="ec-base-help typeDash">
+                <li class="{$subscription_show_display|display}"><span class="txtEm">상기 금액은 결제 시점의 금액과 다를 수 있습니다.</span></li>
+                <li>무이자할부가 적용되지 않은 상품과 무이자할부가 가능한 상품을 동시에 구매할 경우 전체 주문 상품 금액에 대해 무이자할부가 적용되지 않습니다. 무이자할부를 원하시는 경우 장바구니에서 무이자할부 상품만 선택하여 주문하여 주시기 바랍니다.</li>
+                <li>최소 결제 가능 금액은 결제금액에서 배송비를 제외한 금액입니다.</li>
+            </ul>
+        </div>
+
+        <!-- [주문 정보 확인 레이어팝업] -->
+        <!--@import(/order/ec_orderform/confirm.html)-->
+
+        <iframe id="{$payment_proc_id}" name="h_payment" width="0" height="0" frameborder="0" src=""></iframe>
+        <input type="hidden" id="sPrdName" name="sPrdName" value="{$sPrdName}">
+    </div>
+    <div id="progressPaybar" style="display:none;">
+        <div id="progressPaybarBackground" class="layerProgress"></div>
+        <div id="progressPaybarView">
+            <p class="graph">현재 결제가 진행중입니다.</p>
+            <p class="txt">
+                본 결제 창은 결제완료 후 자동으로 닫히며, <br>
+                결제 진행 중에 본 결제 창을 닫으시면<br>
+                주문이 되지 않으니 <br>
+                결제 완료 될 때 까지 닫지 마시기 바랍니다.
+            </p>
+        </div>
+    </div>
+    
+
+<!------------- google analytics -------------->
+<script>
+    function callbackProductList(callback) {
+        var time = 0;
+        var interval = setInterval(function () {
+            if(typeof aBasketProductOrderData !== 'undefined') {
+                // visible, do something
+                callback();
+                clearInterval(interval);
+            } else {
+                // not visible yet, do something
+                time += 100;
+            }
+        }, 200);
+    }
+
+    var productList = [];
+    callbackProductList(function() {
+        aBasketProductOrderData.map(function(item)
+        {
+            console.log(item.product_name);
+
+            productList.push({
+                'id': item.product_no,
+                'name': item.product_name,
+                'price': item.product_sale_price,
+                // 'price': item.sum_price_org,
+                'category': item.main_cate_no,
+                'quantity': item.product_qty
+            });
+
+            return item.product_name;
+        });
+
+        if (typeof productList !== 'undefined' && productList.length > 0) {
+
+            var productTotalPrice = 0;
+
+            if(productList.length > 0) {
+                for (var i in productList) {
+                    productTotalPrice += productList[i].price * productList[i].quantity
+                }
+            }
+
+            if(typeof productList !== 'undefined' && productList.length > 0) {gtag('event', 'begin_checkout', {"items": productList,});}
+            function goNextStep() {var payMethod = '';$('input[name=addr_paymethod]').each(function(i,item){if($(this).is(':checked')){console.log($(this).val());if($(this).val() == 'card') {payMethod = '카드'} else if($(this).val() == 'tcash') {payMethod = '실시간 계좌이체'} else if($(this).val() == 'cell') {payMethod = '휴대폰 결제'} else if($(this).val() == 'cash') {payMethod = '무통장입금'} else if($(this).val() == 'icash') {payMethod = '가상계좌'} else if($(this).val() == 'kakaopay') {payMethod = '카카오페이'} else if($(this).val() == 'payco') {payMethod = '페이코'}}});console.log(payMethod);if(payMethod != '') {gtag('event', 'checkout_progress', {"checkout_step": 2, "checkout_option": payMethod,});}}
+            callbackIsVisible('#btn_payment', function() {console.log('결제하기 버튼 이벤트 추가');$('#btn_payment').click(function() {goNextStep()})})
+        }
+    })
+</script>
+<!------------- google analytics -------------->
+
+
+
+    
+</body>
+</html>
