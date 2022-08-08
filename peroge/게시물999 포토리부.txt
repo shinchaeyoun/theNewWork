@@ -1,0 +1,19 @@
+게시글 999
+
+       function mainFn (){
+           for (let i=0; i<reviewImg.length; i++) {
+               
+               let ab = $('.review_img').eq(i).attr('src') === errorSrc;
+               
+               // 포토리뷰 먼저보기
+               $('.photo_review').click(function(){
+                   $('.photo_review').addClass('active');
+                   
+                   if (ab == true) {
+                       //console.log('ab',i/2)
+                       //content.eq(i/2).sort().appendTo($('.review_container'));
+                       $('.review_container').sort();
+                   };
+                   
+                   
+                });
