@@ -10,7 +10,7 @@
         $(function(){
             
 
-            setInterval(() => {
+            /*setInterval(() => {
                 let dateString = null
                 let newDate = new Date ();
 
@@ -86,12 +86,104 @@
         // 21-10-14 웹앤모바일 crossTarget스크립트 삽입
         ex2cts.push('track', 'product');
         // 21-10-14 웹앤모바일 crossTarget스크립트 삽입
+
+
+
+
+        // 코드펜 코드
+
+        function remaindTime() {
+            var now = new Date();
+            var end = new Date(now.getFullYear(),now.getMonth(),now.getDate(),21,00,00);
+            var open = new Date(now.getFullYear(),now.getMonth(),now.getDate(),09,00,00);
+        
+            var nt = now.getTime();
+            var ot = open.getTime();
+            var et = end.getTime();
+        
+            if(nt<ot){
+                $(".time").fadeIn();
+                $("p.time-title").html("금일 오픈까지 남은 시간");
+                sec =parseInt(ot - nt) / 1000;
+                day  = parseInt(sec/60/60/24);
+                sec = (sec - (day * 60 * 60 * 24));
+                hour = parseInt(sec/60/60);
+                sec = (sec - (hour*60*60));
+                min = parseInt(sec/60);
+                sec = parseInt(sec-(min*60));
+                if(hour<10){hour="0"+hour;}
+                if(min<10){min="0"+min;}
+                if(sec<10){sec="0"+sec;}
+                $(".hours").html(hour);
+                $(".minutes").html(min);
+                $(".seconds").html(sec);
+            } else if(nt>et){
+                $("p.time-title").html("금일 마감");
+                $(".time").fadeOut();
+            }else {
+                $(".time").fadeIn();
+                $("p.time-title").html("금일 마감까지 남은 시간");
+                sec =parseInt(et - nt) / 1000;
+                day  = parseInt(sec/60/60/24);
+                sec = (sec - (day * 60 * 60 * 24));
+                hour = parseInt(sec/60/60);
+                sec = (sec - (hour*60*60));
+                min = parseInt(sec/60);
+                sec = parseInt(sec-(min*60));
+                if(hour<10){hour="0"+hour;}
+                if(min<10){min="0"+min;}
+                if(sec<10){sec="0"+sec;}
+                $(".hours").html(hour);
+                $(".minutes").html(min);
+                $(".seconds").html(sec);
+            }
+        }
+
+        setInterval(remaindTime,1000);*/
+
+        // 응용 배송 남은 시간
+        function remaindTime() {
+            var now = new Date();
+            var end = new Date(now.getFullYear(),now.getMonth(),now.getDate(),14,00,00);
+        
+            var nt = now.getTime();
+            var et = end.getTime();
+        
+            
+            $(".time").fadeIn();
+            sec =parseInt(et - nt) / 1000;
+            day  = parseInt(sec/60/60/24);
+            sec = (sec - (day * 60 * 60 * 24));
+            hour = parseInt(sec/60/60);
+            sec = (sec - (hour*60*60));
+            min = parseInt(sec/60);
+            sec = parseInt(sec-(min*60));
+            if(hour<10){hour="0"+hour;}
+            if(min<10){min="0"+min;}
+            if(sec<10){sec="0"+sec;}
+            $(".hours").html(hour + ':');
+            $(".minutes").html(min + ':');
+            $(".seconds").html(sec);
+        }
+        
+        setInterval(remaindTime,1000);
+    });
     </script>
 </head>
 <body>
-    <div id="date">
-        hi
-    </div>
+    <div class="sec7-text-box">
+        <p class="font18">오늘의 운영시간</p>
+        <p class="runTimeCon font25">PM 09:00 ~ PM 09:00 </p>
+        <hr/>
+        
+        <div class="time font40">
+          <span class="hours"></span>
+          <span class="minutes"></span>
+          <span class="seconds"></span>
+          <p class="font15 time-title" style="display: inline-block">내 주문시 오늘 출발</p>
+        </div>
+      
+      </div>
 </body>
 
 </html>
