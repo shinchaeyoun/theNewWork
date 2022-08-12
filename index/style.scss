@@ -24,15 +24,15 @@ header .logo {}
 
 nav { display: flex; justify-content: space-between; position: fixed; top: 50px; padding: 0 50px; width: 100%; box-sizing: border-box; }
 nav ul li a { font-size: 30px; line-height: 1.5; }
-nav .gnb li a { font-size: 28px;}
-nav .gnb li a {}
+nav .gnb li a,
+nav .gnb div a { font-size: 28px;}
 nav .right_nav { text-align: right; }
 nav .right_nav .menu { margin-bottom: 20px; }
 nav .right_nav .customer li a { font-size: 20px; }
 
 
 main {}
-main div { height: 100vh; border-bottom: 1px solid #000; }
+main section { height: 100vh; border-bottom: 1px solid #000; }
 
 main .main_visual { display: flex; flex-wrap: wrap; }
 main .main_visual .frame { width: 50%; height: 100vh; }
@@ -45,17 +45,5 @@ main {
     .event {background-color: #fdd9c1; }
     .store { background-color:#fdcfb6; }
     .support { background-color: #fcc4ac;}
+    .footer {background-color: #fcb9a2;}
 }
-
-
-footer { 
-    display: flex; justify-content: space-between;  height: 100vh; background-color: #fcb9a2;
-    // ul.info { display: flex; justify-content: space-between; }
-}
-
-footer > ul { width: 50%; }
-footer > ul > li { margin: 0 0 20px; }
-
-footer ul.contact {}
-footer ul.contact li {}
-footer ul.contact li input { margin-top: 10px; padding: 5px; background-color: #ffffff00; border:0; border-bottom: 1px solid #000; }

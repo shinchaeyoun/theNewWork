@@ -53,7 +53,8 @@ nav ul li a {
   line-height: 1.5;
 }
 
-nav .gnb li a {
+nav .gnb li a,
+nav .gnb div a {
   font-size: 28px;
 }
 
@@ -69,7 +70,7 @@ nav .right_nav .customer li a {
   font-size: 20px;
 }
 
-main div {
+main section {
   height: 100vh;
   border-bottom: 1px solid #000;
 }
@@ -106,26 +107,6 @@ main .store {
 main .support {
   background-color: #fcc4ac;
 }
-
-footer {
-  display: flex;
-  justify-content: space-between;
-  height: 100vh;
+main .footer {
   background-color: #fcb9a2;
-}
-
-footer > ul {
-  width: 50%;
-}
-
-footer > ul > li {
-  margin: 0 0 20px;
-}
-
-footer ul.contact li input {
-  margin-top: 10px;
-  padding: 5px;
-  background-color: rgba(255, 255, 255, 0);
-  border: 0;
-  border-bottom: 1px solid #000;
 }/*# sourceMappingURL=style.css.map */
