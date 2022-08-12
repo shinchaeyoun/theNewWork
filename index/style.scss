@@ -15,7 +15,7 @@ $gowun : 'Gowun Batang', serif;
 li { list-style: none;}
 a:link, a:active, a:visited { text-decoration: none; color: #000; }
 
-span.memo { font-size: 14px; background-color: lemonchiffon; }
+span.memo { font-size: 13px; background-color: lemonchiffon; }
 
 .wrap { position: relative }
 
@@ -48,6 +48,14 @@ main {
 }
 
 
-footer { height: 100vh; background-color: #fcb9a2;
-    ul { display: flex; justify-content: space-between; }
+footer { 
+    display: flex; justify-content: space-between;  height: 100vh; background-color: #fcb9a2;
+    // ul.info { display: flex; justify-content: space-between; }
 }
+
+footer > ul { width: 50%; }
+footer > ul > li { margin: 0 0 20px; }
+
+footer ul.contact {}
+footer ul.contact li {}
+footer ul.contact li input { margin-top: 10px; padding: 5px; background-color: #ffffff00; border:0; border-bottom: 1px solid #000; }

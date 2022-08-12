@@ -22,7 +22,7 @@ a:link, a:active, a:visited {
 }
 
 span.memo {
-  font-size: 14px;
+  font-size: 13px;
   background-color: lemonchiffon;
 }
 
@@ -108,10 +108,24 @@ main .support {
 }
 
 footer {
+  display: flex;
+  justify-content: space-between;
   height: 100vh;
   background-color: #fcb9a2;
 }
-footer ul {
-  display: flex;
-  justify-content: space-between;
+
+footer > ul {
+  width: 50%;
+}
+
+footer > ul > li {
+  margin: 0 0 20px;
+}
+
+footer ul.contact li input {
+  margin-top: 10px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 0;
+  border-bottom: 1px solid #000;
 }/*# sourceMappingURL=style.css.map */
