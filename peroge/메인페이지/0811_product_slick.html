@@ -1,0 +1,104 @@
+<link rel="stylesheet" type="text/css" href="/mosen/slick_slide/slick/slick.css">
+
+<!--@layout(/layout/basic/main.html)-->
+<style>
+    /* 전체상품 */
+    .prod-wrap { position:relative; margin: 150px 0; }
+    .prod-wrap .slider { margin: 30px auto; width: 80%; }
+    
+    .prod-wrap .slider .slick-arrow { position: absolute; top: 50%;  width: 50px; height: 50px; font-size:0; background-image: url(/AURA/right-arrow.png); background-size: 25px; background-repeat: no-repeat; background-position: center; background-color: initial; border:none; transform: translate(0,-50%); }
+    .prod-wrap .slider .slick-prev { left: -50px; transform: rotateY(180deg) translateY(-50%); }
+    .prod-wrap .slider .slick-next { right: -50px;  }
+    
+    .prod-wrap .slick-slide .item .description { text-align: center; }
+    .prod-wrap .slick-slide .item .description .name { margin-bottom: 5px; }
+    .prod-wrap .slick-slide .item .description .name a span { font-size: 13px !important; font-weight: bold; }
+    .prod-wrap .slick-slide .item .description .custom,
+    .prod-wrap .slick-slide .item .description .price { font-size: 13px !important; }
+
+    .prod-wrap .slick-dots { display: flex; justify-content: center; margin-top: 20px; }
+    .prod-wrap .slick-dots li button { font-size: 0; width:30px; height: 1px; background-color: #ddd; border:none; }
+    .prod-wrap .slick-dots li.slick-active button { background-color: #000; }
+    
+    @media screen and (max-width:768px){
+        .prod-wrap { margin: 0 0; }
+    	.prod-wrap .slick-list { overflow: initial; }
+    };
+    
+    
+</style>
+
+<div module="product_listmain_1" class="prod-wrap">
+    <!--
+    $count = 12
+    $basket_result = /product/add_basket.html
+    $basket_option = /product/basket_option.html
+    -->
+    <ul class="slider slider_set">
+        <li class="item" id="anchorBoxId_{$product_no}">
+            <div class="thumbnail move">
+                <div class="prdImg" onclick="window.location.href='{$link_product_detail}'">
+                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}">
+                        <img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" />
+                        <span module="product_Imagestyle">
+                            <span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="description">
+                <span class="chk"><input type="checkbox" class="{$product_compare_class} {$product_compare_display|display}" /></span>
+                <p class="name {$product_name_display|display}"><a href="{$link_product_detail}">{$product_name}</a></p>
+                <p class="custom {$product_custom|display}"><strike>{$disp_product_custom}</strike></p>
+                <p class="price {$product_price_display|display} {$product_sale_strike}">{$disp_product_price}<span class="{$product_price_ref_display|display}">{$txt_product_price_ref}</span></p>    
+                <p class="price sale {$product_sale_visible}">{$prd_price_sale}</p>
+                <p class="simple">{$simple_desc}</p>
+            </div>
+        </li>
+        <li class="item" id="anchorBoxId_{$product_no}">
+            <div class="thumbnail move">
+                <div class="prdImg" onclick="window.location.href='{$link_product_detail}'">
+                    <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}">
+                        <img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" />
+                        <span module="product_Imagestyle">
+                            <span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="description">
+                <span class="chk"><input type="checkbox" class="{$product_compare_class} {$product_compare_display|display}" /></span>
+                <p class="name {$product_name_display|display}"><a href="{$link_product_detail}">{$product_name}</a></p>
+                <p class="custom {$product_custom|display}"><strike>{$disp_product_custom}</strike></p>
+                <p class="price {$product_price_display|display} {$product_sale_strike}">{$disp_product_price}<span class="{$product_price_ref_display|display}">{$txt_product_price_ref}</span></p>    
+                <p class="price sale {$product_sale_visible}">{$prd_price_sale}</p>
+                <p class="simple">{$simple_desc}</p>
+            </div>
+        </li>  
+    </ul>
+</div>
+
+
+<script src="/mosen/slick_slide/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    $('.prod-wrap .slider').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        lazyLoad: 'ondemand', // ondemand progressive anticipated
+        dots: true,
+        arrows:true, 
+        responsive: [ // 반응형 웹 구현 옵션
+            {
+                breakpoint: 769, //화면 사이즈 768px
+                settings: {
+                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+                    slidesToShow: 1,
+                    //arrows:false
+                }
+            }
+        ]
+    });
+</script>
