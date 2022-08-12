@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@0;1&display=swap");
 @font-face {
   font-family: "Pretendard-Regular";
   src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
@@ -22,7 +23,7 @@ a:link, a:active, a:visited {
 }
 
 span.memo {
-  font-size: 13px;
+  font-size: 10px;
   background-color: lemonchiffon;
 }
 
@@ -49,13 +50,15 @@ nav {
 }
 
 nav ul li a {
-  font-size: 30px;
+  font-size: 18px;
   line-height: 1.5;
 }
 
-nav .gnb li a,
-nav .gnb div a {
-  font-size: 28px;
+/*nav .gnb li a,
+nav .gnb div a { font-size: 28px;}*/
+nav .gnb li.active a,
+nav .gnb div.active a {
+  color: #ff5722;
 }
 
 nav .right_nav {
@@ -109,4 +112,38 @@ main .support {
 }
 main .footer {
   background-color: #fcb9a2;
+}
+
+.brand_story .text {
+  margin: 0 auto;
+  padding: 100px 0;
+  width: 50%;
+  text-align: center;
+  font-size: 25px;
+  font-family: "Sorts Mill Goudy", serif;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 300px;
+}
+
+.footer > ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.footer ul.info > li {
+  width: 300px;
+}
+
+.footer ul.contact input {
+  margin: 3px 0;
+  padding: 3px 10px;
+  border: 0;
+  border-bottom: 1px solid #000;
+  background-color: rgba(255, 255, 255, 0);
 }/*# sourceMappingURL=style.css.map */
