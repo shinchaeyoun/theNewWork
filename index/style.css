@@ -10,6 +10,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-size: 14px;
   font-family: "Outfit", "Pretendard-Regular", sans-serif;
 }
 
@@ -219,7 +220,7 @@ main .support {
   background-color: #fcc4ac;
 }
 main .footer {
-  background-color: #fcb9a2;
+  background-color: #f0cb7a;
 }
 
 .brand_story .text {
@@ -383,27 +384,80 @@ main .footer {
   margin: 50px 0;
 }
 
+.store {
+  display: flex;
+}
+.store > .store_info {
+  display: block;
+  border: 1px solid #000;
+}
+.store > .store_info .title {
+  text-align: center;
+  font-size: 24px;
+}
+.store > .store_info ul li:nth-child(odd) {
+  font-weight: 600;
+}
+.store > .store_info ul li:nth-child(even) {
+  margin-left: 10px;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
 }
-
 .footer > ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 30px 0;
   width: 50%;
 }
-
-.footer ul.info > li {
-  width: 300px;
+.footer ul.info {
+  flex-direction: row;
+  justify-content: space-between;
 }
-
+.footer ul.info > li {
+  font-size: 18px;
+}
+.footer ul.info > li > ul {
+  margin-top: 10px;
+}
+.footer ul.contact {
+  align-items: center;
+  padding: 30px 0;
+}
 .footer ul.contact input {
-  margin: 3px 0;
-  padding: 3px 10px;
+  margin: 3px 0 20px;
+  padding: 5px 10px;
+  width: 500px;
   border: 0;
   border-bottom: 1px solid #000;
+  background-color: rgba(255, 255, 255, 0);
+}
+.footer ul.contact textarea {
+  margin: 3px 0;
+  padding: 5px 10px;
+  width: 500px;
+  border: 1px solid #000;
+  background-color: rgba(255, 255, 255, 0);
+}
+.footer ul.contact input::-moz-placeholder, .footer ul.contact textarea::-moz-placeholder {
+  color: #000;
+  font-size: 12px;
+}
+.footer ul.contact input:-ms-input-placeholder, .footer ul.contact textarea:-ms-input-placeholder {
+  color: #000;
+  font-size: 12px;
+}
+.footer ul.contact input::placeholder,
+.footer ul.contact textarea::placeholder {
+  color: #000;
+  font-size: 12px;
+}
+.footer ul.contact button {
+  width: 522px;
+  padding: 10px 0;
+  border: 1px solid #000;
   background-color: rgba(255, 255, 255, 0);
 }
 
@@ -446,6 +500,49 @@ main .footer {
     padding: 100px 30px;
     width: initial;
   }
+  main .production_process .version1 .img_wrap {
+    margin-bottom: 50px;
+    padding: 0 15px;
+    flex-wrap: wrap;
+  }
+  main .production_process .version1 .img_wrap .frame {
+    width: 49%;
+    height: 300px;
+  }
+  main .production_process .version1 .img_wrap .frame:nth-of-type(1) {
+    margin-bottom: 8px;
+    width: 100%;
+    height: 600px;
+  }
+  main .production_process .version1 .img_wrap .frame:nth-of-type(2) {
+    display: none;
+  }
+  main .production_process .version1 .img_wrap .frame:nth-of-type(3) {
+    display: none;
+  }
+  main .production_process .version1 .sec1 {
+    margin-bottom: 50px;
+  }
+  main .production_process .version1 .sec1 .sub {
+    width: initial;
+    padding: 0 15px;
+  }
+  main .production_process .version1 .section {
+    flex-direction: column;
+    padding: 0 15px;
+  }
+  main .production_process .version1 .section .frame {
+    margin-right: initial;
+    width: 100%;
+    height: 250px;
+  }
+  main .production_process .version1 .section .text_wrap {
+    margin-left: initial;
+    width: 100%;
+  }
+  main .production_process .version1 .sec4 {
+    flex-direction: column;
+  }
   .footer {
     padding: initial;
     flex-direction: column;
@@ -454,6 +551,9 @@ main .footer {
   }
   .footer > ul {
     width: initial;
+  }
+  .footer ul.info {
+    flex-direction: column;
     text-align: center;
   }
   .footer ul.info > li {
@@ -466,7 +566,15 @@ main .footer {
   .footer ul.info > li > ul li {
     font-size: initial;
   }
-  .footer ul.contact {
-    margin-top: 50px;
+  .footer ul.contact li {
+    width: 90%;
+  }
+  .footer ul.contact input,
+.footer ul.contact textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .footer ul.contact button {
+    width: 90%;
   }
 }/*# sourceMappingURL=style.css.map */
