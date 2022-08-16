@@ -32,7 +32,15 @@ $(function(){
     $('.burger').click(function(){
         $(this).toggleClass('active');
         $('.side_menu').toggleClass('active');
-    })
+        $('body').toggleClass('noneScroll');
+
+    });
+
+    $('.side_menu li a').click(function(){
+        $('.burger').removeClass('active');
+        $('.side_menu').removeClass('active');
+        $('body').removeClass('noneScroll');
+    });
 
 
     // 반응형
