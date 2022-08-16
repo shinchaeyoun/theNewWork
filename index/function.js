@@ -28,6 +28,12 @@ $(function(){
         }
     });
 
+    // 모바일 버거
+    $('.burger').click(function(){
+        $(this).toggleClass('active');
+        $('.side_menu').toggleClass('active');
+    })
+
 
     // 반응형
     $(window).resize(function(){ 
@@ -45,5 +51,7 @@ $(function(){
     
     }).resize();
     // 반응형 끝 
+
+
 });
 
