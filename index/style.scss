@@ -249,8 +249,10 @@ main {
     ul.info {
         flex-direction: row;
         justify-content: space-between;
-        > li.tit {
-            font-size: 18px;
+        > li {
+            .tit {
+                font-size: 18px;
+            }
             > ul {
                 margin-top: 5px;
                 li {
