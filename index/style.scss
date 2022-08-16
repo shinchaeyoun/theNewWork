@@ -68,18 +68,18 @@ nav .right_nav .customer li a { font-size: 16px; }
             
             span {
                 display: block;
-                width: 20px;
-                height: 1px;
+                width: 30px;
+                height: 2px;
                 background-color: #000;
-                margin-bottom: 5px;
+                margin-bottom: 8px;
                 transition: all .2s;
             }
         }
 
         .burger.active {
-            span:nth-of-type(1) { transform: rotate(45deg) translate(0px,8px); }
+            span:nth-of-type(1) { transform: rotate(45deg) translate(6px,8px); }
             span:nth-of-type(2) { transform: translateX(-10px); opacity: 0;}
-            span:nth-of-type(3) { transform: rotate(-45deg) translate(0px,-8px); }
+            span:nth-of-type(3) { transform: rotate(-45deg) translate(6px,-8px); }
         }
 
     }
@@ -375,6 +375,7 @@ main {
         }
 
         .brand_story {
+            height: 100%;
             .text {
                 padding: 100px 30px;
                 width: initial;
