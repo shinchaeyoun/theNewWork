@@ -384,6 +384,18 @@ main .footer {
   margin: 50px 0;
 }
 
+.event .wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.event .wrap div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .store {
   display: flex;
 }
