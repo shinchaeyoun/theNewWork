@@ -47,14 +47,17 @@ $(function(){
     // $(window).resize(function(){ 
         
         if (window.innerWidth < 768) {  
+            
+            
             // 메인 페이드슬라이드
-            $('.main_visual .frame').hide();
-            $('.main_visual .frame:first-child').show();
+            const fadeSlide = setInterval(() => {
+                $('.main_visual .frame').hide();
+                $('.main_visual .frame:first-child').show();
 
-            setInterval(() => {
                 $('.main_visual .frame:first-child').fadeOut().next().fadeIn().end().appendTo('.main_visual');
-
             }, 3000);
+
+            clearInterval(fadeSlide);
         } 
     
     // }).resize();
