@@ -107,8 +107,9 @@ nav .right_nav .customer li a { font-size: 16px; }
             }
             li {
                 padding-left: 15px;
-                line-height: 1.6;
+                line-height: 1.8;
                 a {
+                    font-size: 16px;
                     span.link {
                         display: inline-block;
                         width: 15px;
@@ -124,8 +125,8 @@ nav .right_nav .customer li a { font-size: 16px; }
                 }
             }
 
-            .menu,
-            .gnb { font-size: 24px; }
+            .menu li a,
+            .gnb li a { font-size: 20px; }
         }
     }
 }

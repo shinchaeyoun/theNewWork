@@ -156,7 +156,10 @@ nav .right_nav .customer li a {
 }
 .side_menu .wrap > ul li {
   padding-left: 15px;
-  line-height: 1.6;
+  line-height: 1.8;
+}
+.side_menu .wrap > ul li a {
+  font-size: 16px;
 }
 .side_menu .wrap > ul li a span.link {
   display: inline-block;
@@ -171,9 +174,9 @@ nav .right_nav .customer li a {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.side_menu .wrap > ul .menu,
-.side_menu .wrap > ul .gnb {
-  font-size: 24px;
+.side_menu .wrap > ul .menu li a,
+.side_menu .wrap > ul .gnb li a {
+  font-size: 20px;
 }
 
 .side_menu.active {
