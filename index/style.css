@@ -30,7 +30,6 @@ a:link, a:active, a:visited {
 }
 
 span.memo {
-  display: none;
   font-size: 10px;
   background-color: lemonchiffon;
 }
