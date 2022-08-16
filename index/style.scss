@@ -271,6 +271,7 @@ main {
             border:0;
             border-bottom: 1px solid #000;
             background-color: #ffffff00;
+            border-radius: 0;
         }
 
         textarea {
@@ -279,6 +280,8 @@ main {
             width: 500px;
             border: 1px solid #000;
             background-color: #ffffff00;
+            resize: none;
+            border-radius: 0;
         }
         
         input::placeholder,
@@ -289,6 +292,7 @@ main {
             padding: 10px 0;
             border: 1px solid #000;
             background-color: #ffffff00;
+            color: #000;
         }
     }
 }

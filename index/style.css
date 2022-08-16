@@ -453,6 +453,7 @@ main .footer {
   border: 0;
   border-bottom: 1px solid #000;
   background-color: rgba(255, 255, 255, 0);
+  border-radius: 0;
 }
 .footer ul.contact textarea {
   margin: 3px 0;
@@ -460,6 +461,8 @@ main .footer {
   width: 500px;
   border: 1px solid #000;
   background-color: rgba(255, 255, 255, 0);
+  resize: none;
+  border-radius: 0;
 }
 .footer ul.contact input::-moz-placeholder, .footer ul.contact textarea::-moz-placeholder {
   color: #000;
@@ -479,6 +482,7 @@ main .footer {
   padding: 10px 0;
   border: 1px solid #000;
   background-color: rgba(255, 255, 255, 0);
+  color: #000;
 }
 
 @media screen and (max-width: 768px) {
