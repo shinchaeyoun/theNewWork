@@ -437,11 +437,11 @@ main .footer {
   flex-direction: row;
   justify-content: space-between;
 }
-.footer ul.info > li {
+.footer ul.info > li.tit {
   font-size: 18px;
 }
-.footer ul.info > li > ul {
-  margin-top: 10px;
+.footer ul.info > li.tit > ul {
+  margin-top: 5px;
 }
 .footer ul.contact {
   align-items: center;
@@ -589,9 +589,6 @@ main .footer {
   }
   .footer ul.info > li > ul {
     margin-top: 5px;
-  }
-  .footer ul.info > li > ul li {
-    font-size: initial;
   }
   .footer ul.contact li {
     width: 90%;

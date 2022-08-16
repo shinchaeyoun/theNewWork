@@ -237,7 +237,7 @@ main {
 .footer {
     display: flex;
     justify-content: space-between;
-    
+
     > ul {
         display: flex;
         flex-direction: column;
@@ -248,10 +248,15 @@ main {
     ul.info {
         flex-direction: row;
         justify-content: space-between;
-        > li {
+        > li.tit {
             font-size: 18px;
             > ul {
-                margin-top: 10px;
+                margin-top: 5px;
+                li {
+                    a {
+
+                    }
+                }
             }
         }
     } 
@@ -468,7 +473,7 @@ main {
                 > ul {
                     margin-top: 5px;
                     li {
-                        font-size: initial;
+
                     }
                 }
             }
