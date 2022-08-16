@@ -203,13 +203,21 @@ main {
 }
 
 .store {
-    display: flex;
+    // display: flex;
+    padding: 50px 30px;
     > .store_info {
         display: block;
         border: 1px solid #000;
+        padding: 20px 10px;
+        width: 50%;
+        margin: 0 auto 10px;
         .title {
             text-align: center;
             font-size: 24px;
+        }
+
+        hr {
+            margin: 10px 0 15px; border: 0; border-top: 1px solid #000;
         }
 
         ul {
@@ -218,6 +226,7 @@ main {
             }
             li:nth-child(even){
                 margin-left: 10px;
+                margin-bottom: 10px;
                 // font-size: 12px;
             }
 
@@ -418,6 +427,18 @@ main {
                     flex-direction: column;
                 }
                 .sec5 {}
+            }
+        }
+
+        .event {
+
+        }
+
+        .store {
+            padding: 50px 15px;
+
+            .store_info {
+                width: initial;
             }
         }
     }
