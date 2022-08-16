@@ -44,7 +44,7 @@ $(function(){
 
 
     // 반응형
-    $(window).resize(function(){ 
+    // $(window).resize(function(){ 
         
         if (window.innerWidth < 768) {  
             // 메인 페이드슬라이드
@@ -57,7 +57,7 @@ $(function(){
             }, 3000);
         } 
     
-    }).resize();
+    // }).resize();
     // 반응형 끝 
 
 
