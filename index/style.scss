@@ -11,6 +11,7 @@
 $outfit : 'Outfit', 'Pretendard-Regular', sans-serif;
 $gowun : 'Gowun Batang', serif;
 $mill : 'Sorts Mill Goudy', serif;
+$pre : 'Pretendard-Regular';
 
 
 
@@ -20,24 +21,27 @@ a:link, a:active, a:visited { text-decoration: none; color: #000; }
 
 span.memo { font-size: 10px; background-color: lemonchiffon; }
 
-.wrap { position: relative }
+.wrap { position: relative; }
 
-header { position: absolute; top: 50px; left: 50%; color:#fff; transform: translateY(-50%); }
-header .logo {}
+header { position: absolute; top: 30px; width: 100%; text-align: center; }
+header .logo { color:#fff; font-size: 30px; text-transform: uppercase;}
 
-nav { display: flex; justify-content: space-between; position: fixed; top: 50px; padding: 0 50px; width: 100%; box-sizing: border-box; }
+nav { position: relative; top: 30px; }
+nav .gnb,
+nav .right_nav { position: fixed;}
+nav .gnb { left: 30px; }
 nav ul li a { font-size: 18px; line-height: 1.5; }
 /*nav .gnb li a,
 nav .gnb div a { font-size: 28px;}*/
 nav .gnb li.active a,
 nav .gnb div.active a { color:#ff5722; }
-nav .right_nav { text-align: right; }
+nav .right_nav { right: 30px; text-align: right; }
 nav .right_nav .menu { margin-bottom: 20px; }
-nav .right_nav .customer li a { font-size: 20px; }
+nav .right_nav .customer li a { font-size: 16px; }
 
 
 main {}
-main section { height: 100vh; border-bottom: 1px solid #000; }
+main section { padding: 0 30px; height: 100vh; }
 
 main .main_visual { display: flex; flex-wrap: wrap; }
 main .main_visual .frame { width: 50%; height: 100vh; }
@@ -57,8 +61,130 @@ main {
 .brand_story { }
 .brand_story .text { margin: 0 auto; padding: 100px 0; width: 50%; text-align: center; font-size: 25px; font-family: $mill;}
 
-.footer { display: flex; justify-content: space-between; padding: 0 300px; }
+
+.production_process { padding: 150px 0; height: 100%; font-family: $pre; }
+.production_process .version1 .img_wrap { display: flex; justify-content: space-between; padding: 0 30px; margin-bottom: 200px; }
+.production_process .version1 .img_wrap .frame { width: calc(100%/3); height: 600px;}
+.production_process .version1 .img_wrap .frame:nth-of-type(2) { margin: 0 40px;}
+.production_process .version1 .img_wrap .frame img { width: 100%; height: 100%; object-fit: cover;}
+.production_process .version1 .sec1 { margin-bottom: 200px; }
+.production_process .version1 .sec1 .title { padding-bottom: 20px; font-size: 28px; font-weight: 800; text-align: center; }
+.production_process .version1 .sec1 .sub { margin: 0 auto; width: 70%; text-align: center; }
+.production_process .version1 .section { margin-top: 10px; display: flex; justify-content: center; align-items: center; }
+.production_process .version1 .section .frame { margin-right: 20px; width: 500px; height: 600px;}
+.production_process .version1 .section .frame img { width: 100%; height: 100%; object-fit: cover;}
+.production_process .version1 .section .text_wrap { margin-left: 20px; width: 500px; } 
+.production_process .version1 .section .text_wrap .tit { margin-bottom: 20px; }
+.production_process .version1 .section .text_wrap .sub { display: block;}
+
+.production_process .version2 { padding: 0 30px;}
+.production_process .version2 .sec1 { margin-bottom: 100px; }
+.production_process .version2 .sec1 .title { padding-bottom: 20px; font-size: 28px; font-weight: 800; text-align: center; }
+.production_process .version2 .sec1 .sub { margin: 0 auto; width: 70%; text-align: center; }
+.production_process .version2 .sec2 { display: flex; justify-content: space-between; margin-bottom: 100px; }
+.production_process .version2 .sec2 .frame { width: calc(100%/3); height: 600px; }
+.production_process .version2 .sec2 .frame:nth-of-type(2) { margin: 0 40px;}
+.production_process .version2 .sec2 .frame img { width: 100%; height: 100%; object-fit: cover; }
+
+.production_process .version2 .section { display: flex; justify-content: center; align-items: center; margin-bottom: 50px; }
+.production_process .version2 .section .frame { margin-right: 20px; width: 500px; height: 700px;}
+.production_process .version2 .section .frame img { width: 100%; height: 100%; object-fit: cover;}
+.production_process .version2 .section .text_wrap { margin-right: 20px; width: 500px; }
+.production_process .version2 .section .text_wrap .tit {}
+.production_process .version2 .section .text_wrap .sub {}
+.production_process .version2 .sec3 { flex-flow: row-reverse nowrap; margin: 50px 0;}
+
+
+
+.footer { display: flex; justify-content: space-between; }
 .footer > ul { display: flex; flex-direction: column; align-items: center; width: 50%; }
 .footer ul.info > li { width: 300px;}
 .footer ul.info > li ul li {}
 .footer ul.contact input { margin:3px 0; padding: 3px 10px; border:0; border-bottom: 1px solid #000; background-color: #ffffff00; }
+
+
+@media screen and (max-width: 768px) {
+    header {
+        .logo {
+
+        }
+    }
+    nav {
+        top: 50px;
+        padding: 0 15px;
+        width: initial;
+        z-index: 100;
+
+        .gnb {
+            li {
+                a {
+
+                }
+            }
+
+            div {
+                a {
+                    
+                }
+            }
+        }
+
+        .right_nav {
+            li.menu {
+                ul {
+                    li {
+                        a {
+
+                        }
+                    }
+                }
+            }
+
+            li.customer {
+                ul {
+                    li {
+                        a {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        .main_visual {
+            position: relative;
+            height: 100vh;
+            .frame {
+                position: absolute;
+                top: 0;left: 0;
+                width: 100%;
+
+                img {
+                    
+                }
+            }
+            .frame.active {
+                opacity: 0;
+            }
+        }
+
+        .brand_story {
+            .text {
+                padding: 100px 30px;
+                width: initial;
+            }
+        }
+
+        .production_process {
+
+        }
+    }
+
+
+
+    .footer {
+        padding: initial;
+    }
+}

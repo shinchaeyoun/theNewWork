@@ -33,20 +33,29 @@ span.memo {
 
 header {
   position: absolute;
-  top: 50px;
-  left: 50%;
+  top: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+header .logo {
   color: #fff;
-  transform: translateY(-50%);
+  font-size: 30px;
+  text-transform: uppercase;
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
+  position: relative;
+  top: 30px;
+}
+
+nav .gnb,
+nav .right_nav {
   position: fixed;
-  top: 50px;
-  padding: 0 50px;
-  width: 100%;
-  box-sizing: border-box;
+}
+
+nav .gnb {
+  left: 30px;
 }
 
 nav ul li a {
@@ -62,6 +71,7 @@ nav .gnb div.active a {
 }
 
 nav .right_nav {
+  right: 30px;
   text-align: right;
 }
 
@@ -70,12 +80,12 @@ nav .right_nav .menu {
 }
 
 nav .right_nav .customer li a {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 main section {
+  padding: 0 30px;
   height: 100vh;
-  border-bottom: 1px solid #000;
 }
 
 main .main_visual {
@@ -123,10 +133,161 @@ main .footer {
   font-family: "Sorts Mill Goudy", serif;
 }
 
+.production_process {
+  padding: 150px 0;
+  height: 100%;
+  font-family: "Pretendard-Regular";
+}
+
+.production_process .version1 .img_wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  margin-bottom: 200px;
+}
+
+.production_process .version1 .img_wrap .frame {
+  width: 33.3333333333%;
+  height: 600px;
+}
+
+.production_process .version1 .img_wrap .frame:nth-of-type(2) {
+  margin: 0 40px;
+}
+
+.production_process .version1 .img_wrap .frame img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.production_process .version1 .sec1 {
+  margin-bottom: 200px;
+}
+
+.production_process .version1 .sec1 .title {
+  padding-bottom: 20px;
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.production_process .version1 .sec1 .sub {
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+}
+
+.production_process .version1 .section {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.production_process .version1 .section .frame {
+  margin-right: 20px;
+  width: 500px;
+  height: 600px;
+}
+
+.production_process .version1 .section .frame img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.production_process .version1 .section .text_wrap {
+  margin-left: 20px;
+  width: 500px;
+}
+
+.production_process .version1 .section .text_wrap .tit {
+  margin-bottom: 20px;
+}
+
+.production_process .version1 .section .text_wrap .sub {
+  display: block;
+}
+
+.production_process .version2 {
+  padding: 0 30px;
+}
+
+.production_process .version2 .sec1 {
+  margin-bottom: 100px;
+}
+
+.production_process .version2 .sec1 .title {
+  padding-bottom: 20px;
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.production_process .version2 .sec1 .sub {
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+}
+
+.production_process .version2 .sec2 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.production_process .version2 .sec2 .frame {
+  width: 33.3333333333%;
+  height: 600px;
+}
+
+.production_process .version2 .sec2 .frame:nth-of-type(2) {
+  margin: 0 40px;
+}
+
+.production_process .version2 .sec2 .frame img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.production_process .version2 .section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.production_process .version2 .section .frame {
+  margin-right: 20px;
+  width: 500px;
+  height: 700px;
+}
+
+.production_process .version2 .section .frame img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.production_process .version2 .section .text_wrap {
+  margin-right: 20px;
+  width: 500px;
+}
+
+.production_process .version2 .sec3 {
+  flex-flow: row-reverse nowrap;
+  margin: 50px 0;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
-  padding: 0 300px;
 }
 
 .footer > ul {
@@ -146,4 +307,33 @@ main .footer {
   border: 0;
   border-bottom: 1px solid #000;
   background-color: rgba(255, 255, 255, 0);
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    top: 50px;
+    padding: 0 15px;
+    width: initial;
+    z-index: 100;
+  }
+  main .main_visual {
+    position: relative;
+    height: 100vh;
+  }
+  main .main_visual .frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  main .main_visual .frame.active {
+    opacity: 0;
+  }
+  main .brand_story .text {
+    padding: 100px 30px;
+    width: initial;
+  }
+  .footer {
+    padding: initial;
+  }
 }/*# sourceMappingURL=style.css.map */
