@@ -435,93 +435,31 @@ main .footer {
 
 .footer {
   display: flex;
-  justify-content: space-between;
-}
-.footer > ul {
-  display: flex;
-  flex-direction: column;
-  padding: 30px 0;
-  width: 50%;
-}
-.footer ul.info {
-  flex-direction: row;
-  justify-content: space-between;
-}
-.footer ul.info > li .tit {
-  font-size: 18px;
-}
-.footer ul.info > li > ul {
-  margin-top: 5px;
-}
-.footer ul.contact {
-  align-items: center;
-  padding: 30px 0;
-}
-.footer ul.contact input {
-  margin: 3px 0 20px;
-  padding: 5px 10px;
-  width: 500px;
-  border: 0;
-  border-bottom: 1px solid #000;
-  background-color: rgba(255, 255, 255, 0);
-  border-radius: 0;
-}
-.footer ul.contact textarea {
-  margin: 3px 0;
-  padding: 5px 10px;
-  width: 500px;
-  border: 1px solid #000;
-  background-color: rgba(255, 255, 255, 0);
-  resize: none;
-  border-radius: 0;
-}
-.footer ul.contact input::-moz-placeholder, .footer ul.contact textarea::-moz-placeholder {
-  color: #000;
-  font-size: 12px;
-}
-.footer ul.contact input:-ms-input-placeholder, .footer ul.contact textarea:-ms-input-placeholder {
-  color: #000;
-  font-size: 12px;
-}
-.footer ul.contact input::placeholder,
-.footer ul.contact textarea::placeholder {
-  color: #000;
-  font-size: 12px;
-}
-.footer ul.contact button {
-  width: 522px;
-  padding: 10px 0;
-  border: 1px solid #000;
-  background-color: rgba(255, 255, 255, 0);
-  color: #000;
-}
-
-footer {
-  display: flex;
   justify-content: center;
   padding: 100px 30px;
+  height: 100vh;
+  box-sizing: border-box;
   text-align: center;
   background-color: rgb(238, 188, 79);
 }
-footer .left_section > ul > li {
-  margin: 0 0 20px;
-  font-size: 20px;
-}
-footer .left_section > ul > li .tit {
+.footer .tit {
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
 }
-footer .center_section {
+.footer .left_section > ul > li {
+  margin: 0 0 20px;
+}
+.footer .center_section {
   margin: 0 300px;
 }
-footer .center_section .logo {
+.footer .center_section .logo {
   margin-bottom: 30px;
   font-size: 36px;
   text-transform: uppercase;
 }
-footer .right_section > ul > li {
-  font-size: 18px;
+.footer .right_section > ul > li {
+  margin: 0 0 20px;
 }
 
 @media screen and (max-width: 768px) {
