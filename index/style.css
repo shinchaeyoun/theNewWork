@@ -20,6 +20,14 @@ body.noneScroll {
   height: 100%;
 }
 
+::-moz-selection {
+  background: red;
+}
+
+::selection {
+  background: red;
+}
+
 li {
   list-style: none;
 }
@@ -486,6 +494,34 @@ main .footer {
   border: 1px solid #000;
   background-color: rgba(255, 255, 255, 0);
   color: #000;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 100px 30px;
+  text-align: center;
+  background-color: rgb(238, 188, 79);
+}
+footer .left_section > ul > li {
+  margin: 0 0 20px;
+  font-size: 20px;
+}
+footer .left_section > ul > li .tit {
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+footer .center_section {
+  margin: 0 300px;
+}
+footer .center_section .logo {
+  margin-bottom: 30px;
+  font-size: 36px;
+  text-transform: uppercase;
+}
+footer .right_section > ul > li {
+  font-size: 18px;
 }
 
 @media screen and (max-width: 768px) {

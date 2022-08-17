@@ -63,5 +63,10 @@ $(function(){
     // 반응형 끝 
 
 
+    $(window).click(function(){
+        console.log('click')
+
+        
+    });    
 });
 
