@@ -5,6 +5,7 @@ $(function(){
         $con1 = $('.con1').offset().top,
         $con2 = $('.con2').offset().top,
         $con3 = $('.con3').offset().top,
+        $con4 = $('.con4').offset().top,
         $mainTit = $('.main_content .tit'),
         $mainTitSub = $('.main_content .tit span'),
         $mainTitSub2 = $('.main_content .tit span.date'),
@@ -51,6 +52,22 @@ $(function(){
             $mainTxt.eq(2).removeClass('on');
             $subTit.eq(2).removeClass('on');
             $subTxt.eq(2).removeClass('on');
+          }
+
+          if(window.scrollY > $con4 - $minusWin) {
+            $mainTit.eq(3).addClass('on');
+            $con3TitSub.addClass('on');
+            $mainTxt.eq(3).addClass('on');
+            $mainTit.eq(3).find('span').addClass('on');
+            $subTit.eq(3).addClass('on');
+            $subTxt.eq(3).addClass('on');
+          } else if(window.scrollY < $con3 - $minusWin) {
+            $mainTit.eq(3).removeClass('on');
+            $con3TitSub.removeClass('on');
+            $mainTxt.eq(3).removeClass('on');
+            $mainTit.eq(3).find('span').removeClass('on');
+            $subTit.eq(3).removeClass('on');
+            $subTxt.eq(3).removeClass('on');
           }
         });
 });
