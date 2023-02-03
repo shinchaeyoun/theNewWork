@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/common.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/pageInfo.js"></script>
+    <script src="./js/nav.js"></script>
+    <script src="./js/video.js"></script>
+    <script>
+        let captionType = 3;
+        // 1=webvtt, 2=통자막, 3=실시간자막
+
+        // 실시간 자막
+        const captionStart = [
+            '00:00',
+            '00:06',
+            '00:11',
+            '00:16',
+            '00:21',
+            '00:26'
+        ],
+            captionEnd = [
+                '00:05',
+                '00:10',
+                '00:15',
+                '00:20',
+                '00:25',
+                '00:32',
+            ],
+            captionText = [
+                '1234',
+                '5678',
+                '9101112',
+                '13141516',
+                '17181920',
+                '21222324'
+            ];
+
+        const scrollCaption =
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' + 'In tempor nisl vel volutpat congue.' + 'Aliquam magna sem, mollis auctor convallis ut, blandit ullamcorper mi. Vivamus ut tellus congue magna faucibus rhoncus. Suspendisse ut nunc vitae metus porta cursus sed faucibus sapien. Sed feugiat tortor id arcu feugiat sagittis. Sed semper metus elit, eu pretium diam lacinia eu. Phasellus cursus sit amet magna non vestibulum. Vivamus hendrerit commodo dui in volutpat. Praesent ut eros tortor. Proin ut nibh sit amet metus euismod condimentum. Fusce ac felis sagittis, auctor magna sed, pellentesque massa. Nunc quis mi vel metus tristique efficitur auctor non eros. In condimentum ex ut velit commodo, id blandit risus elementum. Donec id turpis ante. Nam ultricies arcu quis ipsum blandit vehicula.';
+    </script>
+</head>
+
+<body>
+    <div class="wrap"></div>
+</body>
+
+</html>

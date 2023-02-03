@@ -1,0 +1,27 @@
+WEBVTT
+
+STYLE
+::cue {
+    background-color: #ccc;
+    color: #fff;
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+NOTE  STYLE
+NOTE  ::cue(.captionStyle){
+NOTE      color:#f00;
+NOTE  }
+
+
+1
+00:00:00.000 --> 00:00:05.000 line:90%
+<c.captionStyle>06 가나다라<c>
+
+2
+00:00:05.000 --> 00:00:10.000 line:90%
+마바사아
+
+3
+00:00:10.000 --> 00:00:32.999 line:90%
+자차카타
