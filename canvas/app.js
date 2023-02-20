@@ -1,23 +1,16 @@
-console.log('canvas load');
-
 // 전역 변수 선언
 let canvas,
     div,
     ctx,
     drawble = false,
+    lineble = false,
     $url,
     $picture,
     $delete,
-    $color;
+    $color,
+    $range;
 
-
-$(function () {
-    
-});
-
-$(window).load(function(){
-    console.log('ready handler');
-
+$(window).load(function () {
     // 전역 변수 객체 등록; 캔버스 오브젝트 가져오기;
     canvas = $("#canvas");
     div = $(".canvas_container");
@@ -27,23 +20,19 @@ $(window).load(function(){
     $picture = $('.picture_container');
     $delete = $('.delete_container');
     $color = $('.color');
-
-    
-    
-    console.log(ctx);
+    $range = $('#lineRange');
 
     // 이벤트 함수 호출
     init();
-    buttonEvent ();
+    buttonEvent();
 
-    // test();
-    
-})
+});
 
 //이벤트 함수
 function init() {
-    canvas[0].width = div.width();
-    canvas[0].height = div.height();
+    canvasResize();
+    // canvas[0].width = div.width();
+    // canvas[0].height = div.height();
 
     canvas.on('mousedown', draw);
     canvas.on('mousemove', draw);
@@ -51,16 +40,20 @@ function init() {
     canvas.on('mouseout', draw);
 
     // ctx.strokeStyle = 'orange';
-    ctx.lineWidth="5";
+    // ctx.lineWidth = 1~10
+    // ctx.lineWidth = "5";
 
-    colorChange ();
-    lineChange ();
+    colorChange();
+    lineChange();
+
+
 };
 
 // 화면 조절 함수
 function canvasResize() {
     canvas[0].width = div.width();
     canvas[0].height = div.height();
+    ctx.lineWidth = "5";
 };
 
 // draw 이벤트 함수
@@ -70,10 +63,9 @@ function draw(e) {
             drawble = true;
             ctx.beginPath();
             ctx.moveTo(getPosition(e).X, getPosition(e).Y);
-            
         }
-        break;
-        
+            break;
+
         case "mousemove": {
             if (drawble) {
                 ctx.lineTo(getPosition(e).X, getPosition(e).Y);
@@ -90,7 +82,7 @@ function draw(e) {
             break;
     };
 
-    
+
 };
 
 function getPosition(e) {
@@ -100,12 +92,13 @@ function getPosition(e) {
     return { X: x, Y: y };
 };
 
-function buttonEvent (){
-    $url.on('click', function (){
+
+function buttonEvent() {
+    $url.on('click', function () {
         console.log(canvas[0].toDataURL());
     });
 
-    $picture.on('click', function (){
+    $picture.on('click', function () {
         let link = document.createElement('a');
 
         link.href = canvas[0].toDataURL('image/png');
@@ -117,24 +110,41 @@ function buttonEvent (){
         document.body.removeChild(link);
     });
 
-    $delete.on('click', function (){
+    $delete.on('click', function () {
         canvasResize();
     });
+
+    $('.dash_line').on('click', function (e){
+        $(this).toggleClass('active');
+
+        if($(this).hasClass('active')){
+            ctx.setLineDash([10,20]);
+            console.log(ctx.getLineDash());
+        } else {
+
+        }
+
+    })
 };
 
 
 
 
-function colorChange (){
-    $color.on('click', function (){
+function colorChange() {
+    $color.on('click', function () {
         let chColor = $(this).css('background-color');
-
-        console.log(chColor);
-
         ctx.strokeStyle = chColor;
     });
 };
 
-function lineChange (){
+function lineChange (e){
+        $range.on('input', function(e){
+            let size = e.target.value;
 
-};
+            ctx.lineWidth = size;
+
+            console.log(size);
+        })
+
+    
+}

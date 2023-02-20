@@ -19,28 +19,43 @@ body {
     margin-bottom: 10px;
     position: relative;
     left: 50%;
-    width: 100px; height: 5px;
+    width: 150px; height: 5px;
     transform: translateX(-50%);
 }
 .controls > .lines > .line_bar {
-    width: 100px; height: 5px;
+    width: 100%; height: 100%;
     background-color: #ddd;
+    border-radius: 50px;
 }
 .controls > .lines > .active_bar {
     position: absolute;
     top: 0; left: 0;
-    width: 0%; height: 5px;
-    background-color: red;
+    width: 50%; height: 5px;
+    background-color: #5ebdfd;
+    border-radius: 50px;
 }
 .controls > .lines > .line_pointer {
-    /* 오른쪽으로 움직일 수 록 동그라미 커지기 어때? */
+    /* 
+        오른쪽으로 움직일 수 록 동그라미 커지기 어때?
+        최소 크기는 클릭이 어렵지 않을까
+    */
     position: absolute;
-    top: -3px; left: -1px;
+    top: -3px; left: 50%;
     width: 12px; height: 12px;
-    background-color: red;
+    background-color: #5ebdfd;
     border-radius: 50%;
+    transform: translateX(-50%);
 }
 
+.dash_line {
+    width: 30px; height: 30px;
+    background-color: #ddd;
+}
+
+.dash_line.active {
+    width: 30px; height: 30px;
+    background-color: #1fb8df;
+}
 .controls > .colors {
     display: flex;
     align-items: center;

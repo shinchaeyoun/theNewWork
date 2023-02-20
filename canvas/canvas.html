@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script src="./app.js"></script>
 </head>
 <body>
@@ -16,10 +17,9 @@
 
     <div class="controls">
         <div class="lines">
-            <div class="line_bar"></div>
-            <div class="active_bar"></div>
-            <div class="line_pointer"></div>
+            <input type="range" id="lineRange" min="1" max="10" value="5" step="1">
         </div>
+        <div class="dash_line"></div>
         <div class="colors">
             <div class="color black"></div>
             <div class="color white"></div>
