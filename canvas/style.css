@@ -1,11 +1,80 @@
+body {
+    background-color: #f1f4f9;
+}
 .canvas_container {
+    position: relative;
     display: block;
     margin: 0 auto;
-    width: 1280px; height: 800px;
-    border: 1px solid #000;
+    width: 1280px; height: 750px;
+    background-color: #fff;
+    /* border: 1px solid #000; */
+    border-radius: 10px;
+    box-shadow: 0px 7px 10px #ccc;
 
     cursor: pointer;
 }
+
+.controls {
+}
+
+.controls > .lines {
+}
+.controls > .lines > .line_bar {
+    position: relative;
+    /* margin: 40px auto 0px; */
+    width: 100px; height: 5px;
+    background-color: #ddd;
+}
+.controls > .lines > .active_bar {
+
+}
+.controls > .lines > .line_pointer {
+    position: absolute;
+    top: 0; left: 0;
+    width: 10px; height: 10px;
+    background-color: blue;
+    border-radius: 50%;
+}
+
+.controls > .colors {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.controls > .colors > div {
+    margin: 20px 5px 10px;
+    width: 30px; height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.controls > .colors > .black {
+    background-color: black;
+}
+.controls > .colors > .white {
+    background-color: white;
+}
+.controls > .colors > .red {
+    background-color: rgb(224, 0, 0);
+}
+.controls > .colors > .orange {
+    background-color: rgb(255, 81, 0);
+}
+.controls > .colors > .yellow {
+    background-color: rgb(255, 208, 0);
+}
+.controls > .colors > .green {
+    background-color: green;
+}
+.controls > .colors > .blue {
+    background-color: rgb(0, 89, 255);
+}
+.controls > .colors > .navy {
+    background-color: navy;
+}
+.controls > .colors > .purple {
+    background-color: rgb(133, 0, 221);
+}
+
 .button_container {
     display: flex;
     align-items: center;

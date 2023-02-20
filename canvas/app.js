@@ -7,7 +7,8 @@ let canvas,
     drawble = false,
     $url,
     $picture,
-    $delete;
+    $delete,
+    $color;
 
 
 $(function () {
@@ -25,23 +26,34 @@ $(window).load(function(){
     $url = $('.url_container');
     $picture = $('.picture_container');
     $delete = $('.delete_container');
+    $color = $('.color');
 
-    canvas[0].width = div.width();
-    canvas[0].height = div.height();
-    ctx.fillStyle = "orange";
+    
+    
     console.log(ctx);
-    // 이벤트 함수 호출
 
+    // 이벤트 함수 호출
     init();
     buttonEvent ();
+
+    // test();
+    
 })
 
 //이벤트 함수
 function init() {
+    canvas[0].width = div.width();
+    canvas[0].height = div.height();
+
     canvas.on('mousedown', draw);
     canvas.on('mousemove', draw);
     canvas.on('mouseup', draw);
     canvas.on('mouseout', draw);
+
+    // ctx.strokeStyle = 'orange';
+    ctx.lineWidth="5";
+
+    colorChange ();
 };
 
 // 화면 조절 함수
@@ -57,9 +69,10 @@ function draw(e) {
             drawble = true;
             ctx.beginPath();
             ctx.moveTo(getPosition(e).X, getPosition(e).Y);
+            
         }
-            break;
-
+        break;
+        
         case "mousemove": {
             if (drawble) {
                 ctx.lineTo(getPosition(e).X, getPosition(e).Y);
@@ -74,7 +87,9 @@ function draw(e) {
             ctx.closePath();
         }
             break;
-    }
+    };
+
+    
 };
 
 function getPosition(e) {
@@ -99,9 +114,26 @@ function buttonEvent (){
         link.click();
 
         document.body.removeChild(link);
-    })
+    });
 
     $delete.on('click', function (){
         canvasResize();
     });
+};
+
+
+
+
+function colorChange (){
+    $color.on('click', function (){
+        let chColor = $(this).css('background-color');
+
+        console.log(chColor);
+
+        ctx.strokeStyle = chColor;
+    });
+};
+
+function lineChange (){
+
 };
