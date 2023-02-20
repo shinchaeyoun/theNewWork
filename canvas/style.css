@@ -1,0 +1,22 @@
+.canvas_container {
+    display: block;
+    margin: 0 auto;
+    width: 1280px; height: 800px;
+    border: 1px solid #000;
+
+    cursor: pointer;
+}
+.button_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button_container > div {
+    margin: 10px;
+    width: 150px; height: 35px;
+    text-align: center;
+    line-height: 35px;
+    background-color: #fdd35e;
+    border-radius: 3px;
+}
