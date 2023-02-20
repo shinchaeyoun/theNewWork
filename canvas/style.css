@@ -14,25 +14,30 @@ body {
     cursor: pointer;
 }
 
-.controls {
-}
-
 .controls > .lines {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    position: relative;
+    left: 50%;
+    width: 100px; height: 5px;
+    transform: translateX(-50%);
 }
 .controls > .lines > .line_bar {
-    position: relative;
-    /* margin: 40px auto 0px; */
     width: 100px; height: 5px;
     background-color: #ddd;
 }
 .controls > .lines > .active_bar {
-
-}
-.controls > .lines > .line_pointer {
     position: absolute;
     top: 0; left: 0;
-    width: 10px; height: 10px;
-    background-color: blue;
+    width: 0%; height: 5px;
+    background-color: red;
+}
+.controls > .lines > .line_pointer {
+    /* 오른쪽으로 움직일 수 록 동그라미 커지기 어때? */
+    position: absolute;
+    top: -3px; left: -1px;
+    width: 12px; height: 12px;
+    background-color: red;
     border-radius: 50%;
 }
 

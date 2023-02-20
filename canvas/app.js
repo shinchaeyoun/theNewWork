@@ -54,6 +54,7 @@ function init() {
     ctx.lineWidth="5";
 
     colorChange ();
+    lineChange ();
 };
 
 // 화면 조절 함수
