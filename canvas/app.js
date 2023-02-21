@@ -35,27 +35,15 @@ $(window).load(function () {
 //이벤트 함수
 function init() {
     canvasResize();
-    // canvas[0].width = div.width();
-    // canvas[0].height = div.height();
 
     canvas.on('mousedown', draw);
     canvas.on('mousemove', draw);
     canvas.on('mouseup', draw);
     canvas.on('mouseout', draw);
 
-    // ctx.strokeStyle = 'orange';
-    // ctx.lineWidth = 1~10
-    // ctx.lineWidth = "5";
-
     colorChange();
     lineChange();
     saveImg();
-
-    if(localStorage.getItem('imgDate')){
-        console.log(localStorage.getItem('imgDate'));
-    } else {
-        console.log('??????????ahffk');
-    }
 };
 
 // 화면 조절 함수
@@ -74,8 +62,6 @@ function draw(e) {
             ctx.moveTo(getPosition(e).X, getPosition(e).Y);
             ctx.lineTo(getPosition(e).X, getPosition(e).Y);
             ctx.stroke();
-
-            console.log(drawble);
         }
             break;
 
@@ -85,7 +71,6 @@ function draw(e) {
                 ctx.stroke();
                 ctx.lineCap = 'round';
                 ctx.lineJoin = 'round';
-                console.log(drawble);
             }
         }
             break;
@@ -115,7 +100,25 @@ function colorChange() {
     $color.on('click', function () {
         let chColor = $(this).css('background-color');
         ctx.strokeStyle = chColor;
+
+        $('.colorIp').attr('value',rgb2hex(chColor));
+
+        localStorage.setItem('color',rgb2hex(chColor));
+        
     });
+
+    $('.colorIp').on('change keyup paste',function(){
+        let inputColor = $(this).val();
+        ctx.strokeStyle = inputColor;
+
+        localStorage.setItem('color',rgb2hex(inputColor));
+        
+    });
+
+    let saveColor = rgb2hex(localStorage.getItem('color'));
+
+    ctx.strokeStyle = saveColor;
+    $('.colorIp').attr('value',rgb2hex(localStorage.getItem('color')))
 };
 
 function lineChange(e) {
@@ -132,12 +135,23 @@ function saveImg() {
 
     let img = new Image;
     img.src = saveData;
-    img.onload = function (){
-        ctx.drawImage(img,0,0);
+    img.onload = function () {
+        ctx.drawImage(img, 0, 0);
     }
 };
 
 
+function rgb2hex(rgb) {
+    if (  rgb.search("rgb") == -1 ) {
+         return rgb;
+    } else {
+         rgb = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+))?\)$/);
+         function hex(x) {
+              return ("0" + parseInt(x).toString(16)).slice(-2);
+         }
+         return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]); 
+    }
+};
 
 
 function buttonEvent() {
@@ -152,7 +166,7 @@ function buttonEvent() {
         }
     });
 
-    $save.on('click', function (){
+    $save.on('click', function () {
         localStorage.setItem('saveCanvas', canvas[0].toDataURL());
     });
     $url.on('click', function () {
@@ -176,5 +190,6 @@ function buttonEvent() {
         localStorage.setItem('saveCanvas', canvas[0].toDataURL());
         $dashLine.removeClass('active');
         ctx.setLineDash([]);
+        ctx.strokeStyle = rgb2hex(localStorage.getItem('color'));
     });
 };

@@ -12,9 +12,11 @@ input[type=range] {
     background: #e5e4e3;
     border-radius: 50px;
 }
+
 input[type=range]:focus {
     outline: none;
 }
+
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 15px;
@@ -24,13 +26,34 @@ input[type=range]::-webkit-slider-thumb {
     cursor: pointer;
     border-radius: 50px;
 }
+
 input[type=range]::-ms-track {
     background: transparent;
     border-color: transparent;
     color: transparent;
     /* background-color: #f00; */
-  }
+}
 
+
+.color_picker {
+    position: relative;
+    width: 30px; height: 30px;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.colorpick-eyedropper-input-trigger {display: none;}
+
+input[type="color" i] {
+    position: absolute;
+    top: -5px; left: -5px;
+    margin: 0px; padding: 0px;
+    outline: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
 
 .canvas_container {
     position: relative;
@@ -79,13 +102,22 @@ input[type=range]::-ms-track {
 .controls>.line_type>.dash_line::after {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 6px;
     display: block;
-    width: 20px;
+    width: 8px;
     height: 3px;
     background-color: #000;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+}
+.controls>.line_type>.dash_line::before {
+    content: '';
+    position: absolute;
+    top: 50%; right: 6px;
+    display: block;
+    width: 8px;
+    height: 3px;
+    background-color: #000;
+    transform: translateY(-50%);
 }
 
 .controls>.line_type>.dash_line.active {
@@ -95,9 +127,12 @@ input[type=range]::-ms-track {
 }
 
 .controls>.colors {
+    margin: 0 10px;
+    padding: 0 5px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-left: 1px solid #000;
 }
 
 .controls>.colors>div {
@@ -117,7 +152,7 @@ input[type=range]::-ms-track {
 }
 
 .controls>.colors>.red {
-    background-color: rgb(224, 0, 0);
+    background-color: #e00000;
 }
 
 .controls>.colors>.orange {
