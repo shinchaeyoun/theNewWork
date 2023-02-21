@@ -173,5 +173,6 @@ function buttonEvent() {
 
     $delete.on('click', function () {
         canvasResize();
+        localStorage.setItem('saveCanvas', canvas[0].toDataURL());
     });
 };
