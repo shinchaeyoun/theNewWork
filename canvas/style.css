@@ -179,6 +179,17 @@ input[type="color" i] {
     background-color: rgb(133, 0, 221);
 }
 
+.controls>.erase {
+    width: 70px; height: 30px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+    background-color: #9fdae9;
+    border-radius: 3px;
+}
+
 .button_container {
     display: flex;
     align-items: center;
@@ -193,4 +204,8 @@ input[type="color" i] {
     line-height: 35px;
     background-color: #fdd35e;
     border-radius: 3px;
+}
+
+.button_container>div:active {
+    background-color: #ffae00;
 }

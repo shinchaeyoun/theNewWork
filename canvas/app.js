@@ -47,14 +47,14 @@ function init() {
     lineChange();
     saveImg();
 
-    
+
 };
 
 // 화면 조절 함수
 function canvasResize() {
     canvas[0].width = div.width();
     canvas[0].height = div.height();
-    ctx.lineWidth = "5";
+    // ctx.lineWidth = "5";
 };
 
 // draw 이벤트 함수
@@ -105,31 +105,43 @@ function colorChange() {
         let chColor = $(this).css('background-color');
         ctx.strokeStyle = chColor;
 
-        $colorPicker.attr('value',rgb2hex(chColor));
+        $colorPicker.attr('value', rgb2hex(chColor));
 
-        localStorage.setItem('color',rgb2hex(chColor));
+        localStorage.setItem('color', rgb2hex(chColor));
     });
 
-    $colorPicker.on('change keyup paste',function(){
+    $colorPicker.on('change keyup paste', function () {
         let inputColor = $(this).val();
         ctx.strokeStyle = inputColor;
 
-        localStorage.setItem('color',rgb2hex(inputColor));
+        localStorage.setItem('color', rgb2hex(inputColor));
     });
 
     let saveColor = rgb2hex(localStorage.getItem('color'));
 
     ctx.strokeStyle = saveColor;
-    $colorPicker.attr('value',saveColor);
+    $colorPicker.attr('value', saveColor);
+
+    // console.log(saveColor);
 };
 
 function lineChange(e) {
     $range.on('input', function (e) {
         let size = e.target.value;
         ctx.lineWidth = size;
+
+        localStorage.setItem('lineWeight', size);
     });
 
+    if (localStorage.getItem('lineWeight') == null) {
+        localStorage.setItem('lineWeight', 5);
+        let defultLine = localStorage.getItem('lineWeight');
+        ctx.lineWidth = defultLine;
+    }
+    // ctx.lineWidth = localStorage.getItem('lineWeight');
+    ctx.lineWidth = 5;
 
+    console.log(ctx.lineWidth);
 };
 
 function saveImg() {
@@ -139,24 +151,34 @@ function saveImg() {
     img.src = saveData;
     img.onload = function () {
         ctx.drawImage(img, 0, 0);
-    }
+    };
 };
 
 
 
 function rgb2hex($val) {
-    $val = '#000000';
     if ($val.search("rgb") == -1) {
-
-         return $val;
+        return $val;
     } else {
         $val = $val.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+))?\)$/);
-         function hex(x) {
-              return ("0" + parseInt(x).toString(16)).slice(-2);
-         }
-         return "#" + hex($val[1]) + hex($val[2]) + hex($val[3]); 
+        function hex(x) {
+            return ("0" + parseInt(x).toString(16)).slice(-2);
+        }
+        return "#" + hex($val[1]) + hex($val[2]) + hex($val[3]);
     };
 };
+
+function reset() {
+    canvas[0].width = div.width();
+    canvas[0].height = div.height();
+    localStorage.setItem('saveCanvas', canvas[0].toDataURL());
+    $dashLine.removeClass('active');
+    ctx.setLineDash([]);
+    ctx.strokeStyle = rgb2hex(localStorage.getItem('color'));
+    ctx.lineWidth = localStorage.getItem('lineWeight');
+
+    console.log(ctx.lineWidth);
+}
 
 
 function buttonEvent() {
@@ -191,10 +213,13 @@ function buttonEvent() {
     });
 
     $delete.on('click', function () {
-        canvasResize();
-        localStorage.setItem('saveCanvas', canvas[0].toDataURL());
-        $dashLine.removeClass('active');
-        ctx.setLineDash([]);
-        ctx.strokeStyle = rgb2hex(localStorage.getItem('color'));
+        // canvasResize();
+        // canvas[0].width = div.width();
+        // canvas[0].height = div.height();
+        // localStorage.setItem('saveCanvas', canvas[0].toDataURL());
+        // $dashLine.removeClass('active');
+        // ctx.setLineDash([]);
+        // ctx.strokeStyle = rgb2hex(localStorage.getItem('color'));
+        reset();
     });
 };
