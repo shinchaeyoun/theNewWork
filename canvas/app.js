@@ -9,6 +9,7 @@ let canvas,
     $picture,
     $delete,
     $color,
+    $colorPicker,
     $range,
     $dashLine;
 
@@ -23,6 +24,7 @@ $(window).load(function () {
     $picture = $('.picture_container');
     $delete = $('.delete_container');
     $color = $('.color');
+    $colorPicker = $('.colorIp');
     $range = $('#lineRange');
     $dashLine = $('.dash_line');
 
@@ -44,6 +46,8 @@ function init() {
     colorChange();
     lineChange();
     saveImg();
+
+    
 };
 
 // 화면 조절 함수
@@ -101,24 +105,22 @@ function colorChange() {
         let chColor = $(this).css('background-color');
         ctx.strokeStyle = chColor;
 
-        $('.colorIp').attr('value',rgb2hex(chColor));
+        $colorPicker.attr('value',rgb2hex(chColor));
 
         localStorage.setItem('color',rgb2hex(chColor));
-        
     });
 
-    $('.colorIp').on('change keyup paste',function(){
+    $colorPicker.on('change keyup paste',function(){
         let inputColor = $(this).val();
         ctx.strokeStyle = inputColor;
 
         localStorage.setItem('color',rgb2hex(inputColor));
-        
     });
 
     let saveColor = rgb2hex(localStorage.getItem('color'));
 
     ctx.strokeStyle = saveColor;
-    $('.colorIp').attr('value',rgb2hex(localStorage.getItem('color')))
+    $colorPicker.attr('value',saveColor);
 };
 
 function lineChange(e) {
@@ -141,16 +143,19 @@ function saveImg() {
 };
 
 
-function rgb2hex(rgb) {
-    if (  rgb.search("rgb") == -1 ) {
-         return rgb;
+
+function rgb2hex($val) {
+    $val = '#000000';
+    if ($val.search("rgb") == -1) {
+
+         return $val;
     } else {
-         rgb = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+))?\)$/);
+        $val = $val.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+))?\)$/);
          function hex(x) {
               return ("0" + parseInt(x).toString(16)).slice(-2);
          }
-         return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]); 
-    }
+         return "#" + hex($val[1]) + hex($val[2]) + hex($val[3]); 
+    };
 };
 
 
