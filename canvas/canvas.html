@@ -17,9 +17,13 @@
 
     <div class="controls">
         <div class="lines">
-            <input type="range" id="lineRange" min="1" max="10" value="5" step="1">
+            <input type="range" id="lineRange" min="1" max="10" value="5" step="0.1">
         </div>
-        <div class="dash_line"></div>
+
+        <div class="line_type">
+            <div class="dash_line dashType1"></div>
+        </div>
+
         <div class="colors">
             <div class="color black"></div>
             <div class="color white"></div>
@@ -34,10 +38,14 @@
     </div>
 
     <div class="button_container">
+        <div class="save_container">
+            <div id="save_txt">저장하기</div>
+        </div>
+        
         <div class="url_container">
             <div id="url_txt">URL 저장</div>
         </div>
-    
+
         <div class="picture_container">
             <div id="picture_txt">이미지 저장</div>
         </div>
