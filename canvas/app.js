@@ -11,7 +11,10 @@ let canvas,
     $color,
     $colorPicker,
     $range,
-    $dashLine;
+    $dashLine,
+    chColor,
+    inputColor,
+    saveColor;
 
 $(window).load(function () {
     // 전역 변수 객체 등록; 캔버스 오브젝트 가져오기;
@@ -36,6 +39,7 @@ $(window).load(function () {
 
 //이벤트 함수
 function init() {
+    
     canvasResize();
 
     canvas.on('mousedown', draw);
@@ -46,7 +50,6 @@ function init() {
     colorChange();
     lineChange();
     saveImg();
-
 
 };
 
@@ -102,7 +105,7 @@ function getPosition(e) {
 
 function colorChange() {
     $color.on('click', function () {
-        let chColor = $(this).css('background-color');
+        chColor = $(this).css('background-color');
         ctx.strokeStyle = chColor;
 
         $colorPicker.attr('value', rgb2hex(chColor));
@@ -111,7 +114,7 @@ function colorChange() {
     });
 
     $colorPicker.on('change keyup paste', function () {
-        let inputColor = $(this).val();
+        inputColor = $(this).val();
         ctx.strokeStyle = inputColor;
 
         localStorage.setItem('color', rgb2hex(inputColor));
@@ -122,7 +125,7 @@ function colorChange() {
     ctx.strokeStyle = saveColor;
     $colorPicker.attr('value', saveColor);
 
-    // console.log(saveColor);
+    console.log('saveColor',saveColor);
 };
 
 function lineChange(e) {
@@ -138,10 +141,10 @@ function lineChange(e) {
         let defultLine = localStorage.getItem('lineWeight');
         ctx.lineWidth = defultLine;
     }
-    // ctx.lineWidth = localStorage.getItem('lineWeight');
+    ctx.lineWidth = localStorage.getItem('lineWeight');
     ctx.lineWidth = 5;
 
-    console.log(ctx.lineWidth);
+    console.log('ctx.lineWidth',ctx.lineWidth);
 };
 
 function saveImg() {
@@ -157,7 +160,8 @@ function saveImg() {
 
 
 function rgb2hex($val) {
-    if ($val.search("rgb") == -1) {
+    if ($val.indexOf("rgb") == -1) {
+        console.log('$val.indexOf("rgb")',$val.indexOf("rgb"));
         return $val;
     } else {
         $val = $val.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+))?\)$/);
@@ -177,7 +181,7 @@ function reset() {
     ctx.strokeStyle = rgb2hex(localStorage.getItem('color'));
     ctx.lineWidth = localStorage.getItem('lineWeight');
 
-    console.log(ctx.lineWidth);
+    console.log('ctx.lineWidth',ctx.lineWidth);
 }
 
 
@@ -198,6 +202,12 @@ function buttonEvent() {
     });
     $url.on('click', function () {
         console.log(canvas[0].toDataURL());
+        // document.execCommand( 'Copy' );
+        $url.append('<p class="hide">'+canvas[0].toDataURL()+'</p>');
+
+        let test11 = canvas[0].toDataURL().select();
+
+        console.log(test11);
     });
 
     $picture.on('click', function () {

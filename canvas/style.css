@@ -209,3 +209,8 @@ input[type="color" i] {
 .button_container>div:active {
     background-color: #ffae00;
 }
+
+.button_container>.url_container > .hide {
+    width: 0; height: 0;
+    font-size: 0;
+}
