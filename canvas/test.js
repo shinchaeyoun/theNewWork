@@ -4,8 +4,6 @@ let canvas,
     ctx,
     startDot,
     endDot,
-    dragObj,
-    dropObj,
     drawble = false,
     dropble = false,
     lineble = false,
@@ -25,7 +23,7 @@ let canvas,
     sy, sx, ex, ey,
     dragCon,
     dragBal = false,
-    dropBal = true,
+    dropBal = false,
     defaultX,
     defaultY,
     startX,
@@ -34,13 +32,7 @@ let canvas,
     defaultendX,
     defaultendY,
     stIdx,
-    edIdx,
-    originX,
-    originY,
-    dropNum,
-    ogX, ogY,
-    overNum,
-    test;
+    edIdx;
 
 $(window).load(function () {
     // 전역 변수 객체 등록; 캔버스 오브젝트 가져오기;
@@ -49,9 +41,6 @@ $(window).load(function () {
     ctx = canvas[0].getContext("2d");
     startDot = $('.start .move_dot');
     endDot = $('.end .dot');
-    dragBox = $('.start .dot');
-    dragObj = $('.start .dragObj');
-    dropObj = $('.end .dot');
 
     $save = $('.save_container');
     $url = $('.url_container');
@@ -64,21 +53,12 @@ $(window).load(function () {
 
     dragCon = $('.dot_container');
 
-    dropNum = 0;
-
     startX = new Array();
     startY = new Array();
     endX = new Array();
     endY = new Array();
     endEachX = [];
     endEachY = [];
-    originX = [];
-    originY = [];
-
-    dropIdx = [];
-
-    test = [];
-    
 
     // 이벤트 함수 호출
     init();
@@ -108,13 +88,10 @@ function init() {
     // canvas.on('touchmove', drawMo);
 
     // 선긋기
-    // dragdropable();
-    ddable();
+    dragdropable();
 
     colorChange();
     lineChange();
-
-
 };
 
 
@@ -125,142 +102,6 @@ function init() {
 
 
 
-
-
-
-function ddable() {
-    dragBox.each(function (e) {
-        radius = $(this).width() / 2;
-
-        $(this).attr('data-originalLeft', $(this).position().left);
-        $(this).attr('data-originalTop', $(this).position().top);
-
-        defaultX = $(this).attr('data-originalLeft');
-        defaultY = $(this).position().top;
-
-        startX[e] = ((Number(defaultX) + radius) + dragCon.offset().left) - canvas.offset().left;
-        startY[e] = ((Number(defaultY) + radius) + dragCon.offset().top) - canvas.offset().top;
-
-        originX[e] = $(this).find('.dragObj').offset().left;
-        originY[e] = $(this).find('.dragObj').offset().top;
-
-        dragObj.draggable({
-            start: function () {
-                stIdx = dragObj.index(this);
-                
-                if($(this).hasClass('restart')){
-                    dropNum--;
-                };
-                
-            },
-            drag: function (e, ui) {
-
-            },
-            revert: function (e, ui) {
-                // if( dropNum !== 1){
-                //     dropObj.find('.dropObj').removeClass('active');
-
-                //     $(this).offset({
-                //         top: originY[stIdx],
-                //         left: originX[stIdx]
-                //     });
-
-                //     console.log('revert',dropNum);
-                //     return true;
-                // };
-    
-                if (e == false) {
-                    isRevert = false;
-                    console.log('if', isRevert);
-
-                    $(this).offset({
-
-                    })
-                    return true;
-                } else {
-                    isRevert = true;
-                    console.log('else', isRevert);
-
-                    if(dropObj.hasClass('enter')){
-                        console.log('??',dropObj.index());
-                    }
-                };
-            },
-            stop: function (e, ui){
-                $(this).addClass('restart');
-
-                // if(dropNum !== 1){
-                    // dropNum++;
-                    // console.log('stop dropNum',dropNum);
-
-                    // $(this).offset({
-                    //     top: originY[stIdx],
-                    //     left: originX[stIdx]
-                    // });
-                // };
-
-                // console.log('stop');
-            }
-        });
-    });
-
-
-    dropObj.each(function(e){
-        dropObj.droppable({
-            over: function (e, ui) {
-                // dropNum++;
-
-                $(this).find('.dropObj').addClass('active');
-
-                dropy = $(this).find('.dropObj').offset().top;
-                dropx = $(this).find('.dropObj').offset().left;
-
-
-                if($(this).hasClass('enter')){
-                    ui.draggable.draggable('option','revert');
-                    console.log('already have');
-                } else {
-                    console.log('you can drop here');
-                }
-            },
-            out: function (e, ui) {
-                dragable = ui.draggable;
-
-                // dropNum--;
-                // $(this).find('.dropObj').removeClass('active');
-
-                ogX = dragable.parent().attr('data-originalLeft');
-                ogY = dragable.parent().attr('data-originalTop');
-
-                dragable.offset({
-                    top: Number(ogY),
-                    left: Number(ogX)
-                });
-
-                console.log(dragable.offset());
-            },
-            drop: function (e, ui) {
-                dragable = ui.draggable;
-
-                $(this).addClass('enter')
-
-                // if(dropNum == 1) {
-                    dragable.offset({
-                        top: dropy,
-                        left: dropx
-                    });
-                // } else {
-                //     ui.draggable.draggable('option','revert');
-                // };
-
-                // console.log('drop');
-            }
-        });
-
-    });
-
-    
-};
 
 
 
@@ -275,7 +116,7 @@ function ddable() {
 
 // 선긋기, 드래그 드랍
 function dragdropable() {
-    dragBox.each(function (e) {
+    startDot.each(function (e) {
         radius = $(this).width() / 2;
 
         $(this).attr('data-originalLeft', $(this).position().left);
@@ -284,142 +125,105 @@ function dragdropable() {
         defaultX = $(this).attr('data-originalLeft');
         defaultY = $(this).position().top;
 
-        startX[e] = ((Number(defaultX) + radius) + dragCon.offset().left) - canvas.offset().left;
+        startX[e] = ((Number(defaultX) + radius) + dragCon.offset().left)- canvas.offset().left;
         startY[e] = ((Number(defaultY) + radius) + dragCon.offset().top) - canvas.offset().top;
-
-        originX[e] = $(this).find('.dragObj').offset().left;
-        originY[e] = $(this).find('.dragObj').offset().top;
-
-
     });
-    dropObj.each(function (e) {
-        radius = $(this).width() / 2;
-
-        // endDor arr 필요없으면 나중에 지우기
+    endDot.each(function (e) {
         $(this).attr('data-originalLeft', $(this).position().left);
         $(this).attr('data-originalTop', $(this).position().top);
 
         defaultendX = $(this).attr('data-originalLeft');
         defaultendY = $(this).position().top;
 
-        endX[e] = ((Number(defaultendX) + radius) + dragCon.offset().left) - canvas.offset().left;
+        endX[e] = ((Number(defaultendX) + radius) + dragCon.offset().left)- canvas.offset().left;
         endY[e] = ((Number(defaultendY) + radius) + dragCon.offset().top) - canvas.offset().top;
     });
 
-    dragObj.draggable({
+    startDot.draggable({
         start: function () {
-            stIdx = dragObj.index(this);
+            $(this).addClass('zIndex');
+            // backup = ctx.getImageData(0, 0, canvas.width(), canvas.height());
+            dragBal = true;
+            
+            originX = $(this).offset().left;
+            originY = $(this).offset().top;
 
-            // 드롭 된 이후에는 선이 확정되어서 백업에 이전 드롭 때 그려진 선이 저장됨
-            if (!$(this).hasClass('restart')) {
-                backup = ctx.getImageData(0, 0, canvas.width(), canvas.height());
+            if($(this).hasClass('restart')){
+                // console.log('restart');
             } else {
-                ctx.clearRect(0, 0, canvas.width(), canvas.height())
-            };
-
-            console.log(startY[stIdx]);
+                backup = ctx.getImageData(0, 0, canvas.width(), canvas.height());
+            }
         },
         drag: function (e, ui) {
-            lineToY = (e.clientY - canvas.offset().top);
-            lineToX = (e.clientX - canvas.offset().left);
+            if (dragBal) {
+                stIdx = startDot.index(this);
 
-            ctx.putImageData(backup, 0, 0);
-            ctx.beginPath();
-            ctx.moveTo(startX[stIdx], startY[stIdx]);
-            ctx.lineTo(lineToX, lineToY);
-            ctx.stroke();
-            ctx.lineCap = 'round';
-            ctx.lineJoin = 'round';
-        },
-        revert: function (e, ui) {
-            if (e == false) {
-                isRevert = false;
-                ctx.clearRect(0, 0, canvas.width(), canvas.height())
+                sy = (e.clientY - dragCon.offset().top) - radius;
+                sx = (e.clientX - dragCon.offset().left) - radius;
+
+                lineToy = (e.clientY - canvas.offset().top);
+                lineTox = (e.clientX - canvas.offset().left);
+
                 ctx.putImageData(backup, 0, 0);
+                ctx.beginPath();
+                ctx.moveTo(startX[stIdx], startY[stIdx]);
+                ctx.lineTo(lineTox, lineToy);
+                ctx.stroke();
+                // 
+                
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+            }
+        },
+        revert: function(e, ui){
+            if (e == false){
+                isRevert = false;
+                ctx.putImageData(backup, 0, 0);
+
+                console.log('revert');
+                // $(this).offset({
+                //     top: startY[stIdx],
+                //     left: startX[stIdx]
+                // })
+                
                 return true;
             } else {
+                console.log('revert');
                 isRevert = true;
-            };
-
-            // if(e.hasClass('dropfinish')){
-            //     console.log('has class');
-            //     ctx.putImageData(backup, 0, 0);
-            //     isRevert = false;
-            //     return true;
-            // } else {
-            //     console.log('dont have class');
-            // }
-
-            console.log('revert');
+            }
         },
-        // revertDuration: 100,
-        stop: function (e) {
+        revertDuration: 70,
+        stop: function(e){
             $(this).addClass('restart');
 
-            if (!isRevert) {
-                $(this).offset({
-                    top: originY[stIdx],
-                    left: originX[stIdx]
-                });
-            };
+            console.log('drag stop');
         }
     });
-    dropObj.droppable({
+    endDot.droppable({
         over: function (e, ui) {
-            // dropNum++;
+            dropBal = true;
             $(this).addClass('endDotActive');
 
-            ey = $(this).find('.dropObj').offset().top;
-            ex = $(this).find('.dropObj').offset().left;
+            ey = $(this).offset().top;
+            ex = $(this).offset().left;
         },
         out: function (e, ui) {
-            // dropNum--;
-            dropBal = true;
-            // dropBal = false;
-
+            dropBal = false;
             $(this).removeClass('endDotActive');
-
-            console.log('out / line clear');
-        },
-        activate: function (e, ui) { // start
-
-        },
-        create: function (e, ui) { // road
-            edIdx = dropObj.index(this);
         },
         drop: function (e, ui) {
-            dropBal = true;
-            dragObj1 = ui.draggable;
+            // edIdx = endDot.index(this);
+            dragObj = ui.draggable;
 
-            // if(isRevert){
-            // if(dropNum == 1) {
-                dragObj1.offset({
+            if (dropBal) {
+                dragObj.offset({
                     top: ey,
                     left: ex
                 });
-            // };
-            // } else {
-            //     // false 일 경우에는 원래 자리로 돌아가기
-            //     dragObj.offset({
-            //         top: originY[stIdx],
-            //         left: originX[stIdx]
-            //     });
-            // };
-            $(this).addClass('dropfinish');
+            };
 
-            console.log('drop',originY[stIdx]);
-
-            // dragObj.draggable(revert)
-
-            // $(this).droppable('destroy',true);
-
+            // console.log('drop');
         },
-        deactivate: function (e, ui) { // end stop
-            dropBal = false;
-            dragObj1 = ui.draggable;
-
-            console.log('deactivate');
-        }
     });
 };
 
@@ -642,15 +446,13 @@ function reset() {
     canvas[0].width = div.width();
     canvas[0].height = div.height();
 
-    // localStorage.setItem('saveCanvas', canvas[0].toDataURL());
-    ctx.clearRect(0, 0, canvas.width(), canvas.height())
+    localStorage.setItem('saveCanvas', canvas[0].toDataURL());
+
     $dashLine.removeClass('active');
     ctx.setLineDash([]);
 
     ctx.strokeStyle = rgb2hex(localStorage.getItem('color'));
     ctx.lineWidth = localStorage.getItem('lineWeight');
-
-    location.reload();
 };
 
 function buttonEvent() {
