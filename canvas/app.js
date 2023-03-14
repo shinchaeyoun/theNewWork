@@ -162,12 +162,7 @@ function dragdropable() {
             dropY = $(this).offset().top;
         },
         out: function(e, ui){
-            $(this).droppable('enable');
-            console.log('out',!$(this).droppable('enable'),!$(this).droppable('disable'));
 
-            ui.draggable.offset({
-
-            })
         },
         drop: function(e, ui){
             console.log('drop');
@@ -176,16 +171,8 @@ function dragdropable() {
                 top: dropY,
                 left: dropX
             });
-
-            $(this).droppable('disabled')
         },
-        deactivate: function(){
-            console.log('deactivate');
-        }
     });
-    dropObj.on('click', function(){
-        console.log(dropObj.index(this));
-    })
 };
 
 
@@ -462,3 +449,17 @@ function buttonEvent() {
         reset();
     });
 };
+
+
+$.fn.hitTestPoint = function(px, py) {
+	var mx = px;
+	var my = py;
+	
+	var bounds = this.offset();
+	var mT = bounds.top; 
+	var mB = bounds.top + this.outerHeight();
+	var mL = bounds.left;
+	var mR = bounds.left + this.outerWidth();
+	
+	return (mx <= mR && mx >= mL && my <= mB && my >= mT);
+}
