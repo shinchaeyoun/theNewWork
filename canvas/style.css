@@ -149,9 +149,6 @@ input[type="color" i] {
 .canvas_container .dot_container .start .dot:nth-of-type(2) .dragObj{background-color: #ff9100;}
 .canvas_container .dot_container .start .dot:nth-of-type(3) .dragObj{background-color: #fde400;}
 
-.canvas_container .dot_container .end .dot.endDotActive{
-    background-color: #ffc400;
-}
 
 
 

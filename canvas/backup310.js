@@ -40,13 +40,7 @@ let canvas,
     dropNum,
     ogX, ogY,
     overNum,
-    test,
-    restoreArr, arrIndex,
-    lineArr, lineIdx,
-    eventX,
-    eventY,
-    dropObjIndex,
-    dropX,dropY;
+    test;
 
 $(window).load(function () {
     // 전역 변수 객체 등록; 캔버스 오브젝트 가져오기;
@@ -57,7 +51,7 @@ $(window).load(function () {
     endDot = $('.end .dot');
     dragBox = $('.start .dot');
     dragObj = $('.start .dragObj');
-    dropObj = $('.end .dropObj');
+    dropObj = $('.end .dot');
 
     $save = $('.save_container');
     $url = $('.url_container');
@@ -84,15 +78,6 @@ $(window).load(function () {
     dropIdx = [];
 
     test = [];
-
-    restoreArr = [];
-    arrIndex = -1;
-
-
-    lineArr = [];
-    lineIdx = -1;
-
-    actions = [];
     
 
     // 이벤트 함수 호출
@@ -124,70 +109,310 @@ function init() {
 
     // 선긋기
     dragdropable();
+    // ddable();
 
+    // dragObj.on('mousedown',)
 
     colorChange();
     lineChange();
+
 };
+
+
+
+
+
+
+
+
+
+
+
+
+function ddable() {
+    dragBox.each(function (e) {
+        radius = $(this).width() / 2;
+
+        $(this).attr('data-originalLeft', $(this).position().left);
+        $(this).attr('data-originalTop', $(this).position().top);
+
+        defaultX = $(this).attr('data-originalLeft');
+        defaultY = $(this).position().top;
+
+        startX[e] = ((Number(defaultX) + radius) + dragCon.offset().left) - canvas.offset().left;
+        startY[e] = ((Number(defaultY) + radius) + dragCon.offset().top) - canvas.offset().top;
+
+        originX[e] = $(this).find('.dragObj').offset().left;
+        originY[e] = $(this).find('.dragObj').offset().top;
+
+        dragObj.draggable({
+            start: function (e, ui) {
+                stIdx = dragObj.index(this);
+                backup = ctx.getImageData(0, 0, canvas.width(), canvas.height());
+                
+                // if(!$(this).hasClass('hi')){
+                // } else {
+                //     dropObj.droppable('option', 'disabled', false)
+                //     ctx.clearRect(0, 0, canvas.width(), canvas.height())
+                // };
+            },
+            drag: function (e, ui) {
+                lineToY = (e.clientY - canvas.offset().top);
+                lineToX = (e.clientX - canvas.offset().left);
+    
+                ctx.putImageData(backup, 0, 0);
+                ctx.beginPath();
+                ctx.moveTo(startX[stIdx], startY[stIdx]);
+                ctx.lineTo(lineToX, lineToY);
+                ctx.stroke();
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+            },
+            revert: function (e, ui) {
+                if (e == false) {
+                    isRevert = false;
+                    
+                    // $(this).offset({
+                    //     top: originY[stIdx],
+                    //     left: originX[stIdx]
+                    // });
+
+                    console.log('revert if');
+                    return true;
+                } else {
+                    isRevert = true;
+                };
+                console.log('revert');
+            },
+            // revertDuration: 100,
+            stop: function (e, ui){
+                // $(this).addClass('restart');
+
+                if (!isRevert) {
+                    $(this).offset({
+                        top: originY[stIdx],
+                        left: originX[stIdx]
+                    });
+                }
+                // console.log('stop');
+            }
+        });
+    });
+
+
+    dropObj.each(function(e){
+        dropObj.droppable({
+            activate: function(e, ui){
+                
+            },
+            over: function (e, ui) {
+                $(this).find('.dropObj').addClass('active');
+
+                dropy = $(this).find('.dropObj').offset().top;
+                dropx = $(this).find('.dropObj').offset().left;
+
+                ui.draggable.addClass('hi');
+            },
+            out: function (e, ui) {
+                $(this).find('.dropObj').removeClass('active');
+                $(this).removeClass('test');
+                $(this).removeClass('enter');
+                ui.draggable.removeClass('hi');
+            },
+            drop: function (e, ui) {
+                $(this).addClass('test');
+                ui.draggable.addClass('hi');
+
+                ui.draggable.offset({
+                    top: dropy,
+                    left: dropx
+                });
+
+                if($(this).hasClass('enter')){
+                    ui.draggable.draggable('option','revert',true);
+                    console.log('has class enter');
+                };
+
+                // console.log($(this))
+                // console.log($(this).find(ui.draggable))
+
+                // $(this).droppable('option', 'disabled', true)
+            },
+            deactivate: function (e, ui){
+                // create: function (e, ui){
+                if($(this).hasClass('test')){
+                    $(this).addClass('enter');
+                };
+
+                // console.log(ui.draggable.data());
+                // console.log($(this));
+            },
+            
+        });
+
+    });
+
+    
+};
+
+
+
+
+
+
+
+
+
+
 
 
 // 선긋기, 드래그 드랍
 function dragdropable() {
+    dragBox.each(function (e) {
+        radius = $(this).width() / 2;
+
+        $(this).attr('data-originalLeft', $(this).position().left);
+        $(this).attr('data-originalTop', $(this).position().top);
+
+        defaultX = $(this).attr('data-originalLeft');
+        defaultY = $(this).position().top;
+
+        startX[e] = ((Number(defaultX) + radius) + dragCon.offset().left) - canvas.offset().left;
+        startY[e] = ((Number(defaultY) + radius) + dragCon.offset().top) - canvas.offset().top;
+
+        originX[e] = $(this).find('.dragObj').offset().left;
+        originY[e] = $(this).find('.dragObj').offset().top;
+    });
+    dropObj.each(function (e) {
+        radius = $(this).width() / 2;
+
+        // endDor arr 필요없으면 나중에 지우기
+        $(this).attr('data-originalLeft', $(this).position().left);
+        $(this).attr('data-originalTop', $(this).position().top);
+
+        defaultendX = $(this).attr('data-originalLeft');
+        defaultendY = $(this).position().top;
+
+        endX[e] = ((Number(defaultendX) + radius) + dragCon.offset().left) - canvas.offset().left;
+        endY[e] = ((Number(defaultendY) + radius) + dragCon.offset().top) - canvas.offset().top;
+    });
+
     dragObj.draggable({
-        create: function(){
+        start: function () {
+            stIdx = dragObj.index(this);
 
-        },
-        start: function(){
+            // 드롭 된 이후에는 선이 확정되어서 백업에 이전 드롭 때 그려진 선이 저장됨
+            if (!$(this).hasClass('restart')) {
+                backup = ctx.getImageData(0, 0, canvas.width(), canvas.height());
+            } else {
+                ctx.clearRect(0, 0, canvas.width(), canvas.height())
+            };
 
+            console.log(startY[stIdx]);
         },
-        drag: function(){
+        drag: function (e, ui) {
+            lineToY = (e.clientY - canvas.offset().top);
+            lineToX = (e.clientX - canvas.offset().left);
 
+            ctx.putImageData(backup, 0, 0);
+            ctx.beginPath();
+            ctx.moveTo(startX[stIdx], startY[stIdx]);
+            ctx.lineTo(lineToX, lineToY);
+            ctx.stroke();
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
         },
-        revert: function(e, ui){
-            if(e==false){
+        revert: function (e, ui) {
+            if (e == false) {
                 isRevert = false;
+                ctx.clearRect(0, 0, canvas.width(), canvas.height())
+                ctx.putImageData(backup, 0, 0);
                 return true;
             } else {
                 isRevert = true;
             };
-        },
-        stop:function(){
 
+            // if(e.hasClass('dropfinish')){
+            //     console.log('has class');
+            //     ctx.putImageData(backup, 0, 0);
+            //     isRevert = false;
+            //     return true;
+            // } else {
+            //     console.log('dont have class');
+            // }
+
+            // console.log('revert');
+        },
+        // revertDuration: 100,
+        stop: function (e) {
+            $(this).addClass('restart');
+
+            if (!isRevert) {
+                $(this).offset({
+                    top: originY[stIdx],
+                    left: originX[stIdx]
+                });
+            };
         }
     });
-
     dropObj.droppable({
-        over: function(){
-            dropX = $(this).offset().left;
-            dropY = $(this).offset().top;
+        over: function (e, ui) {
+            // dropNum++;
+            $(this).addClass('endDotActive');
+
+            ey = $(this).find('.dropObj').offset().top;
+            ex = $(this).find('.dropObj').offset().left;
         },
-        out: function(e, ui){
-            $(this).droppable('enable');
-            console.log('out',!$(this).droppable('enable'),!$(this).droppable('disable'));
+        out: function (e, ui) {
+            // dropNum--;
+            dropBal = true;
+            // dropBal = false;
 
-            ui.draggable.offset({
+            $(this).removeClass('endDotActive');
 
-            })
+            console.log('out / line clear');
         },
-        drop: function(e, ui){
-            console.log('drop');
+        activate: function (e, ui) { // start
 
-            ui.draggable.offset({
-                top: dropY,
-                left: dropX
-            });
-
-            $(this).droppable('disabled')
         },
-        deactivate: function(){
-            console.log('deactivate');
+        create: function (e, ui) { // road
+            edIdx = dropObj.index(this);
+        },
+        drop: function (e, ui) {
+            dropBal = true;
+            dragObj1 = ui.draggable;
+
+            // if(isRevert){
+            // if(dropNum == 1) {
+                dragObj1.offset({
+                    top: ey,
+                    left: ex
+                });
+            // };
+            // } else {
+            //     // false 일 경우에는 원래 자리로 돌아가기
+            //     dragObj.offset({
+            //         top: originY[stIdx],
+            //         left: originX[stIdx]
+            //     });
+            // };
+            $(this).addClass('dropfinish');
+
+            // console.log('drop',originY[stIdx]);
+
+            // dragObj.draggable(revert)
+
+            // $(this).droppable('destroy',true);
+
+        },
+        deactivate: function (e, ui) { // end stop
+            dropBal = false;
+            dragObj1 = ui.draggable;
+
+            // console.log('deactivate');
         }
     });
-    dropObj.on('click', function(){
-        console.log(dropObj.index(this));
-    })
 };
-
 
 
 
