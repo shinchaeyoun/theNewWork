@@ -171,6 +171,10 @@ function dragdropable() {
                 top: dropY,
                 left: dropX
             });
+
+            if($(this).hitTestPoint(e.clientX,e.clientY)){
+                console.log('?');
+            }
         },
     });
 };
