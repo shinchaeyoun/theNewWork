@@ -92,7 +92,6 @@ $(window).load(function () {
     lineIdx = -1;
 
     actions = [];
-    
 
     // 이벤트 함수 호출
     init();

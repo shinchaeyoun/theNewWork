@@ -58,7 +58,7 @@ $(window).load(function () {
     endDot = $('.end .dot');
     dragBox = $('.start .dot');
     dragObj = $('.start .dragObj');
-    dropObj = $('.end .dropObj');
+    dropObj = $('.end .dot');
 
     $save = $('.save_container');
     $url = $('.url_container');
@@ -155,24 +155,12 @@ function dragdropable() {
         start: function (e, ui) {
             stIdx = dragObj.index(this);
             otherObj = dragObj.not($(this));
-
-            backup = ctx.getImageData(0, 0, canvas.width(), canvas.height());
-            
-            console.log($(this).attr('data-index'),'start data index');
-            
-
-            // if($(this).hasClass('restart')){
-            //     let deleteIdx = $(this).attr('data-index');
-            //     lineArr.splice(deleteIdx,1);
-            //     lineIdx -= 1;
-            //     ctx.putImageData(backup, 0, 0);
-            // }
         },
         drag: function (e, ui) {
             lineToY = (e.clientY - canvas.offset().top);
             lineToX = (e.clientX - canvas.offset().left);
 
-            redraw(e);
+            // draw();
         },
         revert: function (e, ui) {
             if (e == false) {
@@ -184,15 +172,8 @@ function dragdropable() {
         },
         revertDuration: 10,
         stop: function (e, ui) {
-            // backup = ctx.getImageData(0, 0, canvas.width(), canvas.height());
-            lineArr.push(backup);
-            lineIdx += 1;
-
-            $(this).attr('data-index', lineIdx);
-
-            console.log(lineArr);
-
             if ($(this).hasClass('return')) {
+                
                 $(this).offset({
                     top: originY[stIdx],
                     left: originX[stIdx]
@@ -205,8 +186,8 @@ function dragdropable() {
 
     dropObj.droppable({
         over: function (e, ui) {
-            dropX = $(this).offset().left;
-            dropY = $(this).offset().top;
+            dropX = $(this).find('.dropObj').offset().left;
+            dropY = $(this).find('.dropObj').offset().top;
         },
         out: function (e, ui) {
 
@@ -223,82 +204,39 @@ function dragdropable() {
                     revert: true,
                     revertDuration: 10
                 });
-
-                // 그려진 라인 지우는 코드
-                // ctx.putImageData(lineArr[lineIdx], 0, 0)
             };
 
             if (ui.draggable.hitTestObject(otherObj.eq(0))) {
-                hittest();
+                hittest()
             } else if (ui.draggable.hitTestObject(otherObj.eq(1))) {
-                hittest();
+                hittest()
             } else {
                 ui.draggable.draggable({
                     revert: function (e, ui) {
                         if (e == false) {
-                            // $(this).addClass('return');
-                            // isRevert = false;
-                            // return true;
-                            hittest();
+                            $(this).addClass('return');
+                            isRevert = false;
+                            return true;
                         } else {
-                            $(this).addClass('restart');
                             isRevert = true;
                         };
                     }
                 });
             };
-            // hittest end
         },
-        // drop end
-    });
-    // droppable end
-
-    $('.button_container').append('<div class="lineArrTest"></div>');
-
-    $('.lineArrTest').on('click', function(){
-        console.log(lineArr.length);
-        if(!lineArr.length == 0){
-            ctx.putImageData(lineArr[lineIdx], 0, 0);
-        };
-    });
-
-    $('.return_container').on('click', function(){
-        lineArr.pop();
-        lineIdx-=1;
-        ctx.putImageData(lineArr[lineIdx], 0, 0);
-        console.log(lineArr,lineIdx);
     });
 };
 
+function offsetVal(){
 
-function draw(e){
-    lineToY = (e.clientY - canvas.offset().top);
-    lineToX = (e.clientX - canvas.offset().left);
-
-    // ctx.clearRect(0, 0, canvas.width(), canvas.height());
-    ctx.putImageData(backup, 0, 0);
+}
+function draw(){
     ctx.beginPath();
     ctx.moveTo(startX[stIdx], startY[stIdx]);
     ctx.lineTo(lineToX, lineToY);
     ctx.stroke();
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
-};
-
-function redraw(e){
-    if(lineIdx <= 0){
-        ctx.clearRect(0,0,canvas.width(), canvas.height());
-        lineArr=[];
-        lineIdx =-1;
-    } else {
-        lineIdx -= 1;
-        //lineArr.pop();
-         lineArr.shift();
-
-        ctx.putImageData(lineArr[lineIdx],0,0);
-    };
-
-    draw(e)
 }
 
 
