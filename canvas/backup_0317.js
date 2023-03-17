@@ -2,9 +2,13 @@
 let canvas,
     div,
     ctx,
+    startDot,
+    endDot,
     dragObj,
     dropObj,
     drawble = false,
+    dropble = false,
+    lineble = false,
     isRevert = true,
     $save,
     $url,
@@ -20,22 +24,39 @@ let canvas,
     backup,
     sy, sx, ex, ey,
     dragCon,
+    dragBal = false,
+    dropBal = true,
     defaultX,
     defaultY,
     startX,
     startY,
+    endArea,
+    defaultendX,
+    defaultendY,
     stIdx,
+    edIdx,
     originX,
     originY,
+    dropNum,
+    ogX, ogY,
+    overNum,
+    test,
+    restoreArr, arrIndex,
     lineArr, lineIdx,
+    eventX,
+    eventY,
+    dropObjIndex,
     dropX, dropY,
-    otherObj;
+    otherObj,
+    fbackup;
 
 $(window).load(function () {
     // 전역 변수 객체 등록; 캔버스 오브젝트 가져오기;
     canvas = $("#canvas");
     div = $(".canvas_container");
     ctx = canvas[0].getContext("2d");
+    startDot = $('.start .move_dot');
+    endDot = $('.end .dot');
     dragBox = $('.start .dot');
     dragObj = $('.start .dragObj');
     dropObj = $('.end .dropObj');
@@ -51,15 +72,32 @@ $(window).load(function () {
 
     dragCon = $('.dot_container');
 
+    dropNum = 0;
+
     startX = new Array();
     startY = new Array();
+    endX = new Array();
+    endY = new Array();
+    endEachX = [];
+    endEachY = [];
     originX = [];
     originY = [];
+
+    dropIdx = [];
+
+    test = [];
+
+    restoreArr = [];
+    arrIndex = -1;
+
 
     lineArr = [];
     lineIdx = -1;
 
+    actions = [];
+
     otherObj = [];
+
 
     // 이벤트 함수 호출
     init();
@@ -76,7 +114,7 @@ function init() {
     // canvas.on('mouseup', drawPc);
     // canvas.on('mouseout', drawPc);
 
-    // 직선그리기
+    // 직선그리기-------------
     // canvas.on('mousedown', drawingPc);
     // canvas.on('mousemove', drawingPc);
     // canvas.on('mouseup', drawingPc);
@@ -91,6 +129,7 @@ function init() {
     // 선긋기
     dragdropable();
 
+
     colorChange();
     lineChange();
 };
@@ -104,7 +143,7 @@ function dragdropable() {
         $(this).attr('data-originalTop', $(this).position().top);
 
         defaultX = $(this).attr('data-originalLeft');
-        defaultY = $(this).attr('data-originalTop');
+        defaultY = $(this).position().top;
 
         startX[e] = ((Number(defaultX) + radius) + dragCon.offset().left) - canvas.offset().left;
         startY[e] = ((Number(defaultY) + radius) + dragCon.offset().top) - canvas.offset().top;
@@ -113,15 +152,26 @@ function dragdropable() {
         originY[e] = $(this).find('.dragObj').offset().top;
     });
 
+    if(lineIdx >= 2){
+        lineIdx--;
+    } else {
+        lineIdx++;
+    };
+
     dragObj.draggable({
         start: function (e, ui) {
             stIdx = dragObj.index(this);
             otherObj = dragObj.not($(this));
-
-            if ($(this).hasClass('restart')) {
+            
+            if($(this).hasClass('restart')){
                 let thisIdx = Number($(this).attr('data-index'));
-                lineArr.splice(thisIdx, 1);
+                lineArr.splice(thisIdx,1);
                 lineIdx -= 1;
+                console.log('re start',lineIdx,'attr index', thisIdx);
+                // backup = ctx.clearRect(0, 0, canvas.width(), canvas.height());
+            } else {
+                console.log('first start');
+                // backup = ctx.getImageData(0, 0, canvas.width(), canvas.height());
             };
         },
         drag: function (e, ui) {
@@ -133,32 +183,38 @@ function dragdropable() {
         revert: function (e, ui) {
             if (e == false) {
                 isRevert = false;
+                console.log('revert if');
                 return true;
             } else {
                 isRevert = true;
+                console.log('rever else');
             };
+
+            console.log('revert');
         },
         revertDuration: 10,
         stop: function (e, ui) {
-            backup = ctx.getImageData(0, 0, canvas.width(), canvas.height());
-            lineArr.push(backup);
+            fbackup = ctx.getImageData(0, 0, canvas.width(), canvas.height());
+            lineArr.push(fbackup);
             lineIdx += 1;
-            
+            // 드래그가 끝나면 fbackup에 현재 값 저장, 라인어레이에 배열 추가, 라인 인덱스 1증가
+
             $(this).attr('data-index', lineIdx);
+            // 현재 라인인덱스 값을 드래그 요소의 데이터 인덱스로 값을 넣어줌
 
-            console.log('stop lineIdx',lineIdx);
-
-            if (lineIdx > dragObj.length) {
-                console.log('over the dragObj length', lineIdx);
-            } else {
-                console.log('low the dragObj length', lineIdx);
-            };
-
-            if (!isRevert) {
-                lineIdx -= 1;
+            if(!isRevert){
+                lineIdx-=1;
                 lineArr.pop();
-                lineArrIdx();
+
+                if(lineIdx < 0){
+                    ctx.clearRect(0, 0, canvas.width(), canvas.height());
+                    console.log('stop !isrevert if');
+                } else {
+                    ctx.putImageData(lineArr[lineIdx], 0, 0);
+                    console.log('stop !isRevert else');
+                };
             };
+            // isRevert가 false일 경우, 원래 자리로 돌아가는 경우에는 마지막에 추가된 배열 지우고, 인덱스 1 감소. 라인인덱스가 0보다 작을 경우 캔버스 클리어, 0보다 클 경우엔 라인 어레이 값으로 덮어씌움
 
             if ($(this).hasClass('return')) {
                 $(this).removeClass('return');
@@ -166,7 +222,9 @@ function dragdropable() {
                     top: originY[stIdx],
                     left: originX[stIdx]
                 });
+                console.log('return class');
             };
+            // 드래그가 끝났을 때 drop에서 return 클래스가 추가됬을 경우에는 원래 자리로 돌아감
         },
     });
 
@@ -181,7 +239,7 @@ function dragdropable() {
                 left: dropX
             });
 
-            function hittest() {
+            function hittest(){
                 console.log('hit test fn');
                 isRevert = false;
                 ui.draggable.addClass('return');
@@ -194,54 +252,51 @@ function dragdropable() {
 
             if (ui.draggable.hitTestObject(otherObj.eq(0))) {
                 hittest();
-                // console.log('other object 01');
             } else if (ui.draggable.hitTestObject(otherObj.eq(1))) {
                 hittest();
-                // console.log('other object 02');
             } else {
                 ui.draggable.draggable({
                     revert: function (e, ui) {
                         if (e == false) {
                             hittest();
-                            // console.log('other object 03');
                         } else {
                             isRevert = true;
                             $(this).addClass('restart');
-                            // console.log('other object 04');
+
                         };
+                        console.log('drop revert else');
                     }
                 });
             };
+            // hittest end
         },
+        // drop end
     });
+    // droppable end
 
     $('.button_container').append('<div class="lineArrTest"></div>');
 
-    $('.lineArrTest').on('click', function () {
+    $('.lineArrTest').on('click', function(){
         console.log('lineArr', lineArr, lineIdx);
     });
 
-    $('.return_container').on('click', function () {
+    $('.return_container').on('click', function(){
         ctx.putImageData(lineArr[lineIdx], 0, 0);
-        console.log(lineArr, lineIdx);
+        console.log(lineArr,lineIdx);
     });
 };
 
-function lineArrIdx() {
-    if (lineIdx < 0) {
-        lineArr = [];
-        lineIdx = -1;
-        ctx.clearRect(0, 0, canvas.width(), canvas.height());
-    } else {
-        ctx.putImageData(lineArr[lineIdx], 0, 0);
-    };
-};
-
-function draw(e) {
+function draw(e){
     lineToY = (e.clientY - canvas.offset().top);
     lineToX = (e.clientX - canvas.offset().left);
 
-    lineArrIdx();
+    if(lineIdx < 0){
+        ctx.clearRect(0, 0, canvas.width(), canvas.height());
+        console.log('draw if');
+    } else {
+        ctx.putImageData(lineArr[lineIdx], 0, 0);
+        console.log('draw else');
+    };
 
     ctx.beginPath();
     ctx.moveTo(startX[stIdx], startY[stIdx]);
@@ -251,20 +306,29 @@ function draw(e) {
     ctx.lineJoin = 'round';
 };
 
-function redraw(e) {
-    if (lineIdx <= 0) {
-        ctx.clearRect(0, 0, canvas.width(), canvas.height());
-        lineArr = [];
-        lineIdx = -1;
+function redraw(e){
+    if(lineIdx <= 0){
+        ctx.clearRect(0,0,canvas.width(), canvas.height());
+        lineArr=[];
+        lineIdx =-1;
+        console.log('redraw if');
     } else {
         lineIdx -= 1;
         lineArr.pop();
+        //  lineArr.shift();
 
-        ctx.putImageData(lineArr[lineIdx], 0, 0);
+        ctx.putImageData(lineArr[lineIdx],0,0);
+        console.log('redraw else');
     };
 
     draw(e);
 };
+
+function lineRevert(){
+    // 선 되돌리기
+
+};
+
 
 
 
@@ -396,6 +460,7 @@ function drawMo(e) {
 function getPosition(e) {
     let x = e.pageX - canvas.offset().left;
     let y = e.pageY - canvas.offset().top;
+
     return { X: x, Y: y };
 };
 
@@ -404,6 +469,7 @@ function getMobilePosition(e) {
     var y = e.originalEvent.changedTouches[0].pageY - canvas.offset().top;
     return { X: x, Y: y };
 };
+
 
 function colorChange() {
     $color.on('click', function () {
@@ -478,7 +544,8 @@ function rgb2hex($val) {
 };
 
 function reset() {
-    canvasResize();
+    canvas[0].width = div.width();
+    canvas[0].height = div.height();
 
     // localStorage.setItem('saveCanvas', canvas[0].toDataURL());
     ctx.clearRect(0, 0, canvas.width(), canvas.height())
