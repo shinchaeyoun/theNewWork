@@ -29,7 +29,8 @@ let canvas,
     originY,
     lineArr, lineIdx,
     dropX, dropY,
-    otherObj;
+    otherObj,
+    dataIdx;
 
 $(window).load(function () {
     // 전역 변수 객체 등록; 캔버스 오브젝트 가져오기;
@@ -58,6 +59,10 @@ $(window).load(function () {
 
     lineArr = [];
     lineIdx = -1;
+
+    dataIdx = -1;
+
+
 
     otherObj = [];
 
@@ -144,15 +149,17 @@ function dragdropable() {
             lineArr.push(backup);
             lineIdx += 1;
             
-            $(this).attr('data-index', lineIdx);
+            // $(this).attr('data-index', lineIdx);
 
-            console.log('stop lineIdx',lineIdx);
-
-            if (lineIdx > dragObj.length) {
-                console.log('over the dragObj length', lineIdx);
-            } else {
-                console.log('low the dragObj length', lineIdx);
+            dataIdx++;
+            if(dataIdx > dragObj.length - 1){
+                dataIdx = 0;
             };
+            $(this).attr('data-index', dataIdx);
+            console.log(dataIdx);
+
+
+
 
             if (!isRevert) {
                 lineIdx -= 1;
