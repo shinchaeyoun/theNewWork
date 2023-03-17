@@ -159,8 +159,6 @@ function dragdropable() {
             console.log(dataIdx);
 
 
-
-
             if (!isRevert) {
                 lineIdx -= 1;
                 lineArr.pop();
