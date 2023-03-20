@@ -68,8 +68,7 @@ $(window).load(function () {
 
     // 이벤트 함수 호출
     init();
-    // canvasResize();
-    reset();
+    canvasResize();
     saveImg();
     buttonEvent();
 });
@@ -152,7 +151,6 @@ function dragdropable() {
             lineArr.push(backup);
             lineIdx += 1;
 
-
             $(this).attr('data-index',lineIdx);
             $(this).text(lineIdx);
 
@@ -169,8 +167,6 @@ function dragdropable() {
                     left: originX[stIdx]
                 });
             };
-
-            lineArrIdx();
         },
     });
 
@@ -252,6 +248,7 @@ function lineArray(){
         lineIdx -= 1;
     };
 };
+
 
 
 
@@ -397,17 +394,19 @@ function colorChange() {
         ctx.strokeStyle = chColor;
 
         $colorPicker.attr('value', rgb2hex(chColor));
+
         localStorage.setItem('color', rgb2hex(chColor));
     });
 
     $colorPicker.on('change keyup paste', function () {
         inputColor = $(this).val();
         ctx.strokeStyle = inputColor;
+
         localStorage.setItem('color', rgb2hex(inputColor));
     });
 
     let saveColor = rgb2hex(localStorage.getItem('color'));
-    
+
     ctx.strokeStyle = saveColor;
     $colorPicker.attr('value', saveColor);
 };
@@ -416,6 +415,7 @@ function lineChange(e) {
     $range.on('input', function (e) {
         let size = e.target.value;
         ctx.lineWidth = size;
+
         localStorage.setItem('lineWeight', size);
     });
 
@@ -423,7 +423,9 @@ function lineChange(e) {
         localStorage.setItem('lineWeight', 5);
         let defultLine = localStorage.getItem('lineWeight');
         ctx.lineWidth = defultLine;
-    };
+    }
+    ctx.lineWidth = localStorage.getItem('lineWeight');
+    ctx.lineWidth = 5;
 };
 
 // 화면 조절 함수
@@ -461,7 +463,7 @@ function rgb2hex($val) {
 function reset() {
     canvasResize();
 
-    localStorage.setItem('saveCanvas', canvas[0].toDataURL());
+    // localStorage.setItem('saveCanvas', canvas[0].toDataURL());
     ctx.clearRect(0, 0, canvas.width(), canvas.height())
     $dashLine.removeClass('active');
     ctx.setLineDash([]);
@@ -469,7 +471,7 @@ function reset() {
     ctx.strokeStyle = rgb2hex(localStorage.getItem('color'));
     ctx.lineWidth = localStorage.getItem('lineWeight');
 
-    console.log(localStorage.getItem('color'));
+    location.reload();
 };
 
 function buttonEvent() {
