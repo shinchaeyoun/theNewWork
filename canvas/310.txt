@@ -136,3 +136,28 @@ stop 에서는 멈출 때마다 배열에 값을 넣어주는게 맞고.
 drag랑 stop에서만 사용 중인데 활동하다보면 오류가 생김
 인덱스 값 때문에 문제가 생기는 것일지도? 
 인덱스를 lineArr에 저장할 수 있는 라인을 3개로 한정하고,(dragObj.length)
+
+
+0321 --------------
+1. 고유 인덱스로 수정
+2. putImageData 수정
+
+1.
+현재 스탑에서 저장하고 있음 데이터 인덱스 값을
+
+형제 값을 변경해야할까
+
+
+값이 앞으로 밀렸으면 좋겠음
+if($(this).attr('data-index')>0){
+    
+    if(!otherObj.attr('data0-index') == undefinded){
+        otherObj.attr('data-index')-1;
+    };
+};
+
+현재 값이랑 다른 오브젝트의 값이 동일하면 내리기
+
+if($(this).attr(data-index) == otherObj.attr(data-index)){
+    otherObj.attr('data-indx')-1;
+}

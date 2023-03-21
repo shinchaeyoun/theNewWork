@@ -58,7 +58,11 @@ $(function() {
   });
 
 
-
+function test(){
+  dragObj.each(function(e){
+    $(this).attr('index',e)
+  })
+}
 
 
 

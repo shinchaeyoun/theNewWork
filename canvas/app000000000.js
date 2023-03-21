@@ -27,19 +27,19 @@ let canvas,
     stIdx,
     originX,
     originY,
-    lineArr,
+    lineArr, lineIdx,
     dropX, dropY,
-    otherObj;
+    otherObj,
+    dataIdx;
 
 $(window).load(function () {
     // 전역 변수 객체 등록; 캔버스 오브젝트 가져오기;
     canvas = $("#canvas");
     div = $(".canvas_container");
     ctx = canvas[0].getContext("2d");
-
     dragBox = $('.start .dot');
     dragObj = $('.start .dragObj');
-    dropObj = $('.end .dot');
+    dropObj = $('.end .dropObj');
 
     $save = $('.save_container');
     $url = $('.url_container');
@@ -58,14 +58,17 @@ $(window).load(function () {
     originY = [];
 
     lineArr = [];
+    lineIdx = -1;
+
+    dataIdx = -1;
 
     otherObj = [];
 
     // 이벤트 함수 호출
     init();
-    canvasResize();
+    // canvasResize();
     reset();
-    saveImg();
+    // saveImg();
     buttonEvent();
 });
 
@@ -113,18 +116,27 @@ function dragdropable() {
         originX[e] = $(this).find('.dragObj').offset().left;
         originY[e] = $(this).find('.dragObj').offset().top;
     });
-    
     dragObj.draggable({
         start: function (e, ui) {
             stIdx = dragObj.index(this);
             otherObj = dragObj.not($(this));
 
-            lineArr[stIdx] = 'start';
+            if ($(this).hasClass('restart')) {
+                let thisIdx = Number($(this).attr('data-index'));
+                lineArr.splice(thisIdx, 1);
+                lineIdx -= 1;
+            };
 
-            draw();
+            
+			lineArr[stIdx] = {y:(e.clientY - canvas.offset().top), x:(e.clientX - canvas.offset().left)};
+            
+            lineArrIdx();
         },
         drag: function (e, ui) {
-            draw();
+            lineToY = (e.clientY - canvas.offset().top);
+            lineToX = (e.clientX - canvas.offset().left);
+
+            redraw(e);
         },
         revert: function (e, ui) {
             if (e == false) {
@@ -136,6 +148,21 @@ function dragdropable() {
         },
         revertDuration: 10,
         stop: function (e, ui) {
+            // 선이 확정되면 백업 변수에 저장하고 라인어레이에 백업 변수 추가
+            // 모든 라인어레이 변수의 값 덮어쓰기
+            // 반복문으로 지우기/ 지워진 상태에서 백업 변수에 저장이 되면
+            //backup = ctx.getImageData(0, 0, canvas.width(), canvas.height());
+            //lineArr.push(backup);
+            lineIdx += 1;
+
+            if (!isRevert) {
+                lineIdx -= 1;
+                lineArr.pop();
+            };
+
+            $(this).attr('data-index',lineIdx);
+            $(this).text(lineIdx);
+
             if ($(this).hasClass('return')) {
                 $(this).removeClass('return');
                 $(this).offset({
@@ -143,14 +170,32 @@ function dragdropable() {
                     left: originX[stIdx]
                 });
             };
-            draw();
+
+            lineArrIdx();
+            // ctx.putImageData(lineArr[lineIdx], 0, 0);
+
+            // if($(this).attr('data-index') == otherObj.eq(0).attr('data-index')){
+            //     console.log('same 1');
+
+            //     let ogIdx = otherObj.eq(0).attr('data-index');
+
+            //     otherObj.eq(0).attr('data-index',ogIdx-1);
+            //     otherObj.eq(0).text(otherObj.eq(0).attr('data-index'));
+
+            // } else if($(this).attr('data-index') == otherObj.eq(1).attr('data-index')){
+            //     let ogIdx = otherObj.eq(1).attr('data-index');
+
+            //     console.log('same 2');
+            //     otherObj.eq(1).attr('data-index',ogIdx-1);
+            //     otherObj.eq(1).text(otherObj.eq(1).attr('data-index'))
+            // }
         },
     });
 
     dropObj.droppable({
         over: function (e, ui) {
-            dropX = $(this).find('.dropObj').offset().left;
-            dropY = $(this).find('.dropObj').offset().top;
+            dropX = $(this).offset().left;
+            dropY = $(this).offset().top;
         },
         drop: function (e, ui) {
             ui.draggable.offset({
@@ -169,40 +214,72 @@ function dragdropable() {
                             hittest($(this));
                         } else {
                             isRevert = true;
+                            $(this).addClass('restart');
                         };
                     }
                 });
             };
-        }
+        },
     });
 };
 
-function draw() {
-    ctx.clearRect(0, 0, canvas.width(), canvas.height());
-    
-    for(let i = 0; i<dragObj.length; i++){
-        let lineToX = (dragObj.eq(i).offset().left)-dragBox.width();
-        let lineToY = dragObj.eq(i).offset().top;
-        
-        if(lineArr[i] == 'start') {
-            ctx.beginPath();
-            ctx.moveTo(startX[i], startY[i]);
-            ctx.lineTo(lineToX, lineToY);
-            ctx.stroke();
-            ctx.lineCap = 'round';
-			ctx.lineJoin = 'round';
-        };
+function lineArrIdx() {
+
+    if (lineIdx < 0) {
+        lineArr = [];
+        lineIdx = -1;
+        ctx.clearRect(0, 0, canvas.width(), canvas.height());
+    } else {
+		ctx.clearRect(0, 0, canvas.width(), canvas.height());
+		for(var i = 0 ; i<dragObj.length; i++)
+		{
+			if(lineArr[i])
+			{
+				ctx.putImageData(lineArr[i].x, lineArr[i].y, 0, 0);
+			}
+		}
     };
 };
+
+function draw(e) {
+    lineToY = (e.clientY - canvas.offset().top);
+    lineToX = (e.clientX - canvas.offset().left);
+
+    ctx.beginPath();
+    ctx.moveTo(startX[stIdx], startY[stIdx]);
+    ctx.lineTo(lineToX, lineToY);
+    ctx.stroke();
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+};
+
+function redraw(e) {
+    lineArrIdx();
+
+    draw(e);
+};
+
 function hittest($obj) {
     isRevert = false;
     $obj.addClass('return');
+    $obj.removeClass('restart');
     $obj.draggable({
         revert: true,
         revertDuration: 10
     });
 };
-// 선긋기 END
+
+function lineArray(){
+    if(lineArr.length >= dragObj.length){
+        lineArr.pop();
+        lineArr.shift();
+        lineIdx -= 1;
+    };
+};
+
+
+
+
 
 
 
@@ -354,7 +431,7 @@ function colorChange() {
     });
 
     let saveColor = rgb2hex(localStorage.getItem('color'));
-    
+
     ctx.strokeStyle = saveColor;
     $colorPicker.attr('value', saveColor);
 };
@@ -408,6 +485,7 @@ function rgb2hex($val) {
 function reset() {
     canvasResize();
 
+    // localStorage.setItem('saveCanvas', canvas[0].toDataURL());
     ctx.clearRect(0, 0, canvas.width(), canvas.height())
     $dashLine.removeClass('active');
     ctx.setLineDash([]);
@@ -415,13 +493,20 @@ function reset() {
     ctx.strokeStyle = rgb2hex(localStorage.getItem('color'));
     ctx.lineWidth = localStorage.getItem('lineWeight');
 
+    // console.log(localStorage.getItem('color'));
+
     lineArr = [];
+    lineIdx = -1;
 
     dragObj.each(function(e){
         $(this).offset({
             top: originY[e],
             left: originX[e]
         });
+
+        $(this).removeAttr('data-index');
+        $(this).removeClass('restart');
+        $(this).text('');
     });
 };
 
@@ -436,6 +521,7 @@ function buttonEvent() {
             ctx.setLineDash([]);
         }
     });
+
     $save.on('click', function () {
         localStorage.setItem('saveCanvas', canvas[0].toDataURL());
     });
@@ -450,6 +536,7 @@ function buttonEvent() {
 
         $('.hide').remove();
     });
+
     $picture.on('click', function () {
         let link = document.createElement('a');
 
@@ -461,13 +548,23 @@ function buttonEvent() {
 
         document.body.removeChild(link);
     });
+
     $delete.on('click', function () {
         reset();
     });
-}; // button click event end
+
+    $('.return_container').on('click', function (){
+        console.log(lineArr, lineIdx);
+    });
+
+    $('.button_container').append('<div class="test"></div>');
+
+    $('.test').on('click', function(){
+        ctx.putImageData(lineArr[lineIdx], 0, 0);
+    });
+};
 
 
-// hit test fn
 $.fn.hitTestObject = function (obj) {
     var bounds = this.offset();
     bounds.right = bounds.left + this.outerWidth();

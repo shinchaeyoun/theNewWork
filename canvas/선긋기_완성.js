@@ -36,10 +36,9 @@ $(window).load(function () {
     canvas = $("#canvas");
     div = $(".canvas_container");
     ctx = canvas[0].getContext("2d");
-
     dragBox = $('.start .dot');
     dragObj = $('.start .dragObj');
-    dropObj = $('.end .dot');
+    dropObj = $('.end .dropObj');
 
     $save = $('.save_container');
     $url = $('.url_container');
@@ -63,9 +62,9 @@ $(window).load(function () {
 
     // 이벤트 함수 호출
     init();
-    canvasResize();
+    // canvasResize();
     reset();
-    saveImg();
+    // saveImg();
     buttonEvent();
 });
 
@@ -119,7 +118,7 @@ function dragdropable() {
             stIdx = dragObj.index(this);
             otherObj = dragObj.not($(this));
 
-            lineArr[stIdx] = 'start';
+            lineArr[stIdx] = 'ok';
 
             draw();
         },
@@ -143,14 +142,15 @@ function dragdropable() {
                     left: originX[stIdx]
                 });
             };
+
             draw();
         },
     });
 
     dropObj.droppable({
         over: function (e, ui) {
-            dropX = $(this).find('.dropObj').offset().left;
-            dropY = $(this).find('.dropObj').offset().top;
+            dropX = $(this).offset().left;
+            dropY = $(this).offset().top;
         },
         drop: function (e, ui) {
             ui.draggable.offset({
@@ -169,6 +169,7 @@ function dragdropable() {
                             hittest($(this));
                         } else {
                             isRevert = true;
+                            $(this).addClass('restart');
                         };
                     }
                 });
@@ -181,13 +182,10 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width(), canvas.height());
     
     for(let i = 0; i<dragObj.length; i++){
-        let lineToX = (dragObj.eq(i).offset().left)-dragBox.width();
-        let lineToY = dragObj.eq(i).offset().top;
-        
-        if(lineArr[i] == 'start') {
+        if(lineArr[i] == 'ok') {
             ctx.beginPath();
             ctx.moveTo(startX[i], startY[i]);
-            ctx.lineTo(lineToX, lineToY);
+            ctx.lineTo((dragObj.eq(i).offset().left)-dragBox.width(), dragObj.eq(i).offset().top);
             ctx.stroke();
             ctx.lineCap = 'round';
 			ctx.lineJoin = 'round';
@@ -197,26 +195,13 @@ function draw() {
 function hittest($obj) {
     isRevert = false;
     $obj.addClass('return');
+    $obj.removeClass('restart');
     $obj.draggable({
         revert: true,
         revertDuration: 10
     });
 };
 // 선긋기 END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // pc draw 이벤트 함수
 function drawPc(e) {
@@ -408,12 +393,15 @@ function rgb2hex($val) {
 function reset() {
     canvasResize();
 
+    // localStorage.setItem('saveCanvas', canvas[0].toDataURL());
     ctx.clearRect(0, 0, canvas.width(), canvas.height())
     $dashLine.removeClass('active');
     ctx.setLineDash([]);
 
     ctx.strokeStyle = rgb2hex(localStorage.getItem('color'));
     ctx.lineWidth = localStorage.getItem('lineWeight');
+
+    // console.log(localStorage.getItem('color'));
 
     lineArr = [];
 
@@ -422,6 +410,10 @@ function reset() {
             top: originY[e],
             left: originX[e]
         });
+
+        $(this).removeAttr('data-index');
+        $(this).removeClass('restart');
+        $(this).text('');
     });
 };
 
@@ -436,6 +428,7 @@ function buttonEvent() {
             ctx.setLineDash([]);
         }
     });
+
     $save.on('click', function () {
         localStorage.setItem('saveCanvas', canvas[0].toDataURL());
     });
@@ -450,6 +443,7 @@ function buttonEvent() {
 
         $('.hide').remove();
     });
+
     $picture.on('click', function () {
         let link = document.createElement('a');
 
@@ -461,13 +455,13 @@ function buttonEvent() {
 
         document.body.removeChild(link);
     });
+
     $delete.on('click', function () {
         reset();
     });
-}; // button click event end
+};
 
 
-// hit test fn
 $.fn.hitTestObject = function (obj) {
     var bounds = this.offset();
     bounds.right = bounds.left + this.outerWidth();
