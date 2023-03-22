@@ -1,109 +1,9 @@
-// 전역 변수 선언
-let canvas,
-    div,
-    ctx,
-    dragObj,
-    dropObj,
-    drawble = false,
-    isRevert = true,
-    $save,
-    $url,
-    $picture,
-    $delete,
-    $color,
-    $colorPicker,
-    $range,
-    $dashLine,
-    chColor,
-    inputColor,
-    saveColor,
-    backup,
-    sy, sx, ex, ey,
-    dragCon,
-    defaultX,
-    defaultY,
-    startX,
-    startY,
-    endX, endY,
-    stIdx,
-    originX,
-    originY,
-    lineArr,
-    dropX, dropY,
-    otherObj;
-
-$(window).load(function () {
-    // 전역 변수 객체 등록; 캔버스 오브젝트 가져오기;
-    canvas = $("#canvas");
-    div = $(".canvas_container");
-    ctx = canvas[0].getContext("2d");
-
-    dragBox = $('.start .dot');
-    dragObj = $('.start .dragObj');
-    dropObj = $('.end .dot');
-
-    $save = $('.save_container');
-    $url = $('.url_container');
-    $picture = $('.picture_container');
-    $delete = $('.delete_container');
-    $color = $('.color');
-    $colorPicker = $('.colorIp');
-    $range = $('#lineRange');
-    $dashLine = $('.dash_line');
-
-    dragCon = $('.dot_container');
-
-    startX = new Array();
-    startY = new Array();
-    originX = [];
-    originY = [];
-
-    lineArr = [];
-
-    otherObj = [];
-
-    // 이벤트 함수 호출
-    // init();
-    // canvasResize();
-    // reset();
-    // saveImg();
-    // buttonEvent();
-});
-
-//이벤트 함수
 function init() {
-    // 그림판
-    // canvas.on('mousedown', drawPc);
-    // canvas.on('mousemove', drawPc);
-    // canvas.on('mouseup', drawPc);
-    // canvas.on('mouseout', drawPc);
-
-    // 직선그리기
-    // canvas.on('mousedown', drawingPc);
-    // canvas.on('mousemove', drawingPc);
-    // canvas.on('mouseup', drawingPc);
-    // canvas.on('mouseup',drawingPc);
-
-    // 모바일
-    // canvas.on('touchstart', drawMo);
-    // canvas.on('touchend', drawMo);
-    // canvas.on('touchcancle', drawMo);
-    // canvas.on('touchmove', drawMo);
-
-    // 선긋기
-    // dragdropable();
-
-    // canvasTypeFn ();
-
     colorChange();
     lineChange();
 };
 
 function canvasTypeFn ($type){
-    // let $type = 'draw';
-
-    console.log('$type',$type);
-
     switch($type){
         case 'draw': {
             console.log('switch draw');
@@ -127,7 +27,7 @@ function canvasTypeFn ($type){
             canvas.on('touchmove', drawMo);
         }; break;
         case 'dragLineDraw': {
-            console.log('switch dragLineDraw');
+            console.log('draaaaaaaa');
             $('.dot_container').show();
             dragdropable();
         }; break;
@@ -136,8 +36,6 @@ function canvasTypeFn ($type){
 
 // 선긋기, 드래그 드랍
 function dragdropable() {
-    console.log('3');
-
     dragBox.each(function (e) {
         radius = $(this).width() / 2;
         objRadius = dragObj.width() / 2;
