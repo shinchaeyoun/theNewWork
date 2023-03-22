@@ -94,7 +94,6 @@ function complete() {
 
 function page() {
     nowType = info.canvasType[urlNum - 1];
-
     canvasTypeFn(nowType);
 };
 
@@ -125,7 +124,6 @@ function pageControls() {
 function pageMove($pageNum) {
     changeUrl = nowUrl.replace(nowUrl.split('/')[5].split('.')[0].split('canvas')[1], $pageNum);
     location.href = changeUrl;
-    console.log('');
 };
 
 function itostr($num) {
