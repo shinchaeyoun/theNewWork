@@ -47,7 +47,7 @@ let loadCheck = 0,
     otherObj;
 
 nowUrl = location.href;
-urlNum = Number(nowUrl.split('/')[4].split('.')[0].split('canvas')[1]);
+urlNum = Number(nowUrl.split('/')[5].split('.')[0].split('canvas')[1]);
 
 function complete() {
     ++loadCheck;
@@ -123,7 +123,7 @@ function pageControls() {
 };
 
 function pageMove($pageNum) {
-    changeUrl = nowUrl.replace(nowUrl.split('/')[4].split('.')[0].split('canvas')[1], $pageNum);
+    changeUrl = nowUrl.replace(nowUrl.split('/')[5].split('.')[0].split('canvas')[1], $pageNum);
     location.href = changeUrl;
     console.log('');
 };
