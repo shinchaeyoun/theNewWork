@@ -3,7 +3,7 @@ body {
 }
 
 input[type=range] {
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
     /* overflow: hidden; */
     width: 100%;
     height: 10px;
@@ -175,17 +175,18 @@ input[type="color" i] {
 
 
 
-
-
-
-
-
-
-
-.canvas_container .text {
-    position: absolute;
-    top: 0;
-    left: 0;
+.page_controls {
+    display: flex;
+    width: 300px; height: 100px;
+}
+.page_controls div {
+    width: 70px; height: 100px;
+    text-align: center;
+    line-height: 100px;
+    border: 1px solid #000;
+}
+.page_controls .prev {
+    margin-right: 10px;
 }
 
 
