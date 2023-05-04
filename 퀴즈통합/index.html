@@ -9,40 +9,25 @@
     <link rel="stylesheet" href="./style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-    <script src="./common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./pageInfo.js"></script>
-    <script>
-        let quizType = ['single', 'essay', 'drawing'];
-
-        let ans = [];
-
-        ans[0] = new Array();
-        ans[0][0] = 3;
-
-        ans[1] = new Array();
-        ans[1][0] = 'z';
-    </script>
+    <script src="./common.js"></script>
 </head>
 
 <body>
+    
     <div class="container">
         <div class="questionPosition">
-            <ul>
-                <li class="page1Q1">1</li>
-                <li class="page1Q2">2</li>
-                <li class="page1Q3">3</li>
-            </ul>
+            <ul></ul>
         </div>
 
-        <div class="quiz_content quiz page1" data-type="single">
+        <div class="quiz_content quizPage">
             <div class="title">
                 <div class="questionNum"></div>
                 <div class="questionTitle"></div>
             </div>
 
-            <div class="answer">
-                
-            </div>
+            <div class="answer"></div>
 
             <div class="resultBtn">
                 <div class="submitBtn">정답확인</div>
@@ -55,26 +40,15 @@
             <div class="lastBtn">
                 <div>결과보기</div>
             </div>
+
+            
         </div>
 
-        <div class="quiz_content page4 resultPage" data-type="resultPage">
+        <div class="quiz_content resultPage" data-type="resultPage">
             <div class="title">Result Page</div>
 
             <div class="quizResult">
-                <ul>
-                    <li class="question1">
-                        <span class="questionNum">1</span>
-                        <p class="question_result"></p>
-                    </li>
-                    <li class="question2">
-                        <span class="questionNum">2</span>
-                        <p class="question_result"></p>
-                    </li>
-                    <li class="question3">
-                        <span class="questionNum">3</span>
-                        <p class="question_result"></p>
-                    </li>
-                </ul>
+                <ul></ul>
             </div>
 
             <div class="btn_container">
@@ -82,6 +56,12 @@
                 <div class="resultView">정답 해설</div>
                 <div class="quizEnd">학습 종료</div>
             </div>
+        </div>
+
+        <div class="result">
+            <div class="correct"><span>정답</span></div>
+            <div class="chance"><span>다시 풀어 보세요.</span></div>
+            <div class="incorrect"><span>오답</span></div>
         </div>
     </div>
 </body>

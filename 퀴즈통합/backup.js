@@ -2,7 +2,7 @@ $(function () {
     init();
 });
 
-let nowPage = 2,
+let nowPage = 1,
     resultArr = [],
     retryArr = [],
     tabMenu,
@@ -31,8 +31,7 @@ let nowPage = 2,
     dropArr = [],
     correctAlt,
     incorrectAlt,
-    chanceCount,
-    container_scale;
+    chanceCount;
 
 function init() {
     resizeFn();
@@ -77,14 +76,43 @@ function init() {
     pageMove(nowPage);
 };
 function resizeFn() {
+    const originHei = $('.container').css('height');
+
     defaultSet();
     $(window).on('resize', defaultSet);
 
     function defaultSet() {
-        let wid = ($(window).width() / $('.container').width()).toFixed(2);
-        let hei = ($(window).height() / $('.container').height()).toFixed(2);
-        
-        container_scale = (wid < hei) ? wid : hei;
+        // var container_scale = "0.5";
+        // var a = $(window).width()/800;
+        // var h = $(window).height()/600;
+        // var container_scale = a;
+        // container_scale ? a : b
+        // container_scale = b;
+        // $("#content_inner").css("transform", "scale(" + container_scale + ")");
+
+        // if ($(window).innerHeight() < 700) {
+        //     $('.container').css('height', $(window).innerHeight() - 150);
+        //     if ($(window).innerHeight() - 150 <= 300) {
+        //         $('.container').css('height', 300)
+        //     };
+        // } else {
+        //     $('.container').css('height', originHei);
+        // };
+
+        let wid = ($(window).width() / $('.container').width()).toFixed(1);
+        let hei = ($(window).height() / $('.container').height()).toFixed(1);
+        // // let wid = ($(window).width() / $('.container').width()).toFixed(2);
+        // // let hei = ($(window).height() / $('.container').height()).toFixed(2);
+
+        // console.log('wid =', wid, '// hei =', hei);
+
+        // console.log($(window).width(), $('.container').width());
+        let container_scale = (wid < hei) ? wid : hei;
+
+        // console.log('container_scale', container_scale);
+        // $('.container').css('transform', 'scale('+ container_scale +')');
+        // $('.container').css("transform-origin","50% 50%");
+
 
         var wrapTop = $('.container').height()/2;
         var wrapLeft = $('.container').width()/2;
@@ -97,8 +125,11 @@ function resizeFn() {
         $('.container').css("margin-top", - wrapTop+ "px");
         $('.container').css("margin-left", - wrapLeft+ "px");
     };
+
 };
 function setQuiz() {
+    // ans = ans[nowPage];
+
     answerArea.empty();
 
     if (nowPage > quizType.length - 1) {
@@ -259,7 +290,6 @@ function resultAlt($val) {
 function singleFn() {
     chanceCount = 1;
 
-    console.log(ans[nowPage]);
     for (let i = 0; i < quizTxt[nowPage].length - 1; i++) {
         answerArea.append('<div class="answerTit">' + quizTxt[nowPage][i + 1] + '</div>');
     };
@@ -304,7 +334,7 @@ function singleFn() {
     });
     previewBtn.off().on('click', function () {
         $(this).toggleClass('active');
-        for (let i = 0; i < ans[nowPage].length; i++) {
+        for (let i = 0; i < ans.length; i++) {
             answer.eq(ans[nowPage][i] - 1).toggleClass('correct');
         };
     });
@@ -320,21 +350,21 @@ function singleFn() {
     };
 
     function isAll() {
-        return userAnsArr.length < ans[nowPage].length;
+        return userAnsArr.length < ans.length;
     };
     function isAns() {
         let correctArr = [];
 
-        if (userAnsArr.length <= ans[nowPage].length) {
-            for (let i = 0; i < ans[nowPage].length; i++) {
+        if (userAnsArr.length <= ans.length) {
+            for (let i = 0; i < ans.length; i++) {
                 for (let e = 0; e < userAnsArr.length; e++) {
-                    if (userAnsArr[e] == ans[nowPage][i]) {
+                    if (userAnsArr[e] == ans[i]) {
                         correctArr.push(true);
                     };
                 };
             };
         };
-        return correctArr.length == ans[nowPage].length;
+        return correctArr.length == ans.length;
     };
     function lastSet($bool) {
         for (let i = 0; i < ans.length; i++) {
@@ -382,14 +412,14 @@ function essayFn() {
                     ansArea.val('');
                     for (let i = 0; i < ansArea.length; i++) {
                         for (let e = 0; e < ansArea.length; e++) {
-                            if (userAnsArr[i] == ans[nowPage][e]) {
+                            if (userAnsArr[i] == ans[e]) {
                                 ansArea.eq(i).val(userAnsArr[i]);
                             };
                         };
                     };
                 } else {
                     resultAlt(incorrectAlt);
-                    for (let i = 0; i < ans[nowPage].length; i++) {
+                    for (let i = 0; i < ans.length; i++) {
                         ansArea.eq(i).val(ans[nowPage][i]);
                     };
                     lastSet(false, 'red');
@@ -432,9 +462,9 @@ function essayFn() {
     function isAns() {
         let correctArr = [];
 
-        for (let i = 0; i < ans[nowPage].length; i++) {
+        for (let i = 0; i < ans.length; i++) {
             for (let e = 0; e < userAnsArr.length; e++) {
-                if (userAnsArr[e] == ans[nowPage][i]) {
+                if (userAnsArr[e] == ans[i]) {
                     correctArr.push(true);
                     console.log(userAnsArr,'if');
                     break;
@@ -443,7 +473,7 @@ function essayFn() {
                 };
             };
         };
-        return correctArr.length == ans[nowPage].length;
+        return correctArr.length == ans.length;
     };
     function lastSet($bool, $color) {
         ansArea.css('color', $color);
@@ -520,23 +550,33 @@ function drawingFn() {
     });
 
     $(window).resize(function () {
-        console.log('??', container_scale);
-
+        console.log('??');
         fakeObj.each(function (e) {
             positionX[e] = $(this).offset().left;
             positionY[e] = $(this).offset().top;
         });
 
-        dragObj.each(function (e) {
-            radius = $(this).width() / 2;
+        if ($(window).innerWidth() < 480) {
+            dragObj.each(function (e) {
+                radius = $(this).width() / 2;
 
-            defaultX = fakeObj.eq(e).position().left + radius;
-            defaultY = fakeObj.eq(e).position().top + radius;
-            
-            startX[e] = ((dragCon.offset().left + defaultX) - canvas.offset().left)/ container_scale;
-            startY[e] = ((dragCon.offset().top + defaultY) - canvas.offset().top)/ container_scale;
-        });
+                defaultX = fakeObj.eq(e).position().left + radius;
+                defaultY = fakeObj.eq(e).position().top + radius;
 
+                startX[e] = (dragCon.offset().left + defaultX) - canvas.offset().left;
+                startY[e] = (dragCon.offset().top + defaultY) - canvas.offset().top;
+            });
+        } else {
+            fakeObj.each(function (e) {
+                radius = $(this).width() / 2;
+
+                defaultX = $(this).position().left + radius;
+                defaultY = $(this).position().top + radius;
+
+                startX[e] = (dragCon.offset().left + defaultX) - canvas.offset().left;
+                startY[e] = (dragCon.offset().top + defaultY) - canvas.offset().top;
+            });
+        };
 
         canvasInit();
 
@@ -580,11 +620,11 @@ function drawingFn() {
             $(this).attr('data-originalLeft', $(this).position().left);
             $(this).attr('data-originalTop', $(this).position().top);
 
-            defaultX = (Number($(this).attr('data-originalLeft')) + radius) / container_scale;
-            defaultY = (Number($(this).attr('data-originalTop')) + radius) / container_scale;
+            defaultX = Number($(this).attr('data-originalLeft')) + radius;
+            defaultY = Number($(this).attr('data-originalTop')) + radius;
 
-            startX[e] = ((dragCon.offset().left + defaultX) - canvas.offset().left);
-            startY[e] = ((dragCon.offset().top + defaultY) - canvas.offset().top);
+            startX[e] = (dragCon.offset().left + defaultX) - canvas.offset().left;
+            startY[e] = (dragCon.offset().top + defaultY) - canvas.offset().top;
 
             originX[e] = $(this).offset().left;
             originY[e] = $(this).offset().top;
@@ -593,7 +633,6 @@ function drawingFn() {
             dropAns[e] = dropObj.eq(e).attr('data-ans') - 1;
         });
     };
-
     function canvasInit() {
         canvas[0].width = canDiv.width();
         canvas[0].height = canDiv.height();
@@ -615,29 +654,17 @@ function drawingFn() {
         let dragIdx,
             dropIdx;
 
-        let click = {
-            x:0,
-            y:0
-        };
-
         dragObj.draggable({
-            start: function (e) {
+            start: function () {
                 stIdx = dragObj.index(this);
                 otherObj = dragObj.not($(this));
                 checkArr[stIdx] = 'start';
 
                 draw(ctx, dragObj, dragAns);
-
-                click.x = e.clientX;
-                click.y = e.clientY;
             },
-            drag: function (e, ui) {
-                let original = ui.originalPosition;
-                ui.position = {
-                    top: (e.clientY - click.y + original.top) / container_scale,
-                    left: (e.clientX - click.x + original.left) / container_scale
-                };
+            drag: function () {
                 draw(ctx, dragObj, dragAns);
+
             },
             revert: function (e) {
                 if (e == false) {
@@ -723,8 +750,8 @@ function drawingFn() {
         $ctx.clearRect(0, 0, canvas.width(), canvas.height());
 
         for (let i = 0; i < $obj.length; i++) {
-            endX = (($obj.eq($arr[i]).offset().left + radius) - canvas.offset().left) / container_scale;
-            endY = (($obj.eq($arr[i]).offset().top + radius) - canvas.offset().top) / container_scale;
+            endX = ($obj.eq($arr[i]).offset().left + radius) - canvas.offset().left;
+            endY = ($obj.eq($arr[i]).offset().top + radius) - canvas.offset().top;
 
             if (checkArr[i] == 'start') {
                 $ctx.beginPath();
