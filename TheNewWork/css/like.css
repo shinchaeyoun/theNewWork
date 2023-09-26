@@ -207,7 +207,6 @@
 #like .fliming .fliming_wrap .slide .slide_container {
   margin: 0 auto;
   width: 790px;
-  overflow: hidden;
 }
 #like .fliming .fliming_wrap .slide .slide_container ul {
   position: relative;
