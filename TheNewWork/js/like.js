@@ -194,7 +194,7 @@ console.log('hi',);
         });
       });
 
-      console.log($fcontainer.left);
+      console.log($fcontainer.offset().left);
     }
 
     const fPrevSlide = function () {
