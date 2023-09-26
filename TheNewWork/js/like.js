@@ -186,13 +186,15 @@ console.log('hi',);
 
       console.log($fItemWid);
       $fcontainer.stop().animate({
-        left: -$fItemWid
+        left: -$fItemWid + 'px'
       }, function () {
         $('#like .fliming .slide .slide_container ul li').slice(0, 5).appendTo($fcontainer);
         $fcontainer.css({
           left: -800
         });
       });
+
+      console.log($fcontainer.left);
     }
 
     const fPrevSlide = function () {
