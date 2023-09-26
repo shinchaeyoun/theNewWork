@@ -29,7 +29,6 @@ $(function(){
     }
 
     if(window.scrollY > $seconHei){
-      console.log('seond 어디니??');
       $seconImg.addClass('active');
       $seconSpan.addClass('on');
       $seconP.addClass('active');
@@ -40,7 +39,6 @@ $(function(){
     }
 
     if(window.scrollY > $thirdLineHei){
-      console.log('third 어디니??');
       $trio.addClass('active');
     } else if(window.scrollY < $thirdLineHei){
       $trio.removeClass('active');
