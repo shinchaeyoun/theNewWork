@@ -186,6 +186,7 @@ console.log('hi',);
         fslideIdx = 1;
       }
 
+      console.log($fItemWid);
       $fcontainer.stop().animate({
         left: -$fItemWid
       }, function () {
