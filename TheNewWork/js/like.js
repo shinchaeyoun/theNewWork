@@ -188,7 +188,7 @@ console.log('hi',);
       $fcontainer.stop().animate({
         left: -$fItemWid + 'px'
       }, function () {
-        $('#like .fliming .slide .slide_container ul li').slice(0, 5).appendTo($fcontainer);
+        $('#like .fliming .slide .slide_container ul li').slice(0, 1).appendTo($fcontainer);
         $fcontainer.css({
           left: -800
         });
