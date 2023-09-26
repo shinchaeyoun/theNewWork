@@ -1,5 +1,5 @@
 $(function () {
-    const windowHei = window.innerHeight,
+  const windowHei = window.innerHeight,
         $minusWin = windowHei / 2,
         $travel = $('.travel'),
         $travelHei = $('.travel').offset().top,
@@ -30,87 +30,85 @@ $(function () {
         $mov3tit = $('.movies .sec3 span'),
         $mov3sub = $('.movies .sec3 p');
 
-    $(window).on('load', function () {
-        if (window.scrollY > $travelHei - $minusWin) {
-            $mainTit.addClass('on');
-            $mainTxt.addClass('active');
-            $mainImg.addClass('active');
-        } else if (window.scrollY < $travelHei - $minusWin) {
-            $mainTit.removeClass('on');
-            $mainTxt.removeClass('active');
-            $mainImg.removeClass('active');
-        }
-    });
+  $(window).on('load', function () {
+    if (window.scrollY > $travelHei - $minusWin) {
+      $mainTit.addClass('on');
+      $mainTxt.addClass('active');
+      $mainImg.addClass('active');
+    } else if (window.scrollY < $travelHei - $minusWin) {
+      $mainTit.removeClass('on');
+      $mainTxt.removeClass('active');
+      $mainImg.removeClass('active');
+    }
+  });
+
+  $(window).on('scroll', function () {
+    if (window.scrollY > $sec2 - $minusWin) {
+      $tabMenuImg.addClass('active');
+      $tabMenuTxt.addClass('active');
+      $tabMenuTit.addClass('on');
+      $tabMenuSub.addClass('on');
+    } else if (window.scrollY < $sec2 - $minusWin) {
+      $tabMenuImg.removeClass('active');
+      $tabMenuTxt.removeClass('active');
+      $tabMenuTit.removeClass('on');
+      $tabMenuSub.removeClass('on');
+    }
+  });
+
+  $(window).resize(function () {
+    if (window.innerWidth > 768) {
+      minusWin = windowHei / 2;
+    } else {
+      minusWin = windowHei * 2.1
+    };
 
     $(window).on('scroll', function () {
-        if (window.scrollY > $sec2 - $minusWin) {
-            $tabMenuImg.addClass('active');
-            $tabMenuTxt.addClass('active');
-            $tabMenuTit.addClass('on');
-            $tabMenuSub.addClass('on');
-        } else if (window.scrollY < $sec2 - $minusWin) {
-            $tabMenuImg.removeClass('active');
-            $tabMenuTxt.removeClass('active');
-            $tabMenuTit.removeClass('on');
-            $tabMenuSub.removeClass('on');
-        }
+      if (window.scrollY > $flim - minusWin) {
+        $flimImg.addClass('active');
+        $flimSlide.addClass('active');
+        $flimSlideBtn.addClass('active');
+        $flimTxt.addClass('active');
+      } else if (window.scrollY < $flim - minusWin) {
+        $flimImg.removeClass('active');
+        $flimSlide.removeClass('active');
+        $flimSlideBtn.removeClass('active');
+        $flimTxt.removeClass('active');
+      }
+
+      if (window.scrollY > $movies - minusWin) {
+        $mov1Mtit.addClass('active');
+        $mov1Img.addClass('active');
+        $mov1Tit.addClass('on');
+        $mov1Sub.addClass('active');
+        $mov2Mtit.addClass('active');
+        $mov2Img.addClass('active');
+        $mov2Tit.addClass('on');
+        $mov2Sub.addClass('active');
+        $mov3Mtit.addClass('active');
+        $mov3img.addClass('active');
+        $mov3tit.addClass('on');
+        $mov3sub.addClass('active');
+      } else if (window.scrollY < $movies - minusWin) {
+        $mov1Mtit.removeClass('active');
+        $mov1Img.removeClass('active');
+        $mov1Tit.removeClass('on');
+        $mov1Sub.removeClass('active');
+        $mov2Mtit.removeClass('active');
+        $mov2Img.removeClass('active');
+        $mov2Tit.removeClass('on');
+        $mov2Sub.removeClass('active');
+        $mov3Mtit.removeClass('active');
+        $mov3img.removeClass('active');
+        $mov3tit.removeClass('on');
+        $mov3sub.removeClass('active');
+      }
     });
+  }).resize();
 
-    $(window).resize(function () {
-        if (window.innerWidth > 768) {
-            minusWin = windowHei / 2;
-        } else {
-            minusWin = windowHei * 2.1
-        };
-
-        $(window).on('scroll', function () {
-            if (window.scrollY > $flim - minusWin) {
-                $flimImg.addClass('active');
-                $flimSlide.addClass('active');
-                $flimSlideBtn.addClass('active');
-                $flimTxt.addClass('active');
-            } else if (window.scrollY < $flim - minusWin) {
-                $flimImg.removeClass('active');
-                $flimSlide.removeClass('active');
-                $flimSlideBtn.removeClass('active');
-                $flimTxt.removeClass('active');
-            }
-
-            if (window.scrollY > $movies - minusWin) {
-                $mov1Mtit.addClass('active');
-                $mov1Img.addClass('active');
-                $mov1Tit.addClass('on');
-                $mov1Sub.addClass('active');
-                $mov2Mtit.addClass('active');
-                $mov2Img.addClass('active');
-                $mov2Tit.addClass('on');
-                $mov2Sub.addClass('active');
-                $mov3Mtit.addClass('active');
-                $mov3img.addClass('active');
-                $mov3tit.addClass('on');
-                $mov3sub.addClass('active');
-            } else if (window.scrollY < $movies - minusWin) {
-                $mov1Mtit.removeClass('active');
-                $mov1Img.removeClass('active');
-                $mov1Tit.removeClass('on');
-                $mov1Sub.removeClass('active');
-                $mov2Mtit.removeClass('active');
-                $mov2Img.removeClass('active');
-                $mov2Tit.removeClass('on');
-                $mov2Sub.removeClass('active');
-                $mov3Mtit.removeClass('active');
-                $mov3img.removeClass('active');
-                $mov3tit.removeClass('on');
-                $mov3sub.removeClass('active');
-            }
-        });
-
-    }).resize();
-
-    travelFn ();
-    flimFn ();
-    musicPlayerFn ();
-
+  travelFn ();
+  flimFn ();
+  musicPlayerFn ();
 }); // 준비핸들러 끝
 
 function travelFn(){
@@ -154,10 +152,11 @@ function flimFn(){
     const $fscreen = $('#like .fliming .screen');
     const $fPrev = $('#like .fliming .fliming_wrap .slide .prev');
     const $fNext = $('#like .fliming .fliming_wrap .slide .next');
+    const $fItemWid = $fcontainer.find('.slide_content').eq(0).width();
     const $fImg = $fcontainer.children('.slide_content').children('img');
 
     let fslideIdx = 1; // 1~4
-
+console.log('hi',);
 
     // 6번째 이미지 
     const fNextImg = function () {
@@ -181,23 +180,20 @@ function flimFn(){
     };
 
     const fNextSlide = function () {
-        console.log('now ind = ', fslideIdx);
+      if (fslideIdx < 4) {
+        fslideIdx++;
+      } else {
+        fslideIdx = 1;
+      }
 
-        if (fslideIdx < 4) {
-            fslideIdx++;
-        } else {
-            fslideIdx = 1;
-        }
-
-        $fcontainer.stop().animate({
-            left: -1600
-        }, function () {
-            $('#like .fliming .slide .slide_container ul li').slice(0, 5).appendTo($fcontainer);
-            $fcontainer.css({
-                left: -800
-            });
+      $fcontainer.stop().animate({
+        left: -$fItemWid
+      }, function () {
+        $('#like .fliming .slide .slide_container ul li').slice(0, 5).appendTo($fcontainer);
+        $fcontainer.css({
+          left: -800
         });
-
+      });
     }
 
     const fPrevSlide = function () {
@@ -331,13 +327,50 @@ function musicPlayerFn (){
         };
     };
 
+    function list (){
+        playIdx = $list.index(this)+1;
+        
+        console.log('listIdx is', playIdx);
+    
+        // 음악 바로 재생
+        play();
+    
+        // 재생버튼, 플레이 바 활성화
+        btnAdd ()
+    
+        // 왼쪽 정보 변경
+        lifeInfo ()
+    
+        // 리스트 활성화
+        listActive ()
+    
+        // 자동 넘김
+        audio.onended = function(){
+          if(playIdx<10) {
+            playIdx++;
+          } else {
+            playIdx=1;
+          }
+          console.log('넘어감',playIdx);
+      
+          audio.src = '../audio/'+playIdx+'.mp3';
+          audio.play();
+    
+          // 왼쪽 정보 변경
+          lifeInfo ()
+    
+          // 리스트 활성화
+          listActive ()
+        }
+      };
+
     // 재생
     function playBtn() {
         // 재생버튼, 플레이 바  활성화
         btnToggle();
 
         if (audio.paused) {
-            audio.volume = 0.1;
+            audio.volume = 0.3;
             audio.loop = false;
             audio.play();
         } else {

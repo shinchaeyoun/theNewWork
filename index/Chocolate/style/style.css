@@ -2,12 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@0;1&display=swap");
 @font-face {
-  font-family: 'Pretendard-Regular';
+  font-family: "Pretendard-Regular";
   src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
-
 img {
   width: 100%;
   height: 100%;
@@ -19,20 +18,14 @@ main section {
   padding: 0 30px;
   height: 100vh;
 }
-
 main .main_visual {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
 main .main_visual .frame {
   width: 50%;
   height: 100vh;
 }
-
 main .main_visual .frame img {
   width: 100%;
   height: 100%;
@@ -42,12 +35,11 @@ main .main_visual .frame img {
 
 main {
   /*.brand_story { background-color: #ffecd2;}
-    .production_process { background-color: #fee4cb;}
-    .event {background-color: #fdd9c1; }
-    .store { background-color:#fdcfb6; }
-    .support { background-color: #fcc4ac;}*/
+  .production_process { background-color: #fee4cb;}
+  .event {background-color: #fdd9c1; }
+  .store { background-color:#fdcfb6; }
+  .support { background-color: #fcc4ac;}*/
 }
-
 main .footer {
   background-color: #f0cb7a;
 }
@@ -55,7 +47,6 @@ main .footer {
 .brand_story {
   height: 100%;
 }
-
 .brand_story .main_text {
   margin: 0 auto;
   padding: 100px 0;
@@ -64,62 +55,43 @@ main .footer {
   font-size: 25px;
   font-family: "Sorts Mill Goudy", serif;
 }
-
 .brand_story .content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 200px;
 }
-
 .brand_story .content.sec1 .frame {
   width: 50%;
   height: 100%;
   margin-right: 10px;
 }
-
 .brand_story .content.sec2 .frame {
   margin-right: 30px;
   width: 40%;
 }
-
 .brand_story .content.sec2 .text_wrap {
   margin-left: 30px;
 }
-
 .brand_story .content.sec3 {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
-
 .brand_story .content.sec3 .frame {
   margin-left: 30px;
   width: 40%;
 }
-
 .brand_story .content.sec3 .text_wrap {
   margin-left: 30px;
   width: 30%;
 }
-
 .brand_story .content .text_wrap {
   margin-left: 30px;
   width: 30%;
   line-height: 1.8;
 }
-
 .brand_story .content .text_wrap p {
   margin-bottom: 30px;
 }
-
 .brand_story .content .text_wrap p:last-child {
   margin-bottom: 0;
 }
@@ -129,86 +101,63 @@ main .footer {
   height: 100%;
   font-family: "Pretendard-Regular";
 }
-
 .production_process .img_wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   padding: 0 30px;
   margin-bottom: 200px;
 }
-
 .production_process .img_wrap .frame {
-  width: calc(100%/3);
+  width: 33.3333333333%;
   height: 700px;
 }
-
 .production_process .img_wrap .frame img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .production_process .img_wrap .frame:nth-of-type(2) {
   margin: 0 40px;
 }
-
 .production_process .sec1 {
   margin-bottom: 200px;
 }
-
 .production_process .sec1 .title {
   padding-bottom: 20px;
   font-size: 28px;
   font-weight: 800;
   text-align: center;
 }
-
 .production_process .sec1 .sub {
   margin: 0 auto;
   width: 70%;
   text-align: center;
 }
-
 .production_process .section {
   margin-top: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .production_process .section .frame {
   margin-right: 20px;
   width: 500px;
   height: 600px;
 }
-
 .production_process .section .frame img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .production_process .section .text_wrap {
   margin-left: 20px;
   width: 500px;
 }
-
 .production_process .section .text_wrap .tit {
   margin-bottom: 20px;
 }
-
 .production_process .section .text_wrap .sub {
   display: block;
 }
@@ -218,19 +167,16 @@ main .footer {
   width: 100%;
   height: 100%;
 }
-
 .event .wrap div {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .store {
   padding: 50px 30px;
 }
-
 .store > .store_info {
   display: block;
   border: 1px solid #000;
@@ -238,22 +184,18 @@ main .footer {
   width: 50%;
   margin: 0 auto 10px;
 }
-
 .store > .store_info .title {
   text-align: center;
   font-size: 24px;
 }
-
 .store > .store_info hr {
   margin: 10px 0 15px;
   border: 0;
   border-top: 1px solid #000;
 }
-
 .store > .store_info ul li:nth-child(odd) {
   font-weight: 600;
 }
-
 .store > .store_info ul li:nth-child(even) {
   margin-left: 10px;
   margin-bottom: 10px;
@@ -293,10 +235,7 @@ main .footer {
   }
   main .brand_story .content.sec2,
   main .brand_story .content.sec3 {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   main .brand_story .content.sec2 .frame,
   main .brand_story .content.sec2 .text_wrap,
@@ -315,8 +254,7 @@ main .footer {
   main .production_process .img_wrap {
     margin-bottom: 50px;
     padding: 0;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   main .production_process .img_wrap .frame {
     width: 49%;
@@ -341,10 +279,7 @@ main .footer {
     padding: 0 15px;
   }
   main .production_process .section {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     margin-bottom: 50px;
     padding: 0 15px;
   }
@@ -359,10 +294,7 @@ main .footer {
     width: 100%;
   }
   main .production_process .sec4 {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   main .store {
     padding: 50px 15px;
@@ -370,5 +302,4 @@ main .footer {
   main .store .store_info {
     width: initial;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

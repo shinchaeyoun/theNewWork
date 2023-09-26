@@ -1,87 +1,65 @@
 #career {
   margin-top: 30px;
 }
-
 #career .career_wrap .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 30px 0;
   border-top: 1px solid #000;
 }
-
 #career .career_wrap .con1 {
   border-top: none;
   padding: 0 0 30px;
 }
-
 #career .career_wrap .main_content {
   width: 50%;
   padding-right: 10px;
 }
-
 #career .career_wrap .main_content .tit {
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: 600;
   font-family: "Nanum Myeongjo", serif;
   opacity: 0;
-  -webkit-transform: TranslateY(20px);
-          transform: TranslateY(20px);
-  -webkit-transition: .5s;
-  transition: .5s;
+  transform: TranslateY(20px);
+  transition: 0.5s;
 }
-
 #career .career_wrap .main_content .tit.on {
   opacity: 1;
-  -webkit-transform: TranslateY(0);
-          transform: TranslateY(0);
+  transform: TranslateY(0);
 }
-
 #career .career_wrap .main_content .tit.active {
   color: #d0021b;
 }
-
 #career .career_wrap .main_content .tit span {
   display: inline-block;
   font-size: 14px;
   color: #5a5a5a;
   opacity: 0;
-  -webkit-transform: TranslateY(20px);
-          transform: TranslateY(20px);
-  -webkit-transition: .5s;
-  transition: .5s;
-  -webkit-transition-delay: .5s;
-          transition-delay: .5s;
+  transform: TranslateY(20px);
+  transition: 0.5s;
+  transition-delay: 0.3s;
 }
-
+#career .career_wrap .main_content .tit span.date {
+  transition-delay: 0.6s;
+}
 #career .career_wrap .main_content .tit span.on {
   opacity: 1;
-  -webkit-transform: TranslateY(0);
-          transform: TranslateY(0);
+  transform: TranslateY(0);
 }
-
 #career .career_wrap .main_content p {
   opacity: 0;
-  -webkit-transform: TranslateY(20px);
-          transform: TranslateY(20px);
-  -webkit-transition: .5s;
-  transition: .5s;
-  -webkit-transition-delay: 1s;
-          transition-delay: 1s;
+  transform: TranslateY(20px);
+  transition: 0.5s;
+  transition-delay: 0.9s;
 }
-
 #career .career_wrap .main_content p.on {
   opacity: 1;
-  -webkit-transform: TranslateY(0);
-          transform: TranslateY(0);
+  transform: TranslateY(0);
 }
-
 #career .career_wrap .sub_content {
   width: 50%;
   padding-left: 10px;
 }
-
 #career .career_wrap .sub_content span {
   display: block;
   margin-bottom: 10px;
@@ -89,46 +67,31 @@
   font-weight: 600;
   font-family: "Nanum Myeongjo", serif;
   opacity: 0;
-  -webkit-transform: TranslateY(20px);
-          transform: TranslateY(20px);
-  -webkit-transition: .5s;
-  transition: .5s;
-  -webkit-transition-delay: 1.5s;
-          transition-delay: 1.5s;
+  transform: TranslateY(20px);
+  transition: 0.5s;
+  transition-delay: 1.2s;
 }
-
 #career .career_wrap .sub_content span.active {
   color: #d0021b;
 }
-
 #career .career_wrap .sub_content span.on {
   opacity: 1;
-  -webkit-transform: TranslateY(0);
-          transform: TranslateY(0);
+  transform: TranslateY(0);
 }
-
 #career .career_wrap .sub_content p {
   opacity: 0;
-  -webkit-transform: TranslateY(20px);
-          transform: TranslateY(20px);
-  -webkit-transition: .5s;
-  transition: .5s;
-  -webkit-transition-delay: 2s;
-          transition-delay: 2s;
+  transform: TranslateY(20px);
+  transition: 0.5s;
+  transition-delay: 1.5s;
 }
-
 #career .career_wrap .sub_content p.on {
   opacity: 1;
-  -webkit-transform: TranslateY(0);
-          transform: TranslateY(0);
+  transform: TranslateY(0);
 }
 
 @media screen and (max-width: 480px) {
   .container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     padding: 30px 10px !important;
   }
   .con1 {
@@ -145,7 +108,6 @@
     padding-left: initial !important;
   }
 }
-
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .container {
     padding: 30px 10px !important;
@@ -153,5 +115,4 @@
   .con1 {
     padding: 0 10px 30px !important;
   }
-}
-/*# sourceMappingURL=career.css.map */
+}/*# sourceMappingURL=career.css.map */

@@ -148,7 +148,6 @@ function onoffFn() {
 };
 
 function dateFn() {
-    // 날짜 시간 분 초 실시간
     var week = new Array('Sunday,', 'Monday,', 'Tuesday,', 'Wednesday,', 'Thursday,', 'Friday,', 'Saturday,');
     var month = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
     date = new Date();

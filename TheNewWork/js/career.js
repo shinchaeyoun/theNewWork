@@ -2,72 +2,29 @@ $(function(){
   const windowHei = window.innerHeight,
         $minusWin = windowHei / 2,
         $container = $('.container'),
-        $con1 = $('.con1').offset().top,
-        $con2 = $('.con2').offset().top,
-        $con3 = $('.con3').offset().top,
-        $con4 = $('.con4').offset().top,
         $mainTit = $('.main_content .tit'),
         $mainTitSub = $('.main_content .tit span'),
         $mainTitSub2 = $('.main_content .tit span.date'),
-        $con2TitSub = $('.con2 .main_content .tit span'),
-        $con3TitSub = $('.con3 .main_content .tit span'),
         $mainTxt = $('.main_content p'),
         $subTit = $('.sub_content span'),
         $subTxt = $('.sub_content p');
+  let top = [];
 
+  for(let i=0; i<$container.length; i++){
+    top[i] = $container.eq(i).offset().top;
+  };
 
-        $(window).on('load',function(){
-          $mainTit.eq(0).addClass('on');
-          $mainTitSub.eq(0).addClass('on');
-          $mainTitSub2.addClass('on');
-          $mainTxt.eq(0).addClass('on');
-          $subTit.eq(0).addClass('on');
-          $subTxt.eq(0).addClass('on');
-        });
-
-        $(window).on('scroll',function(){
-          if(window.scrollY > $con2 - $minusWin) {
-            $mainTit.eq(1).addClass('on');
-            $con2TitSub.addClass('on');
-            $mainTxt.eq(1).addClass('on');
-            $subTit.eq(1).addClass('on');
-            $subTxt.eq(1).addClass('on');
-          } else if(window.scrollY < $con2 - $minusWin) {
-            $mainTit.eq(1).removeClass('on');
-            $con2TitSub.removeClass('on');
-            $mainTxt.eq(1).removeClass('on');
-            $subTit.eq(1).removeClass('on');
-            $subTxt.eq(1).removeClass('on');
-          }
-
-          if(window.scrollY > $con3 - $minusWin) {
-            $mainTit.eq(2).addClass('on');
-            $con3TitSub.addClass('on');
-            $mainTxt.eq(2).addClass('on');
-            $subTit.eq(2).addClass('on');
-            $subTxt.eq(2).addClass('on');
-          } else if(window.scrollY < $con3 - $minusWin) {
-            $mainTit.eq(2).removeClass('on');
-            $con3TitSub.removeClass('on');
-            $mainTxt.eq(2).removeClass('on');
-            $subTit.eq(2).removeClass('on');
-            $subTxt.eq(2).removeClass('on');
-          }
-
-          if(window.scrollY > $con4 - $minusWin) {
-            $mainTit.eq(3).addClass('on');
-            $con3TitSub.addClass('on');
-            $mainTxt.eq(3).addClass('on');
-            $mainTit.eq(3).find('span').addClass('on');
-            $subTit.eq(3).addClass('on');
-            $subTxt.eq(3).addClass('on');
-          } else if(window.scrollY < $con3 - $minusWin) {
-            $mainTit.eq(3).removeClass('on');
-            $con3TitSub.removeClass('on');
-            $mainTxt.eq(3).removeClass('on');
-            $mainTit.eq(3).find('span').removeClass('on');
-            $subTit.eq(3).removeClass('on');
-            $subTxt.eq(3).removeClass('on');
-          }
-        });
+  $(window).on('load scroll',function(){
+    for(let i = 0; i<top.length; i++){
+      console.log(i, top[i]);
+      if(window.scrollY > top[i] - $minusWin) {
+        $mainTit.eq(i).addClass('on');
+        $container.eq(i).find($mainTitSub).addClass('on');
+        $container.eq(i).find($mainTitSub2).addClass('on');
+        $mainTxt.eq(i).addClass('on');
+        $subTit.eq(i).addClass('on');
+        $subTxt.eq(i).addClass('on');
+      }
+    };
+  });
 });
