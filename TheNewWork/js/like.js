@@ -122,12 +122,10 @@ function travelFn(){
 
     $tabMenu.each(function (i) {
         $(this).attr('data-tab', 'tab' + i);
-        console.log('menu');
     });
 
     $allTabs.each(function (i) {
         $(this).attr('data-tab', 'tab' + i);
-        console.log('tab');
     });
 
 
