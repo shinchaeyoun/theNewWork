@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkappydev_clone"]=self["webpackChunkappydev_clone"]||[]).push([[375],{375:function(n,e,r){r.r(e),r.d(e,{default:function(){return o}});var u=r(3396);function c(n,e,r,c,s,t){return(0,u.wg)(),(0,u.iD)("div",null," sponsors ")}var s={},t=r(89);const a=(0,t.Z)(s,[["render",c]]);var o=a}}]);
-//# sourceMappingURL=375.51583277.js.map
