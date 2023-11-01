@@ -1,5 +1,8 @@
+/* eslint-disable */
 import React from 'react';
 import './Header.scss';
+import { useSelector } from "react-redux";
+import { Router, Routes, Route, Link } from 'react-router-dom';
 
 function Header() {
   return(
@@ -25,7 +28,6 @@ function Header() {
           </div>
         </div>
         
-
         <div class="header_cate">
           <ul>
             <li data-hover2><a href="./main.html">Main</a></li>
@@ -35,6 +37,16 @@ function Header() {
             <li data-hover2><a href="./portfolio.html">Portfolio</a></li>
             <li data-hover2><a href="./contact.html">Contact</a></li>
           </ul>
+
+          <Router>
+            <Routes>
+              {/* <Route path="/" element={<Main />} /> */}
+              <Route path="/detail" element={ <div>detail</div> } />
+              <Route path="/about" element={ <div>about</div> } />
+              {/* <Route path="/bookmark" element={ <BookmarkPage /> } /> */}
+            </Routes>
+          </Router>
+          
         </div>
       </div>
     </header>
