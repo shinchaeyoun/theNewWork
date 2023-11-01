@@ -1,0 +1,20 @@
+@import './../../styles/variables.scss';
+
+.header_container {
+  .header_content {
+    display: flex;
+    justify-content: space-between;
+
+    .main_title{
+      font-size: 60px;
+      font-family: Chomsky;
+      .red {
+        color: $pointColor;
+      }
+    }
+  }
+
+  .header_cate {
+    
+  }
+}
