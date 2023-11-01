@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkappydev_clone"]=self["webpackChunkappydev_clone"]||[]).push([[247],{9247:function(e,n,u){u.r(n),u.d(n,{default:function(){return s}});var r=u(3396);function t(e,n,u,t,o,a){return(0,r.wg)(),(0,r.iD)("div",null," submit ")}var o={mounted(){console.log("??",this.$route.params.id)}},a=u(89);const c=(0,a.Z)(o,[["render",t]]);var s=c}}]);
-//# sourceMappingURL=247.e2c9c5b6.js.map
