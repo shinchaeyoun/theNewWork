@@ -2,8 +2,6 @@
 
 .header_container {
   padding: 30px 0 20px;
-  // height: 60px;
-  // outline: 1px solid #f00;
 
   .header_content {
     position: relative;
@@ -21,9 +19,6 @@
     .main_title{
       font-size: 60px;
       font-family: Chomsky;
-      .red {
-        color: $pointColor;
-      }
     }
     .onoff {
       position: absolute;

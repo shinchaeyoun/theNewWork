@@ -70,7 +70,7 @@ function Button({ children, color, size,  ...rest }) {
       {children}
     </StyledButton>
   );
-}
+};
 
 Button.defaultProps = {
   color: 'blue'

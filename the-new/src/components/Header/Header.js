@@ -2,6 +2,7 @@
 import React, { useState, useContext } from 'react';
 import { Routes, Route, Link , useNavigate, Outlet} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
+import styled from 'styled-components';
 import './Header.scss';
 import { AppContext } from '../../App';
 
@@ -39,7 +40,7 @@ function Header() {
           </div>
 
           <div className='main_title'>
-            <span className={isColorMode ? 'red' : ''}>T</span>itle
+          <span className='red'>T</span>itle
           </div>
 
           <div className='onoff'

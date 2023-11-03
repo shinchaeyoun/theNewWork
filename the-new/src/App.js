@@ -15,7 +15,7 @@ import PortfolioPage from './routes/PortfolioPage.js';
 import ContactPage from './routes/ContactPage.js';
 
 const GlobalStyle = createGlobalStyle`
-body {
+  body {
     background-image: url(${(props) => props.theme.bgi});
     color: ${(props) => props.theme.textColor};
 
@@ -46,7 +46,7 @@ console.log(isColorMode,'theme');
           <GlobalStyle toggleColorMode/>
           <div className="App">
             <Header />
-            
+
             <Routes>
               <Route path="/" element={<MainPage />} />
               <Route path="/introduce" element={ <IntroducePage /> } />

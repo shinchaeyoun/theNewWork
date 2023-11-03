@@ -19,17 +19,19 @@ const FooterWrap = styled.footer`
 `
 
 const LogoWrap = styled.div`
-  margin-top: 5px;
+  margin: 5px 0 15px;
   font-family: Chomsky;
   font-size:  28px;
 `
 const Categories = styled.ul`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 40px;
 `
 const MainCate = styled.li`
   .main_title {
     margin-bottom: 10px;
+    font-size: 14px;
     font-weight: 800;
   }
 `
@@ -41,10 +43,13 @@ const Bottom = styled.div`
   flex-flow: row nowrap;
   justify-content: space-between;
 
-  padding: 20px 0;
+  padding: 15px 0;
   height: 30px;
   line-height: 30px;
   color: ${props => props.theme.colors.subGray};
+
+  border-top: 1px solid ${props => props.theme.colors.subGray};
+
   p {
     display: inline;
     font-size: 10px;
