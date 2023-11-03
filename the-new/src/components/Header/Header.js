@@ -1,16 +1,37 @@
 /* eslint-disable */
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { Routes, Route, Link , useNavigate, Outlet} from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
 import './Header.scss';
-import { useSelector } from "react-redux";
-import { Router, Routes, Route, Link } from 'react-router-dom';
+import { AppContext } from '../../App';
 
 function Header() {
+  const { isColorMode, toggleColorMode } = useContext(AppContext);
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
+  let categorys = useSelector((state) => state.categorys);
+  let [category, setCategory] = useState(categorys);
+
+  let date,
+      year,
+      day;
+  let week = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+  let month = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+  date = new Date();
+  year = date.getFullYear();
+  day = date.getDate();
+
+  let currentData = week[date.getDay()] + ', ' + month[date.getMonth()] + day + ', ' + year;
+
+
   return(
     <header>
       <div className='header_container'>
         <div className='header_content'>
           <div className='date'>
-            <div id='current_date'></div>
+            <div id='current_date'>
+              { currentData }
+            </div>
             <div className='clock_wrap'>
               <span id='clock'></span>
               <span id='apm'></span>
@@ -18,35 +39,27 @@ function Header() {
           </div>
 
           <div className='main_title'>
-            <span className='red'>T</span>he <span className='red'>S</span>hin's <span className='red'>W</span>ork <span className='red'>S</span>pace
+            <span className={isColorMode ? 'red' : ''}>T</span>itle
           </div>
 
-          <div className='onoff'>
+          <div className='onoff'
+            onClick={toggleColorMode}>
             <ul>
-              <li></li>
+              <li className={isColorMode ? 'active' : ''}></li>
             </ul>
           </div>
         </div>
         
-        <div class="header_cate">
+        <div className="header_cate">
           <ul>
-            <li data-hover2><a href="./main.html">Main</a></li>
-            <li data-hover2><a href="./introduce.html">Introduce</a></li>
-            <li data-hover2><a href="./like.html">Like</a></li>
-            <li data-hover2><a href="./career.html">Career</a></li>
-            <li data-hover2><a href="./portfolio.html">Portfolio</a></li>
-            <li data-hover2><a href="./contact.html">Contact</a></li>
+            {
+              category.map((item, i)=>{
+                return (
+                  <li item={item} key={i} onClick={()=>{navigate(item.category_link)}}>{item.category_name}</li>
+                )
+              })
+            }
           </ul>
-
-          <Router>
-            <Routes>
-              {/* <Route path="/" element={<Main />} /> */}
-              <Route path="/detail" element={ <div>detail</div> } />
-              <Route path="/about" element={ <div>about</div> } />
-              {/* <Route path="/bookmark" element={ <BookmarkPage /> } /> */}
-            </Routes>
-          </Router>
-          
         </div>
       </div>
     </header>
