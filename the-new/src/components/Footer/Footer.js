@@ -33,10 +33,12 @@ const MainCate = styled.li`
     margin-bottom: 10px;
     font-size: 14px;
     font-weight: 800;
+    cursor: pointer;
   }
 `
 const SubCate = styled.li`
   margin-bottom: 5px;
+  cursor: pointer;
 `
 const Bottom = styled.div`
   display:flex;
@@ -69,6 +71,12 @@ function Footer() {
   let categorys = useSelector((state) => state.categorys);
   let [category, setCategory] = useState(categorys);
 
+  const goToContent = (main, sub) => {
+    console.log('hi',main, sub);
+
+    // navigate(main, {state: sub})
+  }
+
   return(
     <FooterWrap>
       <LogoWrap>
@@ -80,13 +88,21 @@ function Footer() {
           category.map((menu,i) => {
             return (
               <MainCate key={i}>
-                <div className='main_title'>{menu.category_name}</div>
+                {/* <div className='main_title' onClick={()=>{navigate(menu.category_link)}}>{menu.category_name}</div> */}
+                <div className='main_title' onClick={()=>{
+                  goToContent(menu.category_name)
+                }}>{menu.category_name}</div>
 
                 <ul>
                   {
                     menu.sub_categories.map((subMenu, i) => {
                       return (
-                        <SubCate key={i}>
+                        // <SubCate key={i} onClick={()=>{navigate(menu.category_link, {state: subMenu.sub_category_name})}}>
+                        //   {subMenu.sub_category_name}
+                        // </SubCate>
+                        <SubCate key={i} onClick={()=>{
+                          goToContent(menu.category_name, menu.content_top_arr)
+                        }}>
                           {subMenu.sub_category_name}
                         </SubCate>
                       )

@@ -26,7 +26,8 @@ let categorys = createSlice({
         {
           sub_category_name: 'Contact',
         }
-      ]
+      ],
+      content_top_arr : []
     },
     {
       category_name: 'Introduce',
@@ -44,7 +45,8 @@ let categorys = createSlice({
         {
           sub_category_name: 'Favorite Message',
         }
-      ]
+      ],
+      content_top_arr : []
     },
     {
       category_name: 'Like',
@@ -62,7 +64,8 @@ let categorys = createSlice({
         {
           sub_category_name: 'Music',
         }
-      ]
+      ],
+      content_top_arr : []
     },
     {
       category_name: 'Career',
@@ -80,7 +83,8 @@ let categorys = createSlice({
         {
           sub_category_name: 'career4',
         }
-      ]
+      ],
+      content_top_arr : []
     },
     {
       category_name: 'Portfolio',
@@ -104,7 +108,8 @@ let categorys = createSlice({
         {
           sub_category_name: "The Shin's Work Space",
         }
-      ]
+      ],
+      content_top_arr : []
     },
     {
       category_name: 'Contact',
@@ -122,9 +127,17 @@ let categorys = createSlice({
         {
           sub_category_name: 'Kakao-talk',
         }
-      ]
+      ],
+      content_top_arr : []
     }
-  ]
+  ],
+  reducers: {
+    pushTopArr(state, action) {
+      // console.log('state', state[0]);
+      // console.log('payload', action.payload);
+      // console.log('pushTopArr', state,action);
+    }
+  }
 });
 
 export default configureStore({
@@ -132,3 +145,6 @@ export default configureStore({
     categorys: categorys.reducer
   }
 });
+
+
+export let { pushTopArr } = categorys.actions;

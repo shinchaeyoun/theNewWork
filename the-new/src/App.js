@@ -37,8 +37,6 @@ function App() {
     setIsColorMode((prev) => !prev);
   };
 
-console.log(isColorMode,'theme');
-
   return (
     <ThemeProvider theme={isColorMode ? colorTheme : monoTheme}>
      
