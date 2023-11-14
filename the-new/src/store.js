@@ -13,18 +13,23 @@ let categorys = createSlice({
       sub_categories: [
         {
           sub_category_name: 'Introduce',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'Like',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'Career',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'Portfolio',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'Contact',
+          sub_category_top: 0
         }
       ],
       content_top_arr : []
@@ -35,15 +40,19 @@ let categorys = createSlice({
       sub_categories: [
         {
           sub_category_name: 'Greeting',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'Profile',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'Hashtag Story',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'Favorite Message',
+          sub_category_top: 0
         }
       ],
       content_top_arr : []
@@ -54,15 +63,19 @@ let categorys = createSlice({
       sub_categories: [
         {
           sub_category_name: 'Travel',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'Flimeing',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'Movies',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'Music',
+          sub_category_top: 0
         }
       ],
       content_top_arr : []
@@ -73,15 +86,19 @@ let categorys = createSlice({
       sub_categories: [
         {
           sub_category_name: 'career1',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'career2',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'career3',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'career4',
+          sub_category_top: 0
         }
       ],
       content_top_arr : []
@@ -92,21 +109,27 @@ let categorys = createSlice({
       sub_categories: [
         {
           sub_category_name: 'Eigenhain',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'London',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'MMCA',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'Seed',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'Sony',
+          sub_category_top: 0
         },
         {
           sub_category_name: "The Shin's Work Space",
+          sub_category_top: 0
         }
       ],
       content_top_arr : []
@@ -117,25 +140,47 @@ let categorys = createSlice({
       sub_categories: [
         {
           sub_category_name: 'Phone',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'E-mail',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'Instagram',
+          sub_category_top: 0
         },
         {
           sub_category_name: 'Kakao-talk',
+          sub_category_top: 0
         }
-      ],
-      content_top_arr : []
+      ]
     }
   ],
   reducers: {
-    pushTopArr(state, action) {
-      // console.log('state', state[0]);
-      // console.log('payload', action.payload);
-      // console.log('pushTopArr', state,action);
+    gotoContentTop(state, action) {
+      let mainIdx = action.payload[1];
+      let subIdx = action.payload[2];
+      let topVal;
+
+      if(subIdx == null || subIdx == undefined) {
+        topVal = 0;
+      } else {
+        topVal = state[mainIdx].sub_categories[subIdx].sub_category_top;
+      };
+
+      window.scrollTo({
+        top: topVal, left:0,
+        behavior: 'smooth'
+      });
+    },
+    changeTopArr(state, action) {
+      let mainIndex = action.payload[0];
+      let subIndex = action.payload[1];
+      let topVal = action.payload[2];
+      let nowPage = state[mainIndex].sub_categories[subIndex]
+      
+      nowPage.sub_category_top = topVal;
     }
   }
 });
@@ -147,4 +192,4 @@ export default configureStore({
 });
 
 
-export let { pushTopArr } = categorys.actions;
+export let { gotoContentTop,changeTopArr } = categorys.actions;

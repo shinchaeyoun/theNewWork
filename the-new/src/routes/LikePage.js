@@ -1,30 +1,22 @@
 /* eslint-disable */
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { changeTopArr } from './../store';
+import * as commonFn from './../CommonFunction';
 
 
 function LikePage() {
-  const location = useLocation();
-  const subCate = useRef();
-  
-  const [content, setContent] = useState([]);
-
-  const scrollTo = location.state;
-
-  console.log(scrollTo);
-
-  useEffect(()=>{
-    console.log('scrollTo', scrollTo);
-  })
+  commonFn.ScrollFn();
 
   return(
     <>
       like page
-      <ContentBlock id='Travel'>Travel / {scrollTo}</ContentBlock>
-      <ContentBlock id='Flimeing'>Flimeing / {scrollTo}</ContentBlock>
-      <ContentBlock id='Movies'>Movies / {scrollTo}</ContentBlock>
-      <ContentBlock id='Music'>Music / {scrollTo}</ContentBlock>
+      <ContentBlock id='Travel' className='block'>Travel</ContentBlock>
+      <ContentBlock id='Flimeing' className='block'>Flimeing</ContentBlock>
+      <ContentBlock id='Movies' className='block'>Movies</ContentBlock>
+      <ContentBlock id='Music' className='block'>Music</ContentBlock>
     </>
   )
 }

@@ -13,8 +13,6 @@
       left: 0; bottom: 20px;
       font-family: $assistant;
       font-weight: 600;
-
-      outline: 1px solid #ddd;
     }
     .main_title{
       font-size: 60px;
@@ -29,6 +27,7 @@
         border: 1px solid #000;
         border-radius: 50px;
         width: 26px; height: 12px;
+        cursor: pointer;
         li {
           position: absolute;
           top: 0; left: 0;
@@ -69,7 +68,7 @@
       justify-content: space-around;
 
       li {
-        
+        cursor: pointer;
       }
     }
   }

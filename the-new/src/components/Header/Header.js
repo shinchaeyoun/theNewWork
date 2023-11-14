@@ -22,7 +22,15 @@ function Header() {
   year = date.getFullYear();
   day = date.getDate();
 
-  let currentData = week[date.getDay()] + ', ' + month[date.getMonth()] + day + ', ' + year;
+  let currentData = week[date.getDay()] + ', ' + month[date.getMonth()] + ' ' + day + ', ' + year;
+
+  const goToContent = (main, mainIdx) => {    
+    navigate(main, {
+      state: {
+        mainIdx : mainIdx
+      }
+    });
+  };
 
 
   return(
@@ -56,7 +64,8 @@ function Header() {
             {
               category.map((item, i)=>{
                 return (
-                  <li item={item} key={i} onClick={()=>{navigate(item.category_link)}}>{item.category_name}</li>
+                  <li item={item} key={i} onClick={()=>{
+                    goToContent(item.category_link, i)}}>{item.category_name}</li>
                 )
               })
             }
