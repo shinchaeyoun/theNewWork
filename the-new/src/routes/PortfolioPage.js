@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import * as commonFn from './../CommonFunction';
+import S from './../styles/GlobalBlock';
 
 // full img import
 import eigenhainImg from '../img/portfolio/eigenhain_fullpage.png';
@@ -13,9 +14,9 @@ function PortfolioPage() {
   return(
     <>
       Portfolio
-      <ContentBlock className='block'>
+      <S.ContentBlock className='block'>
         1
-        {/* <Title className='red'>
+        <Title className='red'>
 
           Title 1
         </Title>
@@ -24,13 +25,13 @@ function PortfolioPage() {
         <ImgBlock>
           HI
           <FullImg src={eigenhainImg}/>
-        </ImgBlock> */}
-      </ContentBlock>
-      <ContentBlock className='block'>2</ContentBlock>
-      <ContentBlock className='block'>3</ContentBlock>
-      <ContentBlock className='block'>4</ContentBlock>
-      <ContentBlock className='block'>5</ContentBlock>
-      <ContentBlock className='block'>6</ContentBlock>
+        </ImgBlock>
+      </S.ContentBlock>
+      <S.ContentBlock className='block'>2</S.ContentBlock>
+      <S.ContentBlock className='block'>3</S.ContentBlock>
+      <S.ContentBlock className='block'>4</S.ContentBlock>
+      <S.ContentBlock className='block'>5</S.ContentBlock>
+      <S.ContentBlock className='block'>6</S.ContentBlock>
     </>
   )
 }
@@ -53,10 +54,7 @@ const ImgBlock = styled.div`
   overflow-y: scroll;
   border: 1px solid #000;
 `
-const ContentBlock = styled.div`
-  height: 50vh;
 
-`
 
 
 export default PortfolioPage;

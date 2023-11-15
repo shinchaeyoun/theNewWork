@@ -50,7 +50,7 @@ function Header() {
           </div>
 
           <div className='main_title' onClick={()=>{
-            navigate('/')
+            goToContent(true, '/', 0, 0)
           }}>
             <span className='red'>T</span>itle
           </div>

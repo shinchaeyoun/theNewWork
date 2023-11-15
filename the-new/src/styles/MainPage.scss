@@ -1,0 +1,33 @@
+@import './variables.scss';
+
+#mainWrap {
+  margin-top: 50px;
+
+  .imgBox {
+    width: 50%;
+
+    img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .textBox {
+    width: 50%;
+  }
+
+  #mainBox {
+    width: 100%;
+    height: 500px;
+
+    margin-bottom: 100px;
+    padding-bottom: 80px;
+
+    border-bottom: 6px double $lightGray;
+  }
+
+  #contentBox {
+    display: flex;
+
+  }
+}

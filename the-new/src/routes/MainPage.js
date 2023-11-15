@@ -1,41 +1,101 @@
+/* eslint-disable */
 import React from 'react';
 import styled from 'styled-components';
 import * as commonFn from './../CommonFunction';
+import './../styles/MainPage.scss';
 
+import mainImg from './../img/main/mainImg.png';
+import introduceImg from './../img/main/mainImg.png';
+import likeImg from './../img/main/mainImg.png';
+import careerImg from './../img/main/mainImg.png';
+import portfolioImg from './../img/main/mainImg.png';
+import contactImg from './../img/main/mainImg.png';
 
-const Wrapper = styled.div `
-  padding-bottom: 50px;
+const ImgBox = styled.div`
+  width: 600px;
+
+  img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+`
+const TextBox = styled.div`
+  width: 350px;
+  span {}
+  p {}
 `
 
-const ImgContent = styled.div `
-  border: 1px solid #f00;
-  width: ${props => props.wid || '1000px'};
-  height: ${props => props.hei || '500px'};
+const ContentBox = styled.div`
+  display: flex;
+  flex-direction: ${props => props.flexD || 'row'};
+  flex-wrap: row nowrap;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  width: 100%;
+  height: 500px;
+
+  border-bottom: 1px solid ${({ theme }) => theme.colors.lightGray};
+
+  &:last-child {
+    margin-bottom: 100px;
+    border-bottom: none;
+  }
+
+
 `
+
+function ContentWrap ({children, children2, fd, src, hei}) {
+  return (
+    <ContentBox flexD={fd}>
+      <ImgBox hei={hei}>
+        <img src={src} />
+      </ImgBox>
+      
+      <TextBox>
+        <span>{children}</span>
+        <p>{children2}</p>
+      </TextBox>
+    </ContentBox>
+  )
+};
 
 function MainPage() {
   commonFn.ScrollFn();
-  return(
-    <Wrapper>
-      <div id='main_container'>
-        <MainBox classname="block">
-          HI
-        </MainBox>
 
-        {/* <ImgContent wid={'500px'} hei={'250px'}></ImgContent> */}
+  return(
+    <div id='mainWrap'>
+      <div id='mainBox' className='imgBox'>
+        <img src={mainImg} alt='mainImg'/>
       </div>
 
-    </Wrapper>
+      <ContentWrap src={mainImg}>
+        <span>Introduce</span>
+        <p>Hi</p>
+      </ContentWrap>
+
+      <ContentWrap fd={'row-reverse'} src={mainImg}>
+        <span>Like</span>
+        <p>Hi</p>
+      </ContentWrap>
+
+      <ContentWrap src={mainImg}>
+        <span>Career</span>
+        <p>Hi</p>
+      </ContentWrap>
+
+      <ContentWrap fd={'row-reverse'} src={mainImg}>
+        <span>Portfolio</span>
+        <p>Hi</p>
+      </ContentWrap>
+
+      <ContentWrap src={mainImg}>
+        <span>Contact</span>
+        <p>Hi</p>
+      </ContentWrap>
+    </div>
   )
 }
-
-function MainBox ({children, wid, hei}) {
-  return (
-    <ImgContent wid={wid} hei={hei}>
-      {children}
-    </ImgContent>
-  )
-}
-
 
 export default MainPage;

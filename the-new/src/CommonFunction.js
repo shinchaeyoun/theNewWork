@@ -8,16 +8,17 @@ import { gotoContentTop, changeTopArr } from './store';
 function ScrollFn () {
   const location = useLocation();
   const dispatch = useDispatch();
+  const state = location.state;
   let mainIdxState;
   let subIdxState;
   let subCate;
   
-  if(location.state == undefined || location.state == undefined){
+  if(state == undefined || state == undefined){
     mainIdxState = 0;
     subIdxState = 0;
   } else {
-    mainIdxState = location.state.mainIdx;
-    subIdxState = location.state.subIdx;
+    mainIdxState = state.mainIdx;
+    subIdxState = state.subIdx;
   };
 
   subCate = useSelector((state) => state.categorys[mainIdxState].sub_categories);
@@ -34,9 +35,11 @@ function ScrollFn () {
     
   useEffect(()=>{
     setTop();
-    
-    if(!location.state.moveToTop){
-      dispatch(gotoContentTop([subIdxState, mainIdxState, subIdxState]));
+
+    if (!state == null) {
+      if(!state.moveToTop){
+        dispatch(gotoContentTop([subIdxState, mainIdxState, subIdxState]));
+      };
     };
   }, []);
 
