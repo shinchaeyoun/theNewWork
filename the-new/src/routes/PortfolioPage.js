@@ -15,7 +15,7 @@ function PortfolioPage() {
       Portfolio
       <ContentBlock className='block'>
         1
-        <Title className='red'>
+        {/* <Title className='red'>
 
           Title 1
         </Title>
@@ -24,7 +24,7 @@ function PortfolioPage() {
         <ImgBlock>
           HI
           <FullImg src={eigenhainImg}/>
-        </ImgBlock>
+        </ImgBlock> */}
       </ContentBlock>
       <ContentBlock className='block'>2</ContentBlock>
       <ContentBlock className='block'>3</ContentBlock>
@@ -54,7 +54,7 @@ const ImgBlock = styled.div`
   border: 1px solid #000;
 `
 const ContentBlock = styled.div`
-  height: 150vh;
+  height: 50vh;
 
 `
 

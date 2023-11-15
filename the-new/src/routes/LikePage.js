@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { changeTopArr } from './../store';
 import * as commonFn from './../CommonFunction';
 
 

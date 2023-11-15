@@ -161,13 +161,7 @@ let categorys = createSlice({
     gotoContentTop(state, action) {
       let mainIdx = action.payload[1];
       let subIdx = action.payload[2];
-      let topVal;
-
-      if(subIdx == null || subIdx == undefined) {
-        topVal = 0;
-      } else {
-        topVal = state[mainIdx].sub_categories[subIdx].sub_category_top;
-      };
+      let topVal = state[mainIdx].sub_categories[subIdx].sub_category_top;
 
       window.scrollTo({
         top: topVal, left:0,
@@ -178,9 +172,8 @@ let categorys = createSlice({
       let mainIndex = action.payload[0];
       let subIndex = action.payload[1];
       let topVal = action.payload[2];
-      let nowPage = state[mainIndex].sub_categories[subIndex]
-      
-      nowPage.sub_category_top = topVal;
+
+      state[mainIndex].sub_categories[subIndex].sub_category_top = topVal;
     }
   }
 });

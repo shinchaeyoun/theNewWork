@@ -8,7 +8,7 @@ import { AppContext } from '../../App';
 
 function Header() {
   const { isColorMode, toggleColorMode } = useContext(AppContext);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   let categorys = useSelector((state) => state.categorys);
   let [category, setCategory] = useState(categorys);
@@ -24,10 +24,12 @@ function Header() {
 
   let currentData = week[date.getDay()] + ', ' + month[date.getMonth()] + ' ' + day + ', ' + year;
 
-  const goToContent = (main, mainIdx) => {    
+  const goToContent = (toTop, main, mainIdx, subIdx) => {    
     navigate(main, {
       state: {
-        mainIdx : mainIdx
+        moveToTop: toTop,
+        mainIdx : mainIdx,
+        subIdx : subIdx
       }
     });
   };
@@ -47,8 +49,10 @@ function Header() {
             </div>
           </div>
 
-          <div className='main_title'>
-          <span className='red'>T</span>itle
+          <div className='main_title' onClick={()=>{
+            navigate('/')
+          }}>
+            <span className='red'>T</span>itle
           </div>
 
           <div className='onoff'
@@ -65,7 +69,7 @@ function Header() {
               category.map((item, i)=>{
                 return (
                   <li item={item} key={i} onClick={()=>{
-                    goToContent(item.category_link, i)}}>{item.category_name}</li>
+                    goToContent(true, item.category_link, i, 0)}}>{item.category_name}</li>
                 )
               })
             }

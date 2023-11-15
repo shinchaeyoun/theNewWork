@@ -2,6 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import * as commonFn from './../CommonFunction';
 
+
+const Wrapper = styled.div `
+  padding-bottom: 50px;
+`
+
+const ImgContent = styled.div `
+  border: 1px solid #f00;
+  width: ${props => props.wid || '1000px'};
+  height: ${props => props.hei || '500px'};
+`
+
 function MainPage() {
   commonFn.ScrollFn();
   return(
@@ -11,7 +22,7 @@ function MainPage() {
           HI
         </MainBox>
 
-        <ImgContent wid={'500px'} hei={'250px'}></ImgContent>
+        {/* <ImgContent wid={'500px'} hei={'250px'}></ImgContent> */}
       </div>
 
     </Wrapper>
@@ -26,14 +37,5 @@ function MainBox ({children, wid, hei}) {
   )
 }
 
-const Wrapper = styled.div `
-  padding-bottom: 50px;
-`
-
-const ImgContent = styled.div `
-  border: 1px solid #f00;
-  width: ${props => props.wid || '1000px'};
-  height: ${props => props.hei || '500px'};
-`
 
 export default MainPage;

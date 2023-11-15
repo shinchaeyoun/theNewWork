@@ -16,7 +16,7 @@ root.render(
   // <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        {/* <ScrollToTop /> */}
+        <ScrollToTop />
         <App />
       </BrowserRouter>
     </Provider>

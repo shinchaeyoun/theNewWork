@@ -4,7 +4,7 @@ import { Routes, Route, Link , useNavigate, Outlet} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { AppContext } from '../../App';
-import { gotoContentTop } from './../../store';
+import { gotoContentTop,changeTopArr } from './../../store';
 
 const FooterWrap = styled.footer`
   margin-top: 50px;
@@ -65,22 +65,26 @@ const Bottom = styled.div`
 `
 
 function Footer() {
-  const { isColorMode, toggleColorMode } = useContext(AppContext);
+  // const { isColorMode, toggleColorMode } = useContext(AppContext);
   let navigate = useNavigate();
   const dispatch = useDispatch();
   
   let categorys = useSelector((state) => state.categorys);
   let [category, setCategory] = useState(categorys);
 
-  const goToContent = (main, mainIdx, subIdx) => {    
+  const goToContent = (toTop, main, mainIdx, subIdx) => {    
     navigate(main, {
       state: {
+        moveToTop: toTop,
         mainIdx : mainIdx,
         subIdx : subIdx
       }
     });
 
-    dispatch(gotoContentTop([main, mainIdx, subIdx]));
+    window.scrollTo({
+      top: 0, left:0,
+      behavior: 'smooth'
+    });
   };
 
   return(
@@ -96,18 +100,16 @@ function Footer() {
               <MainCate key={mainIdx}>
                 {/* <div className='main_title' onClick={()=>{navigate(menu.category_link)}}>{menu.category_name}</div> */}
                 <div className='main_title' onClick={()=>{
-                  goToContent(menu.category_link, mainIdx, null)
+                  goToContent(true, menu.category_link, mainIdx, 0);
                 }}>{menu.category_name}</div>
 
                 <ul>
                   {
                     menu.sub_categories.map((subMenu, subIdx) => {
                       return (
-                        // <SubCate key={i} onClick={()=>{navigate(menu.category_link, {state: subMenu.sub_category_name})}}>
-                        //   {subMenu.sub_category_name}
-                        // </SubCate>
                         <SubCate key={subIdx} onClick={()=>{
-                          goToContent(menu.category_link, mainIdx, subIdx)
+                          goToContent(false, menu.category_link, mainIdx, subIdx);
+                          dispatch(gotoContentTop([menu.category_link, mainIdx, subIdx]));
                         }}>
                           {subMenu.sub_category_name}
                         </SubCate>
