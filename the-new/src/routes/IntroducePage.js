@@ -23,6 +23,14 @@ function TestBox ({children,color}) {
       </S.ContentBlock>
     </TestBlock>
   )
+};
+
+// 내용을 넣을 곳이 한 곳이면 사용해도 될 것같은데
+function MainWrap ({title}){
+  return (
+    <>
+    </>
+  )
 }
 
 function IntroducePage() {
@@ -31,6 +39,19 @@ function IntroducePage() {
   return(
     <>
       <span>i</span>ntroduce page
+
+      <div id='main'>
+        <div>
+          <div>profile</div>
+          <div>img</div>
+          <div>keyword</div>
+        </div>
+      </div>
+        
+      <div>greeting</div>
+
+      <div>Hashtag Story</div>
+      <div>Favorite Message</div>
 
       <TestBox color={'red'}>
         hid
