@@ -43,10 +43,6 @@ let categorys = createSlice({
           sub_category_top: 0
         },
         {
-          sub_category_name: 'Profile',
-          sub_category_top: 0
-        },
-        {
           sub_category_name: 'Hashtag Story',
           sub_category_top: 0
         },

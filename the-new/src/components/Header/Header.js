@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import './Header.scss';
 import { AppContext } from '../../App';
+import S from '../../styles/GlobalBlock';
 
 function Header() {
   const { isColorMode, toggleColorMode } = useContext(AppContext);
@@ -52,7 +53,7 @@ function Header() {
           <div className='main_title' onClick={()=>{
             goToContent(true, '/', 0, 0)
           }}>
-            <span className='red'>T</span>itle
+            <S.Red>T</S.Red>itle
           </div>
 
           <div className='onoff'
@@ -69,7 +70,9 @@ function Header() {
               category.map((item, i)=>{
                 return (
                   <li item={item} key={i} onClick={()=>{
-                    goToContent(true, item.category_link, i, 0)}}>{item.category_name}</li>
+                    goToContent(true, item.category_link, i, 0)}}>
+                    {item.category_name}
+                  </li>
                 )
               })
             }

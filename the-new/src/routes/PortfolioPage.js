@@ -16,10 +16,11 @@ function PortfolioPage() {
       Portfolio
       <S.ContentBlock className='block'>
         1
-        <Title className='red'>
-
-          Title 1
-        </Title>
+        <S.Title>
+          <S.Red>
+            Title 1
+          </S.Red>
+        </S.Title>
         <SubTitle>sub Title</SubTitle>
 
         <ImgBlock>

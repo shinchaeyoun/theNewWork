@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { AppContext } from '../../App';
 import { gotoContentTop,changeTopArr } from './../../store';
+import S from '../../styles/GlobalBlock';
+
 
 const FooterWrap = styled.footer`
   margin-top: 50px;
@@ -60,7 +62,6 @@ const Bottom = styled.div`
   span {
     font-family: ${({ theme }) => theme.fonts.chomsky};
     font-size: 28px;
-    color: ${({ theme }) => theme.pointColor};
   }
 `
 
@@ -90,7 +91,7 @@ function Footer() {
   return(
     <FooterWrap>
       <LogoWrap>
-        <span className='red'>T</span>he <span className='red'>S</span>hin's <span className='red'>W</span>ork <span className='red'>S</span>pace
+        <S.Red>T</S.Red>he <S.Red>S</S.Red>hin's <S.Red>W</S.Red>ork <S.Red>S</S.Red>pace
       </LogoWrap>
 
       <Categories>
@@ -98,7 +99,6 @@ function Footer() {
           category.map((menu, mainIdx) => {
             return (
               <MainCate key={mainIdx}>
-                {/* <div className='main_title' onClick={()=>{navigate(menu.category_link)}}>{menu.category_name}</div> */}
                 <div className='main_title' onClick={()=>{
                   goToContent(true, menu.category_link, mainIdx, 0);
                 }}>{menu.category_name}</div>
@@ -125,7 +125,7 @@ function Footer() {
 
       <Bottom>
         <div>© The Shin's Work Space. <p>Designed by Shin</p></div>
-        <span>S</span>
+        <S.Red>S</S.Red>
       </Bottom>
     </FooterWrap>
   )

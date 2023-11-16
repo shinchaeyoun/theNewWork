@@ -26,7 +26,8 @@ const fonts = {
 export const monoTheme = {
   colors,fonts,
   bgi: backgroundNoneImg,
-  bgColor: '#fff'
+  bgColor: '#fff',
+  pointColor: '#222'
 };
 
 export const colorTheme = {
@@ -34,7 +35,6 @@ export const colorTheme = {
   bgColor: '#282c35',
   bgi: backgroundImg,
   pointColor: '#d0021b'
-
 };
 
 const theme = {

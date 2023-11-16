@@ -11,5 +11,10 @@ ${props => props.theme.colors.subGray};
 
 스타일 컴포넌트는 나중에 하고 구조 먼저 잡자
 
+        {/* 스타일 컴포넌트로 조건 달아서 스타일링하면 편할 것같은데
+          left, right or small, large
+          https://react.vlpt.us/styling/03-styled-components.html
+        */}
+
 글로벌 블럭을 사용해야하는지 고민해보쟈~
 안써도 될 것같아~

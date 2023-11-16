@@ -1,0 +1,16 @@
+.tab_menu {
+  
+  ul {
+    margin-top: 30px; 
+    li {
+      margin-bottom: 10px;
+
+      cursor: pointer;
+
+      &.focused {
+        font-weight: 600;
+        text-decoration: underline;
+      }
+    }
+  }
+}

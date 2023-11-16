@@ -35,7 +35,7 @@ function ScrollFn () {
     
   useEffect(()=>{
     setTop();
-
+    
     if (!state == null) {
       if(!state.moveToTop){
         dispatch(gotoContentTop([subIdxState, mainIdxState, subIdxState]));
