@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, Component } from 'react';
 import { useLocation } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
@@ -7,50 +7,46 @@ import * as commonFn from './../CommonFunction';
 import S from './../styles/GlobalBlock';
 import './../styles/like.scss'
 
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import flimData from './../img/like/flimImgData';
-
-
 import likeImg from './../img/like/like_image.png'
 import travel1 from './../img/like/like_image.png'
 import travel2 from './../img/like/like_image.png'
 import travel3 from './../img/like/like_image.png'
 
+import flimData from './../img/like/flimImgData';
+import Slider from "react-slick";
+import '../styles/slick.css';
+import '../styles/slick-theme.css';
+
 
 const renderSlides = flimData.map(image => {
   return (
-    <div key={image.alt}>
-      <img src={image.url} alt={image.alt} width={300} height={400} />
-      <p className="legend">Legend</p>
+    <div key={image.alt} style='width: 1000px;'>
+      <img src={image.url} alt={image.alt} width='100%'/>
     </div>
     )
 });
 
+function NextArrow(props) {
+  const {className, style, onClick} = props;
+  return (
+    <div 
+      className={className}
+      style={{...style, display: 'block', background: 'red'}}
+      onClick={onClick}
+    />
+  )
+};
+function PrevArrow(props) {
+  const {className, style, onClick} = props;
+  return (
+    <div 
+      className={className}
+      style={{...style, display: 'block', background: 'blue'}}
+      onClick={onClick}
+    />
+  )
+}
 
-const ContentBox = styled(S.ContentBox)`
-  margin: 30px 0;
-  padding: 30px 0;
-  height: 350px;
-  overflow: hidden;
-
-  ${S.FlexBox} {
-    width: 850px;
-
-    ul {
-      padding-right: 20px;
-      width: 300px;
-      li {
-
-      }
-    }
-
-    ${S.ImgBox} {
-      padding: 0 20px;
-      width: 550px; height: 350px;
-    }
-  }
-`
 
 function LikePage() {
   commonFn.ScrollFn();
@@ -72,6 +68,24 @@ function LikePage() {
     setCurrentIndex(index);
   }
 
+  const driveSetting = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
+  };
+
+  const flimSettings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
+  };
+  
   return(
     <>
       <S.GroupBox className='block'>
@@ -118,23 +132,73 @@ function LikePage() {
       </S.GroupBox>
 
       <S.GroupBox className='block'>
+        <S.Title>Drive</S.Title>
+
+        <S.TextBox $txtwid='400px'>
+          <S.SubTitle>Travel History</S.SubTitle>
+
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </S.TextBox>
+
+        <Slider {...driveSetting}>
+          {/* {renderSlides} */}
+
+          <div className='testBlo'>
+            <h3>title</h3>
+          </div>
+          <div className='testBlo'>
+            <h3>title</h3>
+          </div>
+          <div className='testBlo'>
+            <h3>title</h3>
+          </div>
+        </Slider>
+      </S.GroupBox>
+
+      <S.GroupBox className='block'>
         <S.Title>Flimeing</S.Title>
 
-        <Carousel
-          // showArrows={false}
-          autoPlay={true}
-          centerMode={true}
-          infiniteLoop={true}
-          // showThumbs={false}
-          selectedItem={flimData[currentIndex]}
-          onChange={handleChange}
-          className="w-[400px] lg:hidden">
-          {renderSlides}
-        </Carousel>
+        <Slider {...flimSettings}>
+          {/* {renderSlides} */}
+
+          <div className='testBlo'>
+            <h3>title</h3>
+          </div>
+          <div className='testBlo'>
+            <h3>title</h3>
+          </div>
+          <div className='testBlo'>
+            <h3>title</h3>
+          </div>
+        </Slider>
+
       </S.GroupBox>
     </>
   )
 }
 
 
+const ContentBox = styled(S.ContentBox)`
+  margin: 30px 0;
+  padding: 30px 0;
+  height: 350px;
+  overflow: hidden;
+
+  ${S.FlexBox} {
+    width: 850px;
+
+    ul {
+      padding-right: 20px;
+      width: 300px;
+      li {
+
+      }
+    }
+
+    ${S.ImgBox} {
+      padding: 0 20px;
+      width: 550px; height: 350px;
+    }
+  }
+`
 export default LikePage;

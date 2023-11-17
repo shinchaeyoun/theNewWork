@@ -62,6 +62,10 @@ let categorys = createSlice({
           sub_category_top: 0
         },
         {
+          sub_category_name: 'Drive',
+          sub_category_top: 0
+        },
+        {
           sub_category_name: 'Flimeing',
           sub_category_top: 0
         },

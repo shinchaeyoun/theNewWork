@@ -34,7 +34,7 @@ function IntroducePage() {
           </S.TextBox>
         </S.ContentBox>
 
-        <S.TextContentBox $txtconwid='250px'>
+        <S.TextContentBox $txtconwid='250px' $padding='0 0 0 20px'>
           <S.SubTitle>Profile</S.SubTitle>
 
           <p><span>keyword</span>keyword</p>

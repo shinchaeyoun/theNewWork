@@ -13,28 +13,17 @@ import portfolioImg from './../img/main/mainImg.png';
 import contactImg from './../img/main/mainImg.png';
 
 const ContentBox = styled(S.ContentBox)`
-  /* display: flex;
-  flex-direction: ${(props) => props.$flexD || 'row'};
-  flex-wrap: nowrap;
-  justify-content: space-between;
-
-  padding-bottom: 20px;
-  width: 100%;
-  height: 300px;
-  
-  &:last-child {
-    margin-bottom: 100px;
-    border-bottom: none;
-  } */
-
-  padding-bottom: 20px;
+  padding-top: 20px;
   width: 100%; height: 300px;
   
-  border-bottom: 1px solid ${({ theme }) => theme.colors.lightGray};
+  border-top: 1px solid ${({ theme }) => theme.colors.lightGray};
 
+  &:nth-child(2){
+    padding-top: 0px;
+    border-top: none;
+  }
   &:last-child {
     margin-bottom: 100px;
-    border-bottom: none;
   }
 `
 
@@ -50,8 +39,8 @@ const MainBlock = styled(S.ImgBox)`
 
 function ContentWrap ({children, children2, flexD, src}) {
   return (
-    <ContentBox $flexD={flexD}>
-      <S.ImgBox $imgwid='600px'>
+    <ContentBox $flexD={flexD} className='block'>
+      <S.ImgBox $imgwid='600px' $imghei='300px'>
         <img src={src} />
       </S.ImgBox>
       
@@ -77,22 +66,22 @@ function MainPage() {
         <p>Hi</p>
       </ContentWrap>
 
-      <ContentWrap className='block' flexD='row-reverse' src={likeImg} imghei='300px'>
+      <ContentWrap flexD='row-reverse' src={likeImg} imghei='300px'>
         <span>Like</span>
         <p>Hi</p>
       </ContentWrap>
 
-      <ContentWrap className='block' flexD='row' src={careerImg} $conwid='100%'>
+      <ContentWrap flexD='row' src={careerImg} $conwid='100%'>
         <span>Career</span>
         <p>Hi</p>
       </ContentWrap>
 
-      <ContentWrap className='block' flexD='row-reverse' src={portfolioImg}>
+      <ContentWrap flexD='row-reverse' src={portfolioImg}>
         <span>Portfolio</span>
         <p>Hi</p>
       </ContentWrap>
 
-      <ContentWrap className='block' flexD='row' src={contactImg}>
+      <ContentWrap flexD='row' src={contactImg}>
         <span>Contact</span>
         <p>Hi</p>
       </ContentWrap>

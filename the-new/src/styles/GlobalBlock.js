@@ -75,6 +75,8 @@ const ContentBox = styled.div`
 const TextContentBox = styled.div`
   // div>p>span 구조
   width: ${props => props.$txtconwid || '500px'};
+  padding: ${props => props.$padding};
+  box-sizing: border-box;
   
   p {
     span {
