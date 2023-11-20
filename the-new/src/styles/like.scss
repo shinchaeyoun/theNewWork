@@ -1,7 +1,9 @@
 @import './variables.scss';
 
 .tab_menu {
-  
+  padding-left: 20px;
+  width: 150px;
+
   ul {
     margin-top: 30px; 
     li {
@@ -19,6 +21,7 @@
 
 
 #fSlide {
+  padding-bottom: 60px;
   width: 1000px;
 
   .slick-slider .slick-track div{
@@ -33,5 +36,12 @@
   }
   .slick-dots li.slick-active button:before {
     color: $pointColor !important; /* dot 색깔 */
+  }
+}
+
+#music {
+  .control_bar {
+    display: flex;
+    justify-content: space-between;
   }
 }

@@ -46,12 +46,11 @@ const FlexBox = styled.div`
   display: flex;
   flex-wrap: nowrap;
 
-
   justify-content: space-between;
 
   width: 100%;
 
-  outline: 1px solid #f00;
+  /* outline: 1px solid #f00; */
 `
 const ContentBox = styled.div`
   display: flex;

@@ -18,3 +18,15 @@ ${props => props.theme.colors.subGray};
 
 글로벌 블럭을 사용해야하는지 고민해보쟈~
 안써도 될 것같아~
+
+
+'박효신'
+'짙은'
+'호피폴라'
+'검정치마'
+'선우정아'
+'HONNE'
+'Alec Benjamin'
+'Glass Animals'
+'Jesper Munk'
+'The xx'
