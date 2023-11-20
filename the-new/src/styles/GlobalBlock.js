@@ -39,6 +39,8 @@ const ImgBox = styled.div`
 `
 const TextBox = styled.div`
   width: ${props => props.$txtwid || '100%'};
+
+  padding: ${props => props.$txtpd};
 `
 const FlexBox = styled.div`
   display: flex;

@@ -51,4 +51,37 @@ const flimData = [
   }
 ];
 
-export default flimData;
+const driveData = [
+  {
+    label: 'image 1',
+    alt: 'img1',
+    url: '../flimeing/like_image.png'
+  },
+  {
+    label: 'image 2',
+    alt: 'img2',
+    url: '../flimeing/like_image.png'
+  },
+  {
+    label: 'image 3',
+    alt: 'img3',
+    url: '../flimeing/like_image.png'
+  },
+  {
+    label: 'image 4',
+    alt: 'img4',
+    url: '../flimeing/like_image.png'
+  },
+  {
+    label: 'image 5',
+    alt: 'img5',
+    url: '../flimeing/like_image.png'
+  }
+];
+
+const slideData = {
+  flimData,
+  driveData
+}
+export default slideData;
+// export default flimData;

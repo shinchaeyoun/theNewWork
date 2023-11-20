@@ -1,5 +1,4 @@
 @charset 'UTF-8';
-
 /* Arrows */
 .slick-prev,
 .slick-next
@@ -162,9 +161,8 @@
 }
 .slick-dots li button:before
 {
-    /* 누르지 않은 도트 닷 버튼 */
     font-family: 'slick';
-    font-size: 6px;
+    font-size: 30px;
     line-height: 20px;
 
     position: absolute;
@@ -185,7 +183,6 @@
 }
 .slick-dots li.slick-active button:before
 {
-    /* 활성화 도트 닷 버튼 */
     opacity: .75;
     color: black;
 }

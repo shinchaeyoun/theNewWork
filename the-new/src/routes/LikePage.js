@@ -12,16 +12,23 @@ import travel1 from './../img/like/like_image.png'
 import travel2 from './../img/like/like_image.png'
 import travel3 from './../img/like/like_image.png'
 
-import flimData from './../img/like/flimImgData';
+import slideData from './../img/like/flimImgData';
 import Slider from "react-slick";
 import '../styles/slick.css';
 import '../styles/slick-theme.css';
 
 
-const renderSlides = flimData.map(image => {
+const flimSlides = slideData.flimData.map(image => {
   return (
-    <div key={image.alt} style='width: 1000px;'>
-      <img src={image.url} alt={image.alt} width='100%'/>
+    <div key={image.alt}>
+      <img src={image.url} alt={image.alt}/>
+    </div>
+    )
+});
+const driveSlides = slideData.driveData.map(image => {
+  return (
+    <div key={image.alt}>
+      <img src={image.url} alt={image.alt}/>
     </div>
     )
 });
@@ -48,30 +55,22 @@ function PrevArrow(props) {
 }
 
 
+
 function LikePage() {
   commonFn.ScrollFn();
 
   const [travelTab, setTravelTab] = useState(0);
-
   const travelArr = [
     { name: 'Tab1', content: 'Tab menu one', imgSrc: travel1, alt: 'alt1'},
     { name: 'Tab2', content: 'Tab menu two', imgSrc: travel2, alt: 'alt2'},
     { name: 'Tab3', content: 'Tab menu three', imgSrc: travel3, alt: 'alt3'}
   ];
 
-  const selectMenuHandler = (index) => {
-    setTravelTab(index);
-  }
-
-  const [currentIndex, setCurrentIndex] = useState();
-  function handleChange(index) {
-    setCurrentIndex(index);
-  }
-
   const driveSetting = {
     dots: true,
+    // autoplay: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />
@@ -79,11 +78,14 @@ function LikePage() {
 
   const flimSettings = {
     dots: true,
+    autoplay: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+    prevArrow: <PrevArrow />,
+    speed: 2000,
+    autoplaySpeed: 2000,
   };
   
   return(
@@ -123,7 +125,7 @@ function LikePage() {
                   <li
                   key={index}
                     className={index === travelTab ? 'focused' : null}
-                    onClick={()=>selectMenuHandler(index)}>{menu.name}</li>
+                    onClick={()=>setTravelTab(index)}>{menu.name}</li>
                 ))
               }
             </ul>
@@ -132,46 +134,33 @@ function LikePage() {
       </S.GroupBox>
 
       <S.GroupBox className='block'>
-        <S.Title>Drive</S.Title>
-
-        <S.TextBox $txtwid='400px'>
-          <S.SubTitle>Travel History</S.SubTitle>
-
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </S.TextBox>
-
-        <Slider {...driveSetting}>
-          {/* {renderSlides} */}
-
-          <div className='testBlo'>
-            <h3>title</h3>
-          </div>
-          <div className='testBlo'>
-            <h3>title</h3>
-          </div>
-          <div className='testBlo'>
-            <h3>title</h3>
-          </div>
-        </Slider>
-      </S.GroupBox>
-
-      <S.GroupBox className='block'>
         <S.Title>Flimeing</S.Title>
 
-        <Slider {...flimSettings}>
-          {/* {renderSlides} */}
 
-          <div className='testBlo'>
-            <h3>title</h3>
-          </div>
-          <div className='testBlo'>
-            <h3>title</h3>
-          </div>
-          <div className='testBlo'>
-            <h3>title</h3>
-          </div>
-        </Slider>
+        <div id='fSlide'>
+          <Slider {...flimSettings}>
 
+            {flimSlides}
+            {/* <div className='testBlo'>
+              <h3>title1</h3>
+            </div>
+            <div className='testBlo'>
+              <h3>title2</h3>
+            </div>
+            <div className='testBlo'>
+              <h3>title3</h3>
+            </div>
+            <div className='testBlo'>
+              <h3>title4</h3>
+            </div>
+            <div className='testBlo'>
+              <h3>title5</h3>
+            </div>
+            <div className='testBlo'>
+              <h3>title6</h3>
+            </div> */}
+          </Slider>
+        </div>
       </S.GroupBox>
     </>
   )
