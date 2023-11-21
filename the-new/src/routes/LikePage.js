@@ -55,6 +55,18 @@ function LikePage() {
   const [travelTab, setTravelTab] = useState(0);
   const [trackIdx, setTrackIdx] = useState(0);
   const [playState, setPlayState] = useState(false);
+  const [sHoverWid, setShoverWid] = useState(0);
+  const [sBarWid, setSbarWid] = useState(0);
+  const [dotPos, setDotPos] = useState(0);
+  const [curMin, setCurMin] = useState('00');
+  const [curSec, setCurSec] = useState('00');
+  const [durMin, setDurMin] = useState('00');
+  const [durSec, setDurSec] = useState('00');
+
+  const sAreaRef = useRef();
+  const sHoverRef = useRef();
+  const sBar = useRef();
+  const dot = useRef();
 
   const travelArr = [
     {
@@ -128,6 +140,55 @@ function LikePage() {
     audio.pause();
   };
 
+  const time = () => {
+    let cMin = Math.floor(audio.currentTime / 60);
+    let cSec = Math.floor(audio.currentTime - cMin * 60);
+
+    let dMin = Math.floor(audio.duration / 60);
+    let dSec = Math.floor(audio.duration - dMin * 60);
+
+    if (cMin < 10) { cMin = '0' + cMin; };
+    if (cSec < 10) { cSec = '0' + cSec; };
+    if (dMin < 10) { dMin = '0' + dMin; };
+    if (dSec < 10) { dSec = '0' + dSec; };
+
+    setCurMin(cMin);
+    setCurSec(cSec);
+    setDurMin(dMin);
+    setDurSec(dSec);
+
+    const playProgress = (audio.currentTime / audio.duration) * 100;
+
+    setSbarWid(playProgress+'%');
+    setDotPos(playProgress+'%');
+  };
+  audio.addEventListener('timeupdate', ()=> {
+    time();
+  });
+  audio.onended = () => {
+    NextTrack();
+  };
+  // audio 
+
+  const sAreaEvt = (state, e) => {
+    const seekBarPos = sAreaRef.current?.offsetLeft;
+    const seekT = e.clientX - seekBarPos;
+    const seekLoc = audio.duration * (seekT / sAreaRef.current.offsetWidth);
+
+    switch (state) {
+      case 'over' :
+        let hoverWid = (seekT / sAreaRef.current.offsetWidth) * 100;
+        setShoverWid(hoverWid+'%');
+        break;
+      case 'out' :
+        setShoverWid(0);
+        break;
+      case 'click' :
+        setPlayState(true);
+        audio.currentTime = seekLoc;
+        break;
+    }
+  };
 
   return(
     <>
@@ -191,49 +252,50 @@ function LikePage() {
       <S.GroupBox className='block'>
         <S.Title>Music</S.Title>
 
-              <S.SubTitle onClick={()=>{testfn()}}>TEST button</S.SubTitle>
         <S.FlexBox id='music' className='block'>
           <div id='left'>
-            <S.ImgBox>
+            <S.ImgBox className='album_cover'>
               <img className='testImg' src={audioData.audioList[trackIdx].albumImage}/>
             </S.ImgBox>
 
-            <S.TextBox>
-              {/* <p> */}
+            <S.TextBox className='album_title'>
+              <div className='track_name'>
                 {audioData.audioList[trackIdx].track}
-              {/* </p> */}
-              {/* <p> */}
+              </div>
+              <div className='artist_name'>
                 {audioData.audioList[trackIdx].artist}
-              {/* </p> */}
-              {/* <p> */}
-                {audioData.audioList[trackIdx].trackNumber}
-              {/* </p> */}
+              </div>
             </S.TextBox>
 
             <div className="slider_bar">
-              <div className="slider">
-                <span className={playState ? 'active dot' : 'dot'}></span>
-                <span className="bar"></span>
+              <div className="slider" 
+                ref={sAreaRef}
+                onMouseMove={(e)=>{sAreaEvt('over',e)}}
+                onMouseOut={(e)=>{sAreaEvt('out',e)}}
+                onClick={(e)=>{sAreaEvt('click',e)}}
+              >
+                <span ref={dot} style={{left: dotPos}} className={playState ? 'active dot' : 'dot'}></span>
+                <span ref={sBar} style={{width: sBarWid}} className="bar"></span>
                 <div id="ins-time"></div>
-                <div id="s-hover"></div>
+                <div ref={sHoverRef} style={{width: sHoverWid}} id="s-hover"></div>
                 <div id="seek-bar"></div>
               </div>
             </div>
 
             <div className="track_time">
               <div className="current_time">
-                <span>00:00</span>
+                <span>{curMin} : {curSec}</span>
               </div>
 
               <div className="track_length">
-                <span>00:00</span>
+                <span>{durMin} : {durSec}</span>
               </div>
             </div>
 
             <div className="control_bar">
               <div className="prev" onClick={()=>{
                 PrevTrack();
-              }}>prev</div>
+              }}>{audioData.iconList[2]}</div>
 
               <div className="play" id="play" onClick={()=>{
                 playTrack();
@@ -243,7 +305,7 @@ function LikePage() {
 
               <div className="next" onClick={()=>{
                 NextTrack();
-              }}>next</div>
+              }}>{audioData.iconList[2]}</div>
             </div>
 
             <div className="sound">
@@ -258,8 +320,22 @@ function LikePage() {
               {
                 audioData.audioList.map((item, index)=>{
                   return (
-                    <li key={item.trackNumber}>
-                      {item.track}
+                    <li
+                      key={item.trackNumber}
+                      className={trackIdx === index ? 'active': null}
+                      onClick={() => {
+                        setTrackIdx(index);
+                        const changeAudio  = new Audio(audioData.audioList[index].link);
+                        playing(changeAudio);
+                      }}
+                    >
+                      <S.ImgBox $imgwid='60px' $imghei='60px'>
+                        <img src={item.albumImage} alt='pause_icon'/>
+                      </S.ImgBox>
+                      <div className='title'>
+                        <S.Red className='track'>{item.track}</S.Red>
+                        <S.Red className='artist'>{item.artist}</S.Red>
+                      </div>
                     </li>
                   )
                 })

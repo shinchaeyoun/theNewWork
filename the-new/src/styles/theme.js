@@ -8,7 +8,7 @@ const colors = {
   mainColor: '#222',
   pointColor: '#d0021b',
   bgColor: '#edf2f6',
-  gray: '#a0aec0',
+  gray: '#d3d3d3',
   lightGray: '#d3d3d3',
   subGray: '#5a5a5a',
   darkGray: '#2d3748',
