@@ -132,12 +132,26 @@ function LikePage() {
     setPlayState(true);
     audio.load();
     setAudio(newAudio);
-  }
+  };
 
-  if(playState){
-    audio.play();
-  } else {
-    audio.pause();
+  const sAreaEvt = (state, e) => {
+    const seekBarPos = sAreaRef.current?.offsetLeft;
+    const seekT = e.clientX - seekBarPos;
+    const seekLoc = audio.duration * (seekT / sAreaRef.current.offsetWidth);
+
+    switch (state) {
+      case 'over' :
+        let hoverWid = (seekT / sAreaRef.current.offsetWidth) * 100;
+        setShoverWid(hoverWid+'%');
+        break;
+      case 'out' :
+        setShoverWid(0);
+        break;
+      case 'click' :
+        setPlayState(true);
+        audio.currentTime = seekLoc;
+        break;
+    }
   };
 
   const time = () => {
@@ -162,6 +176,12 @@ function LikePage() {
     setSbarWid(playProgress+'%');
     setDotPos(playProgress+'%');
   };
+
+  if(playState){
+    audio.play();
+  } else {
+    audio.pause();
+  };
   audio.addEventListener('timeupdate', ()=> {
     time();
   });
@@ -170,25 +190,6 @@ function LikePage() {
   };
   // audio 
 
-  const sAreaEvt = (state, e) => {
-    const seekBarPos = sAreaRef.current?.offsetLeft;
-    const seekT = e.clientX - seekBarPos;
-    const seekLoc = audio.duration * (seekT / sAreaRef.current.offsetWidth);
-
-    switch (state) {
-      case 'over' :
-        let hoverWid = (seekT / sAreaRef.current.offsetWidth) * 100;
-        setShoverWid(hoverWid+'%');
-        break;
-      case 'out' :
-        setShoverWid(0);
-        break;
-      case 'click' :
-        setPlayState(true);
-        audio.currentTime = seekLoc;
-        break;
-    }
-  };
 
   return(
     <>
@@ -254,7 +255,7 @@ function LikePage() {
 
         <S.FlexBox id='music' className='block'>
           <div id='left'>
-            <S.ImgBox className='album_cover'>
+            <S.ImgBox className='album_cover' $imgwid='280px'>
               <img className='testImg' src={audioData.audioList[trackIdx].albumImage}/>
             </S.ImgBox>
 
@@ -276,7 +277,6 @@ function LikePage() {
               >
                 <span ref={dot} style={{left: dotPos}} className={playState ? 'active dot' : 'dot'}></span>
                 <span ref={sBar} style={{width: sBarWid}} className="bar"></span>
-                <div id="ins-time"></div>
                 <div ref={sHoverRef} style={{width: sHoverWid}} id="s-hover"></div>
                 <div id="seek-bar"></div>
               </div>
