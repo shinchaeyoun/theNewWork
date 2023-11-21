@@ -6,21 +6,18 @@ import styled from 'styled-components';
 import * as commonFn from './../CommonFunction';
 import S from './../styles/GlobalBlock';
 import './../styles/like.scss'
+import Slider from "react-slick";
+import '../styles/slick.css';
+import '../styles/slick-theme.css';
 
 import likeImg from './../img/like/like_image.png'
 import travel1 from './../img/like/like_image.png'
 import travel2 from './../img/like/like_image.png'
 import travel3 from './../img/like/like_image.png'
 
-import playIcon from './../img/like/music/play.png'
-import pauseIcon from './../img/like/music/pause.png'
-
 import slideData from './../img/like/flimImgData';
-import Slider from "react-slick";
-import '../styles/slick.css';
-import '../styles/slick-theme.css';
 
-import audioList from './../components/MusicData';
+import audioData from './../components/MusicData';
 
 const flimSlides = slideData.flimData.map(image => {
   return (
@@ -29,8 +26,6 @@ const flimSlides = slideData.flimData.map(image => {
     </div>
   )
 });
-
-
 
 function NextArrow(props) {
   const {className, style, onClick} = props;
@@ -59,7 +54,7 @@ function LikePage() {
 
   const [travelTab, setTravelTab] = useState(0);
   const [trackIdx, setTrackIdx] = useState(0);
-  const [playNow, setPalyNow] = useState(false);
+  const [playState, setPlayState] = useState(false);
 
   const travelArr = [
     {
@@ -91,33 +86,49 @@ function LikePage() {
     autoplaySpeed: 2000,
   };
 
+  // player
+  const [audio, setAudio] = useState(new Audio(audioData.audioList[trackIdx].link));
+  audio.loop = false;
+  audio.volume = 0.2;
+
   const NextTrack = () => {
-    // let idx = trackIdx;
-    trackIdx++;
-
-    if (trackIdx >= 10) {
-      trackIdx=0;
-    };
-    setTrackIdx(trackIdx);
+    let idx = trackIdx;
+    idx++;
+    
+    if (idx >= 10) { idx=0; };
+    setTrackIdx(idx);
+    
+    const changeAudio  = new Audio(audioData.audioList[idx].link);
+    playing(changeAudio)
   };
-
+  const playTrack = () => {
+    let nowState = !playState;
+    setPlayState(nowState);
+  };
   const PrevTrack = () => {
-    // let idx = trackIdx;
-    trackIdx--;
-
-    if (trackIdx < 0) {
-      trackIdx=9;
-    };
-    setTrackIdx(trackIdx);
+    let idx = trackIdx;
+    idx--;
+    
+    if (idx < 0) { idx=9; };
+    setTrackIdx(idx);
+    
+    const changeAudio  = new Audio(audioData.audioList[idx].link);
+    playing(changeAudio);
   };
 
-  const Playing = () => {
-    setPalyNow(!playNow);
-
-
+  const playing = (newAudio) => {
+    setPlayState(true);
+    audio.load();
+    setAudio(newAudio);
   }
 
-  
+  if(playState){
+    audio.play();
+  } else {
+    audio.pause();
+  };
+
+
   return(
     <>
       <S.GroupBox className='block'>
@@ -180,21 +191,28 @@ function LikePage() {
       <S.GroupBox className='block'>
         <S.Title>Music</S.Title>
 
+              <S.SubTitle onClick={()=>{testfn()}}>TEST button</S.SubTitle>
         <S.FlexBox id='music' className='block'>
           <div id='left'>
             <S.ImgBox>
-              <img className='testImg' src={audioList[trackIdx].albumImage}/>
+              <img className='testImg' src={audioData.audioList[trackIdx].albumImage}/>
             </S.ImgBox>
 
             <S.TextBox>
-              {audioList[trackIdx].track}
-              {audioList[trackIdx].artist}
-              {audioList[trackIdx].trackNumber}
+              {/* <p> */}
+                {audioData.audioList[trackIdx].track}
+              {/* </p> */}
+              {/* <p> */}
+                {audioData.audioList[trackIdx].artist}
+              {/* </p> */}
+              {/* <p> */}
+                {audioData.audioList[trackIdx].trackNumber}
+              {/* </p> */}
             </S.TextBox>
 
             <div className="slider_bar">
               <div className="slider">
-                <span className="dot"></span>
+                <span className={playState ? 'active dot' : 'dot'}></span>
                 <span className="bar"></span>
                 <div id="ins-time"></div>
                 <div id="s-hover"></div>
@@ -218,9 +236,9 @@ function LikePage() {
               }}>prev</div>
 
               <div className="play" id="play" onClick={()=>{
-                Playing();
+                playTrack();
               }}>
-                {playNow ? playIcon : pauseIcon }
+                {playState ? audioData.iconList[1] : audioData.iconList[0] }
               </div>
 
               <div className="next" onClick={()=>{
@@ -238,7 +256,7 @@ function LikePage() {
           <div id='right'>
             <ul>
               {
-                audioList.map((item, index)=>{
+                audioData.audioList.map((item, index)=>{
                   return (
                     <li key={item.trackNumber}>
                       {item.track}

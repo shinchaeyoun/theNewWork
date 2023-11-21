@@ -22,6 +22,9 @@ const SubTitle = styled.div`
 const Red = styled.span`
   color: ${({ theme }) => theme.pointColor};
 `
+const RedBg = styled.span`
+  background-color: ${({ theme }) => theme.pointColor || theme.subGray};
+`
 
 const ContentBlock = styled.div`
   height: 100vh;
@@ -108,6 +111,7 @@ const GroupBox = styled.div`
 
 const S = {
   Red,
+  RedBg,
   Title,
   SubTitle,
   ContentBlock,
