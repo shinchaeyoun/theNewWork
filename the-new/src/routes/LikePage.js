@@ -253,32 +253,45 @@ function LikePage() {
       <S.GroupBox className='block'>
         <S.Title>Music</S.Title>
 
-        <S.FlexBox id='music' className='block'>
-          <div id='left'>
+        <FlexBox id='music' className='block'>
+          <ContentBlock $wid='350px' $pad='0 40px' id='left' style={{borderRight: 'none'}}>
             <S.ImgBox className='album_cover' $imgwid='280px'>
-              <img className='testImg' src={audioData.audioList[trackIdx].albumImage}/>
+              <img
+                className='testImg'
+                src={audioData.audioList[trackIdx].albumImage}/>
             </S.ImgBox>
 
             <S.TextBox className='album_title'>
               <div className='track_name'>
                 {audioData.audioList[trackIdx].track}
               </div>
+
               <div className='artist_name'>
                 {audioData.audioList[trackIdx].artist}
               </div>
             </S.TextBox>
 
             <div className="slider_bar">
-              <div className="slider" 
+              <div className="slider"
                 ref={sAreaRef}
                 onMouseMove={(e)=>{sAreaEvt('over',e)}}
                 onMouseOut={(e)=>{sAreaEvt('out',e)}}
-                onClick={(e)=>{sAreaEvt('click',e)}}
-              >
-                <span ref={dot} style={{left: dotPos}} className={playState ? 'active dot' : 'dot'}></span>
-                <span ref={sBar} style={{width: sBarWid}} className="bar"></span>
-                <div ref={sHoverRef} style={{width: sHoverWid}} id="s-hover"></div>
-                <div id="seek-bar"></div>
+                onClick={(e)=>{sAreaEvt('click',e)}}>
+                <span
+                  ref={dot}
+                  style={{left: dotPos}}
+                  className={playState ? 'active dot' : 'dot'}>
+                </span>
+                <span
+                  ref={sBar}
+                  style={{width: sBarWid}}
+                  className="bar">
+                </span>
+                <div
+                  ref={sHoverRef}
+                  style={{width: sHoverWid}}
+                  id="s-hover">
+                </div>
               </div>
             </div>
 
@@ -293,19 +306,17 @@ function LikePage() {
             </div>
 
             <div className="control_bar">
-              <div className="prev" onClick={()=>{
-                PrevTrack();
-              }}>{audioData.iconList[2]}</div>
+              <div className="prev" onClick={()=>{PrevTrack()}}>
+                {audioData.iconList[2]}
+              </div>
 
-              <div className="play" id="play" onClick={()=>{
-                playTrack();
-              }}>
+              <div className="play" id="play" onClick={()=>{playTrack()}}>
                 {playState ? audioData.iconList[1] : audioData.iconList[0] }
               </div>
 
-              <div className="next" onClick={()=>{
-                NextTrack();
-              }}>{audioData.iconList[2]}</div>
+              <div className="next" onClick={()=>{NextTrack()}}>
+                {audioData.iconList[2]}
+              </div>
             </div>
 
             <div className="sound">
@@ -313,14 +324,14 @@ function LikePage() {
               <div className="bar"><span></span></div>
               <div className="high"></div>
             </div>
-          </div>
+          </ContentBlock>
 
-          <div id='right'>
+          <ContentBlock $wid='450px' $hei='500px' $scr='scroll' id='right'>
             <ul>
               {
                 audioData.audioList.map((item, index)=>{
                   return (
-                    <li
+                    <ListBox
                       key={item.trackNumber}
                       className={trackIdx === index ? 'active': null}
                       onClick={() => {
@@ -336,13 +347,13 @@ function LikePage() {
                         <S.Red className='track'>{item.track}</S.Red>
                         <S.Red className='artist'>{item.artist}</S.Red>
                       </div>
-                    </li>
+                    </ListBox>
                   )
                 })
               }        
             </ul>
-          </div>
-        </S.FlexBox>
+          </ContentBlock>
+        </FlexBox>
       </S.GroupBox>
     </>
   )
@@ -359,17 +370,54 @@ const ContentBox = styled(S.ContentBox)`
     width: 850px;
 
     ul {
-      /* padding-right: 20px; */
       width: 300px;
-      li {
-
-      }
     }
 
     ${S.ImgBox} {
-      /* padding: 0 20px; */
       width: 550px; height: 350px;
     }
   }
 `
+const FlexBox = styled(S.FlexBox)`
+  justify-content: center;
+`
+const ListBox = styled.li`
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  height: 60x;
+  border-bottom: 1px solid ${({theme}) => theme.colors.gray};
+
+  &:last-child {
+    border-bottom: none;
+  }
+  &.active {
+    background-color: #cccccc7a;
+  }
+
+  .title {
+    padding-left: 20px;
+    text-transform: capitalize;
+
+    .track {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .artist {
+      color: $subGray;
+    }
+  }
+`
+const ContentBlock = styled.div`
+  width: ${props => props.$wid};
+  height: ${props => props.$hei};
+
+  padding: ${props => props.$pad};
+  border: 1px solid ${({theme}) => theme.colors.gray};
+  box-sizing: border-box;
+
+  overflow-y: ${props => props.$scr};
+`
+
 export default LikePage;
