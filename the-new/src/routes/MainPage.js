@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import * as commonFn from './../CommonFunction';
 import S from './../styles/GlobalBlock';
@@ -10,6 +10,8 @@ import likeImg from './../img/main/mainImg.png';
 import careerImg from './../img/main/mainImg.png';
 import portfolioImg from './../img/main/mainImg.png';
 import contactImg from './../img/main/mainImg.png';
+
+import ScrollFade from './../styles/ScrollFadeAnimation';
 
 const ContentBox = styled(S.ContentBox)`
   flex-direction: row;
@@ -79,6 +81,9 @@ function MainPage() {
     },
   ]
 
+  const [activeState, setActiveState] = useState(true);
+
+  console.log(activeState,'activeState');
   return(
     <div id='mainWrap'>
       <MainBlock>
@@ -88,18 +93,20 @@ function MainPage() {
       {
         contents.map((item, index) => {
           return (
-            <ContentBox key={index} className='block'>
-              <S.ImgBox $imgwid='600px' $imghei='300px'>
-                <img src={item.imgSrc} />
-              </S.ImgBox>
-              
-              <S.TextBox $txtwid='350px'>
-                <S.SubTitle>
-                  <S.Red>{item.title}</S.Red>
-                </S.SubTitle>
-                <p>{item.explanation}</p>
-              </S.TextBox>
-            </ContentBox>
+            <ScrollFade key={index} activeState>
+              <ContentBox key={index} className='block'>
+                <S.ImgBox $imgwid='600px' $imghei='300px'>
+                  <img src={item.imgSrc} />
+                </S.ImgBox>
+                
+                <S.TextBox $txtwid='350px'>
+                  <S.SubTitle>
+                    <S.Red>{item.title}</S.Red>
+                  </S.SubTitle>
+                  <p>{item.explanation}</p>
+                </S.TextBox>
+              </ContentBox>
+            </ScrollFade>
           )
         })
       }

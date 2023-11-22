@@ -26,3 +26,8 @@ https://script.google.com/macros/s/AKfycbz9idHCAUlUGLGFcFJrz6tUr9IY8tN1q9bcBkjvN
 
 배포 ID
 AKfycbz9idHCAUlUGLGFcFJrz6tUr9IY8tN1q9bcBkjvNi5bBTA5UwZIP_KDEgo1qyo2SCCSvw
+
+
+스크롤 할 때마다 상태를 확인해야하고.
+이벤트 감지될 때 마다 useState도 변경되야함 useState가 배열이던 불린이던..
+배열에 불린을 저장해야하는게 맞는 덧
