@@ -15,3 +15,14 @@ ${props => props.theme.colors.subGray};
           left, right or small, large
           https://react.vlpt.us/styling/03-styled-components.html
         */}
+
+C:\Users\D102\Desktop\shin-git\shin-pp\shin\the-new\src\img\portfolio\eigenhain_fullpage.png
+
+
+구글 메일
+
+URL
+https://script.google.com/macros/s/AKfycbz9idHCAUlUGLGFcFJrz6tUr9IY8tN1q9bcBkjvNi5bBTA5UwZIP_KDEgo1qyo2SCCSvw/exec
+
+배포 ID
+AKfycbz9idHCAUlUGLGFcFJrz6tUr9IY8tN1q9bcBkjvNi5bBTA5UwZIP_KDEgo1qyo2SCCSvw

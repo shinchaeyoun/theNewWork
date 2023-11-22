@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 import * as commonFn from './../CommonFunction';
 import S from './../styles/GlobalBlock';
-// imgBox 글로벌컴포넌트로 바꾸기
 
 import mainImg from './../img/main/mainImg.png';
 import introduceImg from './../img/main/mainImg.png';
@@ -13,20 +12,32 @@ import portfolioImg from './../img/main/mainImg.png';
 import contactImg from './../img/main/mainImg.png';
 
 const ContentBox = styled(S.ContentBox)`
+  flex-direction: row;
   padding-top: 20px;
   width: 100%; height: 300px;
   
   border-top: 1px solid ${({ theme }) => theme.colors.lightGray};
 
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+  };
+
   &:nth-child(2){
     padding-top: 0px;
     border-top: none;
-  }
+  };
+
   &:last-child {
     margin-bottom: 100px;
+  };
+
+  ${S.TextBox} {
+    padding-top: 20px;
+    ${S.SubTitle} {
+      text-align: left;
+    }
   }
 `
-
 const MainBlock = styled(S.ImgBox)`
   width: 100%;
   height: 500px;
@@ -37,23 +48,36 @@ const MainBlock = styled(S.ImgBox)`
   border-bottom: 6px double ${({theme}) => theme.colors.lightGray};
 `
 
-function ContentWrap ({children, children2, flexD, src}) {
-  return (
-    <ContentBox $flexD={flexD} className='block'>
-      <S.ImgBox $imgwid='600px' $imghei='300px'>
-        <img src={src} />
-      </S.ImgBox>
-      
-      <S.TextBox $txtwid='350px'>
-        <span>{children}</span>
-        <p>{children2}</p>
-      </S.TextBox>
-    </ContentBox>
-  )
-};
-
 function MainPage() {
   commonFn.ScrollFn();
+
+  const contents = [
+    {
+      title: "Introduce",
+      explanation: "Hi",
+      imgSrc: introduceImg
+    },
+    {
+      title: "Like",
+      explanation: "Hi",
+      imgSrc: likeImg
+    },
+    {
+      title: "Career",
+      explanation: "Hi",
+      imgSrc: careerImg
+    },
+    {
+      title: "Portfolio",
+      explanation: "Hi",
+      imgSrc: portfolioImg
+    },
+    {
+      title: "Contact",
+      explanation: "Hi",
+      imgSrc: contactImg
+    },
+  ]
 
   return(
     <div id='mainWrap'>
@@ -61,30 +85,24 @@ function MainPage() {
         <img src={mainImg} alt='mainImg'/>
       </MainBlock>
 
-      <ContentWrap flexD='row' src={introduceImg}>
-        <span>Introduce</span>
-        <p>Hi</p>
-      </ContentWrap>
-
-      <ContentWrap flexD='row-reverse' src={likeImg} imghei='300px'>
-        <span>Like</span>
-        <p>Hi</p>
-      </ContentWrap>
-
-      <ContentWrap flexD='row' src={careerImg} $conwid='100%'>
-        <span>Career</span>
-        <p>Hi</p>
-      </ContentWrap>
-
-      <ContentWrap flexD='row-reverse' src={portfolioImg}>
-        <span>Portfolio</span>
-        <p>Hi</p>
-      </ContentWrap>
-
-      <ContentWrap flexD='row' src={contactImg}>
-        <span>Contact</span>
-        <p>Hi</p>
-      </ContentWrap>
+      {
+        contents.map((item, index) => {
+          return (
+            <ContentBox key={index} className='block'>
+              <S.ImgBox $imgwid='600px' $imghei='300px'>
+                <img src={item.imgSrc} />
+              </S.ImgBox>
+              
+              <S.TextBox $txtwid='350px'>
+                <S.SubTitle>
+                  <S.Red>{item.title}</S.Red>
+                </S.SubTitle>
+                <p>{item.explanation}</p>
+              </S.TextBox>
+            </ContentBox>
+          )
+        })
+      }
     </div>
   )
 }

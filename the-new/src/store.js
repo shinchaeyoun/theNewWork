@@ -85,19 +85,23 @@ let categorys = createSlice({
       category_link: '/career',
       sub_categories: [
         {
-          sub_category_name: 'career1',
+          sub_category_name: 'pdc',
           sub_category_top: 0
         },
         {
-          sub_category_name: 'career2',
+          sub_category_name: 'jns',
           sub_category_top: 0
         },
         {
-          sub_category_name: 'career3',
+          sub_category_name: '101',
           sub_category_top: 0
         },
         {
-          sub_category_name: 'career4',
+          sub_category_name: 'cmyk',
+          sub_category_top: 0
+        },
+        {
+          sub_category_name: 'wedu',
           sub_category_top: 0
         }
       ],
@@ -125,6 +129,22 @@ let categorys = createSlice({
         },
         {
           sub_category_name: 'Sony',
+          sub_category_top: 0
+        },
+        {
+          sub_category_name: 'Canvas',
+          sub_category_top: 0
+        },
+        {
+          sub_category_name: 'Appydev',
+          sub_category_top: 0
+        },
+        {
+          sub_category_name: 'Appydev',
+          sub_category_top: 0
+        },
+        {
+          sub_category_name: 'Todo List',
           sub_category_top: 0
         },
         {

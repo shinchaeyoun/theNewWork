@@ -10,14 +10,15 @@ import Slider from "react-slick";
 import '../styles/slick.css';
 import '../styles/slick-theme.css';
 
+
 import likeImg from './../img/like/like_image.png'
 import travel1 from './../img/like/like_image.png'
 import travel2 from './../img/like/like_image.png'
 import travel3 from './../img/like/like_image.png'
 
-import slideData from './../img/like/flimImgData';
+import slideData from '../Data/flimImgData';
 
-import audioData from './../components/MusicData';
+import audioData from '../Data/MusicData';
 
 const flimSlides = slideData.flimData.map(image => {
   return (
@@ -188,7 +189,7 @@ function LikePage() {
   audio.onended = () => {
     NextTrack();
   };
-  // audio 
+  // player end
 
 
   return(
@@ -201,7 +202,7 @@ function LikePage() {
             <img src={likeImg} alt='likeImg'/>
           </S.ImgBox>
 
-          <S.TextBox $txtwid='400px'>
+          <S.TextBox $txtwid='400px' $txtpd='0 20px 0 0'>
             <S.SubTitle>Travel History</S.SubTitle>
 
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -253,7 +254,7 @@ function LikePage() {
       <S.GroupBox className='block'>
         <S.Title>Music</S.Title>
 
-        <FlexBox id='music' className='block'>
+        <FlexBox id='music' className='block' $padding='50px 0'>
           <ContentBlock $wid='350px' $pad='0 40px' id='left' style={{borderRight: 'none'}}>
             <S.ImgBox className='album_cover' $imgwid='280px'>
               <img
@@ -326,32 +327,34 @@ function LikePage() {
             </div>
           </ContentBlock>
 
-          <ContentBlock $wid='450px' $hei='500px' $scr='scroll' id='right'>
-            <ul>
-              {
-                audioData.audioList.map((item, index)=>{
-                  return (
-                    <ListBox
-                      key={item.trackNumber}
-                      className={trackIdx === index ? 'active': null}
-                      onClick={() => {
-                        setTrackIdx(index);
-                        const changeAudio  = new Audio(audioData.audioList[index].link);
-                        playing(changeAudio);
-                      }}
-                    >
-                      <S.ImgBox $imgwid='60px' $imghei='60px'>
-                        <img src={item.albumImage} alt='pause_icon'/>
-                      </S.ImgBox>
-                      <div className='title'>
-                        <S.Red className='track'>{item.track}</S.Red>
-                        <S.Red className='artist'>{item.artist}</S.Red>
-                      </div>
-                    </ListBox>
-                  )
-                })
-              }        
-            </ul>
+          <ContentBlock $wid='450px' $hei='500px' $scroll='hidden'>
+            <S.ScrollCustom className='ScrollCustom' $hei='500px'>
+              <ul>
+                {
+                  audioData.audioList.map((item, index)=>{
+                    return (
+                      <PlayListBox
+                        key={item.trackNumber}
+                        className={trackIdx === index && playState ? 'active': null}
+                        onClick={() => {
+                          setTrackIdx(index);
+                          const changeAudio  = new Audio(audioData.audioList[index].link);
+                          playing(changeAudio);
+                        }}
+                      >
+                        <S.ImgBox $imgwid='60px' $imghei='60px'>
+                          <img src={item.albumImage} alt='pause_icon'/>
+                        </S.ImgBox>
+                        <div className='title'>
+                          <S.Red className='track'>{item.track}</S.Red>
+                          <div className='artist'>{item.artist}</div>
+                        </div>
+                      </PlayListBox>
+                    )
+                  })
+                }        
+              </ul>
+            </S.ScrollCustom>
           </ContentBlock>
         </FlexBox>
       </S.GroupBox>
@@ -380,8 +383,10 @@ const ContentBox = styled(S.ContentBox)`
 `
 const FlexBox = styled(S.FlexBox)`
   justify-content: center;
+
+  padding: ${props => props.$padding};
 `
-const ListBox = styled.li`
+const PlayListBox = styled.li`
   display: flex;
   align-items: center;
   padding: 10px 30px;
@@ -405,7 +410,7 @@ const ListBox = styled.li`
       font-weight: 600;
     }
     .artist {
-      color: $subGray;
+      color: ${({theme}) => theme.colors.subGray};
     }
   }
 `
@@ -417,7 +422,6 @@ const ContentBlock = styled.div`
   border: 1px solid ${({theme}) => theme.colors.gray};
   box-sizing: border-box;
 
-  overflow-y: ${props => props.$scr};
+  overflow-y: ${props => props.$scroll};
 `
-
 export default LikePage;

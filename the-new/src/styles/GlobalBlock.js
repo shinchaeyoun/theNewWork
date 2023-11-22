@@ -25,12 +25,27 @@ const Red = styled.span`
 const RedBg = styled.span`
   background-color: ${({ theme }) => theme.pointColor || theme.subGray};
 `
+const ScrollCustom = styled.div`
+  height: ${props => props.$hei};
+  overflow-y: scroll;
+  // 해당 박스를 감싼 태그에는 overflow-y: hidden;
+  /* overflow-y: hidden; */
 
-const ContentBlock = styled.div`
-  height: 100vh;
-  border-bottom: 1px solid #000;
-` // 나중에 지울 것
+  &::-webkit-scrollbar {
+    width: 5px;  /* 스크롤바의 너비 */
+  }
 
+  &::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background-color: ${({ theme }) => theme.pointColor || theme.subGray}; /* 스크롤바의 색상 */
+    
+    border-radius: 50px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(90, 90, 90, .3);  /*스크롤바 뒷 배경 색상*/
+  }
+`
 const ImgBox = styled.div`
   width: ${props => props.$imgwid || '500px'};
   height: ${props => props.$imghei || 'initial'};
@@ -44,6 +59,7 @@ const TextBox = styled.div`
   width: ${props => props.$txtwid || '100%'};
 
   padding: ${props => props.$txtpd};
+  box-sizing: border-box;
 `
 const FlexBox = styled.div`
   display: flex;
@@ -77,7 +93,7 @@ const ContentBox = styled.div`
   }
 `
 const TextContentBox = styled.div`
-  // div>p>span 구조
+  // div >p >span 구조
   width: ${props => props.$txtconwid || '500px'};
   padding: ${props => props.$padding};
   box-sizing: border-box;
@@ -106,15 +122,19 @@ const GroupBox = styled.div`
   &:first-child {
     border-top: none;
   }
+
+  &:nth-child(2){
+    border-top: none;
+  }
 `
 
 
 const S = {
   Red,
   RedBg,
+  ScrollCustom,
   Title,
   SubTitle,
-  ContentBlock,
   ImgBox,
   TextBox,
   FlexBox,
