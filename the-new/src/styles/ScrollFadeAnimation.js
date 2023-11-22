@@ -25,46 +25,27 @@ const FadeOut = keyframes`
 `
 
 const ScrollFadeAnimation = styled.span`
-  outline: 1px solid #f00;
+  opacity: 0;
   animation: ${FadeOut} .5s forwards;
 
-  ${({activeState}) =>
-    activeState &&
-    `
-      &.active {
-        animation: ${Fade} .1s forwards;
+  &.active {
+    opacity: 0;
+    animation: ${Fade} .5s .3s forwards;
 
-        ${Title}{
-          opacity: 0;
-          animation: ${Fade} .5s .3s forwards;
-          // ${SubTitle} {
-          //   opacity: 0;
-          //   animation: ${Fade} .5s .6s forwards;
-          // }
-          // & + ${S.TextBox}{
-          //   opacity: 0;
-          //   animation: ${Fade} .5s .9s forwards;
-          // }
-        }
+    & * {
+      opacity: 0;
+      animation: ${Fade} .5s .6s forwards;
 
-        // ${SideTitle} {
-        //   opacity: 0;
-        //   animation: ${Fade} .5s 1.2s forwards;
-
-        //   & + ${S.TextBox} {
-        //     opacity: 0;
-        //     animation: ${Fade} .5s 1.5s forwards;
-        //   }
-        // }
-      }
-    `
-  }
-
+    }
+  };
 `;
 
-function ScrollFade ({children, activeState}) {
+function ScrollFade ({children, ...rest}) {
+
+  console.log('rest',{...rest}.$first);
+
   return (
-    <ScrollFadeAnimation $activeState className='test'>
+    <ScrollFadeAnimation {...rest} id='test'>
       {children}
     </ScrollFadeAnimation>
   )

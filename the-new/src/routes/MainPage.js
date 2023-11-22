@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import * as commonFn from './../CommonFunction';
 import S from './../styles/GlobalBlock';
@@ -41,15 +41,22 @@ const ContentBox = styled(S.ContentBox)`
   }
 `
 const MainBlock = styled(S.ImgBox)`
-  width: 100%;
-  height: 500px;
-
+  position: relative;
   margin-bottom: 50px;
   padding-bottom: 80px;
+  width: 100%;
+  height: 500px;
+  border-bottom: 1px solid ${({theme}) => theme.colors.lightGray};
 
-  border-bottom: 6px double ${({theme}) => theme.colors.lightGray};
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 3px; left: 0%;
+    width: 100%;
+    height: 1px;
+    background-color: ${({theme}) => theme.colors.lightGray};
+  }
 `
-
 function MainPage() {
   commonFn.ScrollFn();
 
@@ -81,9 +88,34 @@ function MainPage() {
     },
   ]
 
-  const [activeState, setActiveState] = useState(true);
 
-  console.log(activeState,'activeState');
+  const [activeIdx, setActiveIdx] = useState(0);
+  const windowHei = window.innerHeight / 1.4;
+
+
+  useEffect(()=>{
+    const Block = document.querySelectorAll('.block');
+    let blankArr = [];
+  
+    for(let i = 0; i < Block.length; i ++) {
+      let blockTop = Block[i].offsetTop;
+       blankArr.push(blockTop);
+     };
+
+    const handleScrollAnimation = (e) => {
+      setActiveIdx(0);
+      for(let i = 0; i < blankArr.length; i ++) {
+        if(window.scrollY > blankArr[i] - windowHei){
+          setActiveIdx(i);
+        }
+      }
+    };
+  
+    window.addEventListener('scroll', (e)=>{
+      handleScrollAnimation(e);
+    });
+  }, []);
+
   return(
     <div id='mainWrap'>
       <MainBlock>
@@ -93,7 +125,10 @@ function MainPage() {
       {
         contents.map((item, index) => {
           return (
-            <ScrollFade key={index} activeState>
+            <ScrollFade
+              key={index}
+              $first={S.SubTitle}
+              className={index === activeIdx || activeIdx > index ? 'active' : null}>
               <ContentBox key={index} className='block'>
                 <S.ImgBox $imgwid='600px' $imghei='300px'>
                   <img src={item.imgSrc} />
