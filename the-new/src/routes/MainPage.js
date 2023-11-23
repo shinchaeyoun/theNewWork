@@ -7,7 +7,7 @@ import S from './../styles/GlobalBlock';
 import MainData from '../Data/MainPageData';
 import mainImg from './../img/main/mainImg.png';
 
-import FadeFn from './../styles/ScrollFadeAnimation';
+import ScrollFade from './../styles/ScrollFadeAnimation';
 
 const ContentBox = styled(S.ContentBox)`
   flex-direction: row;
@@ -59,16 +59,22 @@ function MainPage() {
   const [contents, setContent] = useState(MainData);
   const [activeIdx, setActiveIdx] = useState(0);
   const [isActive, setIsActive] = useState(false);
-
   const [isFade, setIsFade] = useState([]);
+
   useEffect(()=>{
-    console.log('eff',contents.length)
+    // console.log('eff',contents.length)
     let testArr = [];
 
-    
+    for (let index = 0; index < contents.length; index++) {
+      const element = contents[index];
+      testArr.push(false)
+      // console.log(testArr.l);
+    };
+    setIsFade(testArr)
 
     return (
-      console.log('log',contents.length)
+      console.log('log',contents.length,testArr.length,isFade.length,'length 3')
+
     )
   }, []);
 
@@ -83,15 +89,15 @@ function MainPage() {
 
           return (
             <S.GroupBox key={index} className='block'>
-              <FadeFn.FadeGroupBox activeIdx={activeIdx} setActiveIdx={setActiveIdx} index={index} setIsFade={setIsFade}>
+              <ScrollFade.FadeFn.FadeGroupBox activeIdx={activeIdx} setActiveIdx={setActiveIdx} index={index} $isFade={isFade} setIsFade={setIsFade}>
 
                 <ContentBox>
-                  <FadeFn.Item 
-                   isFade={isFade} col='blue'>
+                  <ScrollFade.FadeFn.Item 
+                   $isFade={isFade} setIsFade={setIsFade} index={index} activeIdx={activeIdx} $delay={(.3*activeIdx)+'s'}>
                     <S.ImgBox $imgwid='600px' $imghei='300px'>
                         <img src={item.imgSrc} />
                     </S.ImgBox>
-                  </FadeFn.Item>
+                  </ScrollFade.FadeFn.Item>
                     
                   <S.TextBox $txtwid='350px'>
                     <S.SubTitle>
@@ -105,7 +111,7 @@ function MainPage() {
                 </ContentBox>
 
 
-              </FadeFn.FadeGroupBox>
+              </ScrollFade.FadeFn.FadeGroupBox>
             </S.GroupBox>
           )
         })

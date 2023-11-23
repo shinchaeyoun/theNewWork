@@ -1,9 +1,28 @@
-// /* eslint-disable */
+/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import S from './GlobalBlock';
 
-function FadeGroupBox({children, index, activeIdx, setActiveIdx, setIsFade }){
+const TestBox = styled.div`
+  border: 1px solid #f00;
+
+  opacity: 0;
+  animation: ${S.FadeOut} .5s forwards;
+  
+  &.active {
+    opacity: 0;
+    animation: ${S.Fade} .5s ${props=>props.$delay || '.3s'} forwards;
+  }
+
+  /* ${(props) =>
+    props.$isFade &&
+	  css`
+      opacity: 0;
+      animation: ${S.Fade} ${props=>props.$sec || '3s'} ${props=>props.$delay || '3s'} infinite forwards;
+	  `}; */
+`;
+
+function FadeGroupBox({children, ...rest}){
   const windowHei = window.innerHeight / 1.4;
 
   useEffect(()=>{
@@ -16,13 +35,12 @@ function FadeGroupBox({children, index, activeIdx, setActiveIdx, setIsFade }){
     };
     
     const scrollAnimation = (e) => {
-      setActiveIdx(0);
+      rest.setActiveIdx(0);
       for(let i=0; i<blockArr.length; i++){
         if(window.scrollY > blockArr[i] - windowHei){
-          setActiveIdx(i);
+          rest.setActiveIdx(i);
         };
       };
-
     };
     
     window.addEventListener('scroll',(e)=>{
@@ -30,32 +48,35 @@ function FadeGroupBox({children, index, activeIdx, setActiveIdx, setIsFade }){
     });
   }, []);
 
+
   return(
-    <div>
+    <div className={rest.index === rest.activeIdx || rest.activeIdx > rest.index ? 'active' : null}>
       {children}
     </div>
   )
 };
 
-// export default { FadeGroupBox };
-
-
-const TestBox = styled.div`
-  ${(props) =>
-    props.isFade &&
-	  css`
-      opacity: 0;
-      animation: ${S.Fade} ${props=>props.$sec || '.5s'} ${props=>props.$delay || '.3s'} forwards;
-	  `};
-`;
-
 function Item ({children, ...rest}){
-  console.log(rest.isFade);
+  // // console.log(rest,'rest.isFade');
+  // // console.log(rest.index, rest.activeIdx,'true?? ');
+  // let copyIsFade = [...rest.$isFade];
+  // copyIsFade[rest.activeIdx] = true;
+  // for (let i = 0; i < copyIsFade.length; i++) {
+  //   const element = copyIsFade[i];
+  //   console.log(element);
+  // }
+  // // rest.setIsFade(copyIsFade)
+  console.log(rest.$delay,'$delay');
+
   return (
-    <TestBox {...rest}>
+    <TestBox {...rest} className={rest.index === rest.activeIdx || rest.activeIdx > rest.index ? 'active' : null}>
       {children}
     </TestBox>
   );
 };
 
-export default { FadeGroupBox, Item };
+const FadeFn = {
+  FadeGroupBox, Item
+}
+
+export default { FadeFn };

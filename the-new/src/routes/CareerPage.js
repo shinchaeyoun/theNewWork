@@ -85,10 +85,7 @@ const ContentBox = styled(S.ContentBox)`
   opacity: 0;
   animation: ${S.FadeOut} .5s forwards;
 
-  &:first-child {
-    border-top: none;
-  }
-
+  
   &.active {
     opacity: 0;
     animation: ${S.Fade} .1s forwards;
@@ -115,6 +112,11 @@ const ContentBox = styled(S.ContentBox)`
       }
     }
   }
+
+  &:first-child {
+    border-top: none;
+  }
+
 `
 
 export default CareerPage;
