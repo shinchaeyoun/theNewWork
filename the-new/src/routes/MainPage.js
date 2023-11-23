@@ -58,60 +58,38 @@ function MainPage() {
   commonFn.MoveToContentTopFn();
   const [contents, setContent] = useState(MainData);
   const [activeIdx, setActiveIdx] = useState(0);
-  const [isActive, setIsActive] = useState(false);
-  const [isFade, setIsFade] = useState([]);
-
-  useEffect(()=>{
-    // console.log('eff',contents.length)
-    let testArr = [];
-
-    for (let index = 0; index < contents.length; index++) {
-      const element = contents[index];
-      testArr.push(false)
-      // console.log(testArr.l);
-    };
-    setIsFade(testArr)
-
-    return (
-      console.log('log',contents.length,testArr.length,isFade.length,'length 3')
-
-    )
-  }, []);
 
   return(
     <div id='mainWrap'>
       <MainBlock>
           <img src={mainImg} alt='mainImg'/>
       </MainBlock>
+      
       {
         contents.map((item, index) => {
-          console.log(isFade,'isFade');
-
           return (
             <S.GroupBox key={index} className='block'>
-              <ScrollFade.FadeFn.FadeGroupBox activeIdx={activeIdx} setActiveIdx={setActiveIdx} index={index} $isFade={isFade} setIsFade={setIsFade}>
-
-                <ContentBox>
-                  <ScrollFade.FadeFn.Item 
-                   $isFade={isFade} setIsFade={setIsFade} index={index} activeIdx={activeIdx} $delay={(.3*activeIdx)+'s'}>
-                    <S.ImgBox $imgwid='600px' $imghei='300px'>
-                        <img src={item.imgSrc} />
-                    </S.ImgBox>
-                  </ScrollFade.FadeFn.Item>
-                    
-                  <S.TextBox $txtwid='350px'>
+              <ContentBox>
+                <ScrollFade.Item $index={index} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx}>
+                  <S.ImgBox $imgwid='600px' $imghei='300px'>
+                      <img src={item.imgSrc} />
+                  </S.ImgBox>
+                </ScrollFade.Item>
+                  
+                <S.TextBox $txtwid='350px'>
+                  <ScrollFade.Item $index={index} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $delay='.6s'>
                     <S.SubTitle>
                       {/* <S.Red>{item.title}</S.Red> */}
                       <S.Red>{activeIdx}</S.Red>
                     </S.SubTitle>
+                  </ScrollFade.Item>
 
-                    {/* <p>{item.explanation}</p> */}
+                  {/* <p>{item.explanation}</p> */}
+                  <ScrollFade.Item $index={index} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $delay='.9s'>
                     <p>{activeIdx}</p>
-                  </S.TextBox>
-                </ContentBox>
-
-
-              </ScrollFade.FadeFn.FadeGroupBox>
+                  </ScrollFade.Item>
+                </S.TextBox>
+              </ContentBox>
             </S.GroupBox>
           )
         })

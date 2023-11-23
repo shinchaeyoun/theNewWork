@@ -40,3 +40,4 @@ AKfycbz9idHCAUlUGLGFcFJrz6tUr9IY8tN1q9bcBkjvNi5bBTA5UwZIP_KDEgo1qyo2SCCSvw
 활성화된 인덱스의 nth 순서
 
 페이드 블럭을 넣어두고, 순서대로 활성화를 ..?
+딜레이 시간이 자신이 몇번째 인지 확인해야할 듯 그냥 내가 숫자 넣어도 될 듯
