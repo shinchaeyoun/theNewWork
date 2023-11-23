@@ -61,6 +61,16 @@ function MainPage() {
   const [isActive, setIsActive] = useState(false);
 
   const [isFade, setIsFade] = useState([]);
+  useEffect(()=>{
+    console.log('eff',contents.length)
+    let testArr = [];
+
+    
+
+    return (
+      console.log('log',contents.length)
+    )
+  }, []);
 
   return(
     <div id='mainWrap'>
@@ -69,17 +79,19 @@ function MainPage() {
       </MainBlock>
       {
         contents.map((item, index) => {
-          console.log(index,'index',activeIdx,'activeIdx');
+          console.log(isFade,'isFade');
+
           return (
             <S.GroupBox key={index} className='block'>
+              <FadeFn.FadeGroupBox activeIdx={activeIdx} setActiveIdx={setActiveIdx} index={index} setIsFade={setIsFade}>
 
                 <ContentBox>
-                  <FadeFn 
+                  <FadeFn.Item 
                    isFade={isFade} col='blue'>
                     <S.ImgBox $imgwid='600px' $imghei='300px'>
                         <img src={item.imgSrc} />
                     </S.ImgBox>
-                  </FadeFn>
+                  </FadeFn.Item>
                     
                   <S.TextBox $txtwid='350px'>
                     <S.SubTitle>
@@ -93,6 +105,7 @@ function MainPage() {
                 </ContentBox>
 
 
+              </FadeFn.FadeGroupBox>
             </S.GroupBox>
           )
         })
