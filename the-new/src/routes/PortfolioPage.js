@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-expressions */
+/* eslint-disable */
 import React, { useState } from 'react';
 import * as commonFn from './../CommonFunction';
 import styled from 'styled-components';
@@ -7,7 +7,7 @@ import S from './../styles/GlobalBlock';
 import portfolioData from './../Data/PortfolioData';
 
 function PortfolioPage() {
-  commonFn.ScrollFn();
+  commonFn.MoveToContentTopFn();
   
   const [content, setContent] = useState(portfolioData);
 

@@ -8,7 +8,7 @@ import greetingImg from './../img/introduce/greeting_image.png'
 
 
 function IntroducePage() {
-  commonFn.ScrollFn();
+  commonFn.MoveToContentTopFn();
   
   return(
     <>

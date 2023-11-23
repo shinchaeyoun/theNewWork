@@ -10,7 +10,7 @@ import './style.scss'
 // 
 
 function CareerPage() {
-  commonFn.ScrollFn();
+  commonFn.MoveToContentTopFn();
 
   const [content, setContent ] = useState(CareerDate);
   const [activeIdx, setActiveIdx] = useState(0);
@@ -30,15 +30,15 @@ function CareerPage() {
       for(let i = 0; i < blankArr.length; i ++) {
         if(window.scrollY > blankArr[i] - windowHei){
           setActiveIdx(i);
-        }
-      }
+        };
+      };
     };
-
+    
     window.addEventListener('scroll', (e)=>{
       handleScrollAnimation(e);
     });
   }, []);
-
+  
   return(
     <>
       {

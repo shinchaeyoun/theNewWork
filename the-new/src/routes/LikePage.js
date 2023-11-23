@@ -51,7 +51,7 @@ function PrevArrow(props) {
 
 
 function LikePage() {
-  commonFn.ScrollFn();
+  commonFn.MoveToContentTopFn();
 
   const [travelTab, setTravelTab] = useState(0);
   const [trackIdx, setTrackIdx] = useState(0);
@@ -195,7 +195,11 @@ function LikePage() {
   return(
     <>
       <S.GroupBox className='block'>
-        <S.Title>Travel</S.Title>
+        <S.Title>
+          {/* <S.FadeBox isActive $sec='.5s' $delay='.3s'> */}
+            Travel
+          {/* </S.FadeBox> */}
+        </S.Title>
 
         <ContentBox $flexalign='center' $conwid='100%' $flexD='row-reverse'>
           <S.ImgBox $imgwid='600px' $imghei='400px'>

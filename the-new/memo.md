@@ -31,3 +31,12 @@ AKfycbz9idHCAUlUGLGFcFJrz6tUr9IY8tN1q9bcBkjvNi5bBTA5UwZIP_KDEgo1qyo2SCCSvw
 스크롤 할 때마다 상태를 확인해야하고.
 이벤트 감지될 때 마다 useState도 변경되야함 useState가 배열이던 불린이던..
 배열에 불린을 저장해야하는게 맞는 덧
+
+
+
+자식 요소 갯수를 구해서 클래스를 주고?
+클래스를 선택해야겠다
+
+활성화된 인덱스의 nth 순서
+
+페이드 블럭을 넣어두고, 순서대로 활성화를 ..?

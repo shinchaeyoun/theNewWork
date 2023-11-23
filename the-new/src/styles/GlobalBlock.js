@@ -1,5 +1,41 @@
-import styled, { css } from 'styled-components';
+/* eslint-disable */
+import styled, { css, keyframes } from 'styled-components';
 
+const Fade = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
+const FadeOut = keyframes`
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+`
+const FadeBox = styled.div`
+  opacity: 0;
+  animation: ${FadeOut} .5s forwards;
+
+  ${(props) => 
+    props.isActive &&
+    // isActive가 true 이거나 active 클래스를 가지고 있거나 아님?
+    css`
+     opacity: 0;
+      animation: ${Fade} ${props=>props.$sec} ${props=>props.$delay} forwards;
+    `
+  }
+  opacity: 0;
+  animation: ${Fade} ${props=>props.$sec} ${props=>props.$delay} forwards;
+`
 const Title = styled.div`
   display: block;
   width: 100%;
@@ -32,18 +68,15 @@ const ScrollCustom = styled.div`
   /* overflow-y: hidden; */
 
   &::-webkit-scrollbar {
-    width: 5px;  /* 스크롤바의 너비 */
+    width: 5px;
   }
-
   &::-webkit-scrollbar-thumb {
-    height: 30%; /* 스크롤바의 길이 */
-    background-color: ${({ theme }) => theme.pointColor || theme.subGray}; /* 스크롤바의 색상 */
-    
+    height: 30%;
+    background-color: ${({ theme }) => theme.pointColor || theme.subGray};
     border-radius: 50px;
   }
-
   &::-webkit-scrollbar-track {
-    background: rgba(90, 90, 90, .3);  /*스크롤바 뒷 배경 색상*/
+    background: rgba(90, 90, 90, .3);
   }
 `
 const ImgBox = styled.div`
@@ -64,12 +97,9 @@ const TextBox = styled.div`
 const FlexBox = styled.div`
   display: flex;
   flex-wrap: nowrap;
-
   justify-content: space-between;
 
   width: 100%;
-
-  /* outline: 1px solid #f00; */
 `
 const ContentBox = styled.div`
   display: flex;
@@ -128,8 +158,8 @@ const GroupBox = styled.div`
   }
 `
 
-
 const S = {
+  FadeBox,
   Red,
   RedBg,
   ScrollCustom,
