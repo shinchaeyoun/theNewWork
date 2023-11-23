@@ -1,73 +1,54 @@
 /* eslint-disable */
 import React, { useState, useEffect, useRef } from 'react';
 import * as commonFn from './../CommonFunction';
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
 import S from './../styles/GlobalBlock';
 
 import CareerDate from './../Data/CareerData';
 import './style.scss'
 
-// 
+import FadeFn from './../styles/ScrollFadeAnimation'
+
 
 function CareerPage() {
   commonFn.MoveToContentTopFn();
 
+
   const [content, setContent ] = useState(CareerDate);
+
   const [activeIdx, setActiveIdx] = useState(0);
-  const windowHei = window.innerHeight / 1.4;
 
-  useEffect(()=>{
-    const Block = document.querySelectorAll('.block');
-    let blankArr = [];
-
-    for(let i = 0; i < Block.length; i ++) {
-     let blockTop = Block[i].offsetTop;
-      blankArr.push(blockTop);
-    };
-
-    const handleScrollAnimation = (e) => {
-      setActiveIdx(0);
-      for(let i = 0; i < blankArr.length; i ++) {
-        if(window.scrollY > blankArr[i] - windowHei){
-          setActiveIdx(i);
-        };
-      };
-    };
-    
-    window.addEventListener('scroll', (e)=>{
-      handleScrollAnimation(e);
-    });
-  }, []);
-  
   return(
     <>
       {
-        content.map((item, idx)=>{
+        content.map((item, index)=>{
           return (
-            <S.GroupBox key={idx} className='block'>
-              <ContentBox className={idx === activeIdx || activeIdx > idx ? 'active' : null}>
-                <Content $padding='0 10px 0 0'>
-                  <Title>
-                    <S.Red>{item.title}</S.Red>
-                    <SubTitle>{item.position}</SubTitle>
-                    <SubTitle>{item.date}</SubTitle>
-                  </Title>
+            <S.GroupBox key={index} className='block'>
+              <FadeFn.FadeGroupBox activeIdx={activeIdx} setActiveIdx={setActiveIdx} index={index} >
+                <ContentBox className={index === activeIdx || activeIdx > index ? 'active' : null}>
+                  <Content $padding='0 10px 0 0'>
+                    <Title>
+                      <S.Red>{item.title}</S.Red>
+                      <SubTitle>{item.position}</SubTitle>
+                      <SubTitle>{item.date}</SubTitle>
+                    </Title>
 
-                  <S.TextBox $txtpd='10px 0 0'>
-                    {item.mainStory}
-                  </S.TextBox>
-                </Content>
+                    <S.TextBox $txtpd='10px 0 0'>
+                      {item.mainStory}
+                    </S.TextBox>
+                  </Content>
 
-                <Content $padding='0 0 0 10px'>
-                  <SideTitle>
-                    <S.Red>{item.subTitle}</S.Red>
-                  </SideTitle>
+                  <Content $padding='0 0 0 10px'>
+                    <SideTitle>
+                      <S.Red>{item.subTitle}</S.Red>
+                    </SideTitle>
 
-                  <S.TextBox $txtpd='10px 0 0'>
-                    {item.subStory}
-                  </S.TextBox>
-                </Content>
-              </ContentBox>
+                    <S.TextBox $txtpd='10px 0 0'>
+                      {item.subStory}
+                    </S.TextBox>
+                  </Content>
+                </ContentBox>
+              </FadeFn.FadeGroupBox>
             </S.GroupBox>
           )
         })
@@ -75,27 +56,6 @@ function CareerPage() {
     </>
   )
 }
-
-const Fade = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`
-const FadeOut = keyframes`
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-`
 
 const SideTitle = styled(S.SubTitle)`
   text-align: left;
@@ -123,35 +83,35 @@ const ContentBox = styled(S.ContentBox)`
   padding: 30px 0;
   transition: .5s;
   opacity: 0;
-  animation: ${FadeOut} .5s forwards;
+  animation: ${S.FadeOut} .5s forwards;
 
   &:first-child {
     border-top: none;
   }
 
   &.active {
-    animation: ${Fade} .1s forwards;
+    opacity: 0;
+    animation: ${S.Fade} .1s forwards;
 
     ${Title}{
-      opacity: 0;
-      animation: ${Fade} .5s .3s forwards;
+      animation: ${S.Fade} .5s .3s forwards;
       ${SubTitle} {
         opacity: 0;
-        animation: ${Fade} .5s .6s forwards;
+        animation: ${S.Fade} .5s .6s forwards;
       }
       & + ${S.TextBox}{
         opacity: 0;
-        animation: ${Fade} .5s .9s forwards;
+        animation: ${S.Fade} .5s .9s forwards;
       }
     }
 
     ${SideTitle} {
       opacity: 0;
-      animation: ${Fade} .5s 1.2s forwards;
+      animation: ${S.Fade} .5s 1.2s forwards;
 
       & + ${S.TextBox} {
         opacity: 0;
-        animation: ${Fade} .5s 1.5s forwards;
+        animation: ${S.Fade} .5s 1.5s forwards;
       }
     }
   }

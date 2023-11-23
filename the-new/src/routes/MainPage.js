@@ -7,7 +7,7 @@ import S from './../styles/GlobalBlock';
 import MainData from '../Data/MainPageData';
 import mainImg from './../img/main/mainImg.png';
 
-import ScrollFn from './../styles/ScrollFadeAnimation';
+import FadeFn from './../styles/ScrollFadeAnimation';
 
 const ContentBox = styled(S.ContentBox)`
   flex-direction: row;
@@ -60,35 +60,40 @@ function MainPage() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [isActive, setIsActive] = useState(false);
 
+  const [isFade, setIsFade] = useState([]);
+
   return(
     <div id='mainWrap'>
       <MainBlock>
-        {/* <ScrollFn.FadeGroupBox isActive $sec='.5s' $delay='1s'> */}
           <img src={mainImg} alt='mainImg'/>
-        {/* </ScrollFn.FadeGroupBox> */}
       </MainBlock>
       {
         contents.map((item, index) => {
+          console.log(index,'index',activeIdx,'activeIdx');
           return (
-            <ScrollFn.FadeGroupBox isActive={isActive} setIsActive={setIsActive} key={index} 
-              activeIdx={activeIdx} setActiveIdx={setActiveIdx} index={index} >
-              <S.GroupBox >
+            <S.GroupBox key={index} className='block'>
+
                 <ContentBox>
-                  <S.ImgBox $imgwid='600px' $imghei='300px'>
-                    <img src={item.imgSrc} />
+                  <FadeFn 
+                   isFade={isFade} col='blue'>
+                    <S.ImgBox $imgwid='600px' $imghei='300px'>
+                        <img src={item.imgSrc} />
                     </S.ImgBox>
+                  </FadeFn>
                     
-                    <S.TextBox $txtwid='350px'>
+                  <S.TextBox $txtwid='350px'>
                     <S.SubTitle>
-                    {/* <S.Red>{item.title}</S.Red> */}
-                    <S.Red>{activeIdx}</S.Red>
+                      {/* <S.Red>{item.title}</S.Red> */}
+                      <S.Red>{activeIdx}</S.Red>
                     </S.SubTitle>
+
                     {/* <p>{item.explanation}</p> */}
                     <p>{activeIdx}</p>
                   </S.TextBox>
                 </ContentBox>
-              </S.GroupBox>
-            </ScrollFn.FadeGroupBox>
+
+
+            </S.GroupBox>
           )
         })
       }

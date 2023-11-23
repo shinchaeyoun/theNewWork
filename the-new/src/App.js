@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-image: url(${(props) => props.theme.bgi});
     color: ${(props) => props.theme.textColor};
-
+    
     .red {
       color: ${({ theme }) => theme.pointColor}
     }

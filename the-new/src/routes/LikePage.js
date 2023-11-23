@@ -196,9 +196,7 @@ function LikePage() {
     <>
       <S.GroupBox className='block'>
         <S.Title>
-          {/* <S.FadeBox isActive $sec='.5s' $delay='.3s'> */}
             Travel
-          {/* </S.FadeBox> */}
         </S.Title>
 
         <ContentBox $flexalign='center' $conwid='100%' $flexD='row-reverse'>

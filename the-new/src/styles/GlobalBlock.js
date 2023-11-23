@@ -1,5 +1,5 @@
 /* eslint-disable */
-import styled, { css, keyframes } from 'styled-components';
+import styled, { createGlobalStyle, css, keyframes } from 'styled-components';
 
 const Fade = keyframes`
   0% {
@@ -21,20 +21,11 @@ const FadeOut = keyframes`
     transform: translateY(20px);
   }
 `
-const FadeBox = styled.div`
-  opacity: 0;
-  animation: ${FadeOut} .5s forwards;
 
-  ${(props) => 
-    props.isActive &&
-    // isActive가 true 이거나 active 클래스를 가지고 있거나 아님?
-    css`
-     opacity: 0;
-      animation: ${Fade} ${props=>props.$sec} ${props=>props.$delay} forwards;
-    `
-  }
-  opacity: 0;
-  animation: ${Fade} ${props=>props.$sec} ${props=>props.$delay} forwards;
+const FadeItem = styled.div`
+  ${(props) => props.$isFade &&`
+    color: red;
+  `}
 `
 const Title = styled.div`
   display: block;
@@ -157,9 +148,10 @@ const GroupBox = styled.div`
     border-top: none;
   }
 `
-
 const S = {
-  FadeBox,
+  Fade,
+  FadeOut,
+  FadeItem,
   Red,
   RedBg,
   ScrollCustom,

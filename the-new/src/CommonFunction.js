@@ -34,17 +34,17 @@ function MoveToContentTopFn () {
       dispatch(changeTopArr([mainIdxState, i, contentTop]));
     };
   };
-    
+  
   useEffect(()=>{
     setTop();
-    
+
     if (!state == null) {
       if(!state.moveToTop){
         dispatch(gotoContentTop([subIdxState, mainIdxState, subIdxState]));
       };
     };
   }, []);
-
 };
+
 
 export { MoveToContentTopFn };
