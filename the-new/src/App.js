@@ -43,7 +43,7 @@ function App() {
       <AppContext.Provider value={{ isColorMode, toggleColorMode }}>
           <GlobalStyle toggleColorMode/>
           <div className="App">
-            <Header />
+            {/* <Header /> */}
 
             <Routes>
               <Route path="/" element={<MainPage />} />
@@ -54,7 +54,7 @@ function App() {
               <Route path="/contact" element={ <ContactPage /> } />
             </Routes>
 
-            <Footer/>
+            {/* <Footer/> */}
           </div>
       </AppContext.Provider>
     </ThemeProvider>

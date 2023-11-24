@@ -5,6 +5,7 @@ import * as commonFn from './../CommonFunction';
 import S from './../styles/GlobalBlock';
 
 import greetingImg from './../img/introduce/greeting_image.png'
+import ScrollFade from '../ScrollFadeAnimation';
 
 
 function IntroducePage() {
@@ -14,13 +15,14 @@ function IntroducePage() {
     <>
       <S.GroupBox className='block'>
         <S.TextContentBox $txtconwid='250px'>
-          <S.SubTitle>Profile</S.SubTitle>
+          {/* <S.SubTitle>Profile</S.SubTitle> */}
+          <S.SubTitle>Lorem Ipsum</S.SubTitle>
 
-          <p><span>name</span>name</p>
-          <p><span>bone</span>bone</p>
-          <p><span>addr</span>addr</p>
-          <p><span>phon</span>phon</p>
-          <p><span>emai</span>emai</p>
+          <p><span>Lorem</span>Ipsum</p>
+          <p><span>Lorem</span>Ipsum</p>
+          <p><span>Lorem</span>Ipsum</p>
+          <p><span>Lorem</span>Ipsum</p>
+          <p><span>Lorem</span>Ipsum</p>
         </S.TextContentBox>
 
         <S.ContentBox $conwid='500px'>
@@ -29,13 +31,15 @@ function IntroducePage() {
           </S.ImgBox>
 
           <S.TextBox>
-            <S.SubTitle>Greeting</S.SubTitle>
+            <S.SubTitle>Lorem Ipsum</S.SubTitle>
+            {/* <S.SubTitle>Greeting</S.SubTitle> */}
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           </S.TextBox>
         </S.ContentBox>
 
         <S.TextContentBox $txtconwid='250px' $padding='0 0 0 20px'>
-          <S.SubTitle>Profile</S.SubTitle>
+          <S.SubTitle>Lorem Ipsum</S.SubTitle>
+          {/* <S.SubTitle>Profile</S.SubTitle> */}
 
           <p><span>keyword</span>keyword</p>
           <p><span>keyword</span>keyword</p>

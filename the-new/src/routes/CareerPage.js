@@ -7,7 +7,7 @@ import S from './../styles/GlobalBlock';
 import CareerDate from './../Data/CareerData';
 import './style.scss'
 
-import FadeFn from './../styles/ScrollFadeAnimation'
+import FadeFn from './../ScrollFadeAnimation'
 
 
 function CareerPage() {
@@ -24,7 +24,7 @@ function CareerPage() {
         content.map((item, index)=>{
           return (
             <S.GroupBox key={index} className='block'>
-              <FadeFn.FadeGroupBox activeIdx={activeIdx} setActiveIdx={setActiveIdx} index={index} >
+              <FadeFn.Item activeIdx={activeIdx} setActiveIdx={setActiveIdx} index={index} >
                 <ContentBox className={index === activeIdx || activeIdx > index ? 'active' : null}>
                   <Content $padding='0 10px 0 0'>
                     <Title>
@@ -48,7 +48,7 @@ function CareerPage() {
                     </S.TextBox>
                   </Content>
                 </ContentBox>
-              </FadeFn.FadeGroupBox>
+              </FadeFn.Item>
             </S.GroupBox>
           )
         })
