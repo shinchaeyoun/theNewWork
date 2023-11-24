@@ -14,12 +14,10 @@ const TestBox = styled.div`
   };
 `;
 const NonMapItem = styled.div`
-  /* border: 1px solid #f00; */
   opacity: 0;
   animation: ${S.FadeOut} .5s forwards;
   
   &.active {
-    /* border: 1px solid #00f; */
     opacity: 0;
     animation: ${S.Fade} .5s ${props=>props.$delay || '.3s'} forwards;
   };
@@ -59,13 +57,23 @@ function Item({children, ...rest}){
       </TestBox>
     );
   } else {
+    /*
+      맵으로 돌리는 컴포넌트가 아니면 activeIdx는 사용하지 않을 예정.
+      클래스 핸들링은 리턴에서 해야해.
+      data-index를 주고. 가상의 인덱스를 만들까. 함수 내에서만 사용하는 인덱스.. 현재 인덱스..
+
+      구간을 지난 아이템에게 활성화를 해줘야함.
+      그 아이템을 어케 선택할래?
+      위에서는 아이템 인덱스랑       
+    */
+
     useEffect(()=>{
-      const block = document.querySelectorAll('.nonMapItem');
+      const block = document.querySelectorAll('.singleItem');
       let itemTopArr = [];
 
       for(let i=0; i < block.length; i ++){
         block[i].setAttribute('index',i)
-        let blockTop = block[i].parentElement.offsetTop;
+        let blockTop = block[i].offsetTop;
         itemTopArr.push(blockTop);
       };
 
@@ -79,14 +87,14 @@ function Item({children, ...rest}){
         };
       };
       
-      window.addEventListener('scroll',(e)=>{
+      window.addEventListener('click',(e)=>{
         scrollAnimation(e);
       });
     }, []);
 
     return (
       <NonMapItem {...rest}
-        className='nonMapItem'
+        className='singleItem'
       // className={rest.$index === rest.$activeIdx || rest.$activeIdx > rest.$index ? 'active nonMapItem' : 'nonMapItem'}
       >
         { children }

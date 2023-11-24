@@ -61,11 +61,53 @@ function MainPage() {
 
   return(
     <div id='mainWrap'>
-      <ScrollFade.Item $type={false}>
-        <MainBlock>
-          <img src={mainImg} alt='mainImg'/>
-        </MainBlock>
-      </ScrollFade.Item>
+      <S.GroupBox></S.GroupBox>
+      
+        <ScrollFade.Item $type={false}>
+          <MainBlock>
+            <img src={mainImg} alt='mainImg'/>
+          </MainBlock>
+        </ScrollFade.Item>
+        <ScrollFade.Item $type={false}>
+          <MainBlock>
+            <img src={mainImg} alt='mainImg'/>
+          </MainBlock>
+        </ScrollFade.Item>
+        <ScrollFade.Item $type={false}>
+          <MainBlock>
+            <img src={mainImg} alt='mainImg'/>
+          </MainBlock>
+        </ScrollFade.Item>
+      {/* <S.GroupBox>
+        <ScrollFade.Item $type={false} $itemIdx={itemIdx} $setItemIdx={setItemIdx}>
+          <MainBlock>
+            <img src={mainImg} alt='mainImg'/>
+          </MainBlock>
+        </ScrollFade.Item>
+      </S.GroupBox>
+      <S.GroupBox>
+        <ScrollFade.Item $type={false} $itemIdx={itemIdx} $setItemIdx={setItemIdx}>
+          <MainBlock>
+            <img src={mainImg} alt='mainImg'/>
+          </MainBlock>
+        </ScrollFade.Item>
+      </S.GroupBox>
+      <S.GroupBox>
+        <ScrollFade.Item $type={false} $itemIdx={itemIdx} $setItemIdx={setItemIdx}>
+          <MainBlock>
+            <img src={mainImg} alt='mainImg'/>
+          </MainBlock>
+        </ScrollFade.Item>
+      </S.GroupBox>
+      <S.GroupBox>
+        <ScrollFade.Item $type={false} $itemIdx={itemIdx} $setItemIdx={setItemIdx}>
+          <MainBlock>
+            <img src={mainImg} alt='mainImg'/>
+          </MainBlock>
+        </ScrollFade.Item>
+      </S.GroupBox> */}
+
+
 
       {
         contents.map((item, index) => {
