@@ -5,39 +5,51 @@ import styled from 'styled-components';
 import S from './../styles/GlobalBlock';
 
 import portfolioData from './../Data/PortfolioData';
+import ScrollFade from '../ScrollFadeAnimation';
 
 function PortfolioPage() {
   commonFn.MoveToContentTopFn();
   
   const [content, setContent] = useState(portfolioData);
+  const [activeIdx, setActiveIdx] = useState();
 
   return(
     <>
       {
-        content.map((item, idx) => {
+        content.map((item, index) => {
           return (
             <S.GroupBox className='block'>
-              <S.ContentBox key={idx}>
+              <S.ContentBox key={index}>
                 <TitleBox>
-                  <Title><S.Red>{item.title}</S.Red></Title>
+                  <ScrollFade.Item $type={true} $index={index} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx}>
+                    <Title><S.Red>{item.title}</S.Red></Title>
+                  </ScrollFade.Item>
                   <SubTitle>
-                    {item.subTitle}
-                    <span>{item.notice}</span>
+                    <ScrollFade.Item $type={true} $index={index} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $delay='.6s'>
+                      {item.subTitle}
+                    </ScrollFade.Item>
+                    <ScrollFade.Item $type={true} $index={index} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $delay='.9s'>
+                      <span>{item.notice}</span>
+                    </ScrollFade.Item>
                   </SubTitle>
                 </TitleBox>
 
-                <ImgBlock>
-                  <S.ScrollCustom $hei='600px'>
-                    <FullImg src={item.fullImg}/>
-                  </S.ScrollCustom>
-                </ImgBlock>
+                <ScrollFade.Item $type={true} $index={index} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $delay='.9s'>
+                  <ImgBlock>
+                    <S.ScrollCustom $hei='500px'>
+                      <FullImg src={item.fullImg}/>
+                    </S.ScrollCustom>
+                  </ImgBlock>
+                </ScrollFade.Item>
 
-                <TextBlock>
-                  <BoldText><S.Red>사용언어</S.Red></BoldText> {item.language}
-                  <BoldText><S.Red>사용기능</S.Red></BoldText> {item.function}
-                  <BoldText><S.Red>기획의도</S.Red></BoldText> {item.intention}
-                  <BoldText><S.Red>제작후기</S.Red></BoldText> {item.review}
-                </TextBlock>
+                <ScrollFade.Item $type={true} $index={index} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $delay='1.2s'>
+                  <TextBlock>
+                    <BoldText><S.Red>Lorem Ipsum</S.Red></BoldText> {item.language}
+                    <BoldText><S.Red>Lorem Ipsum</S.Red></BoldText> {item.function}
+                    <BoldText><S.Red>Lorem Ipsum</S.Red></BoldText> {item.intention}
+                    <BoldText><S.Red>Lorem Ipsum</S.Red></BoldText> {item.review}
+                  </TextBlock>
+                </ScrollFade.Item>
               </S.ContentBox>
             </S.GroupBox>
           )

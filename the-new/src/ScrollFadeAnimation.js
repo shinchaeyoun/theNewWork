@@ -24,7 +24,6 @@ width: 100%;
   };
 `;
 
-
 /* 컴포넌트에서 받아와야할 것
 $type={true} $index={index} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} */
 function Item({children, ...rest}){
