@@ -4,6 +4,7 @@ import styled, { css, keyframes } from 'styled-components';
 import S from './styles/GlobalBlock';
 
 const MapAniItem = styled.div`
+  width: 100%;
   opacity: 0;
   animation: ${S.FadeOut} .5s forwards;
   
@@ -13,6 +14,7 @@ const MapAniItem = styled.div`
   };
   `;
 const SingleAniItem = styled.div`
+width: 100%;
   opacity: 0;
   animation: ${S.FadeOut} .5s forwards;
   
@@ -23,6 +25,8 @@ const SingleAniItem = styled.div`
 `;
 
 
+/* 컴포넌트에서 받아와야할 것
+$type={true} $index={index} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} */
 function Item({children, ...rest}){
   const windowHei = window.innerHeight / 1.4;
 
@@ -48,7 +52,7 @@ function Item({children, ...rest}){
       window.addEventListener('scroll',()=>{
         scrollAnimation();
       });
-      
+
       scrollAnimation();
     }, []);
 

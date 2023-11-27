@@ -83,18 +83,18 @@ function IntroducePage() {
         <S.Title>Hashtag Story</S.Title>
 
         <S.ContentBox $conwid='590px'>
-          <ScrollFade.Item $type={false}>
+          <ScrollFade.Item $type={false} $delay={delayTime*2.5+'s'}>
             <S.ImgBox $imgwid='100%' $imghei='400px'>
               <img src={greetingImg} alt='hashtagStory'/>
             </S.ImgBox>
           </ScrollFade.Item>
 
           <S.TextBox $txtwid='95%'>
-            <ScrollFade.Item $type={false} $delay={delayTime*2.5+'s'}>
+            <ScrollFade.Item $type={false} $delay={delayTime*3.5+'s'}>
               <S.SubTitle>#Hashtag</S.SubTitle>
             </ScrollFade.Item>
 
-            <ScrollFade.Item $type={false} $delay={delayTime*3.5+'s'}>
+            <ScrollFade.Item $type={false} $delay={delayTime*4.5+'s'}>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </ScrollFade.Item>
           </S.TextBox>
@@ -137,18 +137,18 @@ function IntroducePage() {
         </S.ContentBox>
 
         <S.ContentBox $conwid='590px'>
-          <ScrollFade.Item $type={false}>
+          <ScrollFade.Item $type={false} $delay={delayTime*2.5+'s'}>
             <S.ImgBox $imgwid='100%' $imghei='400px'>
               <img src={greetingImg} alt='hashtagStory'/>
             </S.ImgBox>
           </ScrollFade.Item>
 
           <S.TextBox $txtwid='95%'>
-            <ScrollFade.Item $type={false} $delay={delayTime*2.5+'s'}>
+            <ScrollFade.Item $type={false} $delay={delayTime*3.5+'s'}>
               <S.SubTitle>#Hashtag</S.SubTitle>
             </ScrollFade.Item>
             
-            <ScrollFade.Item $type={false} $delay={delayTime*3.5+'s'}>
+            <ScrollFade.Item $type={false} $delay={delayTime*4.5+'s'}>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </ScrollFade.Item>
           </S.TextBox>
