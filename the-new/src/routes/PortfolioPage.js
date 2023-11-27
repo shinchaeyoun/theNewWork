@@ -18,8 +18,8 @@ function PortfolioPage() {
       {
         content.map((item, index) => {
           return (
-            <S.GroupBox className='block'>
-              <S.ContentBox key={index}>
+            <S.GroupBox key={index} className='block'>
+              <S.ContentBox>
                 <TitleBox>
                   <ScrollFade.Item $type={true} $index={index} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx}>
                     <Title><S.Red>{item.title}</S.Red></Title>
