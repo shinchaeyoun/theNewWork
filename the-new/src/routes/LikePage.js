@@ -54,22 +54,7 @@ function LikePage() {
   commonFn.MoveToContentTopFn();
 
   const [travelTab, setTravelTab] = useState(0);
-  const [trackIdx, setTrackIdx] = useState(0);
-  const [playState, setPlayState] = useState(false);
-  const [sHoverWid, setShoverWid] = useState(0);
-  const [sBarWid, setSbarWid] = useState(0);
-  const [dotPos, setDotPos] = useState(0);
-  const [curMin, setCurMin] = useState('00');
-  const [curSec, setCurSec] = useState('00');
-  const [durMin, setDurMin] = useState('00');
-  const [durSec, setDurSec] = useState('00');
-
-  const sAreaRef = useRef();
-  const sHoverRef = useRef();
-  const sBar = useRef();
-  const dot = useRef();
-
-  const travelArr = [
+    const travelArr = [
     {
       name: 'Tab1',
       content: 'Tab menu one',
@@ -100,6 +85,21 @@ function LikePage() {
   };
 
   // player
+  const [trackIdx, setTrackIdx] = useState(0);
+  const [playState, setPlayState] = useState(false);
+  const [sHoverWid, setShoverWid] = useState(0);
+  const [sBarWid, setSbarWid] = useState(0);
+  const [dotPos, setDotPos] = useState(0);
+  const [curMin, setCurMin] = useState('00');
+  const [curSec, setCurSec] = useState('00');
+  const [durMin, setDurMin] = useState('00');
+  const [durSec, setDurSec] = useState('00');
+
+  const sAreaRef = useRef();
+  const sHoverRef = useRef();
+  const sBar = useRef();
+  const dot = useRef();
+
   const [audio, setAudio] = useState(new Audio(audioData.audioList[trackIdx].link));
   audio.loop = false;
   audio.volume = 0.2;

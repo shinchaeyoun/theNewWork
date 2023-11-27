@@ -28,9 +28,12 @@ function CareerPage() {
                 <ContentBox className={index === activeIdx || activeIdx > index ? 'active' : null}>
                   <Content $padding='0 10px 0 0'>
                     <Title>
-                      <S.Red>{item.title}</S.Red>
+                      {/* <S.Red>{item.title}</S.Red>
                       <SubTitle>{item.position}</SubTitle>
-                      <SubTitle>{item.date}</SubTitle>
+                      <SubTitle>{item.date}</SubTitle> */}
+                      <S.Red>Lorem Ipsum</S.Red>
+                      <SubTitle>Lorem Ipsum</SubTitle>
+                      <SubTitle>Lorem Ipsum</SubTitle>
                     </Title>
 
                     <S.TextBox $txtpd='10px 0 0'>
@@ -86,7 +89,7 @@ const ContentBox = styled(S.ContentBox)`
   animation: ${S.FadeOut} .5s forwards;
 
   
-  &.active {
+  /* &.active {
     opacity: 0;
     animation: ${S.Fade} .1s forwards;
 
@@ -111,7 +114,7 @@ const ContentBox = styled(S.ContentBox)`
         animation: ${S.Fade} .5s 1.5s forwards;
       }
     }
-  }
+  } */
 
   &:first-child {
     border-top: none;

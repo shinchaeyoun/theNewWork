@@ -54,7 +54,7 @@ function App() {
               <Route path="/contact" element={ <ContactPage /> } />
             </Routes>
 
-            {/* <Footer/> */}
+            <Footer/>
           </div>
       </AppContext.Provider>
     </ThemeProvider>

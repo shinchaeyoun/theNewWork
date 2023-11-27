@@ -22,11 +22,7 @@ const FadeOut = keyframes`
   }
 `
 
-const FadeItem = styled.div`
-  ${(props) => props.$isFade &&`
-    color: red;
-  `}
-`
+
 const Title = styled.div`
   display: block;
   width: 100%;
@@ -151,7 +147,6 @@ const GroupBox = styled.div`
 const S = {
   Fade,
   FadeOut,
-  FadeItem,
   Red,
   RedBg,
   ScrollCustom,
