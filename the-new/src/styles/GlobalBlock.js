@@ -20,6 +20,7 @@ const FadeOut = keyframes`
     opacity: 0;
     transform: translateY(20px);
   }
+
 `
 
 
@@ -144,6 +145,7 @@ const GroupBox = styled.div`
     border-top: none;
   }
 `
+
 const S = {
   Fade,
   FadeOut,

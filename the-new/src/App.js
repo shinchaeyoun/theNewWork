@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route, Link } from 'react-router-dom';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { colors, fonts, colorTheme, monoTheme } from './styles/theme.js';
+
 import Header from './components/Header/Header.js';
 import Footer from './components/Footer/Footer.js';
 import MainPage from './routes/MainPage.js';
@@ -25,6 +26,11 @@ const GlobalStyle = createGlobalStyle`
     .chomsky {
       font-family: ${({ theme }) => theme.fonts.chomsky};
     }
+
+    .SrOnly {
+      position: absolute;
+      left: -9999px;
+    }
   }
 `;
 
@@ -32,6 +38,7 @@ export const AppContext = createContext();
 
 function App() {
   const [isColorMode, setIsColorMode] = useState(false);
+
 
   const toggleColorMode = () => {
     setIsColorMode((prev) => !prev);
@@ -43,8 +50,12 @@ function App() {
       <AppContext.Provider value={{ isColorMode, toggleColorMode }}>
           <GlobalStyle toggleColorMode/>
           <div className="App">
-            {/* <Header /> */}
+            <Header />
 
+            {/* {isDesktop && <p style={{ background: "red" }}>Desktop</p>}
+            {isTablet && <p style={{ background: "blue" }}>Tablet</p>}
+            {isMobile && <p style={{ background: "green" }}>Mobile</p>} */}
+      
             <Routes>
               <Route path="/" element={<MainPage />} />
               <Route path="/introduce" element={ <IntroducePage /> } />

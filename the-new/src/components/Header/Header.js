@@ -2,10 +2,14 @@
 import React, { useState, useContext } from 'react';
 import { Routes, Route, Link , useNavigate, Outlet} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
+import { useMediaQuery } from "react-responsive";
+
 import styled from 'styled-components';
 import './Header.scss';
 import { AppContext } from '../../App';
 import S from '../../styles/GlobalBlock';
+
+// import {Desktop, Tablet, Mobile, Default } from '../../styles/mediaQuery';
 
 function Header() {
   const { isColorMode, toggleColorMode } = useContext(AppContext);
@@ -13,6 +17,7 @@ function Header() {
   const dispatch = useDispatch();
   let categorys = useSelector((state) => state.categorys);
   let [category, setCategory] = useState(categorys);
+
 
   let date,
       year,
@@ -36,8 +41,59 @@ function Header() {
   };
 
 
+  
+
+  // const isDesktop = useMediaQuery({
+  //   query: '(min-width: 1024px)',
+  // });
+  // const isTablet = useMediaQuery({
+  //   query: '(min-width: 768px) and (max-width: 1023px)',
+  // });
+  // const isMobile = useMediaQuery({
+  //   query: '(max-width: 767px)'
+  // });
+  
+const Desktop = ({children}) => {
+  const isDesktop = useMediaQuery({ minWidth: 1024 });
+  return isDesktop ? children : null;
+};
+
+const Tablet = ({children}) => {
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+  return isTablet ? children : null;
+};
+
+const Mobile = ({children}) => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  return isMobile ? children : null;
+};
+
+// mobile이 아닐 때만 출력되는 컴포넌트
+const Default = ({children}) => {
+  const isNotMobile = useMediaQuery({ minWidth: 768 });
+  return isNotMobile ? children : null;
+};
+
+
+
   return(
     <header>
+      <Desktop>
+        <p>Desktop or laptop</p>
+      </Desktop>
+
+      <Tablet>
+        <p>Tablet</p>
+      </Tablet>
+
+      <Mobile>
+        <p>Mobile</p>
+      </Mobile>
+
+      
+
+
+
       <div className='header_container'>
         <div className='header_content'>
           <div className='date'>
@@ -64,6 +120,7 @@ function Header() {
           </div>
         </div>
         
+        <Default>
         <div className="header_cate">
           <ul>
             {
@@ -78,6 +135,7 @@ function Header() {
             }
           </ul>
         </div>
+      </Default>
       </div>
     </header>
   )

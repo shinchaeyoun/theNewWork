@@ -2,6 +2,9 @@
 import React from 'react';
 import { useLocation } from 'react-router';
 import * as commonFn from './../CommonFunction';
+import { useMediaQuery } from "react-responsive";
+import styled from 'styled-components';
+
 
 import './../styles/contact.scss'
 import S from '../styles/GlobalBlock';
@@ -9,13 +12,18 @@ import S from '../styles/GlobalBlock';
 import ScrollFade from '../ScrollFadeAnimation';
 
 
+const ContentBox = styled(S.ContentBox)`
+  flex-direction: row;
+
+
+`
+
 function ContactPage() {
   <script data-cfasync="false" type="text/javascript"src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
 
-  console.log('?? aw');
   return(
     <>
-      <S.ContentBox $flexD='row'>
+      <ContentBox>
         <div className="submit_container">
           <form
             action="https://script.google.com/macros/s/AKfycbzWzazX8wefcET9ZB6aJdDUsB7byML__q206U8vhsj_q0O6VKrez5WNXQLHAxn8X5eFgg/exec"
@@ -25,20 +33,20 @@ function ContactPage() {
             <div className="form-elements">
               <ScrollFade.Item $type={false}>
                 <fieldset className="pure-group">
-                  <label className="sr-only" htmlFor="name">Name</label>
+                  <label className="SrOnly" htmlFor="name">Name</label>
                   <input type="text" id="name" name="name" autoComplete="off" placeholder="Enter your name" />
                 </fieldset>
               </ScrollFade.Item>
               <ScrollFade.Item $type={false} $delay='.6s'>
                 <fieldset className="pure-group">
-                  <label className="sr-only" htmlFor="email">Email</label>
+                  <label className="SrOnly" htmlFor="email">Email</label>
                   <input type="email" id="email" name="email" autoComplete="off"
                     placeholder="Enter a valid emali address" />
                 </fieldset>
               </ScrollFade.Item>
               <ScrollFade.Item $type={false} $delay='.9s'>
                 <fieldset className="pure-group">
-                  <label className="sr-only" htmlFor="message">Message</label>
+                  <label className="SrOnly" htmlFor="message">Message</label>
                   <textarea name="message" id="message" cols="30" rows="10" autoComplete="off"
                     placeholder="Enter your message"></textarea>
                 </fieldset>
@@ -85,8 +93,7 @@ function ContactPage() {
             </li>
           </ul>
         </div>
-      </S.ContentBox>
-
+      </ContentBox>
     </>
   )
 }

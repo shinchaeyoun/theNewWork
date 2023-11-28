@@ -45,3 +45,9 @@ AKfycbz9idHCAUlUGLGFcFJrz6tUr9IY8tN1q9bcBkjvNi5bBTA5UwZIP_KDEgo1qyo2SCCSvw
 -------
 single fade animation item
 
+
+
+===========
+반응형
+
+기기별로의 다른 컴포넌트를 만들어야하는건가
