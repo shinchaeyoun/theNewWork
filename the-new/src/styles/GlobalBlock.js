@@ -47,7 +47,15 @@ const Red = styled.span`
   color: ${({ theme }) => theme.pointColor};
 `
 const RedBg = styled.span`
-  background-color: ${({ theme }) => theme.pointColor || theme.subGray};
+  background-color: ${({ theme }) => theme.pointColor};
+`
+const RedButton = styled.button`
+  width: ${props => props.$wid || '100px'};
+  height: ${props => props.$hei || '30px'};
+  border: ${props => props.$bd || 'none'};
+  border-radius: ${props => props.bdrs || '25px'};
+  background-color: ${({theme}) => theme.btnColor};
+  color: ${({theme}) => theme.bgColor};
 `
 const ScrollCustom = styled.div`
   height: ${props => props.$hei};
@@ -146,11 +154,17 @@ const GroupBox = styled.div`
   }
 `
 
+const SrOnly = styled.label`
+  position: absolute;
+	left: -9999px;
+`
+
 const S = {
   Fade,
   FadeOut,
   Red,
   RedBg,
+  RedButton,
   ScrollCustom,
   Title,
   SubTitle,
@@ -160,6 +174,7 @@ const S = {
   ContentBox,
   TextContentBox,
   GroupBox,
+  SrOnly,
 }
 
 export default S;

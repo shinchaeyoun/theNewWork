@@ -61,19 +61,17 @@ function Header() {
     });
   };
 
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1024px)',
-  });
-  const isTablet = useMediaQuery({
-    query: '(min-width: 768px) and (max-width: 1023px)',
-  });
-  const isMobile = useMediaQuery({
-    query: '(max-width: 767px)'
-  });
+  // const isDesktop = useMediaQuery({
+  //   query: '(min-width: 1024px)',
+  // });
+  // const isTablet = useMediaQuery({
+  //   query: '(min-width: 768px) and (max-width: 1023px)',
+  // });
+  // const isMobile = useMediaQuery({
+  //   query: '(max-width: 767px)'
+  // });
   
   
-
- 
   
 // const Desktop = ({children}) => {
 //   const isDesktop = useMediaQuery({ minWidth: 1024 });
@@ -100,7 +98,7 @@ function Header() {
 
   return(
     <header>
-      <Test isDesktop={isDesktop} isTablet={isTablet} isMobile={isMobile}>Test</Test>
+      {/* <Test $isDesktop={isDesktop} $isTablet={isTablet} $isMobile={isMobile}>Test</Test> */}
       {/* <Desktop>
         <p>Desktop or laptop</p>
       </Desktop>
@@ -139,7 +137,7 @@ function Header() {
           </div>
         </div>
         
-        {/* <Default>
+        {/* <Default> */}
         <div className="header_cate">
           <ul>
             {
@@ -154,7 +152,7 @@ function Header() {
             }
           </ul>
         </div>
-      </Default> */}
+      {/* </Default> */}
       </div>
     </header>
   )
