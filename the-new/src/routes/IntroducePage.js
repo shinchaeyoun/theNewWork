@@ -3,11 +3,11 @@ import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import * as commonFn from './../CommonFunction';
 import S from './../styles/GlobalBlock';
-
-import greetingImg from './../img/introduce/greeting_image.png'
 import ScrollFade from '../ScrollFadeAnimation';
 
 import Content from './../Data/IntroduceData';
+import greetingImg from './../img/introduce/greeting_image.png'
+
 
 function IntroducePage() {
   commonFn.MoveToContentTopFn();
@@ -163,7 +163,6 @@ function IntroducePage() {
           <ScrollFade.Item $type={false}>
             <S.SubTitle>Favorite Message</S.SubTitle>
           </ScrollFade.Item>
-
 
           <p>
             <ScrollFade.Item $type={false} $delay={delayTime*2+'s'}>

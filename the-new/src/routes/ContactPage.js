@@ -11,7 +11,6 @@ import './../styles/contact.scss'
 import qrImg from '../img/kakao_qr.png'
 
 
-
 const ContentBox = styled(S.ContentBox)`
   flex-direction: row;
 `

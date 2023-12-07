@@ -4,66 +4,58 @@ import * as commonFn from './../CommonFunction';
 import styled from 'styled-components';
 import S from './../styles/GlobalBlock';
 import ScrollFade from '../ScrollFadeAnimation';
-
 import CareerDate from './../Data/CareerData';
-import './style.scss'
-
-const FadeItemSpan = styled(ScrollFade.Item)`
-  width: 10px;
-`
 
 function CareerPage() {
   commonFn.MoveToContentTopFn();
-
-
-  const [content, setContent ] = useState(CareerDate);
-
+  
+  const [content, setContent] = useState(CareerDate);
   const [activeIdx, setActiveIdx] = useState(0);
 
-  return(
+  return (
     <>
       {
-        content.map((item, index)=>{
+        content.map((item, index) => {
           return (
             <S.GroupBox key={index} className='block'>
-                <ContentBox className={index === activeIdx || activeIdx > index ? 'active' : null}>
-                  <Content $padding='0 10px 0 0'>
-                    <Title>
-                      <ScrollFade.Item $type={true} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $index={index}>
-                        <S.Red>Lorem Ipsum</S.Red>
-                        {/* <S.Red>{item.title}</S.Red> */}
-                      </ScrollFade.Item>
-                      <ScrollFade.Item $type={true} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $index={index} $delay='.4s'>
-                        <SubTitle>Lorem Ipsum</SubTitle>
-                        {/* <SubTitle>{item.position}</SubTitle> */}
-                      </ScrollFade.Item>
-                      <ScrollFade.Item $type={true} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $index={index} $delay='.5s'>
-                        <SubTitle>Lorem Ipsum</SubTitle>
-                        {/* <SubTitle>{item.date}</SubTitle> */}
-                      </ScrollFade.Item>
-                    </Title>
-
-                    <ScrollFade.Item $type={true} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $index={index} $delay='.6s'>
-                      <S.TextBox $txtpd='10px 0 0'>
-                        {item.mainStory}
-                      </S.TextBox>
+              <ContentBox className={index === activeIdx || activeIdx > index ? 'active' : null}>
+                <Content $padding='0 10px 0 0'>
+                  <Title>
+                    <ScrollFade.Item $type={true} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $index={index}>
+                      <S.Red>Lorem Ipsum</S.Red>
+                      {/* <S.Red>{item.title}</S.Red> */}
                     </ScrollFade.Item>
-                  </Content>
-
-                  <Content $padding='0 0 0 10px'>
-                    <ScrollFade.Item $type={true} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $index={index} $delay='.9s'>
-                      <SideTitle>
-                        <S.Red>{item.subTitle}</S.Red>
-                      </SideTitle>
+                    <ScrollFade.Item $type={true} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $index={index} $delay='.4s'>
+                      <SubTitle>Lorem Ipsum</SubTitle>
+                      {/* <SubTitle>{item.position}</SubTitle> */}
                     </ScrollFade.Item>
-
-                    <ScrollFade.Item $type={true} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $index={index} $delay='1.2s'>
-                      <S.TextBox $txtpd='10px 0 0'>
-                        {item.subStory}
-                      </S.TextBox>
+                    <ScrollFade.Item $type={true} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $index={index} $delay='.5s'>
+                      <SubTitle>Lorem Ipsum</SubTitle>
+                      {/* <SubTitle>{item.date}</SubTitle> */}
                     </ScrollFade.Item>
-                  </Content>
-                </ContentBox>
+                  </Title>
+
+                  <ScrollFade.Item $type={true} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $index={index} $delay='.6s'>
+                    <S.TextBox $txtpd='10px 0 0'>
+                      {item.mainStory}
+                    </S.TextBox>
+                  </ScrollFade.Item>
+                </Content>
+
+                <Content $padding='0 0 0 10px'>
+                  <ScrollFade.Item $type={true} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $index={index} $delay='.9s'>
+                    <SideTitle>
+                      <S.Red>{item.subTitle}</S.Red>
+                    </SideTitle>
+                  </ScrollFade.Item>
+
+                  <ScrollFade.Item $type={true} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $index={index} $delay='1.2s'>
+                    <S.TextBox $txtpd='10px 0 0'>
+                      {item.subStory}
+                    </S.TextBox>
+                  </ScrollFade.Item>
+                </Content>
+              </ContentBox>
             </S.GroupBox>
           )
         })
@@ -81,7 +73,7 @@ const SubTitle = styled.span`
   display: inline-block;
   margin-left: 10px;
   font-size: 14px;
-  color:${({theme}) => theme.colors.subGray};
+  color:${({ theme }) => theme.colors.subGray};
 `
 const Title = styled(S.SubTitle)`
   margin-bottom: 10px;
