@@ -1,3 +1,5 @@
+** 현재 프로젝트 완료하면 레포지토리 새로 만들어서 build 하자! **
+
 store의 state를 변경할 때 dispatch 사용
 
 navigation으로 보낸 state은 location으로 받아서 사용
@@ -54,3 +56,5 @@ single fade animation item
 
 react-responsive 사용 자체는 기기별로 다른 컴포넌트를 보여줄 때 사용하고
 하나의 컴포넌트를 반응형으로 사용하려면 미디어쿼리 밖에 없을 것같은데
+
+
