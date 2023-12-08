@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1f3193a7.css",
+    "main.js": "/static/js/main.a0195e6b.js",
+    "static/js/787.c5528d8f.chunk.js": "/static/js/787.c5528d8f.chunk.js",
+    "static/media/mmca_fullpage.png": "/static/media/mmca_fullpage.15fd8a55e0b36ea7347c.png",
+    "static/media/london_fullpage.png": "/static/media/london_fullpage.011125c4f0d4722b0efd.png",
+    "static/media/the_shins_work_space.png": "/static/media/the_shins_work_space.8aadcd0981e1c3c39aac.png",
+    "static/media/eigenhain_fullpage.png": "/static/media/eigenhain_fullpage.bf010b2ac826e78a9b54.png",
+    "static/media/8.mp3": "/static/media/8.4826d9fba99edd02834e.mp3",
+    "static/media/3.mp3": "/static/media/3.59fafcc56427a87f24e5.mp3",
+    "static/media/1.mp3": "/static/media/1.73f60be510744483c96c.mp3",
+    "static/media/5.mp3": "/static/media/5.cd9c63644bb927fab241.mp3",
+    "static/media/6.mp3": "/static/media/6.f8dee08851d773abeb76.mp3",
+    "static/media/2.mp3": "/static/media/2.10886310a0e823069ad2.mp3",
+    "static/media/10.mp3": "/static/media/10.c2575254dcca132e549f.mp3",
+    "static/media/bg.jpg": "/static/media/bg.7189a57d1fa5d2c4d04d.jpg",
+    "static/media/9.mp3": "/static/media/9.07f6e11534d2b5bc3fc2.mp3",
+    "static/media/7.mp3": "/static/media/7.0d8970c5c9a43a7270b6.mp3",
+    "static/media/4.mp3": "/static/media/4.31b0df0714728ca0eca1.mp3",
+    "static/media/sony_fullpage.png": "/static/media/sony_fullpage.b29102e3b793560fb0f3.png",
+    "static/media/seed_fullpage.png": "/static/media/seed_fullpage.7acf86e6345e547600ea.png",
+    "static/media/appydev_vue_fullpage.png": "/static/media/appydev_vue_fullpage.3417f333da844695c8ef.png",
+    "static/media/bgNone.jpg": "/static/media/bgNone.e341cf0f8c55ecc68e8d.jpg",
+    "static/media/Chomsky.otf": "/static/media/Chomsky.7c2ce2ca847ebba92ad0.otf",
+    "static/media/kakao_qr.png": "/static/media/kakao_qr.3c55ddb000f23924ff08.png",
+    "static/media/canvas_fullpage.png": "/static/media/canvas_fullpage.00c2fd22feff600c7c88.png",
+    "static/media/todoList_fullpage.png": "/static/media/todoList_fullpage.571eac4097ece6f2b43c.png",
+    "index.html": "/index.html",
+    "main.1f3193a7.css.map": "/static/css/main.1f3193a7.css.map",
+    "main.a0195e6b.js.map": "/static/js/main.a0195e6b.js.map",
+    "787.c5528d8f.chunk.js.map": "/static/js/787.c5528d8f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f3193a7.css",
+    "static/js/main.a0195e6b.js"
+  ]
+}
