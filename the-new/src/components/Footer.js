@@ -3,9 +3,9 @@ import React, { useState, useContext } from 'react';
 import { Routes, Route, Link , useNavigate, Outlet} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { AppContext } from '../../App';
-import { gotoContentTop,changeTopArr } from './../../store';
-import S from '../../styles/GlobalBlock';
+import { AppContext } from '../App';
+import { gotoContentTop,changeTopArr } from '../store';
+import S from '../styles/GlobalBlock';
 
 
 const FooterWrap = styled.footer`

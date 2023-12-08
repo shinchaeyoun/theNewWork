@@ -7,8 +7,8 @@ import { useMediaQuery } from "react-responsive";
 import styled, { css, keyframes } from 'styled-components';
 
 import './Header.scss';
-import { AppContext } from '../../App';
-import S from '../../styles/GlobalBlock';
+import { AppContext } from '../App';
+import S from '../styles/GlobalBlock';
 
 // import {Desktop, Tablet, Mobile, Default } from '../../styles/mediaQuery';
 
