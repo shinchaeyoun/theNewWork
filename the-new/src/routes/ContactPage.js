@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import S from '../styles/GlobalBlock';
 import './../styles/contact.scss'
 
-import qrImg from '../img/kakao_qr.png'
+import qrImg from './../img/kakao_qr.png'
 
 
 const ContentBox = styled(S.ContentBox)`

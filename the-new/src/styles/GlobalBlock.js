@@ -106,6 +106,7 @@ const ContentBox = styled.div`
 
   margin-bottom: ${props => props.$mb || '30px'};
   width: ${props => props.$conwid || '100%'};
+  height: ${props => props.$conhei};
 
   ${props => props.$border && css`
     border-top: 1px solid ${({theme}) => theme.colors.lightGray};

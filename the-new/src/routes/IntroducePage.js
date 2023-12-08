@@ -8,6 +8,13 @@ import ScrollFade from '../ScrollFadeAnimation';
 import Content from './../Data/IntroduceData';
 import greetingImg from './../img/introduce/greeting_image.png'
 
+const HashtagBox = styled(S.ContentBox)`
+  justify-content: flex-start;
+
+  ${S.TextBox}{
+    margin-top: 30px;
+  }
+`
 
 function IntroducePage() {
   commonFn.MoveToContentTopFn();
@@ -36,7 +43,6 @@ function IntroducePage() {
           <ScrollFade.Item $type={false} $delay={delayTime*4+'s'}>
             <p><span>Lorem</span>Ipsum</p>
           </ScrollFade.Item>
-          
         </S.TextContentBox>
 
         <S.ContentBox $conwid='500px'>
@@ -82,7 +88,7 @@ function IntroducePage() {
       <S.GroupBox className='block'>
         <S.Title>Hashtag Story</S.Title>
 
-        <S.ContentBox $conwid='590px'>
+        <HashtagBox $mb='50px' $conwid='590px'>
           <ScrollFade.Item $type={false} $delay={delayTime*2.5+'s'}>
             <S.ImgBox $imgwid='100%' $imghei='400px'>
               <img src={greetingImg} alt='hashtagStory'/>
@@ -98,9 +104,9 @@ function IntroducePage() {
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </ScrollFade.Item>
           </S.TextBox>
-        </S.ContentBox>
+        </HashtagBox>
 
-        <S.ContentBox $conwid='390px'>
+        <HashtagBox $conwid='390px'>
           <ScrollFade.Item $type={false}>
             <S.ImgBox $imgwid='100%' $imghei='300px'>
               <img src={greetingImg} alt='hashtagStory'/>
@@ -116,9 +122,9 @@ function IntroducePage() {
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </ScrollFade.Item>
           </S.TextBox>
-        </S.ContentBox>
+        </HashtagBox>
 
-        <S.ContentBox $conwid='390px'>
+        <HashtagBox $conwid='390px'>
           <ScrollFade.Item $type={false}>
             <S.ImgBox $imgwid='100%' $imghei='300px'>
               <img src={greetingImg} alt='hashtagStory'/>
@@ -134,9 +140,9 @@ function IntroducePage() {
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </ScrollFade.Item>
           </S.TextBox>
-        </S.ContentBox>
+        </HashtagBox>
 
-        <S.ContentBox $conwid='590px'>
+        <HashtagBox $conwid='590px' $conhei='570px'>
           <ScrollFade.Item $type={false} $delay={delayTime*2.5+'s'}>
             <S.ImgBox $imgwid='100%' $imghei='400px'>
               <img src={greetingImg} alt='hashtagStory'/>
@@ -152,7 +158,7 @@ function IntroducePage() {
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </ScrollFade.Item>
           </S.TextBox>
-        </S.ContentBox>
+        </HashtagBox>
 
       </S.GroupBox>
 
@@ -164,15 +170,13 @@ function IntroducePage() {
             <S.SubTitle>Favorite Message</S.SubTitle>
           </ScrollFade.Item>
 
-          <p>
-            <ScrollFade.Item $type={false} $delay={delayTime*2+'s'}>
-              <span>Lorem ipsum</span>
-            </ScrollFade.Item>
+          <ScrollFade.Item $type={false} $delay={delayTime*2+'s'}>
+            <span>Lorem ipsum</span>
+          </ScrollFade.Item>
 
-            <ScrollFade.Item $type={false} $delay={delayTime*3+'s'}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </ScrollFade.Item>
-          </p>
+          <ScrollFade.Item $type={false} $delay={delayTime*3+'s'}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </ScrollFade.Item>
         </S.TextContentBox>
         
         <S.TextContentBox $txtconwid='475px;' $spanfull={true}>
@@ -180,15 +184,13 @@ function IntroducePage() {
             <S.SubTitle>Motto of Life</S.SubTitle>
           </ScrollFade.Item>
 
-          <p>
-            <ScrollFade.Item $type={false} $delay={delayTime*5+'s'}>
-              <span >Lorem ipsum</span>
-            </ScrollFade.Item>
+          <ScrollFade.Item $type={false} $delay={delayTime*5+'s'}>
+            <span >Lorem ipsum</span>
+          </ScrollFade.Item>
 
-            <ScrollFade.Item $type={false} $delay={delayTime*6+'s'}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </ScrollFade.Item>
-          </p>
+          <ScrollFade.Item $type={false} $delay={delayTime*6+'s'}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </ScrollFade.Item>
         </S.TextContentBox>
       </S.GroupBox>
     </>
