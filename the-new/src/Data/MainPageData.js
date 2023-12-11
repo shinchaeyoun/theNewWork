@@ -8,28 +8,33 @@ import contactImg from './../img/main/mainImg.png';
 const MainData = [
   {
     title: "Introduce",
-    explanation: "Hi",
-    imgSrc: introduceImg
+    explanation: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    imgSrc: introduceImg,
+    type: 'img',
   },
   {
     title: "Like",
-    explanation: "Hi",
-    imgSrc: likeImg
+    explanation: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    imgSrc: likeImg,
+    type: 'img',
   },
   {
     title: "Career",
-    explanation: "Hi",
-    imgSrc: careerImg
+    explanation: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    imgSrc: careerImg,
+    type: 'text',
   },
   {
     title: "Portfolio",
-    explanation: "Hi",
-    imgSrc: portfolioImg
+    explanation: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    imgSrc: portfolioImg,
+    type: 'text',
   },
   {
     title: "Contact",
-    explanation: "Hi",
-    imgSrc: contactImg
+    explanation: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    imgSrc: contactImg,
+    type: 'text',
   },
 ];
 

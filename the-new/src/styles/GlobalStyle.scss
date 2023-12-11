@@ -1,0 +1,8 @@
+@import './variables.scss';
+
+header {
+  .active {
+    color: $pointColor;
+    font-weight: bold;
+  };
+};

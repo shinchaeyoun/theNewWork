@@ -15,7 +15,6 @@ const HashtagBox = styled(S.ContentBox)`
     margin-top: 30px;
   }
 `
-
 function IntroducePage() {
   commonFn.MoveToContentTopFn();
 

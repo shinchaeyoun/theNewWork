@@ -11,27 +11,44 @@ import './../styles/contact.scss'
 import qrImg from './../img/kakao_qr.png'
 
 
-const ContentBox = styled(S.ContentBox)`
-  flex-direction: row;
-`
-const GroupBox = styled(S.GroupBox)`
-  align-items: center;
-  justify-content: center;
 
-  margin: 50px 0;
-  width: 50%; height: 420px;
 
-  &:first-child {
-    border-right: 1px solid ${props => props.theme.colors.gray};
-  }
-  &:last-child {text-align: center;}
-`
 const Title = styled(S.Title)`
   margin-bottom: 15px;
 `
-const Form = styled.form`
-  width: 100%;
+const InfoVal = styled.a`
+
 `
+const InfoType = styled.p`
+  font-weight: 600;
+`
+
+const Li = styled.li`
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+
+  ${S.ImgBox} {
+    position: absolute;
+    top: 40px; left: 50%;
+    transform: translateX(-50%);
+  }
+`
+
+const RedButton = styled(S.RedButton)`
+  margin-top: 10px;
+`
+const SandingMsg = styled.div`
+  padding-top: 100px;
+  width: 100%;
+  height: 250px;
+  font-size: 15px;
+  font-family: ${props => props.theme.fonts.outfit};
+  font-weight: 600;
+  text-align: center;
+  box-sizing: border-box;
+`
+
 const Input = styled.input`
   margin-bottom: 20px;
   padding: ${props => props.$pad || '2px 10px'};
@@ -48,39 +65,47 @@ const Input = styled.input`
     color: ${props => props.theme.colors.gray};
   }
 `
-const SandingMsg = styled.div`
-  padding-top: 100px;
+const Form = styled.form`
   width: 100%;
-  height: 250px;
-  font-size: 15px;
-  font-family: ${props => props.theme.fonts.outfit};
-  font-weight: 600;
-  text-align: center;
-  box-sizing: border-box;
 `
-const RedButton = styled(S.RedButton)`
-  margin-top: 10px;
-`
+const GroupBox = styled(S.GroupBox)`
+  align-items: center;
+  justify-content: center;
 
-const Ul = styled.ul`
-`
-const Li = styled.li`
-  margin-bottom: 30px;
-  text-align: center;
-  position: relative;
+  margin: 50px 0;
+  width: 50%; height: 420px;
 
-  ${S.ImgBox} {
-    position: absolute;
-    top: 40px; left: 50%;
-    transform: translateX(-50%);
+  &:first-child {
+    border-right: 1px solid ${props => props.theme.colors.gray};
   }
+  &:last-child {text-align: center;}
 `
-const InfoType = styled.p`
-  font-weight: 600;
-`
-const InfoVal = styled.a`
-
-
+const ContentBox = styled(S.ContentBox)`
+  flex-direction: row;
+  margin-bottom: 0;
+  
+  @media ${props => props.theme.media.mobile} {
+    flex-direction: column;
+    overflow-x: hidden;
+    
+    ${Title}{
+      width: 90%;
+      margin: 0 auto;
+    }
+    ${GroupBox}{
+      margin: 0;
+      padding: 80px 0;
+      width: 100%;
+        &:first-child {
+          border-right: none;
+          border-bottom: 1px solid ${props => props.theme.colors.gray};
+        }
+      
+      ${Form}{
+        text-align: center;
+      }
+    }
+  }
 `
 
 function ContactPage() {
@@ -91,6 +116,13 @@ function ContactPage() {
     <>
       <ContentBox>
         <GroupBox>
+          {
+            !isSanding &&
+            <ScrollFade.Item $type={false}>
+              <Title>Title</Title>
+            </ScrollFade.Item>
+          }
+
           <Form action="https://script.google.com/macros/s/AKfycbxNDoWfUMMc3rz0_GbwZl9j8Q5MJ0C4rmHvDZWTxFaDIZUUs8NLfBXTMwXv3xQbP-XOZA/exec"
             className="gform pure-form pure-form-stacked" method="POST" data-email="jun29182877@gmail.com" target="_blank">
             {
@@ -103,9 +135,7 @@ function ContactPage() {
                 </SandingMsg>
                 :
                 <>
-                  <ScrollFade.Item $type={false}>
-                    <Title>Title</Title>
-                  </ScrollFade.Item>
+                  
 
                   <div className="form-elements">
                     <ScrollFade.Item $type={false}>
@@ -126,7 +156,7 @@ function ContactPage() {
                     <ScrollFade.Item $type={false} $delay='.9s'>
                       <fieldset className="pure-group">
                         <S.SrOnly htmlFor="message">Message</S.SrOnly>
-                        <Input $pad='10px' $hei='200px' as="textarea" name="message" id="message" cols="30" rows="10" autoComplete="off" placeholder="Enter your message"></Input>
+                        <Input as="textarea" $pad='10px' $hei='200px' name="message" id="message" cols="30" rows="10" autoComplete="off" placeholder="Enter your message"></Input>
                       </fieldset>
                     </ScrollFade.Item>
 
@@ -140,7 +170,7 @@ function ContactPage() {
         </GroupBox>
 
         <GroupBox>
-          <Ul>
+          <ul>
             <Li>
               <ScrollFade.Item $type={false} $delay='.6s'>
                 <InfoType>phone</InfoType>
@@ -175,7 +205,7 @@ function ContactPage() {
                 }
               </ScrollFade.Item>
             </Li>
-          </Ul>
+          </ul>
         </GroupBox>
       </ContentBox>
     </>

@@ -55,7 +55,8 @@ const RedButton = styled.button`
   border: ${props => props.$bd || 'none'};
   border-radius: ${props => props.bdrs || '25px'};
   background-color: ${({theme}) => theme.btnColor};
-  color: ${({theme}) => theme.bgColor};
+  /* color: ${({theme}) => theme.bgColor}; */
+  color: #fff;
 `
 const ScrollCustom = styled.div`
   height: ${props => props.$hei};

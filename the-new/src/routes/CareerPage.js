@@ -6,6 +6,64 @@ import S from './../styles/GlobalBlock';
 import ScrollFade from '../ScrollFadeAnimation';
 import CareerDate from './../Data/CareerData';
 
+
+const SideTitle = styled(S.SubTitle)`
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: 600;
+`
+const SubTitle = styled.span`
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 14px;
+  color:${({ theme }) => theme.colors.subGray};
+`
+const Title = styled(S.SubTitle)`
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600px;
+  text-align: left;
+`
+const Content = styled.div`
+  width: 50%;
+  padding: ${props => props.$padding};
+`
+const ContentBox = styled(S.ContentBox)`
+  flex-direction: row;
+  padding: 30px 0;
+  transition: .5s;
+
+  &:first-child {
+    border-top: none;
+  }
+
+  @media ${props => props.theme.media.mobile} {
+    flex-direction: column;
+
+    ${Content}{
+      padding: 0 20px;
+      width: 100%;
+
+      box-sizing: border-box;
+
+      ${Title}{
+        display: flex;
+        ${SubTitle} {
+          font-size: 12px;
+        }
+      }
+      ${S.TextBox}{
+        width: 100%;
+      }
+
+      &:nth-child(1) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+`
+
 function CareerPage() {
   commonFn.MoveToContentTopFn();
   
@@ -64,35 +122,5 @@ function CareerPage() {
   )
 }
 
-const SideTitle = styled(S.SubTitle)`
-  text-align: left;
-  margin-bottom: 10px;
-  font-weight: 600;
-`
-const SubTitle = styled.span`
-  display: inline-block;
-  margin-left: 10px;
-  font-size: 14px;
-  color:${({ theme }) => theme.colors.subGray};
-`
-const Title = styled(S.SubTitle)`
-  margin-bottom: 10px;
-  font-size: 20px;
-  font-weight: 600px;
-  text-align: left;
-`
-const Content = styled.div`
-  width: 50%;
-  padding: ${props => props.$padding};
-`
-const ContentBox = styled(S.ContentBox)`
-  flex-direction: row;
-  padding: 30px 0;
-  transition: .5s;
-
-  &:first-child {
-    border-top: none;
-  }
-`
 
 export default CareerPage;

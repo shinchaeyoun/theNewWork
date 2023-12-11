@@ -4,7 +4,7 @@ import styled, { css, keyframes } from 'styled-components';
 import S from './styles/GlobalBlock';
 
 const MapAniItem = styled.div`
-  width: 100%;
+  /* width: 100%; */
   opacity: 0;
   animation: ${S.FadeOut} .5s forwards;
   
@@ -14,7 +14,7 @@ const MapAniItem = styled.div`
   };
   `;
 const SingleAniItem = styled.div`
-width: 100%;
+  width: 100%;
   opacity: 0;
   animation: ${S.FadeOut} .5s forwards;
   

@@ -1,5 +1,5 @@
 /* eslint-disable */
-import './App.css';
+// import './App.css';
 import React, { useState, createContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route, Link } from 'react-router-dom';
@@ -7,7 +7,7 @@ import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { colors, fonts, colorTheme, monoTheme } from './styles/theme.js';
 
 import Header from './components/Header.js';
-import Footer from './components/Footer/Footer.js';
+import Footer from './components/Footer.js';
 import MainPage from './routes/MainPage.js';
 import IntroducePage from './routes/IntroducePage.js';
 import LikePage from './routes/LikePage.js';
@@ -34,6 +34,20 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const Wrap = styled.div`
+  width: 1000px;
+  margin: 0 auto;
+
+  @media ${props => props.theme.media.desktop} {
+
+  }
+  @media ${props => props.theme.media.tablet} {
+    width: 100%;
+  }
+  @media ${props => props.theme.media.mobile} {
+  }
+`
+
 export const AppContext = createContext();
 
 function App() {
@@ -49,7 +63,7 @@ function App() {
      
       <AppContext.Provider value={{ isColorMode, toggleColorMode }}>
           <GlobalStyle toggleColorMode/>
-          <div className="App">
+          <Wrap>
             <Header />
 
             {/* {isDesktop && <p style={{ background: "red" }}>Desktop</p>}
@@ -66,7 +80,7 @@ function App() {
             </Routes>
 
             <Footer/>
-          </div>
+          </Wrap>
       </AppContext.Provider>
     </ThemeProvider>
   );

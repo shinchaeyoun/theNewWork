@@ -9,6 +9,8 @@ import appydevReactImg from './../img/portfolio/appydev_vue_fullpage.png';
 import todoListImg from './../img/portfolio/todoList_fullpage.png';
 import theShinsWorkSpaceImg from './../img/portfolio/the_shins_work_space.png';
 
+
+
 const portfolioData = [
   {
     title: "Eigenhain",
@@ -18,7 +20,8 @@ const portfolioData = [
     language: 'Lorem Ipsum is simply',
     function: 'Lorem Ipsum is simply dummy text',
     intention: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been',
-    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    url: 'https://shinchaeyoun.github.io/shin/eigenhain_SHIN/index.html',
   },
   {
     title: "London",
@@ -28,7 +31,8 @@ const portfolioData = [
     language: 'Lorem Ipsum is simply',
     function: 'Lorem Ipsum is simply dummy text',
     intention: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been',
-    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    url: 'https://shinchaeyoun.github.io/shin/london_SHIN/html/index.html',
   },
   {
     title: "MMCA",
@@ -38,7 +42,8 @@ const portfolioData = [
     language: 'Lorem Ipsum is simply',
     function: 'Lorem Ipsum is simply dummy text',
     intention: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been',
-    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    url: 'https://shinchaeyoun.github.io/shin/mmca_SHIN/index.html',
   },
   {
     title: "Seed",
@@ -48,7 +53,8 @@ const portfolioData = [
     language: 'Lorem Ipsum is simply',
     function: 'Lorem Ipsum is simply dummy text',
     intention: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been',
-    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    url: 'https://shinchaeyoun.github.io/shin/seed_SHIN/index.html',
   },
   {
     title: "Sony",
@@ -58,7 +64,8 @@ const portfolioData = [
     language: 'Lorem Ipsum is simply',
     function: 'Lorem Ipsum is simply dummy text',
     intention: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been',
-    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    url: 'https://shinchaeyoun.github.io/shin/sony_SHIN/index.html',
   },
   {
     title: "Canvas",
@@ -68,7 +75,8 @@ const portfolioData = [
     language: 'Lorem Ipsum is simply',
     function: 'Lorem Ipsum is simply dummy text',
     intention: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been',
-    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    url: 'https://shinchaeyoun.github.io/shin/canvas_typeChange/canvas01.html',
   },
   {
     title: "Appydev",
@@ -78,7 +86,8 @@ const portfolioData = [
     language: 'Lorem Ipsum is simply',
     function: 'Lorem Ipsum is simply dummy text',
     intention: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been',
-    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    url: 'https://shinchaeyoun.github.io/shin/vue-appydev/index.html',
   },
   {
     title: "Appydev",
@@ -88,7 +97,8 @@ const portfolioData = [
     language: 'Lorem Ipsum is simply',
     function: 'Lorem Ipsum is simply dummy text',
     intention: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been',
-    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    url: 'https://shinchaeyoun.github.io/shin/vue-appydev/index.html',
   },
   {
     title: "Todo List",
@@ -98,7 +108,8 @@ const portfolioData = [
     language: 'Lorem Ipsum is simply',
     function: 'Lorem Ipsum is simply dummy text',
     intention: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been',
-    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    url: 'https://shinchaeyoun.github.io/shin/doyobird/index.html',
   },
   {
     title: "The Shin's Work Space",
@@ -108,7 +119,8 @@ const portfolioData = [
     language: 'Lorem Ipsum is simply',
     function: 'Lorem Ipsum is simply dummy text',
     intention: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been',
-    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+    review: 'but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    url: 'https://shinchaeyoun.github.io/shin/doyobird/index.html',
   },
 ]
 

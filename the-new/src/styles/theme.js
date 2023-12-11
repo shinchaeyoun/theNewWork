@@ -22,19 +22,30 @@ const fonts = {
   nanum : 'Nanum Myeongjo, serif',
   chomsky: 'Chomsky'
 };
-
+const size = {
+  mobile: '767px',
+  tablet: '999px',
+  desktop: '1000px',
+}
+const media = {
+  desktop: `(min-width: ${size.desktop})`,
+  tablet: `(max-width: ${size.tablet})`,
+  mobile: `(max-width: ${size.mobile})`
+}
 export const monoTheme = {
-  colors,fonts,
+  colors,fonts,media,
   bgi: backgroundNoneImg,
   bgColor: '#fff',
-  pointColor: '#222'
+  pointColor: '#222',
+  btnColor: '#d3d3d3',
 };
 
 export const colorTheme = {
-  colors,fonts,
+  colors,fonts,media,
   bgColor: '#282c35',
   bgi: backgroundImg,
-  pointColor: '#d0021b'
+  pointColor: '#d0021b',
+  btnColor: '#d0021b',
 };
 
 const theme = {

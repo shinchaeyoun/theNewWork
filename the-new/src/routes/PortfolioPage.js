@@ -51,6 +51,19 @@ const BoldText = styled.span`
 const TextBlock = styled(S.TextBox)`
   line-height: 1.3;
 `
+const ContentBox = styled(S.ContentBox)`
+  @media ${props => props.theme.media.mobile} {
+    ${ImgBlock}{
+      height: 450px;
+    }
+  }
+`
+const GroupBox = styled(S.GroupBox)`
+ @media ${props => props.theme.media.mobile} {
+  padding: 0 20px; 
+  box-sizing: border-box;
+ }
+`
 
 function PortfolioPage() {
   commonFn.MoveToContentTopFn();
@@ -63,8 +76,8 @@ function PortfolioPage() {
       {
         content.map((item, index) => {
           return (
-            <S.GroupBox key={index} className='block'>
-              <S.ContentBox>
+            <GroupBox key={index} className='block'>
+              <ContentBox>
                 <TitleBox>
                   <ScrollFade.Item $type={true} $index={index} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx}>
                     <Title><S.Red>{item.title}</S.Red></Title>
@@ -80,7 +93,7 @@ function PortfolioPage() {
                 </TitleBox>
 
                 <ScrollFade.Item $type={true} $index={index} $activeIdx={activeIdx} $setActiveIdx={setActiveIdx} $delay='.9s'>
-                  <ImgBlock>
+                  <ImgBlock onClick={()=>{window.open(item.url)}}>
                     <S.ScrollCustom $hei='550px'>
                       <FullImg src={item.fullImg}/>
                     </S.ScrollCustom>
@@ -95,8 +108,8 @@ function PortfolioPage() {
                     <BoldText><S.Red>Lorem Ipsum</S.Red></BoldText> {item.review}
                   </TextBlock>
                 </ScrollFade.Item>
-              </S.ContentBox>
-            </S.GroupBox>
+              </ContentBox>
+            </GroupBox>
           )
         })
       }
